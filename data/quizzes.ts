@@ -1,5 +1,6 @@
 // data/quizzes.ts
 export type Question = {
+  id: number;
   question: string;
   options: string[];
   answer: string;
@@ -21,16 +22,19 @@ export const quizzes: Quiz[] = [
     image: "/images/anatomy.png",
     questions: [
       {
+        id: 1,
         question: "What is the largest organ in the human body?",
         options: ["Liver", "Skin", "Heart", "Brain"],
         answer: "Skin",
       },
       {
+        id: 2,
         question: "How many chambers does the human heart have?",
         options: ["2", "3", "4", "5"],
         answer: "4",
       },
       {
+        id: 3,
         question: "Which system is responsible for transporting blood?",
         options: ["Respiratory", "Circulatory", "Digestive", "Nervous"],
         answer: "Circulatory",
@@ -44,16 +48,19 @@ export const quizzes: Quiz[] = [
     image: "/images/pills.png",
     questions: [
       {
+        id: 1,
         question: "Which route of drug administration is the fastest?",
         options: ["Oral", "Intravenous", "Topical", "Subcutaneous"],
         answer: "Intravenous",
       },
       {
+        id: 2,
         question: "What does the term 'half-life' refer to in pharmacology?",
         options: ["Time for drug to be excreted completely", "Time for drug to reach bloodstream", "Time for half of the drug to be eliminated", "Time for full therapeutic effect"],
         answer: "Time for half of the drug to be eliminated",
       },
       {
+        id: 3,
         question: "Which organ primarily metabolizes drugs?",
         options: ["Kidneys", "Liver", "Lungs", "Spleen"],
         answer: "Liver",
@@ -67,16 +74,19 @@ export const quizzes: Quiz[] = [
     image: "/images/medical-terms.png",
     questions: [
       {
+        id: 1,
         question: "What does 'cardio-' mean?",
         options: ["Lung", "Heart", "Blood", "Muscle"],
         answer: "Heart",
       },
       {
+        id: 2,
         question: "What does '-itis' indicate?",
         options: ["Inflammation", "Tumor", "Disease", "Condition"],
         answer: "Inflammation",
       },
       {
+        id: 3,
         question: "What does 'hypo-' mean?",
         options: ["Above", "Below", "Normal", "Without"],
         answer: "Below",
@@ -90,16 +100,19 @@ export const quizzes: Quiz[] = [
     image: "/images/physiology.png",
     questions: [
       {
+        id: 1,
         question: "Which organ filters blood and produces urine?",
         options: ["Liver", "Kidneys", "Heart", "Pancreas"],
         answer: "Kidneys",
       },
       {
+        id: 2,
         question: "What part of the brain controls balance and coordination?",
         options: ["Cerebrum", "Cerebellum", "Brainstem", "Hypothalamus"],
         answer: "Cerebellum",
       },
       {
+        id: 3,
         question: "Which blood cells help fight infections?",
         options: ["Red blood cells", "White blood cells", "Platelets", "Plasma"],
         answer: "White blood cells",
