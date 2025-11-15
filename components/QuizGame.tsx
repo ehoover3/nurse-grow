@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Quiz } from "../data/quizzes";
 import { useRouter } from "next/navigation";
+import Button from "../components/Button";
 
 type QuizGameProps = {
   quiz: Quiz;
@@ -22,28 +23,27 @@ export default function QuizGame({ quiz }: QuizGameProps) {
   const [questionsToRetry, setQuestionsToRetry] = useState<Quiz["questions"]>([]);
   const [userSelectedAnswer, setUserSelectedAnswer] = useState<string | null>(null);
   const [quizState, setQuizState] = useState<QuizState>(QuizState.SELECT_ANSWER);
-
   const [score, setScore] = useState(0);
   const [showSummary, setShowSummary] = useState(false);
   const currentQuestion = questionsToAsk[questionsToAskIndex];
 
-  const answerLogic = {
+  const handleCheck = {
     check: () => {
       if (!userSelectedAnswer) return;
       const isCorrect = userSelectedAnswer === currentQuestion.answer;
-      if (isCorrect) answerLogic.correct();
-      else answerLogic.incorrect();
+      if (isCorrect) handleCheck.correct();
+      else handleCheck.incorrect();
       setQuizState(QuizState.CONTINUE_BUTTON);
     },
     correct: () => setScore((prev) => prev + 1),
     incorrect: () => setQuestionsToRetry((prev) => [...prev, currentQuestion]),
   };
 
-  const flowLogic = {
+  const handleContinue = {
     continue: () => {
       const nextIndex = questionsToAskIndex + 1;
-      if (nextIndex < questionsToAsk.length) return flowLogic.askNext();
-      if (questionsToRetry.length > 0) return flowLogic.reask();
+      if (nextIndex < questionsToAsk.length) return handleContinue.askNext();
+      if (questionsToRetry.length > 0) return handleContinue.reask();
       setShowSummary(true);
     },
     askNext: () => {
@@ -99,7 +99,7 @@ export default function QuizGame({ quiz }: QuizGameProps) {
   const quizScreen = (
     <div className='mt-8'>
       <h2 className='text-2xl font-bold mb-2'>
-        Question {questionsToAskIndex + 1} / {quiz.questions.length}
+        Question {score} / {quiz.questions.length}
       </h2>
       <p className='text-lg mb-4'>{currentQuestion.question}</p>
 
@@ -107,26 +107,14 @@ export default function QuizGame({ quiz }: QuizGameProps) {
 
       <div className='mt-4'>
         {quizState === QuizState.SELECT_ANSWER ? (
-          <button onClick={answerLogic.check} disabled={!userSelectedAnswer} className='px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition disabled:bg-gray-300'>
-            Check
-          </button>
+          <Button variant='skyBlue' onClick={handleCheck.check} disabled={!userSelectedAnswer}>
+            CHECK
+          </Button>
         ) : (
-          <button onClick={flowLogic.continue} className='px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition'>
-            Continue
-          </button>
+          <Button variant='skyBlue' onClick={handleContinue.continue}>
+            CONTINUE
+          </Button>
         )}
-      </div>
-
-      {/* Debug Panel */}
-      <div className='mt-6'>
-        <details className='p-4 border rounded bg-gray-50'>
-          <summary className='cursor-pointer font-bold text-lg'>Debug Panel</summary>
-          <div className='mt-3 grid grid-cols-1 gap-2 text-sm'>
-            <p>currentQuestionIndex + 1: {questionsToAskIndex + 1};</p>
-            <p>queue.length: {questionsToAsk.length};</p>
-            <p>retryQueue.length: {questionsToRetry.length};</p>
-          </div>
-        </details>
       </div>
     </div>
   );
