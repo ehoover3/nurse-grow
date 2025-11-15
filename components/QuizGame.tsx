@@ -1,82 +1,141 @@
 "use client";
 
-import React, { useState } from "react";
+// TODO: Fix reask bug.
+
+import { useState } from "react";
 import { Quiz } from "../data/quizzes";
-import { useRouter } from "next/navigation"; // Next 13+ App Router
+import { useRouter } from "next/navigation";
 
 type QuizGameProps = {
   quiz: Quiz;
 };
 
 export default function QuizGame({ quiz }: QuizGameProps) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedOption, setSelectedOption] = useState<string | null>(null);
-  const [score, setScore] = useState(0);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [selectedAnswer, setselectedAnswer] = useState<string | null>(null);
   const [finished, setFinished] = useState(false);
 
-  const router = useRouter(); // for navigation
+  const [correctAnswersIndices, setCorrectAnswersIndices] = useState<Set<number>>(new Set());
+  const [countUserFirstAttemptAnswersCorrect, setCountUserFirstAttemptAnswersCorrect] = useState<Set<number>>(new Set());
+  const [queue, setQueue] = useState<Quiz["questions"]>(quiz.questions);
+  const [reaskQueue, setReaskQueue] = useState<Quiz["questions"]>([]);
+  const [countCorrectlyAnswered, setCountCorrectlyAnswer] = useState(0);
 
-  const currentQuestion = quiz.questions[currentIndex];
+  const router = useRouter();
+  const currentQuestion = queue[currentQuestionIndex];
+  const globalIndex = quiz.questions.indexOf(currentQuestion);
 
-  const handleOptionClick = (option: string) => {
-    setSelectedOption(option);
-    if (option === currentQuestion.answer) {
-      setScore((s) => s + 1);
-    }
+  // ------------------- Logic Functions -------------------
 
-    setTimeout(() => {
-      if (currentIndex + 1 < quiz.questions.length) {
-        setCurrentIndex((i) => i + 1);
-        setSelectedOption(null);
-      } else {
-        setFinished(true);
+  const handleAnswer = (isCorrect: boolean) => {
+    const alreadyCorrect = correctAnswersIndices.has(globalIndex);
+    const inRetryQueue = reaskQueue.includes(currentQuestion);
+    const firstAttempt = !alreadyCorrect && !inRetryQueue;
+    if (isCorrect) {
+      setCorrectAnswersIndices((prev) => new Set(prev).add(globalIndex));
+      setCountCorrectlyAnswer((prev) => prev + 1);
+      if (firstAttempt) {
+        setCountUserFirstAttemptAnswersCorrect((prev) => new Set(prev).add(globalIndex));
       }
-    }, 500);
+    } else if (firstAttempt) {
+      setReaskQueue((prev) => [...prev, currentQuestion]);
+    }
   };
 
-  const handleRetry = () => {
-    setCurrentIndex(0);
-    setSelectedOption(null);
-    setScore(0);
+  const moveToNextQuestion = () => {
+    const nextIndex = currentQuestionIndex + 1;
+
+    if (nextIndex < queue.length) {
+      // Move to next question in the current queue
+      setCurrentQuestionIndex(nextIndex);
+      setselectedAnswer(null);
+    } else if (reaskQueue.length > 0) {
+      // If there are any wrong questions, reask them
+      setQueue(reaskQueue);
+      setCurrentQuestionIndex(0);
+      setselectedAnswer(null);
+      setReaskQueue([]); // Clear the retry queue for this pass
+    } else {
+      // All questions answered correctly
+      setCountCorrectlyAnswer(0);
+      setFinished(true);
+    }
+  };
+
+  const onSelectAnswer = (option: string) => {
+    setselectedAnswer(option);
+    const isCorrect = option === currentQuestion.answer;
+    handleAnswer(isCorrect);
+    setTimeout(() => moveToNextQuestion(), 500);
+  };
+
+  const restartQuiz = () => {
+    setQueue(quiz.questions);
+    setCurrentQuestionIndex(0);
+    setselectedAnswer(null);
     setFinished(false);
+    setCorrectAnswersIndices(new Set());
+    setCountUserFirstAttemptAnswersCorrect(new Set());
+    setReaskQueue([]);
   };
 
-  const handleBack = () => {
-    router.push("/"); // navigate back to quiz list
+  const exitQuiz = () => router.push("/");
+
+  // ------------------- Render Helpers -------------------
+
+  const renderOptions = () => {
+    return currentQuestion.options.map((option) => {
+      let bgClass = "hover:bg-gray-200";
+      if (selectedAnswer) {
+        if (option === currentQuestion.answer) bgClass = "bg-green-300";
+        else if (option === selectedAnswer) bgClass = "bg-red-300";
+      }
+      return (
+        <button key={option} onClick={() => onSelectAnswer(option)} className={`p-2 rounded border ${bgClass}`} disabled={!!selectedAnswer}>
+          {option}
+        </button>
+      );
+    });
   };
 
-  if (finished) {
-    return (
-      <div className='p-8 flex flex-col items-center gap-4'>
-        <h2 className='text-2xl font-bold mb-2'>Quiz Finished!</h2>
-        <p className='text-xl mb-4'>
-          You scored {score} / {quiz.questions.length}
-        </p>
-        <div className='flex gap-4'>
-          <button onClick={handleRetry} className='px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition'>
-            Retry Quiz
-          </button>
-          <button onClick={handleBack} className='px-4 py-2 bg-gray-300 text-black rounded hover:bg-gray-400 transition'>
-            Back to Quizzes
-          </button>
-        </div>
-      </div>
-    );
-  }
+  // ------------------- JSX -------------------
 
-  return (
-    <div className='p-8'>
+  const currentQuestionJSX = (
+    <div className='mt-8'>
       <h2 className='text-2xl font-bold mb-2'>
-        Question {currentIndex + 1} / {quiz.questions.length}
+        Question {countCorrectlyAnswered} / {quiz.questions.length}
       </h2>
       <p className='text-lg mb-4'>{currentQuestion.question}</p>
-      <div className='grid gap-2'>
-        {currentQuestion.options.map((option) => (
-          <button key={option} onClick={() => handleOptionClick(option)} className={`p-2 rounded border ${selectedOption ? (option === currentQuestion.answer ? "bg-green-300" : option === selectedOption ? "bg-red-300" : "") : "hover:bg-gray-200"}`}>
-            {option}
-          </button>
-        ))}
+      <p className='mb-2 text-gray-700'>
+        Score so far: {correctAnswersIndices.size} / {quiz.questions.length}
+      </p>
+      <div className='grid gap-2'>{renderOptions()}</div>
+    </div>
+  );
+
+  const summaryJSX = (
+    <div className='flex flex-col items-center gap-4 mt-8'>
+      <h2 className='text-2xl font-bold mb-2'>Quiz Finished!</h2>
+      <p className='text-xl mb-4'>
+        You answered {countUserFirstAttemptAnswersCorrect.size} / {quiz.questions.length} correctly on the first attempt
+      </p>
+      <div className='flex gap-4'>
+        <button onClick={restartQuiz} className='px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition'>
+          Retry Quiz
+        </button>
+        <button onClick={exitQuiz} className='px-4 py-2 bg-gray-300 text-black rounded hover:bg-gray-400 transition'>
+          Back to Quizzes
+        </button>
       </div>
+    </div>
+  );
+
+  return (
+    <div className='p-8 relative'>
+      <button onClick={exitQuiz} className='absolute top-4 left-4 text-xl font-bold text-gray-700 hover:text-gray-900' aria-label='Back to quiz list'>
+        ✕
+      </button>
+      {!finished ? currentQuestionJSX : summaryJSX}
     </div>
   );
 }
