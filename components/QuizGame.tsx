@@ -24,7 +24,6 @@ export default function QuizGame({ quiz }: QuizGameProps) {
   const [userSelectedAnswer, setUserSelectedAnswer] = useState<string | null>(null);
   const [quizState, setQuizState] = useState<QuizState>(QuizState.SELECT_ANSWER);
   const [score, setScore] = useState(0);
-  const [showSummary, setShowSummary] = useState(false);
   const currentQuestion = questionsToAsk[questionsToAskIndex];
 
   const handleCheck = {
@@ -44,7 +43,7 @@ export default function QuizGame({ quiz }: QuizGameProps) {
       const nextIndex = questionsToAskIndex + 1;
       if (nextIndex < questionsToAsk.length) return handleContinue.askNext();
       if (questionsToRetry.length > 0) return handleContinue.reask();
-      setShowSummary(true);
+      setQuizState(QuizState.VIEW_SUMMARY);
     },
     askNext: () => {
       setQuestionsToAskIndex((i) => i + 1);
@@ -65,7 +64,6 @@ export default function QuizGame({ quiz }: QuizGameProps) {
     setQuestionsToAskIndex(0);
     setUserSelectedAnswer(null);
     setQuizState(QuizState.SELECT_ANSWER);
-    setShowSummary(false);
     setQuestionsToRetry([]);
     setScore(0);
   };
@@ -142,7 +140,7 @@ export default function QuizGame({ quiz }: QuizGameProps) {
         ✕
       </button>
 
-      {!showSummary ? quizScreen : summaryScreen}
+      {quizState !== QuizState.VIEW_SUMMARY ? quizScreen : summaryScreen}
     </div>
   );
 }
