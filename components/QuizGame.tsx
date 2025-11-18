@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react"; // 👈 IMPORT useEffect
 import { Quiz } from "../data/quizzes";
 import { useRouter } from "next/navigation";
 import Button from "../components/Button";
+import shuffleArray from "../utils/shuffleArray";
 
 type QuizGameProps = {
   quiz: Quiz;
@@ -16,15 +17,33 @@ enum QuizState {
   VIEW_SUMMARY,
 }
 
+const shuffleQuizAnswerOptions = (questions: Quiz["questions"]): Quiz["questions"] => {
+  return questions.map((question) => ({
+    ...question,
+    options: shuffleArray(question.options),
+  }));
+};
+
 export default function QuizGame({ quiz }: QuizGameProps) {
   const router = useRouter();
-  const [questionsToAsk, setQuestionsToAsk] = useState<Quiz["questions"]>(quiz.questions);
+  const [questionsToAsk, setQuestionsToAsk] = useState<Quiz["questions"]>(() => quiz.questions);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    if (!isMounted) {
+      setQuestionsToAsk(shuffleQuizAnswerOptions(quiz.questions));
+      setIsMounted(true);
+    }
+  }, [quiz.questions, isMounted]);
+
   const [questionsToAskIndex, setQuestionsToAskIndex] = useState(0);
   const [questionsToRetry, setQuestionsToRetry] = useState<Quiz["questions"]>([]);
   const [userSelectedAnswer, setUserSelectedAnswer] = useState<string | null>(null);
   const [quizState, setQuizState] = useState<QuizState>(QuizState.SELECT_ANSWER);
   const [score, setScore] = useState(0);
-  const currentQuestion = questionsToAsk[questionsToAskIndex];
+
+  // Use a fallback to prevent crashing while options are potentially undefined during initial render
+  const currentQuestion = questionsToAsk[questionsToAskIndex] || quiz.questions[0];
 
   const handleCheck = {
     check: () => {
@@ -51,7 +70,8 @@ export default function QuizGame({ quiz }: QuizGameProps) {
       setQuizState(QuizState.SELECT_ANSWER);
     },
     reask: () => {
-      setQuestionsToAsk(questionsToRetry);
+      // Shuffling is safe here as it only runs on the client after interaction
+      setQuestionsToAsk(shuffleQuizAnswerOptions(questionsToRetry));
       setQuestionsToAskIndex(0);
       setQuestionsToRetry([]);
       setUserSelectedAnswer(null);
@@ -60,7 +80,8 @@ export default function QuizGame({ quiz }: QuizGameProps) {
   };
 
   const restartQuiz = () => {
-    setQuestionsToAsk(quiz.questions);
+    // Shuffling is safe here as it only runs on the client after interaction
+    setQuestionsToAsk(shuffleQuizAnswerOptions(quiz.questions));
     setQuestionsToAskIndex(0);
     setUserSelectedAnswer(null);
     setQuizState(QuizState.SELECT_ANSWER);
@@ -72,6 +93,7 @@ export default function QuizGame({ quiz }: QuizGameProps) {
 
   // ------------------- Render Helpers -------------------
 
+  // ... (renderOptions remains the same)
   const renderOptions = () =>
     currentQuestion.options.map((option) => {
       let bgClass = "hover:bg-gray-200";
@@ -94,15 +116,25 @@ export default function QuizGame({ quiz }: QuizGameProps) {
 
   // ------------------- JSX -------------------
 
+  // Hide quiz screen until it's mounted to prevent brief flash of unshuffled options.
+  if (!isMounted) {
+    return (
+      <div className='p-8 relative'>
+        <p>Loading Quiz...</p>
+        <button onClick={exitQuiz} className='absolute top-4 left-4 text-xl font-bold text-gray-700 hover:text-gray-900' aria-label='Back to quiz list'>
+          ✕
+        </button>
+      </div>
+    );
+  }
+
   const quizScreen = (
     <div className='mt-8'>
       <h2 className='text-2xl font-bold mb-2'>
-        Question {score} / {quiz.questions.length}
+        Question {questionsToAskIndex + 1} / {quiz.questions.length}
       </h2>
       <p className='text-lg mb-4'>{currentQuestion.question}</p>
-
       <div className='grid gap-2'>{renderOptions()}</div>
-
       <div className='mt-4'>
         {quizState === QuizState.SELECT_ANSWER ? (
           <Button variant='skyBlue' onClick={handleCheck.check} disabled={!userSelectedAnswer}>
