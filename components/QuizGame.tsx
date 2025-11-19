@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react"; // 👈 IMPORT useEffect
+import { useState, useEffect } from "react";
 import { Quiz } from "../data/quizzes";
 import { useRouter } from "next/navigation";
 import Button from "../components/Button";
@@ -17,6 +17,13 @@ enum QuizState {
   VIEW_SUMMARY,
 }
 
+type AnswerOptionsProps = {
+  currentQuestion: Quiz["questions"][number];
+  quizState: QuizState;
+  userSelectedAnswer: string | null;
+  setUserSelectedAnswer: (answer: string) => void;
+};
+
 const shuffleQuizAnswerOptions = (questions: Quiz["questions"]): Quiz["questions"] => {
   return questions.map((question) => ({
     ...question,
@@ -24,10 +31,58 @@ const shuffleQuizAnswerOptions = (questions: Quiz["questions"]): Quiz["questions
   }));
 };
 
+function Question({ question }: { question: string }) {
+  return <p className='text-lg mb-4'>{question}</p>;
+}
+
+function AnswerOptions({ currentQuestion, quizState, userSelectedAnswer, setUserSelectedAnswer }: AnswerOptionsProps) {
+  return (
+    <div className='grid gap-2'>
+      {currentQuestion.options.map((option: any) => {
+        const isSelecting = quizState === QuizState.SELECT_ANSWER;
+        const isChecking = quizState === QuizState.CONTINUE_BUTTON;
+        const isUserPick = userSelectedAnswer === option;
+        let bgClass = "hover:bg-gray-200";
+        let borderClass = "border-gray-300";
+
+        if (isSelecting && isUserPick) {
+          bgClass = "bg-sky-100";
+          borderClass = "border-sky-300 border-2";
+        }
+
+        if (isChecking) {
+          const isCorrect = option === currentQuestion.answer;
+          const isWrong = isUserPick && option !== currentQuestion.answer;
+
+          if (isCorrect) {
+            bgClass = "bg-green-300";
+            borderClass = "border-green-700 border-2";
+          } else if (isWrong) {
+            bgClass = "bg-red-300";
+            borderClass = "border-red-700 border-2";
+          }
+        }
+
+        return (
+          <button key={option} onClick={() => isSelecting && setUserSelectedAnswer(option)} className={`p-2 rounded border ${bgClass} ${borderClass}`} disabled={!isSelecting}>
+            {option}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
 export default function QuizGame({ quiz }: QuizGameProps) {
   const router = useRouter();
   const [questionsToAsk, setQuestionsToAsk] = useState<Quiz["questions"]>(() => quiz.questions);
   const [isMounted, setIsMounted] = useState(false);
+  const [questionsToAskIndex, setQuestionsToAskIndex] = useState(0);
+  const [questionsToRetry, setQuestionsToRetry] = useState<Quiz["questions"]>([]);
+  const [userSelectedAnswer, setUserSelectedAnswer] = useState<string | null>(null);
+  const [quizState, setQuizState] = useState<QuizState>(QuizState.SELECT_ANSWER);
+  const [score, setScore] = useState(0);
+  const currentQuestion = questionsToAsk[questionsToAskIndex] || quiz.questions[0];
 
   useEffect(() => {
     if (!isMounted) {
@@ -35,15 +90,6 @@ export default function QuizGame({ quiz }: QuizGameProps) {
       setIsMounted(true);
     }
   }, [quiz.questions, isMounted]);
-
-  const [questionsToAskIndex, setQuestionsToAskIndex] = useState(0);
-  const [questionsToRetry, setQuestionsToRetry] = useState<Quiz["questions"]>([]);
-  const [userSelectedAnswer, setUserSelectedAnswer] = useState<string | null>(null);
-  const [quizState, setQuizState] = useState<QuizState>(QuizState.SELECT_ANSWER);
-  const [score, setScore] = useState(0);
-
-  // Use a fallback to prevent crashing while options are potentially undefined during initial render
-  const currentQuestion = questionsToAsk[questionsToAskIndex] || quiz.questions[0];
 
   const handleCheck = {
     check: () => {
@@ -70,7 +116,6 @@ export default function QuizGame({ quiz }: QuizGameProps) {
       setQuizState(QuizState.SELECT_ANSWER);
     },
     reask: () => {
-      // Shuffling is safe here as it only runs on the client after interaction
       setQuestionsToAsk(shuffleQuizAnswerOptions(questionsToRetry));
       setQuestionsToAskIndex(0);
       setQuestionsToRetry([]);
@@ -80,7 +125,6 @@ export default function QuizGame({ quiz }: QuizGameProps) {
   };
 
   const restartQuiz = () => {
-    // Shuffling is safe here as it only runs on the client after interaction
     setQuestionsToAsk(shuffleQuizAnswerOptions(quiz.questions));
     setQuestionsToAskIndex(0);
     setUserSelectedAnswer(null);
@@ -91,50 +135,14 @@ export default function QuizGame({ quiz }: QuizGameProps) {
 
   const exitQuiz = () => router.push("/");
 
-  // ------------------- Render Helpers -------------------
-
-  // ... (renderOptions remains the same)
-  const renderOptions = () =>
-    currentQuestion.options.map((option) => {
-      let bgClass = "hover:bg-gray-200";
-
-      if (userSelectedAnswer === option && quizState === QuizState.SELECT_ANSWER) {
-        bgClass = "bg-gray-200"; // highlight selected answer before checking
-      }
-
-      if (quizState === QuizState.CONTINUE_BUTTON) {
-        if (option === currentQuestion.answer) bgClass = "bg-green-300"; // correct answer green
-        else if (option === userSelectedAnswer && option !== currentQuestion.answer) bgClass = "bg-red-300"; // wrong selection red
-      }
-
-      return (
-        <button key={option} onClick={() => quizState === QuizState.SELECT_ANSWER && setUserSelectedAnswer(option)} className={`p-2 rounded border ${bgClass}`}>
-          {option}
-        </button>
-      );
-    });
-
-  // ------------------- JSX -------------------
-
-  // Hide quiz screen until it's mounted to prevent brief flash of unshuffled options.
-  if (!isMounted) {
-    return (
-      <div className='p-8 relative'>
-        <p>Loading Quiz...</p>
-        <button onClick={exitQuiz} className='absolute top-4 left-4 text-xl font-bold text-gray-700 hover:text-gray-900' aria-label='Back to quiz list'>
-          ✕
-        </button>
-      </div>
-    );
-  }
-
   const quizScreen = (
     <div className='mt-8'>
       <h2 className='text-2xl font-bold mb-2'>
         Question {questionsToAskIndex + 1} / {quiz.questions.length}
       </h2>
-      <p className='text-lg mb-4'>{currentQuestion.question}</p>
-      <div className='grid gap-2'>{renderOptions()}</div>
+      <Question question={currentQuestion.question} />
+      <AnswerOptions currentQuestion={currentQuestion} quizState={quizState} userSelectedAnswer={userSelectedAnswer} setUserSelectedAnswer={setUserSelectedAnswer} />
+
       <div className='mt-4'>
         {quizState === QuizState.SELECT_ANSWER ? (
           <Button variant='skyBlue' onClick={handleCheck.check} disabled={!userSelectedAnswer}>
@@ -171,7 +179,6 @@ export default function QuizGame({ quiz }: QuizGameProps) {
       <button onClick={exitQuiz} className='absolute top-4 left-4 text-xl font-bold text-gray-700 hover:text-gray-900' aria-label='Back to quiz list'>
         ✕
       </button>
-
       {quizState !== QuizState.VIEW_SUMMARY ? quizScreen : summaryScreen}
     </div>
   );
