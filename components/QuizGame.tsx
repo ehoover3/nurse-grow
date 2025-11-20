@@ -153,6 +153,12 @@ export default function QuizGame({ quiz }: QuizGameProps) {
             CONTINUE
           </Button>
         )}
+
+        {quizState === QuizState.CONTINUE_BUTTON && currentQuestion.answerImage && (
+          <div className='mt-4'>
+            <img src={currentQuestion.answerImage} alt='Answer explanation' className='max-w-full h-auto rounded border' />
+          </div>
+        )}
       </div>
     </div>
   );
