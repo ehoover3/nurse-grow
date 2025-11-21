@@ -894,8 +894,8 @@ export const quizzes: Quiz[] = [
 
   {
     slug: "physiology",
-    title: "Physiology Chapter 7 - ",
-    description: "Physiology Chapter 7 - ",
+    title: "Physiology Chapter 7 - Nerve Cells and Electrical Signaling",
+    description: "Physiology Chapter 7 - Nerve Cells and Electrical Signaling",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -1097,8 +1097,8 @@ export const quizzes: Quiz[] = [
 
   {
     slug: "physiology",
-    title: "Physiology Chapter 8 - ",
-    description: "Physiology Chapter 8 - ",
+    title: "Physiology Chapter 8 - Synaptic Transmission and Neural Integration",
+    description: "Physiology Chapter 8 - Synaptic Transmission and Neural Integration",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -1263,8 +1263,8 @@ export const quizzes: Quiz[] = [
 
   {
     slug: "physiology",
-    title: "Physiology Chapter 9 - ",
-    description: "Physiology Chapter 9 - ",
+    title: "Physiology Chapter 9 - Nervous System: Central System",
+    description: "Physiology Chapter 9 - Nervous System: Central System",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -1451,8 +1451,8 @@ export const quizzes: Quiz[] = [
 
   {
     slug: "physiology",
-    title: "Physiology Chapter 10 - ",
-    description: "Physiology Chapter 10 - ",
+    title: "Physiology Chapter 10 - Nervous System: Autonomic and Motor Systems",
+    description: "Physiology Chapter 10 - Nervous System: Autonomic and Motor Systems",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -1647,8 +1647,8 @@ export const quizzes: Quiz[] = [
 
   {
     slug: "physiology",
-    title: "Physiology Chapter 11 - ",
-    description: "Physiology Chapter 11 - ",
+    title: "Physiology Chapter 11 - Nervous System: Autonomic and Motor Systems",
+    description: "Physiology Chapter 11 - Nervous System: Autonomic and Motor Systems",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -1777,8 +1777,8 @@ export const quizzes: Quiz[] = [
 
   {
     slug: "physiology",
-    title: "Physiology Chapter 12 - ",
-    description: "Physiology Chapter 12 - ",
+    title: "Physiology Chapter 12 - Muscle Physiology",
+    description: "Physiology Chapter 12 - Muscle Physiology",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -1949,8 +1949,8 @@ export const quizzes: Quiz[] = [
 
   {
     slug: "physiology",
-    title: "Physiology Chapter 13 - ",
-    description: "Physiology Chapter 13 - ",
+    title: "Physiology Chapter 13 - Cardiovascular System: Cardiac Function",
+    description: "Physiology Chapter 13 - Cardiovascular System: Cardiac Function",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -2144,8 +2144,8 @@ export const quizzes: Quiz[] = [
 
   {
     slug: "physiology",
-    title: "Physiology Chapter 14 - ",
-    description: "Physiology Chapter 14 - ",
+    title: "Physiology Chapter 14 - Cardiovascular System: Blood Vessels, Blood Flow, and Blood Pressure",
+    description: "Physiology Chapter 14 - Cardiovascular System: Blood Vessels, Blood Flow, and Blood Pressure",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -2323,8 +2323,8 @@ export const quizzes: Quiz[] = [
 
   {
     slug: "physiology",
-    title: "Physiology Chapter 15 - ",
-    description: "Physiology Chapter 15 - ",
+    title: "Physiology Chapter 15 - Cardiovascular System: Blood",
+    description: "Physiology Chapter 15 - Cardiovascular System: Blood",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -2445,8 +2445,8 @@ export const quizzes: Quiz[] = [
 
   {
     slug: "physiology",
-    title: "Physiology Chapter 16 - ",
-    description: "Physiology Chapter 16 - ",
+    title: "Physiology Chapter 16 - Respiratory System: Pulmonary Ventilation",
+    description: "Physiology Chapter 16 - Respiratory System: Pulmonary Ventilation",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -2614,8 +2614,8 @@ export const quizzes: Quiz[] = [
 
   {
     slug: "physiology",
-    title: "Physiology Chapter 17 - ",
-    description: "Physiology Chapter 17 - ",
+    title: "Physiology Chapter 17 - Respiratory System: Gas Exchange and Regulation of Breathing",
+    description: "Physiology Chapter 17 - Respiratory System: Gas Exchange and Regulation of Breathing",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -2693,10 +2693,129 @@ export const quizzes: Quiz[] = [
     ],
   },
 
+  // Under steady-state conditions, the rate at which oxygen enters pulmonary capillaries from alveolar air is equal to
+  // The rate at which oxygen is delivered to alveoli in inspired air.
+  // The rate at which oxygen is carried out of the alveoli in expired air.
+  // The rate at which oxygen is consumed in respiring tissues.
+  // The rate at which carbon dioxide is produced in respiring tissues.
+  // The rate at which carbon dioxide leaves the pulmonary capillaries and enters alveolar air.
+
+  // At the normal resting partial pressure of oxygen of mixed venous blood, hemoglobin is
+  // Nearly 100% saturated.
+  // Nearly 97% saturated.
+  // Nearly 75% saturated.
+  // Nearly 50% saturated.
+  // Nearly 25% saturated.
+
+  // In respiring tissues, an increase in blood partial pressure of carbon dioxide causes all of the following except
+  // An increase in the hydrogen ion concentration.
+  // An increase in the bicarbonate concentration.
+  // An increase in the carbaminohemoglobin concentration.
+  // An increase in the affinity of hemoglobin for oxygen.
+  // An increase in hemoglobin unloading of oxygen.
+
+  // Which of the following does not affect alveolar partial pressure of oxygen?
+  // The rate of oxygen consumption by respiring tissues
+  // Alveolar ventilation
+  // The partial pressure of oxygen of inspired air
+  // The volume of air contained in the alveoli
+  // The humidification of air as it moves through the conducting zone
+
+  // During hyperventilation, which of the following would be expected to happen?
+  // An increase in the partial pressure of oxygen of arterial blood
+  // An increase in the partial pressure of carbon dioxide of arterial blood
+  // An increase in the acidity of arterial blood
+  // An increase in the bicarbonate concentration of arterial blood
+  // A decrease in the pH of arterial blood
+
+  // Which of the following would be expected to cause a decrease in the percent saturation of hemoglobin?
+  // An increase in partial pressure of oxygen
+  // A decrease in blood pH
+  // A decrease in partial pressure of carbon dioxide
+  // A decrease in temperature
+  // All of the above
+
+  // Suppose that alveolar partial pressure of oxygen = 100 mm Hg and partial pressure of carbon dioxide = 60 mm Hg. Which of the following is true?
+  // pH will be less than normal.
+  // Percent saturation of hemoglobin by oxygen will be less than normal.
+  // Bicarbonate concentration will be greater than normal.
+  // Both a and c are true.
+  // All of the above are true.
+
+  // Suppose a person’s arterial partial pressure of oxygen adn partial pressure of carbon dioxide are normal (partial pressure of oxygen = 100 mm Hg; partial pressure of carbon dioxide = 40 mm Hg;). Which of the following would most likely stimulate an increase in ventilation?
+  // A decrease in partial pressure of oxygen to 90 mm Hg
+  // A decrease in partial pressure of carbon dioxide to 35 mm Hg
+  // An increase in partial pressure of oxygen to 110 mm Hg
+  // An increase in partial pressure of carbon dioxide to 45 mm Hg
+
+  // A rise in arterial partial pressure of carbon dioxide triggers an increase in ventilation by stimulating both central and peripheral chemoreceptors. The response of central chemoreceptors is due to
+  // Diffusion of carbon dioxide into brain extracellular fluid, which stimulates chemoreceptors directly.
+  // Diffusion of hydrogen ions into brain extracellular fluid, which stimulates chemoreceptors directly.
+  // Diffusion of carbon dioxide into brain extracellular fluid, which reacts with water to form hydrogen ions, which stimulate chemoreceptors directly.
+  // Diffusion of carbon dioxide into brain extracellular fluid, which reacts with water to form bicarbonate ions, which stimulate chemoreceptors directly.
+  // Direct stimulation by hydrogen ions in arterial blood.
+
+  // When a person exercises, ventilation increases to meet the demands of more active tissues. This is an example of
+  // Hyperventilation.
+  // Hypoventilation.
+  // Hypoxia.
+  // Apnea.
+  // Hyperpnea.
+
+  // The normal ratio of bicarbonate concentration to carbon dioxide concentration in arterial blood is
+  // 1:5.
+  // 5:1.
+  // 10:1.
+  // 20:1.
+  // 1:20.
+
+  // Which of the following can hemoglobin bind and transport in blood?
+  // Oxygen
+  // Carbon dioxide
+  // Hydrogen ions
+  // Both a and c
+  // All of the above
+
+  // Which of the following areas of the brain contain inspiratory neurons?
+  // The dorsal respiratory group only
+  // The ventral respiratory group only
+  // Both the dorsal and ventral respiratory groups
+  // Neither the dorsal nor ventral respiratory group
+
+  // Under normal conditions, the rate at which oxygen is brought into the alveoli in inspired air is (the same as/greater than/less than) the rate at which it is consumed in respiring tissues.
+
+  // Under resting conditions, tissues normally extract (exactly half/more than half/less than half) of the oxygen that is delivered to them in arterial blood.
+
+  // The amount of carbon dioxide in systemic arterial blood is less than 50% of that in mixed venous blood. (true/false)
+
+  // When the partial pressure of carbon dioxide of the blood increases, the concentration of bicarbonate (increases/decreases), and the concentration of hydrogen ions (increases/decreases).
+
+  // The enzyme that catalyzes the conversion of carbon dioxide to carbonic acid is          .
+
+  // As the pH of the blood increases, the affinity of hemoglobin for oxygen (increases/decreases).
+
+  // When a person hypoventilates, the partial pressure of carbon dioxide of arterial blood (increases/decreases).
+
+  // A decrease in alveolar ventilation would be expected to cause a(n) (increase/decrease) in arterial partial pressure of oxygen and a(n) (increase/decrease) in arterial partial pressure of carbon dioxide.
+
+  // Hemoglobin with carbon dioxide bound to it is called           .
+
+  // In gas exchange in both the lungs and respiring tissues, oxygen and carbon dioxide always move down their partial pressure gradients. (true/false)
+
+  // (Central/Peripheral) chemoreceptors respond directly to hydrogen ions produced during metabolism.
+
+  // Coughing is triggered by stimulation of pulmonary            receptors.
+
+  // In respiratory acidosis, arterial partial pressure of carbon dioxide is (higher/lower) than normal.
+
+  // An increase in the partial pressure of oxygen of alveolar air would be expected to trigger local (bronchoconstriction/bronchodilation) in airways.
+
+  // An increase in the partial pressure of oxygen of alveolar air would be expected to trigger local (vasoconstriction/vasodilation).
+
   {
     slug: "physiology",
-    title: "Physiology Chapter 18 - ",
-    description: "Physiology Chapter 18 - ",
+    title: "Physiology Chapter 18 - Urinary System: Renal Function",
+    description: "Physiology Chapter 18 - Urinary System: Renal Function",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -2774,10 +2893,111 @@ export const quizzes: Quiz[] = [
     ],
   },
 
+  // Which structure of the urinary system stores urine until it is excreted?
+  // Kidneys
+  // Bladder
+  // Ureter
+  // Urethra
+  // Gallbladder
+
+  // Which of the following is not one of the mechanisms by which a solute can be exchanged between the plasma and the renal tubules?
+  // Glomerular filtration
+  // Secretion
+  // Excretion
+  // Reabsorption
+
+  // Which type of specialized junction ­connects epithelial cells lining the renal tubules?
+  // Gap junctions
+  // Tight junctions
+  // Desmosomes
+  // Intercalated disks
+  // Slit pores
+
+  // Which of the following does not favor a large glomerular filtration rate?
+  // Slit pores
+  // Fenestrations
+  // High glomerular hydrostatic pressure
+  // High resistance in the afferent arteriole
+  // High resistance in the efferent arteriole
+
+  // Most reabsorption of water and solutes occurs in the
+  // Proximal tubule.
+  // Descending limb of the loop of Henle.
+  // Ascending limb of the loop of Henle.
+  // Distal tubule.
+  // Collecting duct.
+
+  // In which of the following are microvilli most abundant?
+  // Bowman’s capsule
+  // Glomerular capillaries
+  // Distal tubule
+  // Proximal tubule
+  // Collecting duct
+
+  // Which of the following would occur if mean arterial pressure increased from 95 mm Hg to 125 mm Hg?
+  // Glomerular filtration rate would increase because of the increased glomerular capillary hydrostatic pressure.
+  // Glomerular filtration rate would decrease because of the increased Bowman’s capsule hydrostatic pressure.
+  // Glomerular filtration rate would not change because of autoregulation.
+  // Glomerular filtration rate would not change because of activation of the sympathetic nervous system.
+
+  // The normal fasting plasma glucose concentration is 100 mg/dL, and the renal threshold is 300 mg/dL. If the plasma concentration doubles to 200 mg/dL, then
+  // The rate at which glucose is reabsorbed will double.
+  // The capacity of the renal tubule for transporting glucose will be exceeded.
+  // Urinary water excretion will increase.
+  // Glucose clearance will increase.
+  // The filtered load of glucose is halved.
+
+  // A substance S is freely filterable and is excreted at a rate (in moles/min) that is lower than the filtered load. On the basis of this information alone, which of the following is the most precise conclusion that can justifiably be drawn regarding the kidneys’ processing of S?
+  // S is neither reabsorbed nor secreted.
+  // S is definitely reabsorbed and may be secreted.
+  // S is definitely secreted and may be reabsorbed.
+  // S is definitely both reabsorbed and secreted.
+
+  // Which of the following observations would enable you to definitely conclude that a substance X is being secreted?
+  // The clearance of X is greater than the GFR.
+  // The concentration of X in the urine is greater than its concentration in the plasma.
+  // The concentration of X in the plasma is decreasing over time.
+  // Either a or c
+  // Any of the above
+
+  // Micturition occurs in response to
+  // Relaxation of the detrusor muscle.
+  // Contraction of the internal and external urethral sphincters.
+  // Activation of parasympathetic neurons to the bladder.
+  // Activation of somatic motor neurons to the bladder.
+
+  // The (ureter/urethra) carries urine from the bladder to the outside of the body.
+
+  // Urinary excretion is the elimination of urine from the bladder. (true/false)
+
+  // The (afferent/efferent) arteriole carries blood toward the glomerulus.
+
+  // The combination of a glomerulus and the surrounding Bowman’s capsule is called a(n) ____________ ____________.
+
+  // The hydrostatic pressure in glomerular capillaries is (higher/lower) than the ­corresponding pressure in most capillaries of the body.
+
+  // The glomerular filtration rate tends to (increase/decrease) as the concentration of proteins in the plasma increases.
+
+  // Autonomic neurons regulate contraction of the (internal/external) urethral sphincter.
+
+  // The glomerular filtration pressure is synonymous with the hydrostatic pressure inside glomerular capillaries. (true/false)
+
+  // The filtered load of a solute is determined by its plasma concentration and the ­(glomerular filtration rate/urine flow rate).
+
+  // If the clearance of a substance is greater than the glomerular filtration rate, then that substance must have undergone (reabsorption/secretion) in the renal tubules.
+
+  // The clearance of (PAH/creatinine) is approximately equal to the renal plasma flow rate.
+
+  // Substances that are reabsorbed move into the (peritubular capillaries/tubule lumen).
+
+  // An increase in the flow rate through the macula densa causes a(n) (increase/decrease) in the glomerular filtration rate.
+
+  // Glucose reabsorption occurs primarily in the (proximal tubule/distal tubule).
+
   {
     slug: "physiology",
-    title: "Physiology Chapter 19 - ",
-    description: "Physiology Chapter 19 - ",
+    title: "Physiology Chapter 19 - Urinary System: Fluid and Electrolyte Balance",
+    description: "Physiology Chapter 19 - Urinary System: Fluid and Electrolyte Balance",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -2855,10 +3075,140 @@ export const quizzes: Quiz[] = [
     ],
   },
 
+  // Which of the following would be expected to trigger a decrease in the secretion of renin?
+  // A decrease in the mean arterial pressure
+  // A decrease in the pressure inside the afferent arteriole
+  // A decrease in the activity of renal sympathetic nerves
+  // A decrease in the concentration of sodium chloride in tubular fluid
+  // A decrease in GFR
+
+  // Which of the following would be expected to trigger a decrease in the secretion of ADH?
+  // Ingestion of a large quantity of pure water
+  // Sweating
+  // Hemorrhage
+  // A decrease in mean arterial pressure
+  // Both a and c
+
+  // Assume that fluid enters the distal tubule with an osmolarity of 100 mOsm, and that the maximum osmolarity of medullary interstitial fluid is 1100 mOsm. As plasma ADH levels rise, what happens to the osmolarity of the urine?
+  // It approaches 100 mOsm as a lower limit.
+  // It approaches 1100 mOsm as an upper limit.
+  // It eventually exceeds 1100 mOsm.
+  // It approaches 300 mOsm, the normal osmolarity of plasma.
+
+  // Which of the following tends to be accompanied by an increase in the rate at which bicarbonate is excreted in the urine?
+  // A decrease in hydrogen ion secretion
+  // A decrease in the plasma bicarbonate concentration
+  // An increase in the production of ammonia by renal tubule epithelial cells
+  // Both a and b
+  // All of the above
+
+  // Assuming that arterial partial pressure of carbon dioxide is normal, metabolic acidosis promotes which of the following?
+  // Increased hydrogen ion secretion by the renal tubule
+  // Decreased alveolar ventilation
+  // Increased bicarbonate reabsorption
+  // Both a and c
+  // All of the above
+
+  // Which of the following tends to promote an increase in sodium excretion?
+  // An increase in the glomerular filtration rate
+  // An increase in plasma renin concentration
+  // An increase in the secretion of atrial natriuretic peptide
+  // Both a and c
+  // All of the above
+
+  // The osmolarity of tubular fluid increases as it flows through the descending limb of the loop of Henle because
+  // Solutes are passively transported into the descending limb.
+  // Solutes are actively transported into the descending limb.
+  // Solutes are passively transported out of the ascending limb.
+  // Water moves passively into the descending limb.
+  // Water moves passively out of the descending limb.
+
+  // Because sweat is essentially a salt solution with an osmolarity lower than that of plasma, severe sweating leads to a reduction in plasma volume and an increase in plasma osmolarity. How do these changes affect the secretion of ADH?
+  // The decrease in plasma volume inhibits ADH secretion, but the increase in osmolarity stimulates it.
+  // The decrease in plasma volume stimulates ADH secretion, but the increase in osmolarity inhibits it.
+  // Both the decrease in plasma volume and the increase in osmolarity stimulate ADH secretion.
+  // Both the decrease in plasma volume and the increase in osmolarity inhibit ADH secretion.
+
+  // In the cytosol of intercalated cells, the carbon dioxide that is converted to carbonic acid can come from
+  // The lumen of the distal tubule and the collecting duct.
+  // Metabolism inside the intercalated cell.
+  // Catabolism of glutamine.
+  // Both a and b
+  // All of the above
+
+  // In the lumen of the proximal tubule, secreted hydrogen ions are primarily buffered by
+  // Bicarbonate.
+  // Phosphates.
+  // Proteins.
+  // Sulfates.
+  // Carbon dioxide.
+
+  // An increase in mean arterial pressure stimulates which of the following?
+  // ADH release
+  // Angiotensin II production
+  // Aldosterone release
+  // Renin release
+  // Increased water excretion in urine
+
+  // Which of the following does not stimulate aldosterone release?
+  // Atrial natriuretic peptide
+  // An increase in plasma potassium
+  // An increase in renin secretion
+  // An increase in angiotensin II production
+
+  // Where is the Na⁺/K⁺ pump located?
+  // On the basolateral membrane of proximal tubule cells, and on the apical membrane of principal cells
+  // On the apical membrane of proximal tubule cells, and on the basolateral membrane of principal cells
+  // On the basolateral membrane of both proximal tubule cells and principal cells
+  // On the apical membrane of both proximal tubule cells and principal cells
+
+  // In epithelial cells lining the proximal tubules, carbonic anhydrase is located
+  // On the basolateral membrane only.
+  // On the apical membrane only.
+  // Inside the cell only.
+  // Inside the cell and on the apical membrane.
+  // Inside the cell and on the basolateral membrane.
+
+  // A person has the following symptoms: arterial pH = 7.45, partical pressure of carbon dioxide = 44 mm Hg, plasma bicarbonate concentration = 27 mM. What is the diagnosis?
+  // Respiratory acidosis
+  // Respiratory alkalosis
+  // Metabolic acidosis
+  // Metabolic alkalosis
+
+  // An increase in the reabsorption of solutes (increases/decreases) water reabsorption.
+
+  // Most solutes and water are reabsorbed in the (proximal tubule/distal tubule and collecting duct).
+
+  // Epithelial cells of the descending limb of the loop of Henle actively transport solutes from tubular fluid to the surrounding peritubular space. (true/false)
+
+  // Urine flow rate increases as the plasma ADH level (increases/decreases).
+
+  // Stretching of the atria of the heart promotes the secretion of           , a hormone that promotes sodium excretion.
+
+  // If the plasma volume is below normal, an increase in water reabsorption will be sufficient to restore it to normal. (true/false)
+
+  //            stimulates the insertion of Na⁺/K⁺ pumps into the plasma membrane of principal cells of the distal tubules and collecting ducts.
+
+  //            stimulates the insertion of water pores into the plasma membrane of epithelial cells of the distal tubules and collecting ducts.
+
+  // ADH increases water permeability of the loop of Henle. (true/false)
+
+  // Potassium secretion is (stimulated/inhibited) by aldosterone.
+
+  // Calcitonin (increases/decreases) plasma calcium levels.
+
+  // Resorption of bone (increases/decreases) plasma calcium levels.
+
+  // By adding new bicarbonate to the blood, the kidneys can bring about a compensatory (increase/decrease) in the plasma pH.
+
+  // The kidneys can excrete urine that is pure water. (true/false)
+
+  // There is no limit to the amount of hydrogen ions the kidneys can excrete. (true/false)
+
   {
     slug: "physiology",
-    title: "Physiology Chapter 20 - ",
-    description: "Physiology Chapter 20 - ",
+    title: "Physiology Chapter 20 - Gastrointestinal System",
+    description: "Physiology Chapter 20 - Gastrointestinal System",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -2936,10 +3286,116 @@ export const quizzes: Quiz[] = [
     ],
   },
 
+  // What do sodium, fatty acids, and vitamin A have in common?
+  // They are not enzymatically modified prior to their absorption into the bloodstream.
+  // They cross the apical membranes of enterocytes by simple diffusion.
+  // They are transported into blood ­capillaries in the villi.
+  // They are all hydrophilic.
+  // All of the above
+
+  // Blockage of the flow of bile into the ­duodenum interferes with the digestion of which of the following?
+  // Carbohydrates only
+  // Lipids only
+  // Proteins only
+  // Carbohydrates and lipids only
+  // Carbohydrates and proteins only
+
+  // Which of the following is an accurate statement regarding the various phases of gastrointestinal control?
+  // The autonomic nervous system is involved in cephalic-phase regulation only.
+  // The autonomic nervous system is involved in gastric-phase regulation only.
+  // The autonomic nervous system is involved in intestinal-phase regulation only.
+  // The autonomic nervous system is ­involved in gastric-phase and intestinal-phase regulation only.
+  // The autonomic nervous system is involved in all three phases of regulation.
+
+  // Failure of the salivary glands to secrete amylase would make it impossible to ­digest which of the following?
+  // Proteins
+  // Fats
+  // Disaccharides
+  // Starch
+  // None of the above
+
+  // Which of the following tends to inhibit acid secretion by the stomach?
+  // An increase in the osmolarity of duodenal contents
+  // Entry of stomach acid into the duodenum
+  // The arrival of food in the stomach
+  // Both a and b
+  // All of the above
+
+  // Which of the following best illustrates the phenomenon of potentiation?
+  // Bile secretion is normally stimulated by both secretin and CCK.
+  // Secretin and CCK act primarily on ­different parts of the hepatic secretory apparatus.
+  // Secretin and CCK both stimulate bile duct cells to secrete fluid.
+  // The secretion of fluid by bile duct cells is greater when both CCK and secretin are present, compared to when either hormone is present alone (at the same concentration).
+
+  // The enzyme enterokinase is directly or indirectly responsible for the proper functioning of
+  // Bile salts.
+  // Lipases.
+  // Trypsin.
+  // Chymotrypsin.
+  // Both trypsin and chymotrypsin.
+
+  // Which of the following is an example of a zymogen?
+  // Enterokinase
+  // Chymotrypsinogen
+  // Salivary amylase
+  // Cholecystokinin
+  // All of the above
+
+  // Increases in gastric motility are generally accompanied by increases in ileal motility because of the
+  // Gastroileal reflex.
+  // Ileogastric reflex.
+  // Gastrocolic reflex.
+  // Colonocolonic reflex.
+  // Intestino-intestinal reflex.
+
+  // Which of the following is a digestion product of amylase?
+  // Maltose
+  // Glucose
+  // Sucrose
+  // Lactose
+  // Fructose
+
+  // Increases in which of the following can induce satiety?
+  // Alpha melanocyte stimulating hormone
+  // Thyroid stimulating hormone
+  // Leptin
+  // Both a and c
+  // All of the above
+
+  // Through the action of pancreatic amylase alone, starch can be broken down to a form that can be absorbed completely. (true/false)
+
+  // The glands that secrete acid in the ­stomach are examples of accessory glands. (true/false)
+
+  // Receptive relaxation is an example of (cephalic-phase/gastric-phase) control of stomach function.
+
+  // The (submucosal/myenteric) nerve plexus is located within the muscularis externa.
+
+  // The________ is the outermost layer of the gastrointestinal wall, consisting of the mesothelium and an underlying layer of connective tissue.
+
+  // When food is present in the small intestine, contraction of the gallbladder is stimulated by (secretin/cholecystokinin).
+
+  // Bile salts are necessary for the proper functioning of pancreatic (proteases/lipases).
+
+  // The lamina propria is located within the (mucosa/submucosa).
+
+  // Gastrin (stimulates/inhibits) the secretion of acid by the stomach.
+
+  // In the stomach, pepsinogen is secreted by (chief cells/parietal cells).
+
+  // The small intestine is periodically swept of its contents by (segmentation/migrating motility complexes).
+
+  // The term enterohepatic circulation refers to the conduction of blood from the intestine to the liver via the hepatic portal vein. (true/false)
+
+  // Nerves and hormones exert their effects on gastrointestinal motility primarily by altering the (frequency/amplitude) of slow waves.
+
+  // Chewing is under voluntary control but is also controlled by reflex neural pathways. (true/false)
+
+  // Disaccharides are broken down to monosaccharides by (pancreatic enzymes/brush border enzymes).
+
   {
     slug: "physiology",
-    title: "Physiology Chapter 21 - ",
-    description: "Physiology Chapter 21 - ",
+    title: "Physiology Chapter 21 - Endocrine System: Regulation of Energy Metabolism and Growth",
+    description: "Physiology Chapter 21 - Endocrine System: Regulation of Energy Metabolism and Growth",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -3017,10 +3473,107 @@ export const quizzes: Quiz[] = [
     ],
   },
 
+  // Which of the following is an example of a permissive effect of a hormone?
+  // The effect of thyroid hormones on growth
+  // The effect of insulin on glucose uptake by cells
+  // The effect of sex hormones on the ­secretion of growth hormone
+  // Both a and c
+  // All of the above
+
+  // Which of the following is an example of a glucose-sparing effect of cortisol?
+  // Inhibition of ACTH release
+  // Stimulation of gluconeogenesis by the liver
+  // Stimulation of lipolysis
+  // Stimulation of glycogen breakdown
+  // Stimulation of protein synthesis
+
+  // Which of the following cells of the ­pancreas secrete insulin?
+  // Alpha cells
+  // Beta cells
+  // Delta cells
+  // Exocrine cells
+  // Duct cells
+
+  // Stress stimulates secretion of which of the following hormones?
+  // Growth hormone
+  // Epinephrine
+  // Thyroid hormones
+  // ACTH
+  // All of the above
+
+  // Hypoglycemia inhibits secretion of which of the following?
+  // Growth hormone
+  // Insulin
+  // Epinephrine
+  // Glucagon
+  // All of the above
+
+  // In the postabsorptive state, the central nervous system uses which of the following as its primary source of energy?
+  // Fatty acids
+  // Amino acids
+  // Glucose
+  // Glycerol
+  // Ketones
+
+  // Which of the following cell types is directly responsible for building new bone material?
+  // Osteoblasts
+  // Osteoclasts
+  // Osteocytes
+  // Chondrocytes
+
+  // Which of the following is true of adulthood?
+  // Growth hormone exerts no effects on body tissues.
+  // The secretion of growth hormone ceases altogether.
+  // Growth hormone cannot stimulate increases in the length of long bones.
+  // The structure of bone becomes permanently fixed.
+  // None of the above
+
+  // Which form of thyroid hormone has greater activity at target cells?
+  // T₃
+  // T₄
+  // Neither; T₃ and T₄ have equal activity
+
+  // Which of the following hormones is a steroid?
+  // Thyroid hormones
+  // Insulin
+  // Glucagon
+  // Growth hormone
+  // Cortisol
+
+  // Energy mobilization is promoted by (insulin/glucagon).
+
+  // Secretion of (insulin/glucagon) is increased during the absorptive period.
+
+  // Insulin and glucagon both help regulate the plasma glucose concentration. (true/false)
+
+  // Breakdown of triglycerides yields fatty acids and           , which can be used by cells for energy.
+
+  // Conversion of amino acids to fatty acids is more likely to occur in the (absorptive/postabsorptive) state.
+
+  // Conversion of amino acids to glucose is more likely to occur in the (absorptive/postabsorptive) state.
+
+  // An increase in plasma thyroid hormone levels tends to make the body’s energy balance more (positive/negative).
+
+  // Energy that is taken into the body is either stored or appears as work or           .
+
+  // Stress tends to (stimulate/inhibit) GHRH secretion.
+
+  // Many of growth hormone’s effects on target tissues are due to it triggering release of other chemical messengers called           .
+
+  // Closure of the epiphyseal plates is promoted by (growth hormone/sex hormones).
+
+  // Thyroid hormones promote increased ­responsiveness of target tissues to ­(sympathetic/parasympathetic) nerve activity.
+
+  // Glucocorticoids promote (increased/decreased) plasma glucose levels.
+
+  // Stimulation of gluconeogenesis by glucagon is an example of a glucose-sparing effect. (true/false)
+
+  // Plasma glucocorticoids have a(n) (stimulatory/inhibitory) effect on the secretion of ACTH.
+
   {
     slug: "physiology",
-    title: "Physiology Chapter 22 - ",
-    description: "Physiology Chapter 22 - ",
+    title: "Physiology Chapter 22 - Reproductive System",
+    description: "Physiology Chapter 22 - Reproductive System",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -3098,10 +3651,129 @@ export const quizzes: Quiz[] = [
     ],
   },
 
+  // In both males and females, gonadotropin secretion by the anterior pituitary is stimulated by which of the following?
+  // Inhibin
+  // Androgens
+  // GnRH
+  // FSH
+  // GHRH
+
+  // In the embryo, which of the following effects is promoted by testosterone?
+  // Development of the primitive gonads into testes
+  // Regression of Müllerian ducts
+  // Development of Müllerian ducts into male reproductive organs
+  // Development of Wolffian ducts into male reproductive organs
+  // Expression of the srY gene
+
+  // The testes are housed in a structure called the
+  // prostate gland.
+  // scrotum.
+  // penis.
+  // epididymis.
+  // vas deferens.
+
+  // In the first step of spermatogenesis, spermatogonia differentiate into cells called
+  // spermatids.
+  // primary spermatocytes.
+  // secondary spermatocytes.
+  // spermatozoa.
+  // spermatophytes.
+
+  // Cells in the ovaries secrete all of the following hormones except
+  // estrogens.
+  // progesterone.
+  // androgens.
+  // luteinizing hormone.
+  // inhibin.
+
+  // In oogenesis, when does meiosis I occur?
+  // In early fetal life
+  // At birth
+  // Just before ovulation
+  // After ovulation but before fertilization
+  // After fertilization
+
+  // During the early to mid-follicular phase of the ovarian cycle, which hormone(s) stimulate(s) granulosa cell functions?
+  // Progesterone
+  // FSH
+  // LH
+  // GnRH
+  // Estrogens
+
+  // In the late luteal phase, why do estrogen and progesterone levels fall?
+  // Rupture of the dominant follicle
+  // Degeneration of the corpus luteum
+  // An inhibitory effect of LH on secretory activity of the corpus luteum
+  // The inhibitory effect of inhibin on the secretory activity of granulosa cells
+  // All of the above
+
+  // In the uterine cycle, which phase immediately precedes the proliferative phase?
+  // Menstrual phase
+  // Secretory phase
+  // Luteal phase
+  // Follicular phase
+
+  // The placenta not only serves as an organ of exchange but also secretes all of the following hormones except
+  // prolactin.
+  // chorionic gonadotropin.
+  // placental lactogen.
+  // progesterone.
+  // estrogens.
+
+  // In meiosis I, maternal and paternal chromosomes are segregated into separate daughter cells. (true/false)
+
+  // The srY gene codes for (testosterone ­receptors/testis-determining factor), which determine(s) whether an embryo develops testes or ovaries.
+
+  // In the absence of testosterone and MIS, the Müllerian ducts (persist/degenerate) in the embryo, and female structures eventually develop.
+
+  // FSH and LH are classified as (sex hormones/gonadotropins).
+
+  // GnRH, which is secreted by the hypothalamus, stimulates the secretion of both FSH and LH from the anterior pituitary. (true/false)
+
+  // In the testes, androgens are secreted by (Sertoli cells/Leydig cells).
+
+  // Spermatogenesis is stimulated by testosterone and (FSH/LH), which targets Sertoli cells.
+
+  // The head of a sperm contains chromosomes and a(n) , a vesicle containing enzymes needed for fertilization.
+
+  // Erection is accompanied by a(n) (increase/decrease) in the activity of sympathetic neurons projecting to blood vessels in the penis.
+
+  // Once sperm are deposited in the female reproductive tract, they cannot fertilize the oocyte until they have undergone a process called .
+
+  // Fertilization usually occurs in the (uterus/uterine tube).
+
+  // The second half of the ovarian cycle is called the (luteal/follicular) phase.
+
+  // In a follicle, the oocyte is surrounded by a layer of (granulosa/theca) cells that provide it with nourishment and regulate its development.
+
+  // (FSH/LH) stimulates theca cells to secrete androgens, which are converted to estrogens by granulosa cells.
+
+  // The inner layer of the uterine wall is called the (endometrium/myometrium).
+
+  // During the (proliferative/secretory) phase of the uterine cycle, the lining of the uterus thickens under the influence of ­rising estrogen levels.
+
+  // Ovulation is triggered by (FSH/LH).
+
+  // The corpus luteum secretes estrogens and (LH/progesterone).
+
+  // In the late follicular phase, LH secretion is stimulated by (estrogens/progesterone).
+
+  // Degeneration of the corpus luteum causes hormonal changes that trigger (ovulation/menstruation).
+
+  // Before implantation, the morula develops into a(n) __________, which consists of an inner cell mass contained within a hollow, fluid-filled outer cell layer.
+
+  // Secretory-phase uterine conditions are promoted by (estrogen/progesterone), which inhibits gonadotropin secretion during the last half of the ovarian cycle.
+
+  // During the last six months of pregnancy, estrogens and progesterone are secreted by the (ovaries/placenta).
+
+  // During labor, strong uterine contractions are induced by (prolactin/oxytocin).
+
+  // Suckling stimulates the release of __________, which promotes milk production by the breasts.
+
   {
     slug: "physiology",
-    title: "Physiology Chapter 23 - ",
-    description: "Physiology Chapter 23 - ",
+    title: "Physiology Chapter 23 - Immune System",
+    description: "Physiology Chapter 23 - Immune System",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -3179,10 +3851,125 @@ export const quizzes: Quiz[] = [
     ],
   },
 
+  // Which of the following class of pathogens consists of only unicellular organisms?
+  // Virus
+  // Bacteria
+  // Fungi
+  // Parasites
+  // None of the above
+
+  // Which of the following conditions would lead to the most serious immunodeficiency disease?
+  // Lack of IgG
+  // Lack of neutrophils
+  // Lack of B cells
+  // Lack of cytotoxic T cells
+  // Lack of helper T cells
+
+  // Which of the following molecules can opsonize antigen?
+  // A T cell receptor
+  // Interferon
+  // An antibody
+  // A perforin
+  // Interleukin-2
+
+  // Lymphocytes contact foreign antigen in all of the following tissues except
+  // bone marrow.
+  // the spleen.
+  // lymph nodes.
+  // the appendix.
+  // Peyer’s patches.
+
+  // Which of the following is not true about humoral immunity?
+  // It involves B cells.
+  // It involves antibodies.
+  // It involves cytotoxic T cells.
+  // It can provide passive immunity when transferred from one person to another.
+
+  // Macrophages
+  // are derived from monocytes.
+  // have class II MHC molecules.
+  // are phagocytic.
+  // are indirectly involved in specific immunity.
+  // all of the above.
+
+  // Activated cytotoxic T cells release pore-forming molecules called
+  // histamines.
+  // complement proteins.
+  // perforins.
+  // immunoglobulins.
+  // ready-porins.
+
+  // An individual with type AB blood
+  // is considered a universal blood donor.
+  // is considered a universal blood recipient.
+  // produces antibodies to the B antigen.
+  // produces antibodies to the A antigen.
+  // is Rh-positive.
+
+  // Which of the following events can result in lifelong immunity?
+  // Passage of maternal antibodies to a developing fetus
+  // An inflammatory response to a splinter
+  // Phagocytosis of bacteria by a neutrophil
+  // Administration of the polio vaccine
+  // Administration of antibodies against the rabies virus
+
+  // Foreign antigens phagocytosed by macrophages are presented by
+  // class I MHC molecules to cytotoxic T cells.
+  // class II MHC molecules to helper T cells.
+  // class I MHC molecules to helper T cells.
+  // class II MHC molecules to CD8-bearing cells.
+  // class II MHC molecules to cytotoxic T cells.
+
+  // Of the following events, which occurs earliest in the process of local inflammation?
+  // Increased capillary permeability
+  // Fever
+  // Attack by cytotoxic T cells
+  // Release of histamine
+  // Lysis of microbes mediated by antibodies and complement
+
+  // Which of the following is not true about helper T cells?
+  // They function in both the cell-­mediated and humoral immune responses.
+  // They secrete antibody.
+  // They bear surface CD4 molecules.
+  // They are subject to infection by HIV.
+  // When activated, they secrete IL-2 and other cytokines.
+
+  // Which of the following is not an antigen-presenting cell?
+  // Macrophage
+  // Dendritic cell
+  // Mast cell
+  // Activated B cells
+  // Thymus cells
+
+  // IL-2 is important for the activation of all of the following cell types except
+  // B cells.
+  // cytotoxic T cells.
+  // NK cells.
+  // T helper cells.
+  // macrophages.
+
+  // Which of the following is an autoimmune disease in which myelinated neurons become the target of the immune response?
+  // Myasthenia gravis
+  // Multiple sclerosis
+  // Diabetes mellitus
+  // Rheumatoid arthritis
+
+  // A person who experiences life-threatening allergic reactions to bee sting venom might be given an experimental drug designed to (block/enhance) the binding of IgE to mast cells.
+
+  // When a macrophage is infected by a virus, viral antigen will be presented by (class I/class II MHC molecules) to a (helper T cell/cytotoxic T cell).
+
+  // Evidence exists of interactions among the immune system, the nervous system, and the endocrine system. (true/false)
+
+  // A young girl who has never been immunized against tetanus cuts her foot on a rusty nail. In the emergency room her wound is cleaned, and she is given an injection of tetanus antitoxin (antibody to tetanus toxin). This is considered (active/passive) immunization.
+
+  // Macrophages internalize foreign antigens by (endocytosis/phagocytosis), whereas B cells do so by (endocytosis/phagocytosis).
+
+  // A person who has had a thymectomy as a treatment for a thymic tumor will likely experience a diminished (T cell/B cell) count.
+
   {
     slug: "physiology",
-    title: "Physiology Chapter 24 - ",
-    description: "Physiology Chapter 24 - ",
+    title: "Physiology Chapter 24 - Diabetes Mellitus",
+    description: "Physiology Chapter 24 - Diabetes Mellitus",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -3259,4 +4046,93 @@ export const quizzes: Quiz[] = [
       },
     ],
   },
+
+  // Which of the following best describes type 1 DM?
+  // Bacterial infection of the adrenal medulla
+  // Viral infection of the adrenal medulla
+  // Autoimmune disease of the endocrine pancreas
+  // Autoimmune disease of the exocrine pancreas
+  // Disease of chronic obesity
+
+  // Which of the following is not a symptom of ketoacidosis?
+  // Acetone breath
+  // Increased ventilation
+  // Increased lipolysis
+  // Muscle tremors
+  // Increased sympathetic activity
+
+  // What causes a diabetic coma?
+  // Severe hyperglycemia
+  // Too much insulin, which causes severe hypoglycemia
+  // Acidosis
+  // Increased sympathetic activity to blood vessels of the brain
+  // Vasoconstriction of blood vessels to the brain
+
+  // What are the “three polys” of diabetes mellitus?
+  // Polydipsia, polyphagia, polyuria
+  // Polyglycemia, polylipemia, polyuria
+  // Polydipsia, polyglycemia, polycythemia
+  // Polycythemia, polyphagia, polyuria
+  // Polyphagia, polyinsulinemia, polydipsia
+
+  // Glycosylation of which protein is used as a marker for diagnosing diabetes?
+  // Insulin
+  // Hexokinase
+  // Hemoglobin
+  // Aldose reductase
+  // Protein kinase C
+
+  // Proliferative retinopathy is caused by which of the following?
+  // Microaneurysms causing blood vessels in the retina to leak
+  // Extensive angiogenesis in the retina resulting in weak, fragile blood vessels that leak
+  // Increased production of rods and cones such that they overlap and interfere with each other’s function
+  // Extensive development of the choroid, putting pressure on the optic nerve
+  // Extensive development of the retinal pigmented epithelium, putting pressure on the optic nerve
+
+  // What is an early symptom of nephropathy used for diagnostic purposes?
+  // Glucose in the urine
+  // Albumin in the urine
+  // Blood in the urine
+  // Excessive thirst
+  // Dehydration
+
+  // Which of the following is not a phagocyte?
+  // Fibroblasts
+  // Neutrophils
+  // Macrophages
+  // Monocytes
+
+  // Which of the following is not used to treat type 2 DM?
+  // Sulfonylureas
+  // Biguanides
+  // α-Glucosidase inhibitors
+  // Thiazolidinediones
+  // Phenylephrine
+
+  // Which of the following is an enzyme ­currently being studied as a target for gene therapy of diabetes mellitus?
+  // Hexokinase
+  // Protein kinase C
+  // Aldose reductase
+  // AMP-activated protein kinase
+  // Tyrosine kinase
+
+  // Which is the more prevalent, type 1 or type 2 diabetes mellitus?
+
+  // Which is an autoimmune disease, type 1 or type 2 diabetes mellitus?
+
+  // The non-enzymatic addition of glucose to a protein is called            .
+
+  // Acidosis occurs in diabetes due to the production of            .
+
+  // Define polyuria, polydipsia, and polyphagia.
+
+  // Amputation in diabetes occurs secondary to            .
+
+  // Name the three phases of wound healing. Which phases are delayed in diabetes?
+
+  // How do sulfonylureas increase insulin secretion?
+
+  // True or False: Weight-loss surgery can reverse some cases of type 2 DM.
+
+  // What is a diabetic coma?
 ];
