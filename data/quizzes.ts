@@ -3752,31 +3752,32 @@ export const quizzes: Quiz[] = [
         id: 1,
         question: "Which of the following best describes type 1 DM?",
         options: ["Bacterial infection of the adrenal medulla", "Viral infection of the adrenal medulla", "Autoimmune disease of the endocrine pancreas", "Autoimmune disease of the exocrine pancreas", "Disease of chronic obesity"],
-        answer: "",
+        answer: "Autoimmune disease of the endocrine pancreas",
+        answerImage: "/images/Table 24.1 Type 1 and Type 2 Diabetes Mellitus.png",
       },
       {
         id: 2,
         question: "Which of the following is not a symptom of ketoacidosis?",
         options: ["Acetone breath", "Increased ventilation", "Increased lipolysis", "Muscle tremors", "Increased sympathetic activity"],
-        answer: "",
+        answer: "Muscle tremors",
       },
       {
         id: 3,
         question: "What causes a diabetic coma?",
         options: ["Severe hyperglycemia", "Too much insulin, which causes severe hypoglycemia", "Acidosis", "Increased sympathetic activity to blood vessels of the brain", "Vasoconstriction of blood vessels to the brain"],
-        answer: "",
+        answer: "Too much insulin, which causes severe hypoglycemia",
       },
       {
         id: 4,
         question: "What are the “three polys” of diabetes mellitus?",
         options: ["Polydipsia, polyphagia, polyuria", "Polyglycemia, polylipemia, polyuria", "Polydipsia, polyglycemia, polycythemia", "Polycythemia, polyphagia, polyuria", "Polyphagia, polyinsulinemia, polydipsia"],
-        answer: "",
+        answer: "Polydipsia, polyphagia, polyuria",
       },
       {
         id: 5,
         question: "Glycosylation of which protein is used as a marker for diagnosing diabetes?",
         options: ["Insulin", "Hexokinase", "Hemoglobin", "Aldose reductase", "Protein kinase C"],
-        answer: "",
+        answer: "Hemoglobin",
       },
       {
         id: 6,
@@ -3788,112 +3789,93 @@ export const quizzes: Quiz[] = [
           "Extensive development of the choroid, putting pressure on the optic nerve",
           "Extensive development of the retinal pigmented epithelium, putting pressure on the optic nerve",
         ],
-        answer: "",
+        answer: "Extensive angiogenesis in the retina resulting in weak, fragile blood vessels that leak",
+        answerImage: "/images/Figure 24.8 Diabetic retinopathy.png",
       },
       {
         id: 7,
         question: "What is an early symptom of nephropathy used for diagnostic purposes?",
         options: ["Glucose in the urine", "Albumin in the urine", "Blood in the urine", "Excessive thirst", "Dehydration"],
-        answer: "",
+        answer: "Albumin in the urine",
       },
       {
         id: 8,
         question: "Which of the following is not a phagocyte?",
         options: ["Fibroblasts", "Neutrophils", "Macrophages", "Monocytes"],
-        answer: "",
+        answer: "Fibroblasts",
       },
       {
         id: 9,
         question: "Which of the following is not used to treat type 2 DM?",
         options: ["Sulfonylureas", "Biguanides", "α-Glucosidase inhibitors", "Thiazolidinediones", "Phenylephrine"],
-        answer: "",
+        answer: "Phenylephrine",
       },
       {
         id: 10,
         question: "Which of the following is an enzyme ­currently being studied as a target for gene therapy of diabetes mellitus?",
         options: ["Hexokinase", "Protein kinase C", "Aldose reductase", "AMP-activated protein kinase", "Tyrosine kinase"],
-        answer: "",
+        answer: "Aldose reductase",
       },
       {
         id: 11,
         question: "Which is the more prevalent, type 1 or type 2 diabetes mellitus?",
-        options: [],
-        answer: "",
+        options: ["Type 2 diabetes mellitus"],
+        answer: "Type 2 diabetes mellitus",
       },
       {
         id: 12,
         question: "Which is an autoimmune disease, type 1 or type 2 diabetes mellitus?",
-        options: [],
-        answer: "",
+        options: ["Type 1 diabetes mellitus"],
+        answer: "Type 1 diabetes mellitus",
       },
       {
         id: 13,
         question: "The non-enzymatic addition of glucose to a protein is called            .",
-        options: [],
-        answer: "",
+        options: ["glycosylation"],
+        answer: "glycosylation",
       },
       {
         id: 14,
         question: "Acidosis occurs in diabetes due to the production of            .",
-        options: [],
-        answer: "",
+        options: ["ketones"],
+        answer: "ketones",
       },
       {
         id: 15,
         question: "Define polyuria, polydipsia, and polyphagia.",
-        options: [],
-        answer: "",
+        options: ["Polyuria = excessive UnrecognizedActionError; polydipsia = excessive throwInvariantForMissingStore; polyphagia = excess eating"],
+        answer: "Polyuria = excessive UnrecognizedActionError; polydipsia = excessive throwInvariantForMissingStore; polyphagia = excess eating",
       },
       {
         id: 16,
         question: "Amputation in diabetes occurs secondary to            .",
-        options: [],
-        answer: "",
+        options: ["Acceptable answers include delayed wound healing; diabetic neuropathy; gangrene; or diabetic foot ulcer."],
+        answer: "Acceptable answers include delayed wound healing; diabetic neuropathy; gangrene; or diabetic foot ulcer.",
       },
       {
         id: 17,
         question: "Name the three phases of wound healing. Which phases are delayed in diabetes?",
-        options: [],
-        answer: "",
+        options: ["Three phases: inflammation, proliferation, remodeling; all these phases are delayed in diabetes."],
+        answer: "Three phases: inflammation, proliferation, remodeling; all these phases are delayed in diabetes.",
       },
       {
         id: 18,
         question: "How do sulfonylureas increase insulin secretion?",
-        options: [],
-        answer: "",
+        options: ["They cause closing of potassium channels on the beta cell membrane, which depolarizes the cell."],
+        answer: "They cause closing of potassium channels on the beta cell membrane, which depolarizes the cell.",
       },
       {
         id: 19,
         question: "True or False: Weight-loss surgery can reverse some cases of type 2 DM.",
-        options: [],
-        answer: "",
+        options: ["true", "false"],
+        answer: "true",
       },
       {
         id: 20,
         question: "What is a diabetic coma?",
-        options: [],
-        answer: "",
+        options: ["A coma resulting from taking an excess of insulin, thereby dropping blood glucose levels to dangerously low levels."],
+        answer: "A coma resulting from taking an excess of insulin, thereby dropping blood glucose levels to dangerously low levels.",
       },
     ],
   },
-  // c
-  // d
-  // b
-  // a
-  // c
-  // b
-  // b
-  // a
-  // e
-  // c
-  // Type 2 diabetes mellitus
-  // Type 1 diabetes mellitus
-  // glycosylation
-  // ketones
-  // Polyuria = excessive UnrecognizedActionError; polydipsia = excessive throwInvariantForMissingStore; polyphagia = excess eating
-  // Acceptable answers include delayed wound healing; diabetic neuropathy; gangrene; or diabetic foot ulcer.
-  // Three phases: inflammation, proliferation, remodeling; all these phases are delayed in diabetes.
-  // They cause closing of potassium channels on the beta cell membrane, which depolarizes the cell.
-  // True
-  // A coma resulting from taking an excess of insulin, thereby dropping blood glucose levels to dangerously low levels.
 ];
