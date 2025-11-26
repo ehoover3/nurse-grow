@@ -45,9 +45,9 @@ export const quizzes: Quiz[] = [
   },
 
   {
-    slug: "physiology",
+    slug: "physiology-chapter-1",
     title: "Introduction to Physiology",
-    description: "Physiology Chapter 1",
+    description: "physiology-chapter-1",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -133,9 +133,9 @@ export const quizzes: Quiz[] = [
     ],
   },
   {
-    slug: "physiology",
+    slug: "physiology-chapter-2",
     title: "Cell Structure and Function",
-    description: "Physiology Chapter 2",
+    description: "physiology-chapter-2",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -329,9 +329,9 @@ export const quizzes: Quiz[] = [
   },
 
   {
-    slug: "physiology",
+    slug: "physiology-chapter-3",
     title: "Cell Metabolism",
-    description: "Physiology Chapter 3",
+    description: "physiology-chapter-3",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -473,9 +473,9 @@ export const quizzes: Quiz[] = [
   },
 
   {
-    slug: "physiology",
+    slug: "physiology-chapter-4",
     title: "Cell Membrane Transport",
-    description: "Physiology Chapter 4",
+    description: "physiology-chapter-4",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -592,9 +592,9 @@ export const quizzes: Quiz[] = [
     ],
   },
   {
-    slug: "physiology",
+    slug: "physiology-chapter-5",
     title: "Chemical Messengers",
-    description: "Physiology Chapter 5",
+    description: "physiology-chapter-5",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -739,9 +739,9 @@ export const quizzes: Quiz[] = [
     ],
   },
   {
-    slug: "physiology",
+    slug: "physiology-chapter-6",
     title: "Endocrine System: Endocrine Glands and Hormone Actions",
-    description: "Physiology Chapter 6",
+    description: "physiology-chapter-6",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -839,9 +839,9 @@ export const quizzes: Quiz[] = [
     ],
   },
   {
-    slug: "physiology",
+    slug: "physiology-chapter-7",
     title: "Nerve Cells and Electrical Signaling",
-    description: "Physiology Chapter 7",
+    description: "physiology-chapter-7",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -1027,9 +1027,9 @@ export const quizzes: Quiz[] = [
     ],
   },
   {
-    slug: "physiology",
+    slug: "physiology-chapter-8",
     title: "Synaptic Transmission and Neural Integration",
-    description: "Physiology Chapter 8",
+    description: "physiology-chapter-8",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -1155,9 +1155,9 @@ export const quizzes: Quiz[] = [
     ],
   },
   {
-    slug: "physiology",
+    slug: "physiology-chapter-9",
     title: "Nervous System: Central System",
-    description: "Physiology Chapter 9",
+    description: "physiology-chapter-9",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -1316,9 +1316,9 @@ export const quizzes: Quiz[] = [
   },
 
   {
-    slug: "physiology",
+    slug: "physiology-chapter-10",
     title: "Nervous System: Autonomic and Motor Systems",
-    description: "Physiology Chapter 10",
+    description: "physiology-chapter-10",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -1503,103 +1503,103 @@ export const quizzes: Quiz[] = [
   },
 
   {
-    slug: "physiology",
+    slug: "physiology-chapter-11",
     title: "Nervous System: Autonomic and Motor Systems",
-    description: "Physiology Chapter 11",
+    description: "physiology-chapter-11",
     image: "/images/anatomy.png",
     questions: [
       {
         id: 1,
         question: "Effector organs of the autonomic nervous system include all of the following except",
         options: ["Heart muscle.", "Smooth muscle in the pupils of the eye.", "Respiratory muscles.", "Sweat glands.", "Salivary glands."],
-        answer: "",
+        answer: "Respiratory muscles.",
       },
       {
         id: 2,
         question: "According to the concept of dual innervation by the autonomic nervous system, if sympathetic activity inhibits pancreatic secretions, then the parasympathetic nervous system should",
         options: ["Inhibit pancreatic secretions as well.", "Stimulate pancreatic secretions.", "Have no effect on pancreatic secretions."],
-        answer: "",
+        answer: "Stimulate pancreatic secretions.",
       },
       {
         id: 3,
         question: "The adrenal medulla",
         options: ["Contains sympathetic postganglionic neurons.", "Is part of the brainstem.", "Releases epinephrine into the blood.", "Is part of the parasympathetic nervous system.", "Is controlled by the somatic nervous system."],
-        answer: "",
+        answer: "Releases epinephrine into the blood.",
       },
       {
         id: 4,
         question: "The origin of spinal preganglionic neurons is the",
         options: ["Ventral horn of the spinal cord.", "Dorsal horn of the spinal cord.", "Lateral horn of the spinal cord."],
-        answer: "",
+        answer: "Lateral horn of the spinal cord.",
       },
       {
         id: 5,
         question: "The origin of motor neurons is the",
         options: ["Ventral horn of the spinal cord.", "Dorsal horn of the spinal cord.", "Lateral horn of the spinal cord."],
-        answer: "",
+        answer: "Ventral horn of the spinal cord.",
       },
       {
         id: 6,
         question: "Which of the following second messengers stimulates the release of calcium from intracellular stores?",
         options: ["cAMP", "Inositol triphosphate", "Diacylglycerol"],
-        answer: "",
+        answer: "Inositol triphosphate",
       },
       {
         id: 7,
         question: "How many motor neurons innervate a single skeletal muscle cell?",
         options: ["Zero", "One", "Several", "Hundreds", "Millions"],
-        answer: "",
+        answer: "One",
       },
       {
         id: 8,
         question: "Which branch of the autonomic nervous system is most active when the body is at rest?",
-        options: [],
-        answer: "",
+        options: ["parasympathetic"],
+        answer: "parasympathetic",
       },
       {
         id: 9,
         question: "Which part of the adrenal gland secretes epinephrine?",
-        options: [],
-        answer: "",
+        options: ["medulla"],
+        answer: "medulla",
       },
       {
         id: 10,
         question: "A decrease in cAMP is associated with which class of adrenergic receptor?",
-        options: [],
-        answer: "",
+        options: ["α₂ adrenergic"],
+        answer: "α₂ adrenergic",
       },
       {
         id: 11,
         question: "β2 adrenergic receptors have a greater affinity for (epinephrine/norepinephrine).",
-        options: [],
-        answer: "",
+        options: ["epinephrine"],
+        answer: "epinephrine",
       },
     ],
   },
 
   {
-    slug: "physiology",
+    slug: "physiology-chapter-12",
     title: "Muscle Physiology",
-    description: "Physiology Chapter 12",
+    description: "physiology-chapter-12",
     image: "/images/anatomy.png",
     questions: [
       {
         id: 1,
         question: "When a muscle cell is relaxed and intracellular ATP levels are normal, a crossbridge will remain in which of the following states?",
         options: ["Bound to actin and in the low-energy form", "Bound to actin and in the high-energy form", "In the high-energy form, with ADP and Pi bound to it", "In the high-energy form, with ATP bound to it", "In the low-energy form with nothing bound to it"],
-        answer: "",
+        answer: "In the high-energy form, with ADP and Pi bound to it",
       },
       {
         id: 2,
         question: "During a muscle contraction, which of the following does not change length?",
         options: ["The distance between Z lines", "The width of I bands", "The width of A bands", "None of the above"],
-        answer: "",
+        answer: "The width of A bands",
       },
       {
         id: 3,
         question: "Which of the following would tend to ­reduce the concentration of lactic acid that accumulates in a muscle cell as a ­result of contractile activity?",
         options: ["Increasing the concentration of glycolytic enzymes", "Decreasing the oxygen supply to the cell", "Increasing the diameter of the cell", "Increasing the number of mitochondria in the cell", "All of the above"],
-        answer: "",
+        answer: "Increasing the number of mitochondria in the cell",
       },
       {
         id: 4,
@@ -1611,415 +1611,409 @@ export const quizzes: Quiz[] = [
           "Smooth muscle cells can respond to neural input from the somatic or autonomic nervous systems.",
           "None of the above.",
         ],
-        answer: "",
+        answer: "A given smooth muscle cell can respond to more than one type of neurotransmitter.",
       },
       {
         id: 5,
         question: "Which of the following is not a determinant of whole muscle tension?",
         options: ["The number of muscle fibers contracting", "The tension produced by each contracting fiber", "The proportion of each motor unit that is contracting at any given time", "The extent of fatigue", "The frequency of action potentials in the motor neurons"],
-        answer: "",
+        answer: "The proportion of each motor unit that is contracting at any given time",
       },
       {
         id: 6,
         question: "In an isotonic contraction,",
         options: ["Muscle length shortens.", "Muscle tension exceeds the force of the load.", "The load is moved.", "Both a and c.", "All of the above."],
-        answer: "",
+        answer: "All of the above.",
       },
       {
         id: 7,
         question: "Which of the following is true for the ­excitation-contraction coupling of all muscle types (skeletal, cardiac, and smooth)?",
-        options: ["An action potential causes calcium levels in the cytosol to increase.", "Calcium binds to troponin.", "Thick and thin filaments slide past each other.", "Both a and c.", "All of the above."],
-        answer: "",
+        options: ["An action potential causes calcium levels in the cytosol to increase.", "Calcium binds to troponin.", "Thick and thin filaments slide past each other.", "Both an action potential causes calcium levels in the cytosol to increase and thick and thin filaments slide past each other.", "All of the above."],
+        answer: "Both an action potential causes calcium levels in the cytosol to increase and thick and thin filaments slide past each other.",
       },
       {
         id: 8,
         question: "During contraction of a skeletal muscle fiber,",
         options: ["The thick filaments contract.", "The thin filaments contract.", "The A band becomes shorter.", "The I band becomes shorter.", "All of the above."],
-        answer: "",
+        answer: "The I band becomes shorter.",
       },
       {
         id: 9,
         question: "Which of the following statements concerning the characteristics of different types of muscle fibers is false?",
         options: ["The higher the myosin ATPase activity, the faster the speed of contraction.", "Muscles that have high glycolytic capacity and large glycogen stores are more resistant to fatigue.", "Oxidative types of muscle fibers contain myoglobin.", "Oxidative fibers have a richer blood supply.", "Larger-diameter fibers can produce greater tension."],
-        answer: "",
+        answer: "Muscles that have high glycolytic capacity and large glycogen stores are more resistant to fatigue.",
       },
       {
         id: 10,
         question: "Which of the following muscle types contain gap junctions?",
-        options: ["Skeletal muscle", "Smooth muscle", "Cardiac muscle", "Both a and b", "Both b and c"],
-        answer: "",
+        options: ["Skeletal muscle", "Smooth muscle", "Cardiac muscle", "Both skeletal muscle and smooth muscle", "Both smooth muscle and cardiac muscle"],
+        answer: "Both smooth muscle and cardiac muscle",
       },
       {
         id: 11,
         question: "In skeletal muscle, when calcium is released from the sarcoplasmic reticulum, it binds to (troponin/tropomyosin) to initiate the crossbridge cycle.",
-        options: [],
-        answer: "",
+        options: ["troponin"],
+        answer: "troponin",
       },
       {
         id: 12,
         question: "When a muscle fiber contracts, the I bands shorten. (true/false)",
-        options: [],
-        answer: "",
+        options: ["true", "false"],
+        answer: "true",
       },
       {
         id: 13,
         question: "Glycolytic fibers generate more force than oxidative fibers because they are larger in diameter. (true/false)",
-        options: [],
-        answer: "",
+        options: ["true", "false"],
+        answer: "true",
       },
       {
         id: 14,
         question: "(Glycolytic/Oxidative) fibers contain high concentrations of the oxygen-binding protein myoglobin.",
-        options: [],
-        answer: "",
+        options: ["Oxidative"],
+        answer: "Oxidative",
       },
       {
         id: 15,
         question: "The plasma membrane of a muscle cell is also known as the           .",
-        options: [],
-        answer: "",
+        options: ["sarcolemma"],
+        answer: "sarcolemma",
       },
       {
         id: 16,
         question: "During muscle contraction, ATP hydrolysis is catalyzed by (myosin head groups/actin monomers).",
-        options: [],
-        answer: "",
+        options: ["myosin head groups"],
+        answer: "myosin head groups",
       },
       {
         id: 17,
         question: "During an (isometric/isotonic) muscle contraction, a muscle develops contractile force but does not change in length.",
-        options: [],
-        answer: "",
+        options: ["isometric"],
+        answer: "isometric",
       },
       {
         id: 18,
         question: "The velocity of contraction of a muscle fiber is directly related to its (diameter/myosin ATPase activity).",
-        options: [],
-        answer: "",
+        options: ["myosin ATPase activity"],
+        answer: "myosin ATPase activity",
       },
       {
         id: 19,
         question: "A reduction in the number of active crossbridges is responsible for a decrease in force-generating capacity of a muscle fiber that is significantly (longer/shorter) than its optimum length.",
-        options: [],
-        answer: "",
+        options: ["longer"],
+        answer: "longer",
       },
       {
         id: 20,
         question: "(Oxidative/Glycolytic) muscle fibers are more resistant to fatigue.",
-        options: [],
-        answer: "",
+        options: ["Oxidative"],
+        answer: "Oxidative",
       },
       {
         id: 21,
         question: "According to the size principle, the force-generating capacity of a muscle fiber increases in direct proportion to its length. (true/false)",
-        options: [],
-        answer: "",
+        options: ["true", "false"],
+        answer: "false",
       },
     ],
   },
   {
-    slug: "physiology",
+    slug: "physiology-chapter-13",
     title: "Cardiovascular System: Cardiac Function",
-    description: "Physiology Chapter 13",
+    description: "physiology-chapter-13",
     image: "/images/anatomy.png",
     questions: [
       {
         id: 1,
         question: "Minimum aortic pressure during the cardiac cycle is attained",
         options: ["Immediately after closure of the aortic semilunar valve.", "Immediately before opening of the aortic semilunar valve.", "Immediately before opening of the atrioventricular valves.", "In mid-diastole.", "At the end of systole."],
-        answer: "",
+        answer: "Immediately before opening of the aortic semilunar valve.",
       },
       {
         id: 2,
         question: "The first heart sound occurs when the atrioventricular valves close; thus it marks",
-        options: ["The end of the ejection period.", "The beginning of the ejection period.", "The beginning of systole.", "The beginning of isovolumetric contraction.", "Both c and d are true."],
-        answer: "",
+        options: ["The end of the ejection period.", "The beginning of the ejection period.", "The beginning of systole.", "The beginning of isovolumetric contraction.", "Both the beginning of systole and the beginning of isovolumetric contraction are true."],
+        answer: "Both the beginning of systole and the beginning of isovolumetric contraction are true.",
       },
       {
         id: 3,
         question: "If you know end-diastolic volume, the only other thing you need to know to determine stroke volume is",
         options: ["Afterload.", "Ventricular contractility.", "End-systolic volume.", "Heart rate.", "Cardiac output."],
-        answer: "",
+        answer: "End-systolic volume.",
       },
       {
         id: 4,
         question: "As a result of Starling’s law, stroke volume should increase following an increase in",
         options: ["Mean arterial pressure.", "Heart rate.", "Sympathetic activity.", "Afterload.", "Preload."],
-        answer: "",
+        answer: "Preload.",
       },
       {
         id: 5,
         question: "Sympathetic and parasympathetic input to the SA node influences",
         options: ["Ventricular filling time.", "Ventricular contractility.", "Afterload.", "Atrial contractility.", "All of the above."],
-        answer: "",
+        answer: "Ventricular filling time.",
       },
       {
         id: 6,
         question: "Which of the following contains deoxygenated blood?",
         options: ["The right ventricle", "The left ventricle", "Pulmonary veins", "The aorta", "Both a and c are true"],
-        answer: "",
+        answer: "The right ventricle",
       },
       {
         id: 7,
         question: "Which of the following is not normally apparent in the ECG?",
         options: ["Atrial depolarization", "Atrial repolarization", "Ventricular depolarization", "Ventricular repolarization", "None of the above"],
-        answer: "",
+        answer: "Atrial repolarization",
       },
       {
         id: 8,
         question: "The second heart sound occurs when the semilunar valves close; thus it marks",
         options: ["The end of the ejection period.", "The beginning of the ejection period.", "The beginning of systole.", "The beginning of isovolumetric contraction.", "Both c and d are true."],
-        answer: "",
+        answer: "The end of the ejection period.",
       },
       {
         id: 9,
         question: "The QRS complex of the ECG is due to",
         options: ["Atrial depolarization.", "Atrial repolarization.", "Ventricular depolarization.", "Ventricular repolarization.", "Opening of the AV valves."],
-        answer: "",
+        answer: "Ventricular depolarization.",
       },
       {
         id: 10,
         question: "As a wave of action potentials travels from the atria to the ventricles, it is momentarily delayed by about 0.1 second as a result of slow conduction through",
         options: ["The SA node.", "The AV node.", "The atrioventricular bundle.", "The left and right bundle branches.", "Purkinje fibers."],
-        answer: "",
+        answer: "The AV node.",
       },
       {
         id: 11,
         question: "Which of the following is most likely to cause a decrease in the stroke volume of the left ventricle?",
         options: ["An increase in mean arterial pressure", "An increase in end-diastolic pressure", "An increase in end-diastolic volume", "An increase in the activity of sympathetic nerves to the heart", "An increase in central venous pressure"],
-        answer: "",
+        answer: "An increase in mean arterial pressure",
       },
       {
         id: 12,
         question: "Left ventricular pressure and aortic pressure are virtually identical during",
         options: ["Isovolumetric contraction.", "Isovolumetric relaxation.", "Diastole.", "Systole.", "The ejection period."],
-        answer: "",
+        answer: "The ejection period.",
       },
       {
         id: 13,
         question: "Heart rate is normally determined by the action potential frequency in the (SA/AV) node.",
-        options: [],
-        answer: "",
+        options: ["SA"],
+        answer: "SA",
       },
       {
         id: 14,
         question: "According to Starling’s law, stroke volume should increase if end-diastolic volume (increases/decreases).",
-        options: [],
-        answer: "",
+        options: ["increases"],
+        answer: "increases",
       },
       {
         id: 15,
         question: "Heart rate is determined entirely by the inherent action potential frequency in cells of the SA node, with no external influences. (true/false)",
-        options: [],
-        answer: "",
+        options: ["false"],
+        answer: "false",
       },
       {
         id: 16,
         question: "Blood flow through the systemic circuit is driven by contractions of the (right/left) ventricle.",
-        options: [],
-        answer: "",
+        options: ["left"],
+        answer: "left",
       },
       {
         id: 17,
         question: "The valve located at the junction between the left ventricle and the aorta is an example of a(n) (atrioventricular/semilunar) valve.",
-        options: [],
-        answer: "",
+        options: ["semilunar"],
+        answer: "semilunar",
       },
       {
         id: 18,
         question: "(Isovolumetric contraction/Ejection) occurs immediately after diastole.",
-        options: [],
-        answer: "",
+        options: ["Isovolumetric contraction"],
+        answer: "Isovolumetric contraction",
       },
       {
         id: 19,
         question: "The maximum aortic pressure during the cardiac cycle is called (diastolic/systolic) pressure.",
-        options: [],
-        answer: "",
+        options: ["systolic"],
+        answer: "systolic",
       },
       {
         id: 20,
         question: "Under normal conditions, pressures in the left and right ventricles are equal during systole. (true/false)",
-        options: [],
-        answer: "",
+        options: ["true", "false"],
+        answer: "false",
       },
       {
         id: 21,
         question: "Stroke volume and            completely determine cardiac output.",
-        options: [],
-        answer: "",
+        options: ["heart rate"],
+        answer: "heart rate",
       },
       {
         id: 22,
         question: "If end-diastolic volume does not change but end-systolic volume decreases, stroke volume (increases/decreases).",
-        options: [],
-        answer: "",
+        options: ["increases"],
+        answer: "increases",
       },
       {
         id: 23,
         question: "If end-diastolic volume does not change but end-systolic volume decreases, ejection fraction (increases/decreases).",
-        options: [],
-        answer: "",
+        options: ["increases"],
+        answer: "increases",
       },
       {
         id: 24,
         question: "If sympathetic and parasympathetic inputs are constant and end-diastolic volume increases, contractility of the ventricular myocardium increases. (true/false)",
-        options: [],
-        answer: "",
+        options: ["true", "false"],
+        answer: "false",
       },
       {
         id: 25,
         question: "The period of relaxation of the heart muscle is known as           .",
-        options: [],
-        answer: "",
+        options: ["diastole"],
+        answer: "diastole",
       },
       {
         id: 26,
         question: "The (P/T) wave of the ECG corresponds to ventricular repolarization.",
-        options: [],
-        answer: "",
+        options: ["T"],
+        answer: "T",
       },
       {
         id: 27,
         question: "Action potentials generated by pacemaker cells are called pacemaker potentials. (true/false)",
-        options: [],
-        answer: "",
+        options: ["true", "false"],
+        answer: "false",
       },
     ],
   },
   {
-    slug: "physiology",
+    slug: "physiology-chapter-14",
     title: "Cardiovascular System: Blood Vessels, Blood Flow, and Blood Pressure",
-    description: "Physiology Chapter 14",
+    description: "physiology-chapter-14",
     image: "/images/anatomy.png",
     questions: [
       {
         id: 1,
         question: "Total peripheral resistance is",
         options: ["The combined resistance of all organs in the body.", "The resistance of capillaries located in distal body parts.", "The combined resistance of all organs in the systemic circuit.", "The combined resistance of all the blood vessels within an organ or tissue.", "The resistance to blood flow through the heart."],
-        answer: "",
+        answer: "The combined resistance of all organs in the systemic circuit.",
       },
       {
         id: 2,
         question: "Venous pressure increases",
         options: ["When blood volume decreases.", "As a result of venous pooling.", "As a result of an increase in venomotor tone.", "When a person stands up.", "All of the above."],
-        answer: "",
+        answer: "As a result of an increase in venomotor tone.",
       },
       {
         id: 3,
         question: "Which of the following tends to promote edema in systemic tissues?",
         options: ["A decrease in the concentration of plasma proteins", "An increase in pressure in the vena cava", "An increase in arterial pressure", "Leakage of proteins from capillaries into the interstitial fluid", "All of the above"],
-        answer: "",
+        answer: "All of the above",
       },
       {
         id: 4,
         question: "Which of the following tends to cause a decrease in ventricular end-diastolic volume?",
         options: ["An increase in venous pressure", "An increase in skeletal muscle pump activity", "A decrease in filling time", "An increase in blood volume", "An increase in venomotor tone"],
-        answer: "",
+        answer: "A decrease in filling time",
       },
       {
         id: 5,
         question: "Which of the following blood vessels possess valves that prevent blood from flowing backward?",
         options: ["Arteries", "Arterioles", "Capillaries", "Venules", "Veins"],
-        answer: "",
+        answer: "Veins",
       },
       {
         id: 6,
         question: "Where is the greatest proportion of total blood volume at rest?",
         options: ["Heart", "Arteries", "Arterioles", "Capillaries", "Veins"],
-        answer: "",
+        answer: "Veins",
       },
       {
         id: 7,
         question: "Which of the following tends to cause a decrease in mean arterial pressure?",
         options: ["A drop in total peripheral resistance", "An increase in stroke volume of the left ventricle", "An increase in heart rate", "An increase in venous return", "An increase in sympathetic activity"],
-        answer: "",
+        answer: "A drop in total peripheral resistance",
       },
       {
         id: 8,
         question: "Lymphatic capillaries differ from blood capillaries in that",
         options: ["Lymphatic capillaries have a lower permeability to water.", "Lymphatic capillaries have a lower permeability to small solutes.", "Lymphatic capillaries are blind ended.", "Lymphatic capillaries are not connected to any other vessels.", "All of the above"],
-        answer: "",
+        answer: "Lymphatic capillaries are blind ended.",
       },
       {
         id: 9,
         question: "Which of the following tends to cause increased venous pooling?",
         options: ["A decrease in venomotor tone", "A decrease in the osmotic pressure of plasma proteins", "A decrease in mean arterial pressure", "Exercise", "Dehydration"],
-        answer: "",
+        answer: "A decrease in venomotor tone",
       },
       {
         id: 10,
         question: "Which of the following does not tend to increase as a result of the action of the skeletal muscle pump?",
         options: ["Venous pooling", "Venous return", "End-diastolic volume", "Stroke volume", "Cardiac output"],
-        answer: "",
+        answer: "Venous pooling",
       },
 
       {
         id: 11,
         question: "If arterial pressure is elevated, baroreceptor signals trigger which of the following responses?",
         options: ["A rise in vasopressin secretion", "A fall in plasma angiotensin II levels", "Increased activity in sympathetic ­vasoconstrictor nerves", "An increase in epinephrine secretion", "Increased total peripheral resistance"],
-        answer: "",
+        answer: "A fall in plasma angiotensin II levels",
       },
       {
         id: 12,
         question: "During exercise, carbon dioxide produced by muscle cells causes vasodilation in skeletal muscle. This is an example of",
         options: ["Active hyperemia.", "Reactive hyperemia.", "Flow autoregulation.", "Extrinsic control of vascular resistance.", "Starling forces."],
-        answer: "",
+        answer: "Active hyperemia.",
       },
       {
         id: 13,
         question: "Total peripheral resistance (increases/decreases) when general vasodilation of smaller arteries and arterioles occurs in systemic tissues.",
-        options: [],
-        answer: "",
+        options: ["decreases"],
+        answer: "decreases",
       },
       {
         id: 14,
         question: "Veins have a (larger/smaller) compliance than arteries.",
-        options: [],
-        answer: "",
+        options: ["larger"],
+        answer: "larger",
       },
       {
         id: 15,
         question: "(An increase/A decrease) in the radius of a blood vessel raises its resistance.",
-        options: [],
-        answer: "",
+        options: ["decrease"],
+        answer: "decrease",
       },
       {
         id: 16,
         question: "",
-        options: [],
-        answer: "",
+        options: ["true", "false"],
+        answer: "false",
       },
       {
         id: 17,
         question: "Over the course of a day, capillary ­filtration and absorption occur at the same rate, so that the net volume of fluid filtered from capillaries is zero. (true/false)",
-        options: [],
-        answer: "",
+        options: ["true", "false"],
+        answer: "true",
       },
       {
         id: 18,
         question: "An increase in the hydrostatic pressure of blood in capillaries tends to increase the rate at which fluid is filtered across capillary walls. (true/false)",
-        options: [],
-        answer: "",
+        options: ["increase"],
+        answer: "increase",
       },
       {
         id: 19,
         question: "A drop in arterial blood pressure triggers (an increase/a decrease) in sympathetic nervous activity.",
-        options: [],
-        answer: "",
-      },
-      {
-        id: 20,
-        question: "An increase in blood flow in response to a rise in metabolic activity is referred to as active hyperemia. (true/false)",
-        options: [],
-        answer: "",
+        options: ["true"],
+        answer: "true",
       },
     ],
   },
   {
-    slug: "physiology",
+    slug: "physiology-chapter-15",
     title: "Cardiovascular System: Blood",
-    description: "Physiology Chapter 15",
+    description: "physiology-chapter-15",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -2073,10 +2067,20 @@ export const quizzes: Quiz[] = [
       },
     ],
   },
+
+  // 1 d
+  // 2 d
+  // 3 d
+  // 4 d
+  // 5 d
+  // 6 serum
+  // 7 thrombin
+  // 8 Carbonic anhydrase
+
   {
-    slug: "physiology",
+    slug: "physiology-chapter-16",
     title: "Respiratory System: Pulmonary Ventilation",
-    description: "Physiology Chapter 16",
+    description: "physiology-chapter-16",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -2202,10 +2206,31 @@ export const quizzes: Quiz[] = [
       },
     ],
   },
+  // 1 e
+  // 2 c
+  // 3 a
+  // 4 d
+  // 5 d
+  // 6 c
+  // 7 b
+  // 8 b
+  // 9 e
+  // 10 d
+  // 11 false
+  // 12 increases
+  // 13 more
+  // 14 higher
+  // 15 decreases
+  // 16 increases
+  // 17 conducting zone
+  // 18 Obstructive
+  // 19 Goblet
+  // 20 external
+
   {
-    slug: "physiology",
+    slug: "physiology-chapter-17",
     title: "Respiratory System: Gas Exchange and Regulation of Breathing",
-    description: "Physiology Chapter 17",
+    description: "physiology-chapter-17",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -2386,10 +2411,39 @@ export const quizzes: Quiz[] = [
       },
     ],
   },
+  // c
+  // c
+  // d
+  // d
+  // a
+  // b
+  // e
+  // d
+  // c
+  // e
+  // d
+  // e
+  // c
+  // the same as
+  // less than half
+  // false
+  // increases, increases
+  // carbonic anhydrase
+  // increases
+  // increases
+  // decrease, increase
+  // carbaminohemoglobin
+  // true
+  // Peripheral
+  // irritant
+  // higher
+  // bronchoconstriction
+  // vasodilation
+
   {
-    slug: "physiology",
+    slug: "physiology-chapter-18",
     title: "Urinary System: Renal Function",
-    description: "Physiology Chapter 18",
+    description: "physiology-chapter-18",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -2559,10 +2613,36 @@ export const quizzes: Quiz[] = [
       },
     ],
   },
+  // b
+  // c
+  // b
+  // d
+  // a
+  // d
+  // c
+  // a
+  // b
+  // a
+  // c
+  // urethra
+  // true
+  // afferent
+  // renal corpuscle
+  // higher
+  // decrease
+  // internal
+  // false
+  // glomerular filtration rate
+  // secretion
+  // PAH
+  // peritubular capillaries
+  // decrease
+  // proximal tubule
+
   {
-    slug: "physiology",
+    slug: "physiology-chapter-19",
     title: "Urinary System: Fluid and Electrolyte Balance",
-    description: "Physiology Chapter 19",
+    description: "physiology-chapter-19",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -2753,10 +2833,41 @@ export const quizzes: Quiz[] = [
       },
     ],
   },
+  // c
+  // a
+  // b
+  // d
+  // d
+  // d
+  // e
+  // c
+  // b
+  // a
+  // e
+  // a
+  // c
+  // d
+  // d
+  // increases
+  // proximal tubule
+  // false
+  // decreases
+  // atrial natriuretic peptide
+  // false
+  // Aldosterone
+  // Antidiuretic hormone (ADH)
+  // false
+  // stimulated
+  // decreases
+  // increases
+  // increase
+  // false
+  // false
+
   {
-    slug: "physiology",
+    slug: "physiology-chapter-20",
     title: "Gastrointestinal System",
-    description: "Physiology Chapter 20",
+    description: "physiology-chapter-20",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -2928,10 +3039,37 @@ export const quizzes: Quiz[] = [
       },
     ],
   },
+  // a
+  // b
+  // e
+  // e
+  // d
+  // d
+  // e
+  // b
+  // a
+  // a
+  // d
+  // false
+  // false
+  // cephalic-phase
+  // myenteric
+  // serosa
+  // cholecystokinin
+  // lipases
+  // mucosa
+  // stimulates
+  // chief cells
+  // migrating motility complexes
+  // false
+  // amplitude
+  // true
+  // brush border enzymes
+
   {
-    slug: "physiology",
+    slug: "physiology-chapter-21",
     title: "Endocrine System: Regulation of Energy Metabolism and Growth",
-    description: "Physiology Chapter 21",
+    description: "physiology-chapter-21",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -3086,10 +3224,60 @@ export const quizzes: Quiz[] = [
       },
     ],
   },
+  // d
+
+  // c
+
+  // b
+
+  // e
+
+  // b
+
+  // c
+
+  // a
+
+  // c
+
+  // a
+
+  // e
+
+  // glucagon
+
+  // insulin
+
+  // true
+
+  // glycerol
+
+  // absorptive
+
+  // postabsorptive
+
+  // negative
+
+  // heat
+
+  // inhibit
+
+  // (IGFs) insulin-like growth factors
+
+  // sex hormones
+
+  // sympathetic
+
+  // increased
+
+  // false
+
+  // inhibitory
+
   {
-    slug: "physiology",
+    slug: "physiology-chapter-22",
     title: "Reproductive System",
-    description: "Physiology Chapter 22",
+    description: "physiology-chapter-22",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -3304,10 +3492,78 @@ export const quizzes: Quiz[] = [
       },
     ],
   },
+  // c
+
+  // d
+
+  // b
+
+  // b
+
+  // d
+
+  // c
+
+  // b
+
+  // b
+
+  // a
+
+  // a
+  // false
+
+  // testis-determining factor
+
+  // persist
+
+  // gonadotropins
+
+  // true
+
+  // Leydig cells
+
+  // FSH
+
+  // acrosome
+
+  // decrease
+
+  // capacitation
+
+  // uterine tube
+
+  // luteal phase
+
+  // granulosa
+
+  // LH
+
+  // endometrium
+
+  // proliferative
+
+  // LH
+
+  // progesterone
+
+  // estrogens
+
+  // menstruation
+
+  // blastocyst
+
+  // progesterone
+
+  // placenta
+
+  // oxytocin
+
+  // prolactin
   {
-    slug: "physiology",
+    slug: "physiology-chapter-23",
     title: "Immune System",
-    description: "Physiology Chapter 23",
+    description: "physiology-chapter-23",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -3438,11 +3694,58 @@ export const quizzes: Quiz[] = [
       },
     ],
   },
+  // b
 
+  // e
+
+  // c
+
+  // a
+
+  // c
+
+  // e
+
+  // c
+
+  // b
+
+  // d
+
+  // b
+
+  // d
+
+  // b
+
+  // e
+
+  // e
+
+  // b
+  // (a) M (b)
+
+  //  (c)
+
+  //  (d) B (e) B
+
+  // (a) B (b) H (c) N (d) CM (e) CM
+
+  // block
+
+  // class II MHC molecules, helper T cell
+
+  // true
+
+  // passive
+
+  // phagocytosis, endocytosis
+
+  // T cell
   {
-    slug: "physiology",
+    slug: "physiology-chapter-24",
     title: "Diabetes Mellitus",
-    description: "Physiology Chapter 24",
+    description: "physiology-chapter-24",
     image: "/images/anatomy.png",
     questions: [
       {
@@ -3573,4 +3876,24 @@ export const quizzes: Quiz[] = [
       },
     ],
   },
+  // c
+  // d
+  // b
+  // a
+  // c
+  // b
+  // b
+  // a
+  // e
+  // c
+  // Type 2 diabetes mellitus
+  // Type 1 diabetes mellitus
+  // glycosylation
+  // ketones
+  // Polyuria = excessive UnrecognizedActionError; polydipsia = excessive throwInvariantForMissingStore; polyphagia = excess eating
+  // Acceptable answers include delayed wound healing; diabetic neuropathy; gangrene; or diabetic foot ulcer.
+  // Three phases: inflammation, proliferation, remodeling; all these phases are delayed in diabetes.
+  // They cause closing of potassium channels on the beta cell membrane, which depolarizes the cell.
+  // True
+  // A coma resulting from taking an excess of insulin, thereby dropping blood glucose levels to dangerously low levels.
 ];
