@@ -6,9 +6,10 @@ type ButtonProps = {
   disabled?: boolean;
   variant?: Variant;
   className?: string;
+  style?: React.CSSProperties;
 };
 
-export default function DuoButton({ children, onClick, disabled = false, variant = "brightGreen", className = "" }: ButtonProps) {
+export default function DuoButton({ children, onClick, disabled = false, variant = "brightGreen", className = "", style }: ButtonProps) {
   const base = "px-4 py-3 rounded-[16px] font-medium transition-all inline-flex justify-center items-center " + "border-2 border-b-6 active:border-b-2 shadow-sm disabled:opacity-50 disabled:cursor-not-allowed";
 
   const variants: Record<Variant, { bg: string; hoverBg: string; border: string; hoverBorder: string; disabledBg?: string; disabledBorder?: string; text: string }> = {
@@ -170,6 +171,7 @@ export default function DuoButton({ children, onClick, disabled = false, variant
         backgroundColor: bgColor,
         borderColor: borderColor,
         color: textColor,
+        ...style,
       }}>
       {children}
     </button>

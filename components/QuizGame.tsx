@@ -42,31 +42,45 @@ function AnswerOptions({ currentQuestion, quizState, userSelectedAnswer, setUser
         const isSelecting = quizState === QuizState.SELECT_ANSWER;
         const isChecking = quizState === QuizState.CONTINUE_BUTTON;
         const isUserPick = userSelectedAnswer === option;
-        let bgClass = "hover:bg-gray-200";
-        let borderClass = "border-gray-300";
 
+        // Default colors
+        let bgColor = undefined;
+        let borderColor = undefined;
+
+        // Selecting state
         if (isSelecting && isUserPick) {
-          bgClass = "bg-sky-100";
-          borderClass = "border-sky-300 border-2";
+          bgColor = "#1CB0F6";
+          borderColor = "#1698D6";
         }
 
+        // Checking state
         if (isChecking) {
           const isCorrect = option === currentQuestion.answer;
           const isWrong = isUserPick && option !== currentQuestion.answer;
 
           if (isCorrect) {
-            bgClass = "bg-green-300";
-            borderClass = "border-green-700 border-2";
+            bgColor = "#86efac"; // green-300
+            borderColor = "#15803d"; // green-700
           } else if (isWrong) {
-            bgClass = "bg-red-300";
-            borderClass = "border-red-700 border-2";
+            bgColor = "#fca5a5"; // red-300
+            borderColor = "#b91c1c"; // red-700
           }
         }
 
         return (
-          <button key={option} onClick={() => isSelecting && setUserSelectedAnswer(option)} className={`p-2 rounded border ${bgClass} ${borderClass}`} disabled={!isSelecting}>
+          <Button
+            key={option}
+            onClick={() => isSelecting && setUserSelectedAnswer(option)}
+            disabled={!isSelecting}
+            variant='offWhite'
+            className='border w-full text-left p-2 rounded'
+            style={{
+              backgroundColor: bgColor,
+              borderColor: borderColor ?? "#37464f",
+              color: "white",
+            }}>
             {option}
-          </button>
+          </Button>
         );
       })}
     </div>
