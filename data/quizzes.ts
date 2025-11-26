@@ -2874,13 +2874,13 @@ export const quizzes: Quiz[] = [
         id: 1,
         question: "What do sodium, fatty acids, and vitamin A have in common?",
         options: ["They are not enzymatically modified prior to their absorption into the bloodstream.", "They cross the apical membranes of enterocytes by simple diffusion.", "They are transported into blood ­capillaries in the villi.", "They are all hydrophilic.", "All of the above"],
-        answer: "",
+        answer: "They are not enzymatically modified prior to their absorption into the bloodstream.",
       },
       {
         id: 2,
         question: "Blockage of the flow of bile into the ­duodenum interferes with the digestion of which of the following?",
         options: ["Carbohydrates only", "Lipids only", "Proteins only", "Carbohydrates and lipids only", "Carbohydrates and proteins only"],
-        answer: "",
+        answer: "Lipids only",
       },
       {
         id: 3,
@@ -2892,19 +2892,19 @@ export const quizzes: Quiz[] = [
           "The autonomic nervous system is ­involved in gastric-phase and intestinal-phase regulation only.",
           "The autonomic nervous system is involved in all three phases of regulation.",
         ],
-        answer: "",
+        answer: "The autonomic nervous system is involved in all three phases of regulation.",
       },
       {
         id: 4,
         question: "Failure of the salivary glands to secrete amylase would make it impossible to ­digest which of the following?",
         options: ["Proteins", "Fats", "Disaccharides", "Starch", "None of the above"],
-        answer: "",
+        answer: "None of the above",
       },
       {
         id: 5,
         question: "Which of the following tends to inhibit acid secretion by the stomach?",
-        options: ["An increase in the osmolarity of duodenal contents", "Entry of stomach acid into the duodenum", "The arrival of food in the stomach", "Both a and b", "All of the above"],
-        answer: "",
+        options: ["An increase in the osmolarity of duodenal contents", "Entry of stomach acid into the duodenum", "The arrival of food in the stomach", "Both an increase in the osmolarity of duodenal contents and entry of stomach acid into the duodenum", "All of the above"],
+        answer: "Both an increase in the osmolarity of duodenal contents and entry of stomach acid into the duodenum",
       },
       {
         id: 6,
@@ -2915,156 +2915,130 @@ export const quizzes: Quiz[] = [
           "Secretin and CCK both stimulate bile duct cells to secrete fluid.",
           "The secretion of fluid by bile duct cells is greater when both CCK and secretin are present, compared to when either hormone is present alone (at the same concentration).",
         ],
-        answer: "",
+        answer: "The secretion of fluid by bile duct cells is greater when both CCK and secretin are present, compared to when either hormone is present alone (at the same concentration).",
       },
       {
         id: 7,
         question: "The enzyme enterokinase is directly or indirectly responsible for the proper functioning of",
         options: ["Bile salts.", "Lipases.", "Trypsin.", "Chymotrypsin.", "Both trypsin and chymotrypsin."],
-        answer: "",
+        answer: "Both trypsin and chymotrypsin.",
       },
       {
         id: 8,
         question: "Which of the following is an example of a zymogen?",
         options: ["Enterokinase", "Chymotrypsinogen", "Salivary amylase", "Cholecystokinin", "All of the above"],
-        answer: "",
+        answer: "Chymotrypsinogen",
       },
       {
         id: 9,
         question: "Increases in gastric motility are generally accompanied by increases in ileal motility because of the",
         options: ["Gastroileal reflex.", "Ileogastric reflex.", "Gastrocolic reflex.", "Colonocolonic reflex.", "Intestino-intestinal reflex."],
-        answer: "",
+        answer: "Gastroileal reflex.",
       },
       {
         id: 10,
         question: "Which of the following is a digestion product of amylase?",
         options: ["Maltose", "Glucose", "Sucrose", "Lactose", "Fructose"],
-        answer: "",
+        answer: "Maltose",
       },
       {
         id: 11,
         question: "Increases in which of the following can induce satiety?",
-        options: ["Alpha melanocyte stimulating hormone", "Thyroid stimulating hormone", "Leptin", "Both a and c", "All of the above"],
-        answer: "",
+        options: ["Alpha melanocyte stimulating hormone", "Thyroid stimulating hormone", "Leptin", "Both alpha melanocyte stimulating hormone and leptin", "All of the above"],
+        answer: "Both alpha melanocyte stimulating hormone and leptin",
       },
       {
         id: 12,
         question: "Through the action of pancreatic amylase alone, starch can be broken down to a form that can be absorbed completely. (true/false)",
-        options: [],
-        answer: "",
+        options: ["true", "false"],
+        answer: "false",
       },
       {
         id: 13,
         question: "The glands that secrete acid in the ­stomach are examples of accessory glands. (true/false)",
-        options: [],
-        answer: "",
+        options: ["true", "false"],
+        answer: "false",
       },
       {
         id: 14,
         question: "Receptive relaxation is an example of (cephalic-phase/gastric-phase) control of stomach function.",
-        options: [],
-        answer: "",
+        options: ["cephalic-phase", "gastric-phase"],
+        answer: "cephalic-phase",
       },
       {
         id: 15,
         question: "The (submucosal/myenteric) nerve plexus is located within the muscularis externa.",
-        options: [],
-        answer: "",
+        options: ["submucosal", "myenteric"],
+        answer: "myenteric",
       },
       {
         id: 16,
         question: "The________ is the outermost layer of the gastrointestinal wall, consisting of the mesothelium and an underlying layer of connective tissue.",
-        options: [],
-        answer: "",
+        options: ["serosa"],
+        answer: "serosa",
       },
       {
         id: 17,
         question: "When food is present in the small intestine, contraction of the gallbladder is stimulated by (secretin/cholecystokinin).",
-        options: [],
-        answer: "",
+        options: ["secretin", "cholecystokinin"],
+        answer: "cholecystokinin",
       },
       {
         id: 18,
         question: "Bile salts are necessary for the proper functioning of pancreatic (proteases/lipases).",
-        options: [],
-        answer: "",
+        options: ["proteases", "lipases"],
+        answer: "lipases",
       },
       {
         id: 19,
         question: "The lamina propria is located within the (mucosa/submucosa).",
-        options: [],
-        answer: "",
+        options: ["mucosa", "submucosa"],
+        answer: "mucosa",
       },
       {
         id: 20,
         question: "Gastrin (stimulates/inhibits) the secretion of acid by the stomach.",
-        options: [],
-        answer: "",
+        options: ["stimulates", "inhibits"],
+        answer: "stimulates",
       },
       {
         id: 21,
         question: "In the stomach, pepsinogen is secreted by (chief cells/parietal cells).",
-        options: [],
-        answer: "",
+        options: ["chief cells", "parietal cells"],
+        answer: "chief cells",
       },
       {
         id: 22,
         question: "The small intestine is periodically swept of its contents by (segmentation/migrating motility complexes).",
-        options: [],
-        answer: "",
+        options: ["segmentation", "migrating motility complexes"],
+        answer: "migrating motility complexes",
       },
       {
         id: 23,
         question: "The term enterohepatic circulation refers to the conduction of blood from the intestine to the liver via the hepatic portal vein. (true/false)",
-        options: [],
-        answer: "",
+        options: ["true", "false"],
+        answer: "false",
       },
       {
         id: 24,
         question: "Nerves and hormones exert their effects on gastrointestinal motility primarily by altering the (frequency/amplitude) of slow waves.",
-        options: [],
-        answer: "",
+        options: ["frequency", "amplitude"],
+        answer: "amplitude",
       },
       {
         id: 25,
         question: "Chewing is under voluntary control but is also controlled by reflex neural pathways. (true/false)",
-        options: [],
-        answer: "",
+        options: ["true", "false"],
+        answer: "true",
       },
       {
         id: 26,
         question: "Disaccharides are broken down to monosaccharides by (pancreatic enzymes/brush border enzymes).",
-        options: [],
-        answer: "",
+        options: ["pancreatic enzymes", "brush border enzymes"],
+        answer: "brush border enzymes",
       },
     ],
   },
-  // a
-  // b
-  // e
-  // e
-  // d
-  // d
-  // e
-  // b
-  // a
-  // a
-  // d
-  // false
-  // false
-  // cephalic-phase
-  // myenteric
-  // serosa
-  // cholecystokinin
-  // lipases
-  // mucosa
-  // stimulates
-  // chief cells
-  // migrating motility complexes
-  // false
-  // amplitude
-  // true
-  // brush border enzymes
 
   {
     slug: "physiology-chapter-21",
@@ -3075,204 +3049,155 @@ export const quizzes: Quiz[] = [
       {
         id: 1,
         question: "Which of the following is an example of a permissive effect of a hormone?",
-        options: ["The effect of thyroid hormones on growth", "The effect of insulin on glucose uptake by cells", "The effect of sex hormones on the ­secretion of growth hormone", "Both a and c", "All of the above"],
-        answer: "",
+        options: ["The effect of thyroid hormones on growth", "The effect of insulin on glucose uptake by cells", "The effect of sex hormones on the ­secretion of growth hormone", "Both effect of thyroid hormones on growth and effect of sex hormones on the ­secretion of growth hormone", "All of the above"],
+        answer: "Both effect of thyroid hormones on growth and effect of sex hormones on the ­secretion of growth hormone",
       },
       {
         id: 2,
         question: "Which of the following is an example of a glucose-sparing effect of cortisol?",
         options: ["Inhibition of ACTH release", "Stimulation of gluconeogenesis by the liver", "Stimulation of lipolysis", "Stimulation of glycogen breakdown", "Stimulation of protein synthesis"],
-        answer: "",
+        answer: "Stimulation of lipolysis",
       },
       {
         id: 3,
         question: "Which of the following cells of the ­pancreas secrete insulin?",
         options: ["Alpha cells", "Beta cells", "Delta cells", "Exocrine cells", "Duct cells"],
-        answer: "",
+        answer: "Beta cells",
       },
       {
         id: 4,
         question: "Stress stimulates secretion of which of the following hormones?",
         options: ["Growth hormone", "Epinephrine", "Thyroid hormones", "ACTH", "All of the above"],
-        answer: "",
+        answer: "All of the above",
       },
       {
         id: 5,
         question: "Hypoglycemia inhibits secretion of which of the following?",
         options: ["Growth hormone", "Insulin", "Epinephrine", "Glucagon", "All of the above"],
-        answer: "",
+        answer: "Insulin",
       },
       {
         id: 6,
         question: "In the postabsorptive state, the central nervous system uses which of the following as its primary source of energy?",
         options: ["Fatty acids", "Amino acids", "Glucose", "Glycerol", "Ketones"],
-        answer: "",
+        answer: "Glucose",
       },
       {
         id: 7,
         question: "Which of the following cell types is directly responsible for building new bone material?",
         options: ["Osteoblasts", "Osteoclasts", "Osteocytes", "Chondrocytes"],
-        answer: "",
+        answer: "Osteoblasts",
       },
       {
         id: 8,
         question: "Which of the following is true of adulthood?",
         options: ["Growth hormone exerts no effects on body tissues.", "The secretion of growth hormone ceases altogether.", "Growth hormone cannot stimulate increases in the length of long bones.", "The structure of bone becomes permanently fixed.", "None of the above"],
-        answer: "",
+        answer: "Growth hormone cannot stimulate increases in the length of long bones.",
       },
       {
         id: 9,
         question: "Which form of thyroid hormone has greater activity at target cells?",
         options: ["T₃", "T₄", "Neither; T₃ and T₄ have equal activity"],
-        answer: "",
+        answer: "T₃",
       },
       {
         id: 10,
         question: "Which of the following hormones is a steroid?",
         options: ["Thyroid hormones", "Insulin", "Glucagon", "Growth hormone", "Cortisol"],
-        answer: "",
+        answer: "Cortisol",
       },
       {
         id: 11,
         question: "Energy mobilization is promoted by (insulin/glucagon).",
-        options: [],
-        answer: "",
+        options: ["insulin", "glucagon"],
+        answer: "glucagon",
       },
       {
         id: 12,
         question: "Secretion of (insulin/glucagon) is increased during the absorptive period.",
-        options: [],
-        answer: "",
+        options: ["insulin", "glucagon"],
+        answer: "insulin",
       },
       {
         id: 13,
         question: "Insulin and glucagon both help regulate the plasma glucose concentration. (true/false)",
-        options: [],
-        answer: "",
+        options: ["true", "false"],
+        answer: "true",
       },
       {
         id: 14,
         question: "Breakdown of triglycerides yields fatty acids and           , which can be used by cells for energy.",
-        options: [],
-        answer: "",
+        options: ["glycerol"],
+        answer: "glycerol",
       },
       {
         id: 15,
         question: "Conversion of amino acids to fatty acids is more likely to occur in the (absorptive/postabsorptive) state.",
-        options: [],
-        answer: "",
+        options: ["absorptive", "postabsorptive"],
+        answer: "absorptive",
       },
       {
         id: 16,
         question: "Conversion of amino acids to glucose is more likely to occur in the (absorptive/postabsorptive) state.",
-        options: [],
-        answer: "",
+        options: ["absorptive", "postabsorptive"],
+        answer: "postabsorptive",
       },
       {
         id: 17,
         question: "An increase in plasma thyroid hormone levels tends to make the body’s energy balance more (positive/negative).",
-        options: [],
-        answer: "",
+        options: ["positive", "negative"],
+        answer: "negative",
       },
       {
         id: 18,
         question: "Energy that is taken into the body is either stored or appears as work or           .",
-        options: [],
-        answer: "",
+        options: ["heat"],
+        answer: "heat",
       },
       {
         id: 19,
         question: "Stress tends to (stimulate/inhibit) GHRH secretion.",
-        options: [],
-        answer: "",
+        options: ["stimulate", "inhibit"],
+        answer: "inhibit",
       },
       {
         id: 20,
         question: "Many of growth hormone’s effects on target tissues are due to it triggering release of other chemical messengers called           .",
-        options: [],
-        answer: "",
+        options: ["(IGFs) insulin-like growth factors"],
+        answer: "(IGFs) insulin-like growth factors",
       },
       {
         id: 21,
         question: "Closure of the epiphyseal plates is promoted by (growth hormone/sex hormones).",
-        options: [],
-        answer: "",
+        options: ["growth hormone", "sex hormones"],
+        answer: "sex hormones",
       },
       {
         id: 22,
         question: "Thyroid hormones promote increased ­responsiveness of target tissues to ­(sympathetic/parasympathetic) nerve activity.",
-        options: [],
-        answer: "",
+        options: ["sympathetic", "parasympathetic"],
+        answer: "sympathetic",
       },
       {
         id: 23,
         question: "Glucocorticoids promote (increased/decreased) plasma glucose levels.",
-        options: [],
-        answer: "",
+        options: ["increased", "decreased"],
+        answer: "increased",
       },
       {
         id: 24,
         question: "Stimulation of gluconeogenesis by glucagon is an example of a glucose-sparing effect. (true/false)",
-        options: [],
-        answer: "",
+        options: ["true", "false"],
+        answer: "false",
       },
       {
         id: 25,
         question: "Plasma glucocorticoids have a(n) (stimulatory/inhibitory) effect on the secretion of ACTH.",
-        options: [],
-        answer: "",
+        options: ["stimulatory", "inhibitory"],
+        answer: "inhibitory",
       },
     ],
   },
-  // d
-
-  // c
-
-  // b
-
-  // e
-
-  // b
-
-  // c
-
-  // a
-
-  // c
-
-  // a
-
-  // e
-
-  // glucagon
-
-  // insulin
-
-  // true
-
-  // glycerol
-
-  // absorptive
-
-  // postabsorptive
-
-  // negative
-
-  // heat
-
-  // inhibit
-
-  // (IGFs) insulin-like growth factors
-
-  // sex hormones
-
-  // sympathetic
-
-  // increased
-
-  // false
-
-  // inhibitory
 
   {
     slug: "physiology-chapter-22",
@@ -3284,282 +3209,214 @@ export const quizzes: Quiz[] = [
         id: 1,
         question: "In both males and females, gonadotropin secretion by the anterior pituitary is stimulated by which of the following?",
         options: ["Inhibin", "Androgens", "GnRH", "FSH", "GHRH"],
-        answer: "",
+        answer: "GnRH",
       },
       {
         id: 2,
         question: "In the embryo, which of the following effects is promoted by testosterone?",
         options: ["Development of the primitive gonads into testes", "Regression of Müllerian ducts", "Development of Müllerian ducts into male reproductive organs", "Development of Wolffian ducts into male reproductive organs", "Expression of the srY gene"],
-        answer: "",
+        answer: "Development of Wolffian ducts into male reproductive organs",
       },
       {
         id: 3,
         question: "The testes are housed in a structure called the",
         options: ["prostate gland.", "scrotum.", "penis.", "epididymis.", "vas deferens."],
-        answer: "",
+        answer: "scrotum.",
       },
       {
         id: 4,
         question: "In the first step of spermatogenesis, spermatogonia differentiate into cells called",
         options: ["spermatids.", "primary spermatocytes.", "secondary spermatocytes.", "spermatozoa.", "spermatophytes."],
-        answer: "",
+        answer: "primary spermatocytes.",
       },
       {
         id: 5,
         question: "Cells in the ovaries secrete all of the following hormones except",
         options: ["estrogens.", "progesterone.", "androgens.", "luteinizing hormone.", "inhibin."],
-        answer: "",
+        answer: "luteinizing hormone.",
       },
       {
         id: 6,
         question: "In oogenesis, when does meiosis I occur?",
         options: ["In early fetal life", "At birth", "Just before ovulation", "After ovulation but before fertilization", "After fertilization"],
-        answer: "",
+        answer: "Just before ovulation",
       },
       {
         id: 7,
         question: "During the early to mid-follicular phase of the ovarian cycle, which hormone(s) stimulate(s) granulosa cell functions?",
         options: ["Progesterone", "FSH", "LH", "GnRH", "Estrogens"],
-        answer: "",
+        answer: "FSH",
       },
       {
         id: 8,
         question: "In the late luteal phase, why do estrogen and progesterone levels fall?",
         options: ["Rupture of the dominant follicle", "Degeneration of the corpus luteum", "An inhibitory effect of LH on secretory activity of the corpus luteum", "The inhibitory effect of inhibin on the secretory activity of granulosa cells", "All of the above"],
-        answer: "",
+        answer: "Degeneration of the corpus luteum",
       },
       {
         id: 9,
         question: "In the uterine cycle, which phase immediately precedes the proliferative phase?",
         options: ["Menstrual phase", "Secretory phase", "Luteal phase", "Follicular phase"],
-        answer: "",
+        answer: "Menstrual phase",
       },
       {
         id: 10,
         question: "The placenta not only serves as an organ of exchange but also secretes all of the following hormones except",
         options: ["prolactin.", "chorionic gonadotropin.", "placental lactogen.", "progesterone.", "estrogens."],
-        answer: "",
+        answer: "prolactin.",
       },
       {
         id: 11,
         question: "In meiosis I, maternal and paternal chromosomes are segregated into separate daughter cells. (true/false)",
-        options: [],
-        answer: "",
+        options: ["true", "false"],
+        answer: "false",
       },
       {
         id: 12,
         question: "The srY gene codes for (testosterone ­receptors/testis-determining factor), which determine(s) whether an embryo develops testes or ovaries.",
-        options: [],
-        answer: "",
+        options: ["testosterone", "testis-determining factor"],
+        answer: "testis-determining factor",
       },
       {
         id: 13,
         question: "In the absence of testosterone and MIS, the Müllerian ducts (persist/degenerate) in the embryo, and female structures eventually develop.",
-        options: [],
-        answer: "",
+        options: ["persist"],
+        answer: "persist",
       },
       {
         id: 14,
         question: "FSH and LH are classified as (sex hormones/gonadotropins).",
-        options: [],
-        answer: "",
+        options: ["gonadotropins"],
+        answer: "gonadotropins",
       },
       {
         id: 15,
         question: "GnRH, which is secreted by the hypothalamus, stimulates the secretion of both FSH and LH from the anterior pituitary. (true/false)",
-        options: [],
-        answer: "",
+        options: ["true", "false"],
+        answer: "true",
       },
       {
         id: 16,
         question: "In the testes, androgens are secreted by (Sertoli cells/Leydig cells).",
-        options: [],
-        answer: "",
+        options: ["Leydig cells"],
+        answer: "Leydig cells",
       },
       {
         id: 17,
         question: "Spermatogenesis is stimulated by testosterone and (FSH/LH), which targets Sertoli cells.",
-        options: [],
-        answer: "",
+        options: ["FSH", "LH"],
+        answer: "FSH",
       },
       {
         id: 18,
         question: "The head of a sperm contains chromosomes and a(n) , a vesicle containing enzymes needed for fertilization.",
-        options: [],
-        answer: "",
+        options: ["acrosome"],
+        answer: "acrosome",
       },
       {
         id: 19,
         question: "Erection is accompanied by a(n) (increase/decrease) in the activity of sympathetic neurons projecting to blood vessels in the penis.",
-        options: [],
-        answer: "",
+        options: ["increase", "decrease"],
+        answer: "decrease",
       },
       {
         id: 20,
         question: "Once sperm are deposited in the female reproductive tract, they cannot fertilize the oocyte until they have undergone a process called .",
-        options: [],
-        answer: "",
+        options: ["capacitation"],
+        answer: "capacitation",
       },
       {
         id: 21,
         question: "Fertilization usually occurs in the (uterus/uterine tube).",
-        options: [],
-        answer: "",
+        options: ["uterus", "uterine tube"],
+        answer: "uterine tube",
       },
       {
         id: 22,
         question: "The second half of the ovarian cycle is called the (luteal/follicular) phase.",
-        options: [],
-        answer: "",
+        options: ["luteal phase"],
+        answer: "luteal phase",
       },
       {
         id: 23,
         question: "In a follicle, the oocyte is surrounded by a layer of (granulosa/theca) cells that provide it with nourishment and regulate its development.",
-        options: [],
-        answer: "",
+        options: ["granulosa", "theca"],
+        answer: "granulosa",
       },
       {
         id: 24,
         question: "(FSH/LH) stimulates theca cells to secrete androgens, which are converted to estrogens by granulosa cells.",
-        options: [],
-        answer: "",
+        options: ["LH"],
+        answer: "LH",
       },
       {
         id: 25,
         question: "The inner layer of the uterine wall is called the (endometrium/myometrium).",
-        options: [],
-        answer: "",
+        options: ["endometrium", "myometrium"],
+        answer: "endometrium",
       },
       {
         id: 26,
         question: "During the (proliferative/secretory) phase of the uterine cycle, the lining of the uterus thickens under the influence of ­rising estrogen levels.",
-        options: [],
-        answer: "",
+        options: ["proliferative", "secretory"],
+        answer: "proliferative",
       },
       {
         id: 27,
         question: "Ovulation is triggered by (FSH/LH).",
-        options: [],
-        answer: "",
+        options: ["LH"],
+        answer: "LH",
       },
       {
         id: 28,
         question: "The corpus luteum secretes estrogens and (LH/progesterone).",
-        options: [],
-        answer: "",
+        options: ["LH", "progesterone"],
+        answer: "progesterone",
       },
       {
         id: 29,
         question: "In the late follicular phase, LH secretion is stimulated by (estrogens/progesterone).",
-        options: [],
-        answer: "",
+        options: ["estrogens", "progesterone"],
+        answer: "estrogens",
       },
       {
         id: 30,
         question: "Degeneration of the corpus luteum causes hormonal changes that trigger (ovulation/menstruation).",
-        options: [],
-        answer: "",
+        options: ["ovulation", "menstruation"],
+        answer: "menstruation",
       },
       {
         id: 31,
         question: "Before implantation, the morula develops into a(n) __________, which consists of an inner cell mass contained within a hollow, fluid-filled outer cell layer.",
-        options: [],
-        answer: "",
+        options: ["blastocyst"],
+        answer: "blastocyst",
       },
       {
         id: 32,
         question: "Secretory-phase uterine conditions are promoted by (estrogen/progesterone), which inhibits gonadotropin secretion during the last half of the ovarian cycle.",
-        options: [],
-        answer: "",
+        options: ["estrogen", "progesterone"],
+        answer: "progesterone",
       },
       {
         id: 33,
         question: "During the last six months of pregnancy, estrogens and progesterone are secreted by the (ovaries/placenta).",
-        options: [],
-        answer: "",
+        options: ["placenta"],
+        answer: "placenta",
       },
       {
-        id: 33,
+        id: 34,
         question: "During labor, strong uterine contractions are induced by (prolactin/oxytocin).",
-        options: [],
-        answer: "",
+        options: ["oxytocin"],
+        answer: "oxytocin",
       },
       {
-        id: 33,
+        id: 35,
         question: "Suckling stimulates the release of __________, which promotes milk production by the breasts.",
-        options: [],
-        answer: "",
+        options: ["prolactin"],
+        answer: "prolactin",
       },
     ],
   },
-  // c
-
-  // d
-
-  // b
-
-  // b
-
-  // d
-
-  // c
-
-  // b
-
-  // b
-
-  // a
-
-  // a
-  // false
-
-  // testis-determining factor
-
-  // persist
-
-  // gonadotropins
-
-  // true
-
-  // Leydig cells
-
-  // FSH
-
-  // acrosome
-
-  // decrease
-
-  // capacitation
-
-  // uterine tube
-
-  // luteal phase
-
-  // granulosa
-
-  // LH
-
-  // endometrium
-
-  // proliferative
-
-  // LH
-
-  // progesterone
-
-  // estrogens
-
-  // menstruation
-
-  // blastocyst
-
-  // progesterone
-
-  // placenta
-
-  // oxytocin
-
-  // prolactin
   {
     slug: "physiology-chapter-23",
     title: "Immune System",
@@ -3570,178 +3427,130 @@ export const quizzes: Quiz[] = [
         id: 1,
         question: "Which of the following class of pathogens consists of only unicellular organisms?",
         options: ["Virus", "Bacteria", "Fungi", "Parasites", "None of the above"],
-        answer: "",
+        answer: "Bacteria",
       },
       {
         id: 2,
         question: "Which of the following conditions would lead to the most serious immunodeficiency disease?",
         options: ["Lack of IgG", "Lack of neutrophils", "Lack of B cells", "Lack of cytotoxic T cells", "Lack of helper T cells"],
-        answer: "",
+        answer: "Lack of helper T cells",
       },
       {
         id: 3,
         question: "Which of the following molecules can opsonize antigen?",
         options: ["A T cell receptor", "Interferon", "An antibody", "A perforin", "Interleukin-2"],
-        answer: "",
+        answer: "An antibody",
       },
       {
         id: 4,
         question: "Lymphocytes contact foreign antigen in all of the following tissues except",
         options: ["bone marrow.", "the spleen.", "lymph nodes.", "the appendix.", "Peyer’s patches."],
-        answer: "",
+        answer: "bone marrow.",
       },
       {
         id: 5,
         question: "Which of the following is not true about humoral immunity?",
         options: ["It involves B cells.", "It involves antibodies.", "It involves cytotoxic T cells.", "It can provide passive immunity when transferred from one person to another."],
-        answer: "",
+        answer: "It involves cytotoxic T cells.",
       },
       {
         id: 6,
         question: "Macrophages",
         options: ["are derived from monocytes.", "have class II MHC molecules.", "are phagocytic.", "are indirectly involved in specific immunity.", "all of the above."],
-        answer: "",
+        answer: "all of the above.",
       },
       {
         id: 7,
         question: "Activated cytotoxic T cells release pore-forming molecules called",
         options: ["histamines.", "complement proteins.", "perforins.", "immunoglobulins.", "ready-porins."],
-        answer: "",
+        answer: "perforins.",
       },
       {
         id: 8,
         question: "An individual with type AB blood",
         options: ["is considered a universal blood donor.", "is considered a universal blood recipient.", "produces antibodies to the B antigen.", "produces antibodies to the A antigen.", "is Rh-positive."],
-        answer: "",
+        answer: "is considered a universal blood recipient.",
       },
       {
         id: 9,
         question: "Which of the following events can result in lifelong immunity?",
         options: ["Passage of maternal antibodies to a developing fetus", "An inflammatory response to a splinter", "Phagocytosis of bacteria by a neutrophil", "Administration of the polio vaccine", "Administration of antibodies against the rabies virus"],
-        answer: "",
+        answer: "Administration of the polio vaccine",
       },
       {
         id: 10,
         question: "Foreign antigens phagocytosed by macrophages are presented by",
         options: ["class I MHC molecules to cytotoxic T cells.", "class II MHC molecules to helper T cells.", "class I MHC molecules to helper T cells.", "class II MHC molecules to CD8-bearing cells.", "class II MHC molecules to cytotoxic T cells."],
-        answer: "",
+        answer: "class II MHC molecules to helper T cells.",
       },
       {
         id: 11,
         question: "Of the following events, which occurs earliest in the process of local inflammation?",
         options: ["Increased capillary permeability", "Fever", "Attack by cytotoxic T cells", "Release of histamine", "Lysis of microbes mediated by antibodies and complement"],
-        answer: "",
+        answer: "Release of histamine",
       },
       {
         id: 12,
         question: "Which of the following is not true about helper T cells?",
         options: ["They function in both the cell-­mediated and humoral immune responses.", "They secrete antibody.", "They bear surface CD4 molecules.", "They are subject to infection by HIV.", "When activated, they secrete IL-2 and other cytokines."],
-        answer: "",
+        answer: "They secrete antibody.",
       },
       {
         id: 13,
         question: "Which of the following is not an antigen-presenting cell?",
         options: ["Macrophage", "Dendritic cell", "Mast cell", "Activated B cells", "Thymus cells"],
-        answer: "",
+        answer: "Thymus cells",
       },
       {
         id: 14,
         question: "IL-2 is important for the activation of all of the following cell types except",
         options: ["B cells.", "cytotoxic T cells.", "NK cells.", "T helper cells.", "macrophages."],
-        answer: "",
+        answer: "macrophages.",
       },
       {
         id: 15,
         question: "Which of the following is an autoimmune disease in which myelinated neurons become the target of the immune response?",
         options: ["Myasthenia gravis", "Multiple sclerosis", "Diabetes mellitus", "Rheumatoid arthritis"],
-        answer: "",
+        answer: "Multiple sclerosis",
       },
       {
         id: 16,
         question: "A person who experiences life-threatening allergic reactions to bee sting venom might be given an experimental drug designed to (block/enhance) the binding of IgE to mast cells.",
-        options: [],
-        answer: "",
+        options: ["block", "enhance"],
+        answer: "block",
       },
       {
         id: 17,
         question: "When a macrophage is infected by a virus, viral antigen will be presented by (class I/class II MHC molecules) to a (helper T cell/cytotoxic T cell).",
-        options: [],
-        answer: "",
+        options: ["class II MHC molecules, helper T cell", "class I MHC molecules, cytotoxic T cell"],
+        answer: "class II MHC molecules, helper T cell",
       },
       {
         id: 18,
         question: "Evidence exists of interactions among the immune system, the nervous system, and the endocrine system. (true/false)",
-        options: [],
-        answer: "",
+        options: ["true", "false"],
+        answer: "true",
       },
       {
         id: 19,
         question: "A young girl who has never been immunized against tetanus cuts her foot on a rusty nail. In the emergency room her wound is cleaned, and she is given an injection of tetanus antitoxin (antibody to tetanus toxin). This is considered (active/passive) immunization.",
-        options: [],
-        answer: "",
+        options: ["active", "passive"],
+        answer: "passive",
       },
       {
         id: 20,
         question: "Macrophages internalize foreign antigens by (endocytosis/phagocytosis), whereas B cells do so by (endocytosis/phagocytosis).",
-        options: [],
-        answer: "",
+        options: ["phagocytosis, endocytosis", "endocytosis, phagocytosis"],
+        answer: "phagocytosis, endocytosis",
       },
       {
         id: 21,
         question: "A person who has had a thymectomy as a treatment for a thymic tumor will likely experience a diminished (T cell/B cell) count.",
-        options: [],
-        answer: "",
+        options: ["T cell", "B cell"],
+        answer: "T cell",
       },
     ],
   },
-  // b
-
-  // e
-
-  // c
-
-  // a
-
-  // c
-
-  // e
-
-  // c
-
-  // b
-
-  // d
-
-  // b
-
-  // d
-
-  // b
-
-  // e
-
-  // e
-
-  // b
-  // (a) M (b)
-
-  //  (c)
-
-  //  (d) B (e) B
-
-  // (a) B (b) H (c) N (d) CM (e) CM
-
-  // block
-
-  // class II MHC molecules, helper T cell
-
-  // true
-
-  // passive
-
-  // phagocytosis, endocytosis
-
-  // T cell
   {
     slug: "physiology-chapter-24",
     title: "Diabetes Mellitus",
