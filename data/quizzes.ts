@@ -2760,9 +2760,10 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 2,
-        question: "Blockage of the flow of bile into the ­duodenum interferes with the digestion of which of the following?",
+        question: "Blockage of the flow of bile into the duodenum interferes with the digestion of which of the following?",
         options: ["Carbohydrates only", "Lipids only", "Proteins only", "Carbohydrates and lipids only", "Carbohydrates and proteins only"],
         answer: "Lipids only",
+        answerImage: "/images/Figure 20.11 Pancreas",
         answerExplanation: "Bile is essential for emulsifying lipids, allowing lipase to digest fats. If bile cannot enter the duodenum, fat digestion is impaired, while carbohydrate and protein digestion continue normally.",
       },
       {
@@ -2809,6 +2810,7 @@ export const quizzes: Quiz[] = [
         question: "The enzyme enterokinase is directly or indirectly responsible for the proper functioning of",
         options: ["Bile salts.", "Lipases.", "Trypsin.", "Chymotrypsin.", "Both trypsin and chymotrypsin."],
         answer: "Both trypsin and chymotrypsin.",
+        answerImage: "/images/Figure 20.16 Activation of Proteases in Small Intestine",
         answerExplanation: "Enterokinase converts trypsinogen → trypsin, and trypsin activates chymotrypsinogen → chymotrypsin. Thus, enterokinase is responsible for the activation of both trypsin and chymotrypsin.",
       },
       {
@@ -2865,6 +2867,7 @@ export const quizzes: Quiz[] = [
         question: "The (submucosal/myenteric) nerve plexus is located within the muscularis externa.",
         options: ["submucosal", "myenteric"],
         answer: "myenteric",
+        answerImage: "/images/Figure 20.3 Gastrointestial Wall.png",
         answerExplanation: "The myenteric (Auerbach’s) plexus lies between the circular and longitudinal muscle layers of the muscularis externa. The submucosal plexus is located in the submucosa.",
       },
       {
@@ -2907,6 +2910,7 @@ export const quizzes: Quiz[] = [
         question: "In the stomach, pepsinogen is secreted by (chief cells/parietal cells).",
         options: ["chief cells", "parietal cells"],
         answer: "chief cells",
+        answerImage: "/images/Figure 20.15 Pepsin",
         answerExplanation: "Chief cells release pepsinogen, which becomes pepsin in an acidic environment. Parietal cells secrete HCl and intrinsic factor.",
       },
       {
@@ -2914,6 +2918,7 @@ export const quizzes: Quiz[] = [
         question: "The small intestine is periodically swept of its contents by (segmentation/migrating motility complexes).",
         options: ["segmentation", "migrating motility complexes"],
         answer: "migrating motility complexes",
+        answerImage: "/images/Figure 20.30 Peristalsis and Segmentation",
         answerExplanation: "Between meals, migrating motility complexes (MMCs) sweep residual contents through the small intestine. Segmentation occurs during meals.",
       },
       {
@@ -3156,6 +3161,7 @@ export const quizzes: Quiz[] = [
         question: "The testes are housed in a structure called the",
         options: ["prostate gland.", "scrotum.", "penis.", "epididymis.", "vas deferens."],
         answer: "scrotum.",
+        answerImage: "/images/Figure 22.6 Male Reproductive System",
         answerExplanation: "The testes are housed in the scrotum, which helps regulate temperature for proper sperm production.",
       },
       {
@@ -3261,6 +3267,7 @@ export const quizzes: Quiz[] = [
         question: "The head of a sperm contains chromosomes and a(n) , a vesicle containing enzymes needed for fertilization.",
         options: ["acrosome"],
         answer: "acrosome",
+        answerImage: "/images/Figure 22.9 Sperm Cell",
         answerExplanation: "The acrosome contains enzymes that help sperm penetrate the egg.",
       },
       {
@@ -3395,6 +3402,7 @@ export const quizzes: Quiz[] = [
         question: "Which of the following class of pathogens consists of only unicellular organisms?",
         options: ["Virus", "Bacteria", "Fungi", "Parasites", "None of the above"],
         answer: "Bacteria",
+        answerImage: "/images/Figure 23.4 Pathogens",
         answerExplanation: "Bacteria are single-celled prokaryotic organisms, unlike viruses (acellular) or fungi/parasites (can be multicellular).",
       },
       {
@@ -3409,6 +3417,7 @@ export const quizzes: Quiz[] = [
         question: "Which of the following molecules can opsonize antigen?",
         options: ["A T cell receptor", "Interferon", "An antibody", "A perforin", "Interleukin-2"],
         answer: "An antibody",
+        answerImage: "/images/Figure 23.16 Opsonization",
         answerExplanation: "Antibodies bind antigens and tag (opsonize) them for phagocytosis.",
       },
       {
