@@ -2020,63 +2020,53 @@ export const quizzes: Quiz[] = [
         id: 1,
         question: "Which of the following is not found in plasma?",
         options: ["Albumin", "Sodium", "Glucose", "Hemoglobin", "Potassium"],
-        answer: "",
+        answer: "", // 1 d
       },
       {
         id: 2,
         question: "Which organ synthesizes new erythrocytes?",
         options: ["Liver", "Spleen", "Kidney", "Bone Marrow", "Heart"],
-        answer: "",
+        answer: "", // 2 d
       },
       {
         id: 3,
         question: "Which of the following classes of leukocytes function(s) in phagocytosis?",
         options: ["Neutrophils only", "Basophils only", "Lymphocytes only", "Neutrophils and basophils", "Basophils and lymphocytes"],
-        answer: "",
+        answer: "", // 3 d
       },
       {
         id: 4,
         question: "Which class of leukocytes develops into macrophages in tissue?",
         options: ["Neutrophils", "Eosinophils", "Basophils", "Monocytes", "Lymphocytes"],
-        answer: "",
+        answer: "", // 4 d
       },
       {
         id: 5,
         question: "Contact of blood with collagen triggers",
         options: ["Platelet aggregation.", "Activation of the intrinsic clotting cascade.", "Activation of the extrinsic clotting cascade.", "Both a and b.", "All of the above."],
-        answer: "",
+        answer: "", // 5 d
       },
 
       {
         id: 6,
         question: "Plasma with clotting factors removed is called            .",
         options: [],
-        answer: "",
+        answer: "", // 6 serum
       },
       {
         id: 7,
         question: "During the clotting cascade,             ­converts fibrinogen to fibrin.",
         options: [],
-        answer: "",
+        answer: "", // 7 thrombin
       },
       {
         id: 8,
         question: "            is an enzyme that converts carbon dioxide and water into carbonic acid.",
         options: [],
-        answer: "",
+        answer: "", // 8 Carbonic anhydrase
       },
     ],
   },
-
-  // 1 d
-  // 2 d
-  // 3 d
-  // 4 d
-  // 5 d
-  // 6 serum
-  // 7 thrombin
-  // 8 Carbonic anhydrase
-
   {
     slug: "physiology-chapter-16",
     title: "Respiratory System: Pulmonary Ventilation",
@@ -2087,146 +2077,125 @@ export const quizzes: Quiz[] = [
         id: 1,
         question: "Which of the following is a component of internal respiration?",
         options: ["Ventilation", "Transport of oxygen in the blood", "Diffusion of carbon dioxide from tissues to blood", "Diffusion of oxygen from blood to tissues", "Oxidative phosphorylation"],
-        answer: "",
+        answer: "", // 1 e
       },
       {
         id: 2,
         question: "Which of the following is not a function of the conducting zone of the respiratory system?",
         options: ["Humidifying the air", "Adjusting the air to body temperature", "Exchanging gases between the respiratory system and the blood", "Secreting mucus", "Protecting the lungs from inhaled particles"],
-        answer: "",
+        answer: "", // 2 c
       },
       {
         id: 3,
         question: "The smallest airways in the conducting zone are",
         options: ["Terminal bronchioles.", "Respiratory bronchioles.", "Alveolar ducts.", "Alveolar sacs.", "Bronchi."],
-        answer: "",
+        answer: "", // 3 a
       },
       {
         id: 4,
         question: "Surfactant is secreted by",
         options: ["Goblet cells.", "Alveolar macrophages.", "Type I cells.", "Type II cells.", "Ciliated cells."],
-        answer: "",
+        answer: "", // 4 d
       },
       {
         id: 5,
         question: "The product of tidal volume and breathing frequency gives",
         options: ["Respiration rate.", "Total lung capacity.", "Alveolar ventilation.", "Minute ventilation.", "Dead space volume."],
-        answer: "",
+        answer: "", // 5 d
       },
       {
         id: 6,
         question: "When all muscles of respiration are relaxed and alveolar pressure is zero, lung volume is equal to",
         options: ["Residual volume.", "Vital capacity.", "Functional residual capacity.", "Tidal volume.", "Total lung capacity."],
-        answer: "",
+        answer: "", // 6 c
       },
       {
         id: 7,
         question: "Which of the following statements describes the lungs at the functional residual capacity?",
         options: ["Atmospheric, intra-alveolar, and intrapleural pressures are all equal.", "The lungs tend to collapse due to their elastic properties.", "The chest wall tends to collapse due to its elastic properties.", "Both a and c are true.", "All of the above are true."],
-        answer: "",
+        answer: "", // 7 b
       },
       {
         id: 8,
         question: "Which of the following factors decreases airway resistance?",
         options: ["Activation of the parasympathetic nervous system", "Epinephrine", "Histamine"],
-        answer: "",
+        answer: "", // 8 b
       },
       {
         id: 9,
         question: "Pulmonary surfactant",
         options: ["Prevents collapse of alveoli.", "Prevents small alveoli from joining with larger alveoli.", "Increases lung compliance.", "Both a and c.", "All of the above."],
-        answer: "",
+        answer: "", // 9 e
       },
       {
         id: 10,
         question: "Which of the following muscles contract(s) during quiet expiration?",
         options: ["Diaphragm", "Internal intercostals", "External intercostals", "None of the above", "All of the above"],
-        answer: "",
+        answer: "", // 10 d
       },
 
       {
         id: 11,
         question: "Contraction of the diaphragm increases the rate of air flow during forced expiration. (true/false)",
         options: [],
-        answer: "",
+        answer: "", // 11 false
       },
       {
         id: 12,
         question: "During inspiration, transpulmonary pressure (increases/decreases).",
         options: [],
-        answer: "",
+        answer: "", // 12 increases
       },
       {
         id: 13,
         question: "During inspiration, intrapleural pressure becomes (more/less) negative.",
         options: [],
-        answer: "",
+        answer: "", // 13 more
       },
       {
         id: 14,
         question: "If airway resistance increases, a (higher/lower) transpulmonary pressure is required to produce a given rate of air flow during expiration.",
         options: [],
-        answer: "",
+        answer: "", // 14 higher
       },
       {
         id: 15,
         question: "Pulmonary surfactant (increases/decreases) the surface tension of water.",
         options: [],
-        answer: "",
+        answer: "", // 15 decreases
       },
       {
         id: 16,
         question: "Pulmonary surfactant (increases/decreases) lung compliance.",
         options: [],
-        answer: "",
+        answer: "", // 16 increases
       },
       {
         id: 17,
         question: "Dead space volume is the volume of air in the (conducting zone/respiratory zone).",
         options: [],
-        answer: "",
+        answer: "", // 17 conducting zone
       },
       {
         id: 18,
         question: "(Obstructive/Restrictive) lung diseases are characterized by increased airway resistance.",
         options: [],
-        answer: "",
+        answer: "", // 18 Obstructive
       },
       {
         id: 19,
         question: "           cells secrete mucus.",
         options: [],
-        answer: "",
+        answer: "", // 19 Goblet
       },
       {
         id: 20,
         question: "The (internal/external) intercostals are muscles of inspiration.",
         options: [],
-        answer: "",
+        answer: "", // 20 external
       },
     ],
   },
-  // 1 e
-  // 2 c
-  // 3 a
-  // 4 d
-  // 5 d
-  // 6 c
-  // 7 b
-  // 8 b
-  // 9 e
-  // 10 d
-  // 11 false
-  // 12 increases
-  // 13 more
-  // 14 higher
-  // 15 decreases
-  // 16 increases
-  // 17 conducting zone
-  // 18 Obstructive
-  // 19 Goblet
-  // 20 external
-
   {
     slug: "physiology-chapter-17",
     title: "Respiratory System: Gas Exchange and Regulation of Breathing",
@@ -2237,49 +2206,49 @@ export const quizzes: Quiz[] = [
         id: 1,
         question: "Under steady-state conditions, the rate at which oxygen enters pulmonary capillaries from alveolar air is equal to",
         options: ["The rate at which oxygen is delivered to alveoli in inspired air.", "The rate at which oxygen is carried out of the alveoli in expired air.", "The rate at which oxygen is consumed in respiring tissues.", "The rate at which carbon dioxide is produced in respiring tissues.", "The rate at which carbon dioxide leaves the pulmonary capillaries and enters alveolar air."],
-        answer: "",
+        answer: "", // c
       },
       {
         id: 2,
         question: "At the normal resting partial pressure of oxygen of mixed venous blood, hemoglobin is",
         options: ["Nearly 100% saturated.", "Nearly 97% saturated.", "Nearly 75% saturated.", "Nearly 50% saturated.", "Nearly 25% saturated."],
-        answer: "",
+        answer: "", // c
       },
       {
         id: 3,
         question: "In respiring tissues, an increase in blood partial pressure of carbon dioxide causes all of the following except",
         options: ["An increase in the hydrogen ion concentration.", "An increase in the bicarbonate concentration.", "An increase in the carbaminohemoglobin concentration.", "An increase in the affinity of hemoglobin for oxygen.", "An increase in hemoglobin unloading of oxygen."],
-        answer: "",
+        answer: "", // d
       },
       {
         id: 4,
         question: "Which of the following does not affect alveolar partial pressure of oxygen?",
         options: ["The rate of oxygen consumption by respiring tissues", "Alveolar ventilation", "The partial pressure of oxygen of inspired air", "The volume of air contained in the alveoli", "The humidification of air as it moves through the conducting zone"],
-        answer: "",
+        answer: "", // d
       },
       {
         id: 5,
         question: "During hyperventilation, which of the following would be expected to happen?",
         options: ["An increase in the partial pressure of oxygen of arterial blood", "An increase in the partial pressure of carbon dioxide of arterial blood", "An increase in the acidity of arterial blood", "An increase in the bicarbonate concentration of arterial blood", "A decrease in the pH of arterial blood"],
-        answer: "",
+        answer: "", // a
       },
       {
         id: 6,
         question: "Which of the following would be expected to cause a decrease in the percent saturation of hemoglobin?",
         options: ["An increase in partial pressure of oxygen", "A decrease in blood pH", "A decrease in partial pressure of carbon dioxide", "A decrease in temperature", "All of the above"],
-        answer: "",
+        answer: "", // b
       },
       {
         id: 7,
         question: "Suppose that alveolar partial pressure of oxygen = 100 mm Hg and partial pressure of carbon dioxide = 60 mm Hg. Which of the following is true?",
         options: ["pH will be less than normal.", "Percent saturation of hemoglobin by oxygen will be less than normal.", "Bicarbonate concentration will be greater than normal.", "Both a and c are true.", "All of the above are true."],
-        answer: "",
+        answer: "", // e
       },
       {
         id: 8,
         question: "Suppose a person’s arterial partial pressure of oxygen adn partial pressure of carbon dioxide are normal (partial pressure of oxygen = 100 mm Hg; partial pressure of carbon dioxide = 40 mm Hg;). Which of the following would most likely stimulate an increase in ventilation?",
         options: ["A decrease in partial pressure of oxygen to 90 mm Hg", "A decrease in partial pressure of carbon dioxide to 35 mm Hg", "An increase in partial pressure of oxygen to 110 mm Hg", "An increase in partial pressure of carbon dioxide to 45 mm Hg"],
-        answer: "",
+        answer: "", // d
       },
       {
         id: 9,
@@ -2291,155 +2260,125 @@ export const quizzes: Quiz[] = [
           "Diffusion of carbon dioxide into brain extracellular fluid, which reacts with water to form bicarbonate ions, which stimulate chemoreceptors directly.",
           "Direct stimulation by hydrogen ions in arterial blood.",
         ],
-        answer: "",
+        answer: "", // c
       },
       {
         id: 10,
         question: "When a person exercises, ventilation increases to meet the demands of more active tissues. This is an example of",
         options: ["Hyperventilation.", "Hypoventilation.", "Hypoxia.", "Apnea.", "Hyperpnea."],
-        answer: "",
+        answer: "", // e
       },
       {
         id: 11,
         question: "The normal ratio of bicarbonate concentration to carbon dioxide concentration in arterial blood is",
         options: ["1:5.", "5:1.", "10:1.", "20:1.", "1:20."],
-        answer: "",
+        answer: "", // d
       },
       {
         id: 12,
         question: "Which of the following can hemoglobin bind and transport in blood?",
         options: ["Oxygen", "Carbon dioxide", "Hydrogen ions", "Both a and c", "All of the above"],
-        answer: "",
+        answer: "", // e
       },
       {
         id: 13,
         question: "Which of the following areas of the brain contain inspiratory neurons?",
         options: ["The dorsal respiratory group only", "The ventral respiratory group only", "Both the dorsal and ventral respiratory groups", "Neither the dorsal nor ventral respiratory group"],
-        answer: "",
+        answer: "", // c
       },
       {
         id: 14,
         question: "Under normal conditions, the rate at which oxygen is brought into the alveoli in inspired air is (the same as/greater than/less than) the rate at which it is consumed in respiring tissues.",
         options: [],
-        answer: "",
+        answer: "", // the same as
       },
       {
         id: 15,
         question: "Under resting conditions, tissues normally extract (exactly half/more than half/less than half) of the oxygen that is delivered to them in arterial blood.",
         options: [],
-        answer: "",
+        answer: "", // less than half
       },
       {
         id: 16,
         question: "The amount of carbon dioxide in systemic arterial blood is less than 50% of that in mixed venous blood. (true/false)",
         options: [],
-        answer: "",
+        answer: "", // false
       },
+
       {
         id: 17,
         question: "When the partial pressure of carbon dioxide of the blood increases, the concentration of bicarbonate (increases/decreases), and the concentration of hydrogen ions (increases/decreases).",
         options: [],
-        answer: "",
+        answer: "", // increases, increases
       },
       {
         id: 18,
         question: "The enzyme that catalyzes the conversion of carbon dioxide to carbonic acid is          .",
         options: [],
-        answer: "",
+        answer: "", // carbonic anhydrase
       },
       {
         id: 19,
         question: "As the pH of the blood increases, the affinity of hemoglobin for oxygen (increases/decreases).",
         options: [],
-        answer: "",
+        answer: "", // increases
       },
       {
         id: 20,
         question: "When a person hypoventilates, the partial pressure of carbon dioxide of arterial blood (increases/decreases).",
         options: [],
-        answer: "",
+        answer: "", // increases
       },
       {
         id: 21,
         question: "A decrease in alveolar ventilation would be expected to cause a(n) (increase/decrease) in arterial partial pressure of oxygen and a(n) (increase/decrease) in arterial partial pressure of carbon dioxide.",
         options: [],
-        answer: "",
+        answer: "", // decrease, increase
       },
       {
         id: 22,
         question: "Hemoglobin with carbon dioxide bound to it is called           .",
         options: [],
-        answer: "",
+        answer: "", // carbaminohemoglobin
       },
       {
         id: 23,
         question: "In gas exchange in both the lungs and respiring tissues, oxygen and carbon dioxide always move down their partial pressure gradients. (true/false)",
         options: [],
-        answer: "",
+        answer: "", // true
       },
       {
         id: 24,
         question: "(Central/Peripheral) chemoreceptors respond directly to hydrogen ions produced during metabolism.",
-
         options: [],
-        answer: "",
+        answer: "", // Peripheral
       },
       {
         id: 25,
         question: "Coughing is triggered by stimulation of pulmonary            receptors.",
-
         options: [],
-        answer: "",
+        answer: "", // irritant
       },
       {
         id: 26,
         question: "In respiratory acidosis, arterial partial pressure of carbon dioxide is (higher/lower) than normal.",
         options: [],
-        answer: "",
+        answer: "", // higher
       },
       {
         id: 27,
         question: "An increase in the partial pressure of oxygen of alveolar air would be expected to trigger local (bronchoconstriction/bronchodilation) in airways.",
         options: [],
-        answer: "",
+        answer: "", // bronchoconstriction
       },
       {
         id: 28,
         question: "An increase in the partial pressure of oxygen of alveolar air would be expected to trigger local (vasoconstriction/vasodilation).",
         options: [],
-        answer: "",
+        answer: "", // vasodilation
       },
     ],
   },
-  // c
-  // c
-  // d
-  // d
-  // a
-  // b
-  // e
-  // d
-  // c
-  // e
-  // d
-  // e
-  // c
-  // the same as
-  // less than half
-  // false
-  // increases, increases
-  // carbonic anhydrase
-  // increases
-  // increases
-  // decrease, increase
-  // carbaminohemoglobin
-  // true
-  // Peripheral
-  // irritant
-  // higher
-  // bronchoconstriction
-  // vasodilation
-
   {
     slug: "physiology-chapter-18",
     title: "Urinary System: Renal Function",
@@ -2450,38 +2389,38 @@ export const quizzes: Quiz[] = [
         id: 1,
         question: "Which structure of the urinary system stores urine until it is excreted?",
         options: ["Kidneys", "Bladder", "Ureter", "Urethra", "Gallbladder"],
-        answer: "",
+        answer: "", // ?
       },
       {
         id: 2,
         question: "Which of the following is not one of the mechanisms by which a solute can be exchanged between the plasma and the renal tubules?",
         options: ["Glomerular filtration", "Secretion", "Excretion", "Reabsorption"],
-        answer: "",
+        answer: "", // b
       },
       {
         id: 3,
         question: "Which type of specialized junction ­connects epithelial cells lining the renal tubules?",
         options: ["Gap junctions", "Tight junctions", "Desmosomes", "Intercalated disks", "Slit pores"],
-        answer: "",
+        answer: "", // c
       },
       {
         id: 4,
         question: "Which of the following does not favor a large glomerular filtration rate?",
         options: ["Slit pores", "Fenestrations", "High glomerular hydrostatic pressure", "High resistance in the afferent arteriole", "High resistance in the efferent arteriole"],
-        answer: "",
+        answer: "", // b
       },
       {
         id: 5,
         question: "Most reabsorption of water and solutes occurs in the",
         options: ["Proximal tubule.", "Descending limb of the loop of Henle.", "Ascending limb of the loop of Henle.", "Distal tubule.", "Collecting duct."],
-        answer: "",
+        answer: "", // d
       },
 
       {
         id: 6,
         question: "In which of the following are microvilli most abundant?",
         options: ["Bowman’s capsule", "Glomerular capillaries", "Distal tubule", "Proximal tubule", "Collecting duct"],
-        answer: "",
+        answer: "", // a
       },
       {
         id: 7,
@@ -2492,153 +2431,125 @@ export const quizzes: Quiz[] = [
           "Glomerular filtration rate would not change because of autoregulation.",
           "Glomerular filtration rate would not change because of activation of the sympathetic nervous system.",
         ],
-        answer: "",
+        answer: "", // d
       },
       {
         id: 8,
         question: "The normal fasting plasma glucose concentration is 100 mg/dL, and the renal threshold is 300 mg/dL. If the plasma concentration doubles to 200 mg/dL, then",
         options: ["The rate at which glucose is reabsorbed will double.", "The capacity of the renal tubule for transporting glucose will be exceeded.", "Urinary water excretion will increase.", "Glucose clearance will increase.", "The filtered load of glucose is halved."],
-        answer: "",
+        answer: "", // c
       },
       {
         id: 9,
         question: "",
         options: [],
-        answer: "",
+        answer: "", // a
       },
       {
         id: 10,
         question: "A substance S is freely filterable and is excreted at a rate (in moles/min) that is lower than the filtered load. On the basis of this information alone, which of the following is the most precise conclusion that can justifiably be drawn regarding the kidneys’ processing of S?",
         options: ["S is neither reabsorbed nor secreted.", "S is definitely reabsorbed and may be secreted.", "S is definitely secreted and may be reabsorbed.", "S is definitely both reabsorbed and secreted."],
-        answer: "",
+        answer: "", // b
       },
       {
         id: 11,
         question: "Which of the following observations would enable you to definitely conclude that a substance X is being secreted?",
         options: ["The clearance of X is greater than the GFR.", "The concentration of X in the urine is greater than its concentration in the plasma.", "The concentration of X in the plasma is decreasing over time.", "Either a or c", "Any of the above"],
-        answer: "",
+        answer: "", // a
       },
       {
         id: 12,
         question: "Micturition occurs in response to",
         options: ["Relaxation of the detrusor muscle.", "Contraction of the internal and external urethral sphincters.", "Activation of parasympathetic neurons to the bladder.", "Activation of somatic motor neurons to the bladder."],
-        answer: "",
+        answer: "", // c
       },
       {
         id: 13,
         question: "The (ureter/urethra) carries urine from the bladder to the outside of the body.",
         options: [],
-        answer: "",
+        answer: "", // urethra
       },
 
       {
         id: 14,
         question: "Urinary excretion is the elimination of urine from the bladder. (true/false)",
         options: [],
-        answer: "",
+        answer: "", // true
       },
-
       {
         id: 15,
         question: "The (afferent/efferent) arteriole carries blood toward the glomerulus.",
         options: [],
-        answer: "",
+        answer: "", // afferent
       },
-
       {
         id: 16,
         question: "The combination of a glomerulus and the surrounding Bowman’s capsule is called a(n) ____________ ____________.",
         options: [],
-        answer: "",
+        answer: "", // renal corpuscle
       },
       {
         id: 17,
         question: "The hydrostatic pressure in glomerular capillaries is (higher/lower) than the ­corresponding pressure in most capillaries of the body.",
         options: [],
-        answer: "",
+        answer: "", // higher
       },
       {
         id: 18,
         question: "The glomerular filtration rate tends to (increase/decrease) as the concentration of proteins in the plasma increases.",
         options: [],
-        answer: "",
+        answer: "", // decrease
       },
       {
         id: 19,
         question: "Autonomic neurons regulate contraction of the (internal/external) urethral sphincter.",
         options: [],
-        answer: "",
+        answer: "", // internal
       },
       {
         id: 20,
         question: "The glomerular filtration pressure is synonymous with the hydrostatic pressure inside glomerular capillaries. (true/false)",
         options: [],
-        answer: "",
+        answer: "", // false
       },
       {
         id: 21,
         question: "The filtered load of a solute is determined by its plasma concentration and the ­(glomerular filtration rate/urine flow rate).",
         options: [],
-        answer: "",
+        answer: "", // glomerular filtration rate
       },
       {
         id: 22,
         question: "If the clearance of a substance is greater than the glomerular filtration rate, then that substance must have undergone (reabsorption/secretion) in the renal tubules.",
         options: [],
-        answer: "",
+        answer: "", // secretion
       },
       {
         id: 23,
         question: "The clearance of (PAH/creatinine) is approximately equal to the renal plasma flow rate.",
         options: [],
-        answer: "",
+        answer: "", // PAH
       },
       {
         id: 24,
         question: "Substances that are reabsorbed move into the (peritubular capillaries/tubule lumen).",
         options: [],
-        answer: "",
+        answer: "", // peritubular capillaries
       },
       {
         id: 25,
         question: "An increase in the flow rate through the macula densa causes a(n) (increase/decrease) in the glomerular filtration rate.",
         options: [],
-        answer: "",
+        answer: "", // decrease
       },
       {
         id: 26,
         question: "Glucose reabsorption occurs primarily in the (proximal tubule/distal tubule).",
         options: [],
-        answer: "",
+        answer: "", // proximal tubule
       },
     ],
   },
-  // b
-  // c
-  // b
-  // d
-  // a
-  // d
-  // c
-  // a
-  // b
-  // a
-  // c
-  // urethra
-  // true
-  // afferent
-  // renal corpuscle
-  // higher
-  // decrease
-  // internal
-  // false
-  // glomerular filtration rate
-  // secretion
-  // PAH
-  // peritubular capillaries
-  // decrease
-  // proximal tubule
-
   {
     slug: "physiology-chapter-19",
     title: "Urinary System: Fluid and Electrolyte Balance",
@@ -2649,44 +2560,43 @@ export const quizzes: Quiz[] = [
         id: 1,
         question: "Which of the following would be expected to trigger a decrease in the secretion of renin?",
         options: ["A decrease in the mean arterial pressure", "A decrease in the pressure inside the afferent arteriole", "A decrease in the activity of renal sympathetic nerves", "A decrease in the concentration of sodium chloride in tubular fluid", "A decrease in GFR"],
-        answer: "",
+        answer: "", // c
       },
       {
         id: 2,
         question: "Which of the following would be expected to trigger a decrease in the secretion of ADH?",
         options: ["Ingestion of a large quantity of pure water", "Sweating", "Hemorrhage", "A decrease in mean arterial pressure", "Both a and c"],
-        answer: "",
+        answer: "", // a
       },
       {
         id: 3,
         question: "Assume that fluid enters the distal tubule with an osmolarity of 100 mOsm, and that the maximum osmolarity of medullary interstitial fluid is 1100 mOsm. As plasma ADH levels rise, what happens to the osmolarity of the urine?",
         options: ["It approaches 100 mOsm as a lower limit.", "It approaches 1100 mOsm as an upper limit.", "It eventually exceeds 1100 mOsm.", "It approaches 300 mOsm, the normal osmolarity of plasma."],
-        answer: "",
+        answer: "", // b
       },
       {
         id: 4,
         question: "Which of the following tends to be accompanied by an increase in the rate at which bicarbonate is excreted in the urine?",
         options: ["A decrease in hydrogen ion secretion", "A decrease in the plasma bicarbonate concentration", "An increase in the production of ammonia by renal tubule epithelial cells", "Both a and b", "All of the above"],
-        answer: "",
+        answer: "", // d
       },
       {
         id: 5,
         question: "Assuming that arterial partial pressure of carbon dioxide is normal, metabolic acidosis promotes which of the following?",
-
         options: ["Increased hydrogen ion secretion by the renal tubule", "Decreased alveolar ventilation", "Increased bicarbonate reabsorption", "Both a and c", "All of the above"],
-        answer: "",
+        answer: "", // d
       },
       {
         id: 6,
         question: "Which of the following tends to promote an increase in sodium excretion?",
         options: ["An increase in the glomerular filtration rate", "An increase in plasma renin concentration", "An increase in the secretion of atrial natriuretic peptide", "Both a and c", "All of the above"],
-        answer: "",
+        answer: "", // d
       },
       {
         id: 7,
         question: "The osmolarity of tubular fluid increases as it flows through the descending limb of the loop of Henle because",
         options: ["Solutes are passively transported into the descending limb.", "Solutes are actively transported into the descending limb.", "Solutes are passively transported out of the ascending limb.", "Water moves passively into the descending limb.", "Water moves passively out of the descending limb."],
-        answer: "",
+        answer: "", // e
       },
       {
         id: 8,
@@ -2697,172 +2607,142 @@ export const quizzes: Quiz[] = [
           "Both the decrease in plasma volume and the increase in osmolarity stimulate ADH secretion.",
           "Both the decrease in plasma volume and the increase in osmolarity inhibit ADH secretion.",
         ],
-        answer: "",
+        answer: "", // c
       },
       {
         id: 9,
         question: "In the cytosol of intercalated cells, the carbon dioxide that is converted to carbonic acid can come from",
         options: ["The lumen of the distal tubule and the collecting duct.", "Metabolism inside the intercalated cell.", "Catabolism of glutamine.", "Both a and b", "All of the above"],
-        answer: "",
+        answer: "", // b
       },
       {
         id: 10,
         question: "In the lumen of the proximal tubule, secreted hydrogen ions are primarily buffered by",
         options: ["Bicarbonate.", "Phosphates.", "Proteins.", "Sulfates.", "Carbon dioxide."],
-        answer: "",
+        answer: "", // a
       },
       {
         id: 11,
         question: "An increase in mean arterial pressure stimulates which of the following?",
         options: ["ADH release", "Angiotensin II production", "Aldosterone release", "Renin release", "Increased water excretion in urine"],
-        answer: "",
+        answer: "Increased water excretion in urine",
       },
       {
         id: 12,
         question: "Which of the following does not stimulate aldosterone release?",
         options: ["Atrial natriuretic peptide", "An increase in plasma potassium", "An increase in renin secretion", "An increase in angiotensin II production"],
-        answer: "",
+        answer: "Atrial natriuretic peptide",
       },
       {
         id: 13,
         question: "Where is the Na⁺/K⁺ pump located?",
         options: ["On the basolateral membrane of proximal tubule cells, and on the apical membrane of principal cells", "On the apical membrane of proximal tubule cells, and on the basolateral membrane of principal cells", "On the basolateral membrane of both proximal tubule cells and principal cells", "On the apical membrane of both proximal tubule cells and principal cells"],
-        answer: "",
+        answer: "On the basolateral membrane of both proximal tubule cells and principal cells",
       },
       {
         id: 14,
         question: "In epithelial cells lining the proximal tubules, carbonic anhydrase is located",
         options: ["On the basolateral membrane only.", "On the apical membrane only.", "Inside the cell only.", "Inside the cell and on the apical membrane.", "Inside the cell and on the basolateral membrane."],
-        answer: "",
+        answer: "Inside the cell and on the apical membrane.",
       },
       {
         id: 15,
         question: "A person has the following symptoms: arterial pH = 7.45, partical pressure of carbon dioxide = 44 mm Hg, plasma bicarbonate concentration = 27 mM. What is the diagnosis?",
         options: ["Respiratory acidosis", "Respiratory alkalosis", "Metabolic acidosis", "Metabolic alkalosis"],
-        answer: "",
+        answer: "Metabolic alkalosis",
       },
       {
         id: 16,
         question: "An increase in the reabsorption of solutes (increases/decreases) water reabsorption.",
-        options: [],
-        answer: "",
+        options: ["increases", "decreases"],
+        answer: "increases",
       },
       {
         id: 17,
         question: "Most solutes and water are reabsorbed in the (proximal tubule/distal tubule and collecting duct).",
-        options: [],
-        answer: "",
+        options: ["proximal tubule", "distal tubule and collecting duct"],
+        answer: "proximal tubule",
       },
       {
         id: 18,
         question: "Epithelial cells of the descending limb of the loop of Henle actively transport solutes from tubular fluid to the surrounding peritubular space. (true/false)",
-        options: [],
-        answer: "",
+        options: ["true", "false"],
+        answer: "false",
       },
       {
         id: 19,
         question: "Urine flow rate increases as the plasma ADH level (increases/decreases).",
-        options: [],
-        answer: "",
+        options: ["increases", "decreases"],
+        answer: "decreases",
       },
       {
         id: 20,
         question: "Stretching of the atria of the heart promotes the secretion of           , a hormone that promotes sodium excretion.",
-        options: [],
-        answer: "",
+        options: ["atrial natriuretic peptide"],
+        answer: "atrial natriuretic peptide",
       },
       {
         id: 21,
         question: "If the plasma volume is below normal, an increase in water reabsorption will be sufficient to restore it to normal. (true/false)",
-        options: [],
-        answer: "",
+        options: ["true", "false"],
+        answer: "false",
       },
       {
         id: 22,
         question: "           stimulates the insertion of Na⁺/K⁺ pumps into the plasma membrane of principal cells of the distal tubules and collecting ducts.",
-        options: [],
-        answer: "",
+        options: ["Aldosterone"],
+        answer: "Aldosterone",
       },
       {
         id: 23,
         question: "           stimulates the insertion of water pores into the plasma membrane of epithelial cells of the distal tubules and collecting ducts.",
-        options: [],
-        answer: "",
+        options: ["Antidiuretic hormone (ADH)"],
+        answer: "Antidiuretic hormone (ADH)",
       },
       {
         id: 24,
         question: "ADH increases water permeability of the loop of Henle. (true/false)",
-        options: [],
-        answer: "",
+        options: ["true", "false"],
+        answer: "false",
       },
       {
         id: 25,
         question: "Potassium secretion is (stimulated/inhibited) by aldosterone.",
-        options: [],
-        answer: "",
+        options: ["stimulated", "inhibited"],
+        answer: "stimulated",
       },
       {
         id: 26,
         question: "Calcitonin (increases/decreases) plasma calcium levels.",
-        options: [],
-        answer: "",
+        options: ["increases", "decreases"],
+        answer: "decreases",
       },
       {
         id: 27,
         question: "Resorption of bone (increases/decreases) plasma calcium levels.",
-        options: [],
-        answer: "",
+        options: ["increases", "decreases"],
+        answer: "increases",
       },
       {
         id: 28,
         question: "By adding new bicarbonate to the blood, the kidneys can bring about a compensatory (increase/decrease) in the plasma pH.",
-        options: [],
-        answer: "",
+        options: ["increase", "decrease"],
+        answer: "increase",
       },
       {
         id: 29,
         question: "The kidneys can excrete urine that is pure water. (true/false)",
-        options: [],
-        answer: "",
+        options: ["true", "false"],
+        answer: "false",
       },
       {
         id: 30,
         question: "There is no limit to the amount of hydrogen ions the kidneys can excrete. (true/false)",
-        options: [],
-        answer: "",
+        options: ["true", "false"],
+        answer: "false",
       },
     ],
   },
-  // c
-  // a
-  // b
-  // d
-  // d
-  // d
-  // e
-  // c
-  // b
-  // a
-  // e
-  // a
-  // c
-  // d
-  // d
-  // increases
-  // proximal tubule
-  // false
-  // decreases
-  // atrial natriuretic peptide
-  // false
-  // Aldosterone
-  // Antidiuretic hormone (ADH)
-  // false
-  // stimulated
-  // decreases
-  // increases
-  // increase
-  // false
-  // false
 
   {
     slug: "physiology-chapter-20",
@@ -3515,36 +3395,50 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 16,
+        question: "Fill in the blank with the abbreviation for the cell type that mediates the stated function: helper T cell cytotoxic T cell B cell (B), or macrophage (M).  a. ____ Phagocytosis b. ____ Secretion of cytokines such as IL-2 c. ____ Killing of virus-infected cells d. ____ Specific binding to free virus e. ____ Differentiation into ­antibody-secreting plasma cells",
+
+        options: ["(a) M (b) Tₕ (c) T꜀ (d) B (e) B"],
+        answer: "(a) M (b) Tₕ (c) T꜀ (d) B (e) B",
+      },
+      {
+        id: 17,
+        question: "Fill in the blank with the letter that applies to the stated situation: humoral immune response (H), cell-mediated response (CM), both (B), or neither (N). a. ____ Occurs in a viral infection b. ____ Involves the production of antibodies c. ____ Involves the phagocytic activity of neutrophils d. ____ Involves killing of virus-infected cells e. ____ Involves T cells bearing CD8",
+        options: ["(a) B (b) H (c) N (d) CM (e) CM"],
+        answer: "(a) B (b) H (c) N (d) CM (e) CM",
+      },
+
+      {
+        id: 18,
         question: "A person who experiences life-threatening allergic reactions to bee sting venom might be given an experimental drug designed to (block/enhance) the binding of IgE to mast cells.",
         options: ["block", "enhance"],
         answer: "block",
       },
       {
-        id: 17,
+        id: 19,
         question: "When a macrophage is infected by a virus, viral antigen will be presented by (class I/class II MHC molecules) to a (helper T cell/cytotoxic T cell).",
         options: ["class II MHC molecules, helper T cell", "class I MHC molecules, cytotoxic T cell"],
         answer: "class II MHC molecules, helper T cell",
       },
       {
-        id: 18,
+        id: 20,
         question: "Evidence exists of interactions among the immune system, the nervous system, and the endocrine system. (true/false)",
         options: ["true", "false"],
         answer: "true",
       },
       {
-        id: 19,
+        id: 21,
         question: "A young girl who has never been immunized against tetanus cuts her foot on a rusty nail. In the emergency room her wound is cleaned, and she is given an injection of tetanus antitoxin (antibody to tetanus toxin). This is considered (active/passive) immunization.",
         options: ["active", "passive"],
         answer: "passive",
       },
       {
-        id: 20,
+        id: 22,
         question: "Macrophages internalize foreign antigens by (endocytosis/phagocytosis), whereas B cells do so by (endocytosis/phagocytosis).",
         options: ["phagocytosis, endocytosis", "endocytosis, phagocytosis"],
         answer: "phagocytosis, endocytosis",
       },
       {
-        id: 21,
+        id: 23,
         question: "A person who has had a thymectomy as a treatment for a thymic tumor will likely experience a diminished (T cell/B cell) count.",
         options: ["T cell", "B cell"],
         answer: "T cell",
@@ -3652,8 +3546,8 @@ export const quizzes: Quiz[] = [
       {
         id: 15,
         question: "Define polyuria, polydipsia, and polyphagia.",
-        options: ["Polyuria = excessive UnrecognizedActionError; polydipsia = excessive throwInvariantForMissingStore; polyphagia = excess eating"],
-        answer: "Polyuria = excessive UnrecognizedActionError; polydipsia = excessive throwInvariantForMissingStore; polyphagia = excess eating",
+        options: ["Polyuria = excessive urination; polydipsia = excessive thirst; polyphagia = excess eating"],
+        answer: "Polyuria = excessive urination; polydipsia = excessive thirst; polyphagia = excess eating",
       },
       {
         id: 16,
