@@ -170,9 +170,11 @@ export default function QuizGame({ quiz }: QuizGameProps) {
 
         {quizState === QuizState.CONTINUE_BUTTON && currentQuestion.answerImage && (
           <div className='mt-4'>
-            <img src={currentQuestion.answerImage} alt='Answer explanation' className='max-w-full h-auto rounded border' />
+            <img src={currentQuestion.answerImage} alt='Answer explanation' className='max-w-full h-auto rounded border' />{" "}
           </div>
         )}
+
+        {quizState === QuizState.CONTINUE_BUTTON && currentQuestion.answerExplanation && <div className='mt-4'>{currentQuestion.answerExplanation}</div>}
       </div>
     </div>
   );
