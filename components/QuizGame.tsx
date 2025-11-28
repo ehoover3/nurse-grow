@@ -5,6 +5,7 @@ import { Quiz } from "../data/quizzes";
 import { useRouter } from "next/navigation";
 import Button from "../components/Button";
 import shuffleArray from "../utils/shuffleArray";
+import { Variant } from "../components/Button";
 
 type QuizGameProps = {
   quiz: Quiz;
@@ -39,46 +40,21 @@ function AnswerOptions({ currentQuestion, quizState, userSelectedAnswer, setUser
   return (
     <div className='grid gap-2'>
       {currentQuestion.options.map((option: any) => {
-        const isSelecting = quizState === QuizState.SELECT_ANSWER;
-        const isChecking = quizState === QuizState.CONTINUE_BUTTON;
+        const isAnswerSelected = quizState === QuizState.SELECT_ANSWER;
+        const isCheckButtonClicked = quizState === QuizState.CONTINUE_BUTTON;
         const isUserPick = userSelectedAnswer === option;
+        const isCorrect = option === currentQuestion.answer;
+        let variant: Variant = "white";
 
-        // Default colors
-        let bgColor = undefined;
-        let borderColor = undefined;
-
-        // Selecting state
-        if (isSelecting && isUserPick) {
-          bgColor = "#1CB0F6";
-          borderColor = "#1698D6";
+        if (isAnswerSelected && isUserPick) {
+          variant = "darkGray";
+        } else if (isCheckButtonClicked && isCorrect) {
+          variant = "brightGreen";
+        } else if (isCheckButtonClicked && isUserPick) {
+          variant = "red";
         }
-
-        // Checking state
-        if (isChecking) {
-          const isCorrect = option === currentQuestion.answer;
-          const isWrong = isUserPick && option !== currentQuestion.answer;
-
-          if (isCorrect) {
-            bgColor = "#86efac"; // green-300
-            borderColor = "#15803d"; // green-700
-          } else if (isWrong) {
-            bgColor = "#fca5a5"; // red-300
-            borderColor = "#b91c1c"; // red-700
-          }
-        }
-
         return (
-          <Button
-            key={option}
-            onClick={() => isSelecting && setUserSelectedAnswer(option)}
-            disabled={!isSelecting}
-            variant='offWhite'
-            className='border w-full text-left p-2 rounded'
-            style={{
-              backgroundColor: bgColor,
-              borderColor: borderColor ?? "#37464f",
-              color: "white",
-            }}>
+          <Button key={option} onClick={() => isAnswerSelected && setUserSelectedAnswer(option)} disabled={!isAnswerSelected} variant={variant} className='border w-full text-left p-2 rounded'>
             {option}
           </Button>
         );
