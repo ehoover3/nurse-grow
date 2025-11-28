@@ -38,7 +38,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 3,
-        question: "Which system is responsible for transporting blood?",
+        question: "Which transports blood?",
         options: ["Respiratory", "Circulatory", "Digestive", "Nervous"],
         answer: "Circulatory",
       },
@@ -53,27 +53,27 @@ export const quizzes: Quiz[] = [
     questions: [
       {
         id: 1,
-        question: "Which of the following best illustrates the concept of positive feedback?",
+        question: "Which is positive feedback?",
         options: [
-          "The secretion of acid by cells in the stomach lining is suppressed when the acidity of the stomach contents increases.",
+          "Stomach lining cell acid secretion is suppressed when stomach contents acidity increases.",
           "A rise in blood pressure stimulates the elimination of water in the urine, which reduces the blood pressure.",
           "An increase in the concentration of H⁺ in blood causes an increase in H+ excretion in urine.",
-          "An increase in the carbon dioxide concentration of the blood stimulates breathing, which increases the rate at which carbon dioxide is eliminated from the body.",
-          "Contractions of the uterus push the fetus against the cervix, which triggers release of oxytocin into the bloodstream; oxytocin then stimulates stronger contractions of the uterus.",
+          "An increase in the blood carbon dioxide concentration stimulates breathing, which increases the rate at which carbon dioxide is eliminated from the body.",
+          "Uterus contractions push the fetus against the cervix, which triggers release of oxytocin into the bloodstream; oxytocin then stimulates stronger uterus contractions.",
         ],
-        answer: "Contractions of the uterus push the fetus against the cervix, which triggers release of oxytocin into the bloodstream; oxytocin then stimulates stronger contractions of the uterus.",
+        answer: "Uterus contractions push the fetus against the cervix, which triggers release of oxytocin into the bloodstream; oxytocin then stimulates stronger uterus contractions.",
       },
       {
         id: 2,
-        question: "The hormone aldosterone stimulates the reabsorption of sodium ions from the lumen of a kidney tubule. Based on your knowledge of the body’s cell types, you can surmise that this hormone acts on",
+        question: "The hormone aldosterone stimulates the reabsorption of sodium ions from a kidney tubule's lumen. This hormone acts on ____",
         options: ["Neurons.", "Muscle cells.", "Epithelial cells.", "Connective tissue cells."],
         answer: "Epithelial cells.",
       },
       {
         id: 3,
-        question: "Hormones are secreted",
-        options: ["Into the blood.", "From exocrine glands.", "From endocrine glands.", "Both a and b are true.", "Both a and c are true."],
-        answer: "Both a and c are true.",
+        question: "Hormones are secreted...",
+        options: ["Into the blood.", "From exocrine glands.", "From endocrine glands.", "Both into the blood and from exocrine glands.", "Both into the blood and from endocrine glands."],
+        answer: "Both into the blood and from endocrine glands.",
         answerImage: "/images/Figure 1.3 Glands.png",
       },
       {
@@ -97,7 +97,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 7,
-        question: "Maintenance of constant conditions in the internal environment is known as           .",
+        question: "Internal environment constant conditions maintenance is ____.",
         options: ["exocytosis", "gluconeogenesis", "homeostasis", "ionotropic"],
         answer: "homeostasis",
       },
@@ -141,20 +141,20 @@ export const quizzes: Quiz[] = [
     questions: [
       {
         id: 1,
-        question: "Which of the following biomolecules is not a polymer?",
+        question: "Which biomolecule is not a polymer?",
         options: ["Polysaccharide", "Phospholipid", "Protein", "Nucleic acid"],
         answer: "Phospholipid",
       },
 
       {
         id: 2,
-        question: "A fatty acid that has two double bonds between carbon atoms is called",
+        question: "A fatty acid that has two double bonds between carbon atoms is ____",
         options: ["A saturated fatty acid.", "A desaturated fatty acid.", "A monounsaturated fatty acid.", "A polyunsaturated fatty acid.", "An eicosanoid."],
         answer: "A polyunsaturated fatty acid.",
       },
       {
         id: 3,
-        question: "Which of the following molecules is not a component of a phospholipid?",
+        question: "Which molecules is not a component of a phospholipid?",
         options: ["Cholesterol", "Glycerol", "Phosphate", "Fatty acid"],
         answer: "Cholesterol",
       },
@@ -166,7 +166,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 5,
-        question: "Which of the following nucleic acids is not a pyrimidine?",
+        question: "Which nucleic acids is not a pyrimidine?",
         options: ["Cytosine", "Thymine", "Uracil", "Adenine"],
         answer: "Adenine",
       },
@@ -179,14 +179,14 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 7,
-        question: "Which organelle produces most of a cell’s ATP?",
+        question: "Which organelle produces most of a cell's ATP?",
         options: ["Nucleus", "Peroxisome", "Golgi apparatus", "Mitochondrion", "Smooth endoplasmic reticulum"],
         answer: "Mitochondrion",
       },
       {
         id: 8,
         question: "Which cell-to-cell adhesion allows quick transmission of electrical signals between adjacent cells?",
-        options: ["Desmosome", "Gap junction", "Tight junction", "All of the above"],
+        options: ["Desmosome", "Gap junction", "Tight junction"],
         answer: "Gap junction",
       },
 
@@ -267,7 +267,7 @@ export const quizzes: Quiz[] = [
 
       {
         id: 21,
-        question: "The membrane of the smooth endoplasmic reticulum is continuous with the membrane of the Golgi apparatus. (true/false)",
+        question: "The membrane of the smooth endoplasmic reticulum is continuous with the membrane of the Golgi apparatus.",
         options: ["true", "false"],
         answer: "false",
       },
@@ -297,7 +297,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 26,
-        question: "More than one codon may code for a single amino acid. (true/false)",
+        question: "More than one codon may code for a single amino acid.",
         options: ["true", "false"],
         answer: "true",
       },
@@ -343,7 +343,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 2,
-        question: "Which of the following illustrates substrate-level phosphorylation?  (P - phosphate, X - metabolic intermediate)",
+        question: "Which illustrates substrate-level phosphorylation?  (P - phosphate, X - metabolic intermediate)",
         options: ["ATP → ADP + Pᵢ", "ADP + Pᵢ → ATP", "X - P → X + P", "X - P + ADP → X + ATP"],
         answer: "X - P + ADP → X + ATP",
       },
@@ -361,13 +361,13 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 5,
-        question: "Which of the following reactions is an example of hydrolysis?",
+        question: "Which reaction is an example of hydrolysis?",
         options: ["Amino acid 1 + amino acid 2 → dipeptide + H₂O", "Lactose + H₂O → glucose + galactose", "Glucose1-phosphate → gludcose- 6-phosphate", "Glucose + 6O₂ → 6O₂ + 6H₂O", "Water (liquid) + heat → water (steam)"],
         answer: "Lactose + H₂O → glucose + galactose",
       },
       {
         id: 6,
-        question: "Which of the following classes of organic molecules can be used to synthesize triglycerides?",
+        question: "Which classes of organic molecules can be used to synthesize triglycerides?",
         options: ["Carbohydrates only", "Lipids only", "Proteins only", "Carbohydrates and lipids only", "Carbohydrates, lipids, and proteins"],
         answer: "Carbohydrates, lipids, and proteins",
       },
@@ -387,13 +387,13 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 9,
-        question: "Which of the following is carried out by enzymes in the cytosol?",
+        question: "Which is carried out by enzymes in the cytosol?",
         options: ["Glycolysis", "Linking step", "Krebs cycle", "Oxidative phosphorylation", "Chemiosmotic coupling"],
         answer: "Glycolysis",
       },
       {
         id: 10,
-        question: "In which of the following is carbon dioxide generated?",
+        question: "In Which is carbon dioxide generated?",
         options: ["Glycolysis only", "Linking step only", "Krebs cycle only", "Glycolysis and Krebs cycle", "Linking step and Krebs cycle"],
         answer: "Linking step and Krebs cycle",
       },
@@ -424,13 +424,13 @@ export const quizzes: Quiz[] = [
 
       {
         id: 15,
-        question: "Allosteric regulation involves the ­attachment of a modulator molecule to an enzyme by means of a covalent bond. (true/false)",
+        question: "Allosteric regulation involves the ­attachment of a modulator molecule to an enzyme by means of a covalent bond.",
         options: [],
         answer: "false",
       },
       {
         id: 16,
-        question: "Glycogenolysis is an example of a ­catabolic reaction. (true/false)",
+        question: "Glycogenolysis is an example of a ­catabolic reaction.",
         options: [],
         answer: "true",
       },
@@ -442,8 +442,8 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 18,
-        question: "When ATP is synthesized using energy released in glucose oxidation, most of the ATP is synthesized by oxidative ­phosphorylation. (true/false)",
-        options: [],
+        question: "When ATP is synthesized using energy released in glucose oxidation, most of the ATP is synthesized by oxidative ­phosphorylation.",
+        options: ["true", "false"],
         answer: "true",
       },
       {
@@ -454,8 +454,8 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 20,
-        question: "Unless a substance is an essential nutrient, it is not necessary for proper cellular function. (true/false)",
-        options: [],
+        question: "Unless a substance is an essential nutrient, it is not necessary for proper cellular function.",
+        options: ["true", "false"],
         answer: "false",
       },
       {
@@ -481,19 +481,19 @@ export const quizzes: Quiz[] = [
     questions: [
       {
         id: 1,
-        question: "Which of the following is located in greater concentration inside cells compared to outside?",
+        question: "Which is located in greater concentration inside cells compared to outside?",
         options: ["Potassium ions", "Sodium ions", "Proteins", "Potassium and sodium ions are both located in greater concentration inside cells.", "Potassium ions and proteins are both located in greater concentration inside cells."],
         answer: "Potassium ions and proteins are both located in greater concentration inside cells.",
       },
       {
         id: 2,
-        question: "If a certain anion is located in greater concentration inside the cell and a negative membrane potential exists, then which of the following statements is true?",
-        options: ["The electrical force on the anion tries to move it into the cell.", "The chemical force on the anion tries to move it into the cell.", "The equilibrium potential for the ­anion is a positive value.", "Both a and c are correct.", "All of the above are correct."],
+        question: "If a certain anion is located in greater concentration inside the cell and a negative membrane potential exists, then Wwich statements is true?",
+        options: ["The electrical force on the anion tries to move it into the cell.", "The chemical force on the anion tries to move it into the cell.", "The equilibrium potential for the ­anion is a positive value.", "Both a and c are correct."],
         answer: "The equilibrium potential for the ­anion is a positive value.",
       },
       {
         id: 3,
-        question: "Given that the potassium equilibrium potential is -94 mV and the sodium equilibrium potential is +60 mV, which of the following statements is true for forces acting on sodium and potassium when a cell is at -70 mV?",
+        question: "Given that the potassium equilibrium potential is -94 mV and the sodium equilibrium potential is +60 mV, which statements is true for forces acting on sodium and potassium when a cell is at -70 mV?",
         options: ["The electrochemical gradient for Na⁺ tries to move it into the cell.", "The electrochemical gradient for K⁺ tries to move it into the cell.", "Both a and b are correct.", "Neither a nor b is correct."],
         answer: "The electrochemical gradient for Na⁺ tries to move it into the cell.",
       },
@@ -506,12 +506,12 @@ export const quizzes: Quiz[] = [
       {
         id: 5,
         question: "The osmotic pressure of a solution ­depends on",
-        options: ["The concentrations of all solute particles contained in it.", "The concentrations of all permeant solute particles contained in it.", "The concentrations of all impermeant solute particles contained in it.", "The pressure exerted on the solution by the atmosphere.", "The volume of water in which the solute particles are dissolved."],
+        options: ["The concentrations of all solute particles contained in it.", "The concentrations of all permeant solute particles contained in it.", "The concentrations of all impermeant solute particles contained in it.", "The atmosphere pressure exerted on the solution.", "The volume of water in which the solute particles are dissolved."],
         answer: "The concentrations of all solute particles contained in it.",
       },
       {
         id: 6,
-        question: "Assuming that only impermeant solutes are present, which of the following will occur when a cell is placed in a solution whose osmolarity is 200 mOsm?",
+        question: "Assuming that only impermeant solutes are present, which will occur when a cell is placed in a solution whose osmolarity is 200 mOsm?",
         options: ["Water will move into the cell.", "Water will move out of the cell.", "Water will not cross the cell membrane."],
         answer: "Water will move into the cell.",
       },
@@ -543,8 +543,8 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 11,
-        question: "Which of the following transport mechanisms functions to bring a specific extracellular substance into the cell?",
-        options: ["Receptor-mediated endocytosis", "Pinocytosis", "Phagocytosis", "Both Receptor-mediated endocytosis and Phagocytosis", "All of the above"],
+        question: "Which transport mechanisms functions to bring a specific extracellular substance into the cell?",
+        options: ["Receptor-mediated endocytosis", "Pinocytosis", "Phagocytosis", "Both Receptor-mediated endocytosis and Phagocytosis"],
         answer: "Both Receptor-mediated endocytosis and Phagocytosis",
       },
       {
@@ -613,7 +613,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 3,
-        question: "Most chemical messengers fall into which of the following chemical classes?",
+        question: "Most chemical messengers fall into which chemical classes?",
         options: ["Amines", "Amino acids", "Peptides/proteins", "Eicosanoids", "Steroids"],
         answer: "Peptides/proteins",
       },
@@ -631,19 +631,19 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 6,
-        question: "Which of the following is likely to cause an increase in intracellular cAMP levels?",
+        question: "Which is likely to cause an increase in intracellular cAMP levels?",
         options: ["Stimulation of phosphodiesterase activity", "Activation of an inhibitory G protein targeting adenylate cyclase", "Binding of chemical messengers to enzyme-linked receptors", "Binding of chemical messengers to receptor-operated channels", "Stimulation of adenylate cyclase activity"],
         answer: "Stimulation of adenylate cyclase activity",
       },
       {
         id: 7,
-        question: "Which of the following messenger classes bind to intracellular receptors?",
+        question: "Which messenger classes bind to intracellular receptors?",
         options: ["Catecholamines only", "Peptides only", "Steroids only", "Both catecholamines and steroids", "Both peptides and steroids"],
         answer: "Steroids only",
       },
       {
         id: 8,
-        question: "The response of a target cell to a messenger depends on which of the following?",
+        question: "The response of a target cell to a messenger depends on ____?",
         options: ["Concentration of the messenger", "Concentration of receptors on the target cell", "Affinity of the receptor for the messenger", "Both a and c", "All of the above"],
         answer: "All of the above",
       },
@@ -655,7 +655,7 @@ export const quizzes: Quiz[] = [
           "Binding of ligand molecules to cell surface receptors triggers activation or inhibition of enzymes.",
           "Binding of ligand molecules to cell surface receptors triggers synthesis of second messengers.",
           "Binding of ligand molecules to cell surface receptors triggers a change in membrane permeability to ions.",
-          "All of the above are true.",
+          "All of the above.",
         ],
         answer: "Binding of ligand molecules to cell surface receptors triggers synthesis of second messengers.",
       },
@@ -668,7 +668,7 @@ export const quizzes: Quiz[] = [
       {
         id: 11,
         question: "Cells that secrete a messenger are called           .",
-        options: [],
+        options: ["secretory cells"],
         answer: "secretory cells",
       },
       {
@@ -753,13 +753,13 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 2,
-        question: "Which of the following is an accurate statement regarding regulation of pituitary hormone secretion by the hypothalamus?",
+        question: "Which is true regarding regulation of pituitary hormone secretion by the hypothalamus?",
         options: [
           "All pituitary hormones are regulated by tropic hormones from the hypothalamus.",
           "All anterior pituitary hormones are regulated by a releasing hormone and a release-inhibiting hormone from the hypothalamus.",
           "All posterior pituitary hormones are regulated by a releasing hormone from the hypothalamus.",
           "All anterior pituitary hormones are tropic hormones.",
-          "None of the above is accurate.",
+          "None of the above.",
         ],
         answer: "All pituitary hormones are regulated by tropic hormones from the hypothalamus.",
       },
@@ -771,32 +771,32 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 4,
-        question: "Gonadotropin releasing hormone stimulates release of which of the following from the anterior pituitary?",
+        question: "Gonadotropin releasing hormone stimulates release of ____ from the anterior pituitary?",
         options: ["Sex hormones", "Follicle stimulating hormone", "Luteinizing hormone", "Both follicle stimulating hormone and luteinizing hormone"],
         answer: "Both follicle stimulating hormone and luteinizing hormone",
       },
       {
         id: 5,
-        question: "Which of the following adrenal hormones is secreted by chromaffin cells?",
+        question: "Which adrenal hormones is secreted by chromaffin cells?",
         options: ["Cortisol", "Aldosterone", "Epinephrine", "Androgens"],
         answer: "Epinephrine",
       },
       {
         id: 6,
         question: "In primary hyposecretion of thyroid hormones,",
-        options: ["Levels of thyroid hormones in the blood decrease.", "Levels of TRH in the blood decrease.", "Levels of TSH in the blood decrease.", "All of the above are true.", "None of the above is true."],
+        options: ["Levels of thyroid hormones in the blood decrease.", "Levels of TRH in the blood decrease.", "Levels of TSH in the blood decrease."],
         answer: "Levels of thyroid hormones in the blood decrease.",
       },
       {
         id: 7,
-        question: "Which of the following organs secretes glucagon?",
+        question: "Which organs secretes glucagon?",
         options: ["Liver", "Anterior pituitary", "Posterior pituitary", "Adrenal gland", "Pancreas"],
         answer: "Pancreas",
       },
       {
         id: 8,
-        question: "Which of the following is an example of permissiveness?",
-        options: ["Glucagon increases blood glucose levels, and insulin decreases blood glucose levels.", "Glucagon, epinephrine, and cortisol all increase blood glucose levels.", "Estrogen stimulates synthesis of progesterone receptors in the endometrium.", "All of the above.", "None of the above."],
+        question: "Which is an example of permissiveness?",
+        options: ["Glucagon increases blood glucose levels, and insulin decreases blood glucose levels.", "Glucagon, epinephrine, and cortisol all increase blood glucose levels.", "Estrogen stimulates synthesis of progesterone receptors in the endometrium."],
         answer: "Estrogen stimulates synthesis of progesterone receptors in the endometrium.",
       },
       {
@@ -807,14 +807,14 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 10,
-        question: "Neural input to the hypothalamus is involved in regulating secretion of hormones by both lobes of the pituitary. (true/false)",
+        question: "Neural input to the hypothalamus is involved in regulating secretion of hormones by both lobes of the pituitary.",
         options: ["true", "false"],
         answer: "true",
       },
       {
         id: 11,
-        question: "Epinephrine is secreted by the adrenal (medulla/cortex).",
-        options: ["medulla"],
+        question: "The adrenal ____ secretes epinephrine.",
+        options: ["medulla", "cortex"],
         answer: "medulla",
       },
       {
@@ -833,8 +833,8 @@ export const quizzes: Quiz[] = [
 
       {
         id: 14,
-        question: "Calcitonin is secreted by the (thyroid gland/parathyroid gland).",
-        options: ["thyroid gland"],
+        question: "____ secretes calcitonin.",
+        options: ["thyroid gland", "parathyroid gland"],
         answer: "thyroid gland",
       },
     ],
@@ -859,13 +859,13 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 3,
-        question: "If a cation is equally distributed across the cell membrane (that is, its concentration inside the cell equals its concentration outside the cell), then which of the following statements is false?",
+        question: "If a cation is equally distributed across the cell membrane (that is, its concentration inside the cell equals its concentration outside the cell), then which statements is false?",
         options: ["At −70 mV, the chemical force on the ion is zero.", "At −70 mV, the electrical force on the ion acts to move it into the cell.", "At +30 mV, the chemical force on the ion is zero.", "The equilibrium potential for the ion is zero.", "At −70 mV, the electrochemical force on the ion acts to move it out of the cell."],
         answer: "At −70 mV, the electrochemical force on the ion acts to move it out of the cell.",
       },
       {
         id: 4,
-        question: "The depolarization phase of an action ­potential is caused by the",
+        question: "An action potential's depolarization phase is caused by ____",
         options: ["Opening of potassium channels.", "Closing of potassium channels.", "Opening of sodium channels.", "Closing of sodium channels."],
         answer: "Opening of sodium channels.",
       },
@@ -901,25 +901,25 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 10,
-        question: "Which of the following neurons are part of the peripheral nervous system?",
+        question: "Which neurons are part of the peripheral nervous system?",
         options: ["Motor neurons innervating skeletal muscles", "Parasympathetic neurons", "Sympathetic neurons", "All of the above"],
         answer: "All of the above",
       },
       {
         id: 11,
-        question: "Which of the following axons exhibits the greatest conduction velocity?",
+        question: "Which axons exhibits the greatest conduction velocity?",
         options: ["An unmyelinated axon with diameter 5 μm", "A myelinated axon with diameter 5 μm", "An unmyelinated axon with diameter 20 μm", "A myelinated axon with diameter 20 μm"],
         answer: "A myelinated axon with diameter 20 μm",
       },
       {
         id: 12,
-        question: "Which of the following best describes the status of sodium channels at the resting membrane potential?",
+        question: "Which best describes the status of sodium channels at the resting membrane potential?",
         options: ["Activation gates are open and inactivation gates are closed.", "Activation gates are closed and inactivation gates are open.", "Activation gates and inactivation gates are closed.", "Activation gates and inactivation gates are open."],
         answer: "Activation gates are closed and inactivation gates are open.",
       },
       {
         id: 13,
-        question: "Which of the following is not a part of the efferent division of the nervous system?",
+        question: "Which is not a part of the efferent division of the nervous system?",
         options: ["Parasympathetic nervous system", "Sympathetic nervous system", "Motor neurons", "Sensory receptors"],
         answer: "Sensory receptors",
       },
@@ -931,7 +931,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 15,
-        question: "Which of the following statements about graded potentials is false?",
+        question: "Which statements about graded potentials is false?",
         options: ["The magnitude of a graded potential varies with the strength of the stimulus.", "Some graded potentials are ­hyperpolarizations; others are depolarizations.", "Graded potentials are produced at ligand-gated ion channels.", "Graded potentials can sum over space and time.", "Graded potentials are limited in ­duration by the refractory period."],
         answer: "Graded potentials are limited in ­duration by the refractory period.",
       },
@@ -943,7 +943,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 17,
-        question: "Information from the periphery is brought to the central nervous system by (afferent/efferent) pathways.",
+        question: "Info from the periphery is brought to the central nervous system by (afferent/efferent) pathways.",
         options: ["afferent"],
         answer: "afferent",
       },
@@ -997,13 +997,13 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 26,
-        question: "Both sodium and potassium channels have inactivation gates that close shortly after the activation gates open. (true/false)",
+        question: "Both sodium and potassium channels have inactivation gates that close shortly after the activation gates open.",
         options: ["true", "false"],
         answer: "false",
       },
       {
         id: 27,
-        question: "When sodium inactivation gates are closed, a second action potential is impossible. (true/false)",
+        question: "When sodium inactivation gates are closed, a second action potential is impossible.",
         options: ["true", "false"],
         answer: "true",
       },
@@ -1015,7 +1015,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 29,
-        question: "The Na⁺/K⁺ pump causes the repolarization phase of an action potential. (true/false)",
+        question: "The Na⁺/K⁺ pump causes the repolarization phase of an action potential.",
         options: ["true", "false"],
         answer: "false",
       },
@@ -1071,13 +1071,13 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 7,
-        question: "Which of the following neurotransmitters is a biogenic amine but not a catecholamine?",
+        question: "Which neurotransmitters is a biogenic amine but not a catecholamine?",
         options: ["Norepinephrine", "Serotonin", "Dopamine", "Epinephrine"],
         answer: "Serotonin",
       },
       {
         id: 8,
-        question: "Which of the following is most likely to occur at an axoaxonic synapse?",
+        question: "Which is most likely to occur at an axoaxonic synapse?",
         options: ["An EPSP", "An IPSP", "Stabilization of the membrane potential", "Temporal summation", "Presynaptic modulation"],
         answer: "Presynaptic modulation",
       },
@@ -1101,7 +1101,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 12,
-        question: "When the opening of ion channels allows both sodium and potassium ions to move through, no change in membrane potential occurs because sodium moves into the cell and potassium moves out of the cell. (true/false)",
+        question: "When the opening of ion channels allows both sodium and potassium ions to move through, no change in membrane potential occurs because sodium moves into the cell and potassium moves out of the cell.",
         options: ["true", "false"],
         answer: "false",
       },
@@ -1113,19 +1113,19 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 14,
-        question: "Whether a synapse is excitatory or inhibitory is determined by the mechanism of coupling between the neurotransmitter receptor and ion channels in the postsynaptic cell. (true/false)",
+        question: "Whether a synapse is excitatory or inhibitory is determined by the mechanism of coupling between the neurotransmitter receptor and ion channels in the postsynaptic cell.",
         options: ["true", "false"],
         answer: "true",
       },
       {
         id: 15,
-        question: "The synaptic delay includes the time it takes for an action potential to travel from the trigger zone of a presynaptic cell to the axon terminal. (true/false)",
+        question: "The synaptic delay includes the time it takes for an action potential to travel from the trigger zone of a presynaptic cell to the axon terminal.",
         options: ["true", "false"],
         answer: "false",
       },
       {
         id: 16,
-        question: "A given neurotransmitter might be excitatory at one synapse and inhibitory at another synapse. (true/false)",
+        question: "A given neurotransmitter might be excitatory at one synapse and inhibitory at another synapse.",
         options: ["true", "false"],
         answer: "true",
       },
@@ -1200,7 +1200,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 7,
-        question: "Which of the following is not a component of the limbic system?",
+        question: "Which is not a component of the limbic system?",
         options: ["Hippocampus", "Cerebral cortex", "Amygdala", "Midbrain", "Hypothalamus"],
         answer: "Midbrain",
       },
@@ -1218,7 +1218,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 10,
-        question: "Which of the following reflexes is monosynaptic?",
+        question: "Which reflex is monosynaptic?",
         options: ["Withdrawal reflex", "Crossed-extensor reflex", "Muscle spindle stretch reflex", "Both a and c", "All of the above"],
         answer: "Muscle spindle stretch reflex",
       },
@@ -1232,7 +1232,7 @@ export const quizzes: Quiz[] = [
       {
         id: 12,
         question: "Long-term potentiation is",
-        options: ["A prolonged increase in synaptic activity at a given synapse.", "The formation of new synapses.", "Memory from more than 10 years ago.", "Activated through the ascending reticular activating system.", "All of the above."],
+        options: ["A prolonged increase in synaptic activity at a given synapse.", "The formation of new synapses.", "Memory from more than 10 years ago.", "Activated through the ascending reticular activating system."],
         answer: "A prolonged increase in synaptic activity at a given synapse.",
       },
       {
@@ -1303,13 +1303,13 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 24,
-        question: "The ability to recall information when taking physiology exams is an example of            memory.",
+        question: "The ability to recall info when taking physiology exams is an example of            memory.",
         options: ["declarative"],
         answer: "declarative",
       },
       {
         id: 25,
-        question: "The afferents that activate reflex motor actions are different from those that activate ascending tracts to communicate a sensory input to the brain. (true/false)",
+        question: "The afferents that activate reflex motor actions are different from those that activate ascending tracts to communicate a sensory input to the brain.",
         options: ["true", "false"],
         answer: "false",
       },
@@ -1325,7 +1325,7 @@ export const quizzes: Quiz[] = [
       {
         id: 1,
         question: "The strength of a stimulus is coded by",
-        options: ["The size of the receptor potential.", "The size of the action potentials.", "The frequency of action potentials.", "Both the size of the receptor potential and the frequency of action potentials.", "All of the above."],
+        options: ["The size of the receptor potential.", "The size of the action potentials.", "The frequency of action potentials.", "Both the size of the receptor potential and the frequency of action potentials."],
         answer: "Both the size of the receptor potential and the frequency of action potentials.",
       },
       {
@@ -1337,27 +1337,27 @@ export const quizzes: Quiz[] = [
       {
         id: 3,
         question: "In lateral inhibition,",
-        options: ["The nervous system produces contrast to emphasize more-important information over less-important information.", "Afferent neurons with neighboring receptive fields inhibit each other’s communication to second-order neurons.", "The ability to locate the site of a stimulus is enhanced.", "Both a and c.", "All of the above."],
+        options: ["The nervous system produces contrast to emphasize more-important info over less-important info.", "Afferent neurons with neighboring receptive fields inhibit each other’s communication to second-order neurons.", "The ability to locate the site of a stimulus is enhanced.", "Both a and c.", "All of the above."],
         answer: "All of the above.",
       },
       {
         id: 4,
-        question: "Which of the following observations best illustrates the concept of the labeled line?",
+        question: "Which observation best illustrates the concept of the labeled line?",
         options: [
           "When a boxer gets punched in the eye, he perceives light.",
           "Rotation of the head stimulates certain receptors in the vestibular system but not those in the visual system.",
-          "Information from different photoreceptors converges on a single ganglion cell that projects to the lateral geniculate nucleus.",
+          "Info from different photoreceptors converges on a single ganglion cell that projects to the lateral geniculate nucleus.",
           "Hair cells in the cochlea are stimulated by sound vibrations over a wide range of frequencies.",
         ],
         answer: "When a boxer gets punched in the eye, he perceives light.",
       },
       {
         id: 5,
-        question: "Which of the following best illustrates the concept of an adequate stimulus?",
+        question: "Which best illustrates the concept of an adequate stimulus?",
         options: [
           "When a boxer gets punched in the eye, he perceives light.",
           "Rotation of the head stimulates certain receptors in the vestibular system but not those in the visual system.",
-          "Information from different photoreceptors converges on a single ganglion cell that projects to the lateral geniculate nucleus.",
+          "Info from different photoreceptors converges on a single ganglion cell that projects to the lateral geniculate nucleus.",
           "Hair cells in the cochlea are stimulated by sound vibrations over a wide range of frequencies.",
         ],
         answer: "Rotation of the head stimulates certain receptors in the vestibular system but not those in the visual system.",
@@ -1371,24 +1371,24 @@ export const quizzes: Quiz[] = [
       {
         id: 7,
         question: "In the dorsal column–medial lemniscal pathway,",
-        options: ["Proprioception information is transmitted to the brain.", "The first-order neuron communicates to the second-order neuron in the dorsal horn of the spinal cord.", "The pathway crosses to the contralateral side in the spinal cord.", "Both a and c.", "All of the above."],
-        answer: "Proprioception information is transmitted to the brain.",
+        options: ["Proprioception info is transmitted to the brain.", "The first-order neuron communicates to the second-order neuron in the dorsal horn of the spinal cord.", "The pathway crosses to the contralateral side in the spinal cord.", "Both a and c."],
+        answer: "Proprioception info is transmitted to the brain.",
       },
       {
         id: 8,
-        question: "Which of the following is the correct name of the pathway from the retina to the optic chiasm?",
+        question: "Which is the correct name of the pathway from the retina to the optic chiasm?",
         options: ["Optic tract", "Optic radiations", "Optic nerve", "Optic disk"],
         answer: "Optic nerve",
       },
       {
         id: 9,
-        question: "Which of the following is the correct name of the pathway from the lateral geniculate nucleus of the thalamus to the visual cortex?",
+        question: "Which is the correct name of the pathway from the lateral geniculate nucleus of the thalamus to the visual cortex?",
         options: ["Optic tract", "Optic radiations", "Optic nerve", "Optic chiasm", "Optic disk"],
         answer: "Optic radiations",
       },
       {
         id: 10,
-        question: "Where would you expect to find the ascending tracts for somatosensory information?",
+        question: "Where would you expect to find the ascending tracts for somatosensory info?",
         options: ["In the white matter of the spinal cord", "In a spinal nerve", "In the gray matter of the spinal cord", "None of the above"],
         answer: "In the white matter of the spinal cord",
       },
@@ -1407,7 +1407,7 @@ export const quizzes: Quiz[] = [
       {
         id: 13,
         question: "The parasympathetic nervous system causes",
-        options: ["Contraction of the radial muscle of the iris.", "Contraction of the ciliary muscle.", "Pupillary dilation.", "Both a and c.", "All of the above."],
+        options: ["Contraction of the radial muscle of the iris.", "Contraction of the ciliary muscle.", "Pupillary dilation.", "Both a and c."],
         answer: "Contraction of the ciliary muscle.",
       },
       {
@@ -1436,7 +1436,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 18,
-        question: "Information about touch detected on the left side of the body is transmitted to the brain in the dorsal columns on the            side of the spinal cord.",
+        question: "Info about touch detected on the left side of the body is transmitted to the brain in the dorsal columns on the            side of the spinal cord.",
         options: ["left"],
         answer: "left",
       },
@@ -1460,7 +1460,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 22,
-        question: "A hair cell in the cochlea can be excited by sounds of different frequencies. (true/false)",
+        question: "A hair cell in the cochlea can be excited by sounds of different frequencies.",
         options: ["true", "false"],
         answer: "false",
       },
@@ -1478,25 +1478,25 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 25,
-        question: "A single ganglion cell will either be excited or inhibited by light applied to its visual field. (true/false)",
+        question: "A single ganglion cell will either be excited or inhibited by light applied to its visual field.",
         options: ["true", "false"],
         answer: "false",
       },
       {
         id: 26,
-        question: "The visual cortex on the left side of the brain receives information from the right eye only. (true/false)",
+        question: "The visual cortex on the left side of the brain receives info from the right eye only.",
         options: ["true", "false"],
         answer: "true",
       },
       {
         id: 27,
-        question: "Odorant molecules must be dissolved in mucus if they are to bind to olfactory receptors. (true/false)",
+        question: "Odorant molecules must be dissolved in mucus if they are to bind to olfactory receptors.",
         options: ["true", "false"],
         answer: "true",
       },
       {
         id: 28,
-        question: "A given taste receptor cell responds to only one of the four primary tastes. (true/false)",
+        question: "A given taste receptor cell responds to only one of the four primary tastes.",
         options: ["true", "false"],
         answer: "false",
       },
@@ -1541,7 +1541,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 6,
-        question: "Which of the following second messengers stimulates the release of calcium from intracellular stores?",
+        question: "Which second messengers stimulates the release of calcium from intracellular stores?",
         options: ["cAMP", "Inositol triphosphate", "Diacylglycerol"],
         answer: "Inositol triphosphate",
       },
@@ -1586,25 +1586,25 @@ export const quizzes: Quiz[] = [
     questions: [
       {
         id: 1,
-        question: "When a muscle cell is relaxed and intracellular ATP levels are normal, a crossbridge will remain in which of the following states?",
+        question: "When a muscle cell is relaxed and intracellular ATP levels are normal, a crossbridge will remain in which states?",
         options: ["Bound to actin and in the low-energy form", "Bound to actin and in the high-energy form", "In the high-energy form, with ADP and Pi bound to it", "In the high-energy form, with ATP bound to it", "In the low-energy form with nothing bound to it"],
         answer: "In the high-energy form, with ADP and Pi bound to it",
       },
       {
         id: 2,
-        question: "During a muscle contraction, which of the following does not change length?",
+        question: "During a muscle contraction, which does not change length?",
         options: ["The distance between Z lines", "The width of I bands", "The width of A bands", "None of the above"],
         answer: "The width of A bands",
       },
       {
         id: 3,
-        question: "Which of the following would tend to ­reduce the concentration of lactic acid that accumulates in a muscle cell as a ­result of contractile activity?",
+        question: "Which would tend to ­reduce the concentration of lactic acid that accumulates in a muscle cell as a ­result of contractile activity?",
         options: ["Increasing the concentration of glycolytic enzymes", "Decreasing the oxygen supply to the cell", "Increasing the diameter of the cell", "Increasing the number of mitochondria in the cell", "All of the above"],
         answer: "Increasing the number of mitochondria in the cell",
       },
       {
         id: 4,
-        question: "Which of the following statements is a valid generalization regarding the properties of smooth muscle?",
+        question: "Which statement is a valid generalization regarding the properties of smooth muscle?",
         options: [
           "Neurotransmitters can either excite or inhibit smooth muscle contraction, but any given neurotransmitter is always excitatory or inhibitory, regardless of where the muscle is located.",
           "A given smooth muscle cell can respond to more than one type of neurotransmitter.",
@@ -1616,7 +1616,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 5,
-        question: "Which of the following is not a determinant of whole muscle tension?",
+        question: "Which is not a determinant of whole muscle tension?",
         options: ["The number of muscle fibers contracting", "The tension produced by each contracting fiber", "The proportion of each motor unit that is contracting at any given time", "The extent of fatigue", "The frequency of action potentials in the motor neurons"],
         answer: "The proportion of each motor unit that is contracting at any given time",
       },
@@ -1628,25 +1628,25 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 7,
-        question: "Which of the following is true for the ­excitation-contraction coupling of all muscle types (skeletal, cardiac, and smooth)?",
-        options: ["An action potential causes calcium levels in the cytosol to increase.", "Calcium binds to troponin.", "Thick and thin filaments slide past each other.", "Both an action potential causes calcium levels in the cytosol to increase and thick and thin filaments slide past each other.", "All of the above."],
+        question: "Which is true for the ­excitation-contraction coupling of all muscle types (skeletal, cardiac, and smooth)?",
+        options: ["An action potential causes calcium levels in the cytosol to increase.", "Calcium binds to troponin.", "Thick and thin filaments slide past each other.", "Both an action potential causes calcium levels in the cytosol to increase and thick and thin filaments slide past each other."],
         answer: "Both an action potential causes calcium levels in the cytosol to increase and thick and thin filaments slide past each other.",
       },
       {
         id: 8,
         question: "During contraction of a skeletal muscle fiber,",
-        options: ["The thick filaments contract.", "The thin filaments contract.", "The A band becomes shorter.", "The I band becomes shorter.", "All of the above."],
+        options: ["The thick filaments contract.", "The thin filaments contract.", "The A band becomes shorter.", "The I band becomes shorter."],
         answer: "The I band becomes shorter.",
       },
       {
         id: 9,
-        question: "Which of the following statements concerning the characteristics of different types of muscle fibers is false?",
+        question: "Which statements concerning the characteristics of different types of muscle fibers is false?",
         options: ["The higher the myosin ATPase activity, the faster the speed of contraction.", "Muscles that have high glycolytic capacity and large glycogen stores are more resistant to fatigue.", "Oxidative types of muscle fibers contain myoglobin.", "Oxidative fibers have a richer blood supply.", "Larger-diameter fibers can produce greater tension."],
         answer: "Muscles that have high glycolytic capacity and large glycogen stores are more resistant to fatigue.",
       },
       {
         id: 10,
-        question: "Which of the following muscle types contain gap junctions?",
+        question: "Which muscle types contain gap junctions?",
         options: ["Skeletal muscle", "Smooth muscle", "Cardiac muscle", "Both skeletal muscle and smooth muscle", "Both smooth muscle and cardiac muscle"],
         answer: "Both smooth muscle and cardiac muscle",
       },
@@ -1658,13 +1658,13 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 12,
-        question: "When a muscle fiber contracts, the I bands shorten. (true/false)",
+        question: "When a muscle fiber contracts, the I bands shorten.",
         options: ["true", "false"],
         answer: "true",
       },
       {
         id: 13,
-        question: "Glycolytic fibers generate more force than oxidative fibers because they are larger in diameter. (true/false)",
+        question: "Glycolytic fibers generate more force than oxidative fibers because they are larger in diameter.",
         options: ["true", "false"],
         answer: "true",
       },
@@ -1712,7 +1712,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 21,
-        question: "According to the size principle, the force-generating capacity of a muscle fiber increases in direct proportion to its length. (true/false)",
+        question: "According to the size principle, the force-generating capacity of a muscle fiber increases in direct proportion to its length.",
         options: ["true", "false"],
         answer: "false",
       },
@@ -1751,18 +1751,18 @@ export const quizzes: Quiz[] = [
       {
         id: 5,
         question: "Sympathetic and parasympathetic input to the SA node influences",
-        options: ["Ventricular filling time.", "Ventricular contractility.", "Afterload.", "Atrial contractility.", "All of the above."],
+        options: ["Ventricular filling time.", "Ventricular contractility.", "Afterload.", "Atrial contractility."],
         answer: "Ventricular filling time.",
       },
       {
         id: 6,
-        question: "Which of the following contains deoxygenated blood?",
+        question: "Which contains deoxygenated blood?",
         options: ["The right ventricle", "The left ventricle", "Pulmonary veins", "The aorta", "Both a and c are true"],
         answer: "The right ventricle",
       },
       {
         id: 7,
-        question: "Which of the following is not normally apparent in the ECG?",
+        question: "Which is not normally apparent in the ECG?",
         options: ["Atrial depolarization", "Atrial repolarization", "Ventricular depolarization", "Ventricular repolarization", "None of the above"],
         answer: "Atrial repolarization",
       },
@@ -1786,7 +1786,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 11,
-        question: "Which of the following is most likely to cause a decrease in the stroke volume of the left ventricle?",
+        question: "Which is most likely to cause a decrease in the stroke volume of the left ventricle?",
         options: ["An increase in mean arterial pressure", "An increase in end-diastolic pressure", "An increase in end-diastolic volume", "An increase in the activity of sympathetic nerves to the heart", "An increase in central venous pressure"],
         answer: "An increase in mean arterial pressure",
       },
@@ -1798,26 +1798,26 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 13,
-        question: "Heart rate is normally determined by the action potential frequency in the (SA/AV) node.",
-        options: ["SA"],
+        question: "Heart rate is normally determined by the action potential frequency in ____ node.",
+        options: ["SA", "AV"],
         answer: "SA",
       },
       {
         id: 14,
-        question: "According to Starling’s law, stroke volume should increase if end-diastolic volume (increases/decreases).",
-        options: ["increases"],
+        question: "According to Starling’s law, stroke volume should increase if end-diastolic volume ____.",
+        options: ["increases", "decreases"],
         answer: "increases",
       },
       {
         id: 15,
-        question: "Heart rate is determined entirely by the inherent action potential frequency in cells of the SA node, with no external influences. (true/false)",
-        options: ["false"],
+        question: "Heart rate is determined entirely by the inherent action potential frequency in cells of the SA node, with no external influences.",
+        options: ["true", "false"],
         answer: "false",
       },
       {
         id: 16,
-        question: "Blood flow through the systemic circuit is driven by contractions of the (right/left) ventricle.",
-        options: ["left"],
+        question: "Blood flow through the systemic circuit is driven by contractions of the ____ ventricle.",
+        options: ["left", "right"],
         answer: "left",
       },
       {
@@ -1840,7 +1840,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 20,
-        question: "Under normal conditions, pressures in the left and right ventricles are equal during systole. (true/false)",
+        question: "Under normal conditions, pressures in the left and right ventricles are equal during systole.",
         options: ["true", "false"],
         answer: "false",
       },
@@ -1864,7 +1864,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 24,
-        question: "If sympathetic and parasympathetic inputs are constant and end-diastolic volume increases, contractility of the ventricular myocardium increases. (true/false)",
+        question: "If sympathetic and parasympathetic inputs are constant and end-diastolic volume increases, contractility of the ventricular myocardium increases.",
         options: ["true", "false"],
         answer: "false",
       },
@@ -1882,7 +1882,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 27,
-        question: "Action potentials generated by pacemaker cells are called pacemaker potentials. (true/false)",
+        question: "Action potentials generated by pacemaker cells are called pacemaker potentials.",
         options: ["true", "false"],
         answer: "false",
       },
@@ -1903,24 +1903,24 @@ export const quizzes: Quiz[] = [
       {
         id: 2,
         question: "Venous pressure increases",
-        options: ["When blood volume decreases.", "As a result of venous pooling.", "As a result of an increase in venomotor tone.", "When a person stands up.", "All of the above."],
+        options: ["When blood volume decreases.", "As a result of venous pooling.", "As a result of an increase in venomotor tone.", "When a person stands up."],
         answer: "As a result of an increase in venomotor tone.",
       },
       {
         id: 3,
-        question: "Which of the following tends to promote edema in systemic tissues?",
+        question: "Which tends to promote edema in systemic tissues?",
         options: ["A decrease in the concentration of plasma proteins", "An increase in pressure in the vena cava", "An increase in arterial pressure", "Leakage of proteins from capillaries into the interstitial fluid", "All of the above"],
         answer: "All of the above",
       },
       {
         id: 4,
-        question: "Which of the following tends to cause a decrease in ventricular end-diastolic volume?",
+        question: "Which tends to cause a decrease in ventricular end-diastolic volume?",
         options: ["An increase in venous pressure", "An increase in skeletal muscle pump activity", "A decrease in filling time", "An increase in blood volume", "An increase in venomotor tone"],
         answer: "A decrease in filling time",
       },
       {
         id: 5,
-        question: "Which of the following blood vessels possess valves that prevent blood from flowing backward?",
+        question: "Which blood vessels possess valves that prevent blood from flowing backward?",
         options: ["Arteries", "Arterioles", "Capillaries", "Venules", "Veins"],
         answer: "Veins",
       },
@@ -1932,7 +1932,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 7,
-        question: "Which of the following tends to cause a decrease in mean arterial pressure?",
+        question: "Which tends to cause a decrease in mean arterial pressure?",
         options: ["A drop in total peripheral resistance", "An increase in stroke volume of the left ventricle", "An increase in heart rate", "An increase in venous return", "An increase in sympathetic activity"],
         answer: "A drop in total peripheral resistance",
       },
@@ -1944,20 +1944,20 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 9,
-        question: "Which of the following tends to cause increased venous pooling?",
+        question: "Which tends to cause increased venous pooling?",
         options: ["A decrease in venomotor tone", "A decrease in the osmotic pressure of plasma proteins", "A decrease in mean arterial pressure", "Exercise", "Dehydration"],
         answer: "A decrease in venomotor tone",
       },
       {
         id: 10,
-        question: "Which of the following does not tend to increase as a result of the action of the skeletal muscle pump?",
+        question: "Which does not tend to increase as a result of the action of the skeletal muscle pump?",
         options: ["Venous pooling", "Venous return", "End-diastolic volume", "Stroke volume", "Cardiac output"],
         answer: "Venous pooling",
       },
 
       {
         id: 11,
-        question: "If arterial pressure is elevated, baroreceptor signals trigger which of the following responses?",
+        question: "If arterial pressure is elevated, baroreceptor signals trigger which responses?",
         options: ["A rise in vasopressin secretion", "A fall in plasma angiotensin II levels", "Increased activity in sympathetic ­vasoconstrictor nerves", "An increase in epinephrine secretion", "Increased total peripheral resistance"],
         answer: "A fall in plasma angiotensin II levels",
       },
@@ -1993,20 +1993,20 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 17,
-        question: "Over the course of a day, capillary ­filtration and absorption occur at the same rate, so that the net volume of fluid filtered from capillaries is zero. (true/false)",
+        question: "Over the course of a day, capillary ­filtration and absorption occur at the same rate, so that the net volume of fluid filtered from capillaries is zero.",
         options: ["true", "false"],
         answer: "true",
       },
       {
         id: 18,
-        question: "An increase in the hydrostatic pressure of blood in capillaries tends to increase the rate at which fluid is filtered across capillary walls. (true/false)",
-        options: ["increase"],
-        answer: "increase",
+        question: "An increase in the hydrostatic pressure of blood in capillaries tends to increase the rate at which fluid is filtered across capillary walls.",
+        options: ["true", "false"],
+        answer: "true",
       },
       {
         id: 19,
         question: "A drop in arterial blood pressure triggers (an increase/a decrease) in sympathetic nervous activity.",
-        options: ["true"],
+        options: ["true", "false"],
         answer: "true",
       },
     ],
@@ -2019,7 +2019,7 @@ export const quizzes: Quiz[] = [
     questions: [
       {
         id: 1,
-        question: "Which of the following is not found in plasma?",
+        question: "Which is not found in plasma?",
         options: ["Albumin", "Sodium", "Glucose", "Hemoglobin", "Potassium"],
         answer: "", // 1 d
       },
@@ -2031,7 +2031,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 3,
-        question: "Which of the following classes of leukocytes function(s) in phagocytosis?",
+        question: "Which classes of leukocytes function(s) in phagocytosis?",
         options: ["Neutrophils only", "Basophils only", "Lymphocytes only", "Neutrophils and basophils", "Basophils and lymphocytes"],
         answer: "", // 3 d
       },
@@ -2044,7 +2044,7 @@ export const quizzes: Quiz[] = [
       {
         id: 5,
         question: "Contact of blood with collagen triggers",
-        options: ["Platelet aggregation.", "Activation of the intrinsic clotting cascade.", "Activation of the extrinsic clotting cascade.", "Both a and b.", "All of the above."],
+        options: ["Platelet aggregation.", "Activation of the intrinsic clotting cascade.", "Activation of the extrinsic clotting cascade.", "Both a and b."],
         answer: "", // 5 d
       },
 
@@ -2076,13 +2076,13 @@ export const quizzes: Quiz[] = [
     questions: [
       {
         id: 1,
-        question: "Which of the following is a component of internal respiration?",
+        question: "Which is a component of internal respiration?",
         options: ["Ventilation", "Transport of oxygen in the blood", "Diffusion of carbon dioxide from tissues to blood", "Diffusion of oxygen from blood to tissues", "Oxidative phosphorylation"],
         answer: "", // 1 e
       },
       {
         id: 2,
-        question: "Which of the following is not a function of the conducting zone of the respiratory system?",
+        question: "Which is not a function of the conducting zone of the respiratory system?",
         options: ["Humidifying the air", "Adjusting the air to body temperature", "Exchanging gases between the respiratory system and the blood", "Secreting mucus", "Protecting the lungs from inhaled particles"],
         answer: "", // 2 c
       },
@@ -2112,13 +2112,13 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 7,
-        question: "Which of the following statements describes the lungs at the functional residual capacity?",
-        options: ["Atmospheric, intra-alveolar, and intrapleural pressures are all equal.", "The lungs tend to collapse due to their elastic properties.", "The chest wall tends to collapse due to its elastic properties.", "Both a and c are true.", "All of the above are true."],
+        question: "Which statements describes the lungs at the functional residual capacity?",
+        options: ["Atmospheric, intra-alveolar, and intrapleural pressures are all equal.", "The lungs tend to collapse due to their elastic properties.", "The chest wall tends to collapse due to its elastic properties.", "Both a and c are true."],
         answer: "", // 7 b
       },
       {
         id: 8,
-        question: "Which of the following factors decreases airway resistance?",
+        question: "Which factors decreases airway resistance?",
         options: ["Activation of the parasympathetic nervous system", "Epinephrine", "Histamine"],
         answer: "", // 8 b
       },
@@ -2130,16 +2130,16 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 10,
-        question: "Which of the following muscles contract(s) during quiet expiration?",
+        question: "Which muscles contract(s) during quiet expiration?",
         options: ["Diaphragm", "Internal intercostals", "External intercostals", "None of the above", "All of the above"],
         answer: "", // 10 d
       },
 
       {
         id: 11,
-        question: "Contraction of the diaphragm increases the rate of air flow during forced expiration. (true/false)",
-        options: [],
-        answer: "", // 11 false
+        question: "Contraction of the diaphragm increases the rate of air flow during forced expiration.",
+        options: ["true", "false"],
+        answer: "false", // 11 false
       },
       {
         id: 12,
@@ -2223,31 +2223,31 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 4,
-        question: "Which of the following does not affect alveolar partial pressure of oxygen?",
+        question: "Which does not affect alveolar partial pressure of oxygen?",
         options: ["The rate of oxygen consumption by respiring tissues", "Alveolar ventilation", "The partial pressure of oxygen of inspired air", "The volume of air contained in the alveoli", "The humidification of air as it moves through the conducting zone"],
         answer: "", // d
       },
       {
         id: 5,
-        question: "During hyperventilation, which of the following would be expected to happen?",
+        question: "During hyperventilation, which would be expected to happen?",
         options: ["An increase in the partial pressure of oxygen of arterial blood", "An increase in the partial pressure of carbon dioxide of arterial blood", "An increase in the acidity of arterial blood", "An increase in the bicarbonate concentration of arterial blood", "A decrease in the pH of arterial blood"],
         answer: "", // a
       },
       {
         id: 6,
-        question: "Which of the following would be expected to cause a decrease in the percent saturation of hemoglobin?",
+        question: "Which would be expected to cause a decrease in the percent saturation of hemoglobin?",
         options: ["An increase in partial pressure of oxygen", "A decrease in blood pH", "A decrease in partial pressure of carbon dioxide", "A decrease in temperature", "All of the above"],
         answer: "", // b
       },
       {
         id: 7,
-        question: "Suppose that alveolar partial pressure of oxygen = 100 mm Hg and partial pressure of carbon dioxide = 60 mm Hg. Which of the following is true?",
-        options: ["pH will be less than normal.", "Percent saturation of hemoglobin by oxygen will be less than normal.", "Bicarbonate concentration will be greater than normal.", "Both a and c are true.", "All of the above are true."],
+        question: "Suppose that alveolar partial pressure of oxygen = 100 mm Hg and partial pressure of carbon dioxide = 60 mm Hg. Which is true?",
+        options: ["pH will be less than normal.", "Percent saturation of hemoglobin by oxygen will be less than normal.", "Bicarbonate concentration will be greater than normal.", "Both a and c are true.", "All of the above."],
         answer: "", // e
       },
       {
         id: 8,
-        question: "Suppose a person’s arterial partial pressure of oxygen adn partial pressure of carbon dioxide are normal (partial pressure of oxygen = 100 mm Hg; partial pressure of carbon dioxide = 40 mm Hg;). Which of the following would most likely stimulate an increase in ventilation?",
+        question: "Suppose a person’s arterial partial pressure of oxygen adn partial pressure of carbon dioxide are normal (partial pressure of oxygen = 100 mm Hg; partial pressure of carbon dioxide = 40 mm Hg;). Which would most likely stimulate an increase in ventilation?",
         options: ["A decrease in partial pressure of oxygen to 90 mm Hg", "A decrease in partial pressure of carbon dioxide to 35 mm Hg", "An increase in partial pressure of oxygen to 110 mm Hg", "An increase in partial pressure of carbon dioxide to 45 mm Hg"],
         answer: "", // d
       },
@@ -2277,13 +2277,13 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 12,
-        question: "Which of the following can hemoglobin bind and transport in blood?",
+        question: "Which can hemoglobin bind and transport in blood?",
         options: ["Oxygen", "Carbon dioxide", "Hydrogen ions", "Both a and c", "All of the above"],
         answer: "", // e
       },
       {
         id: 13,
-        question: "Which of the following areas of the brain contain inspiratory neurons?",
+        question: "Which areas of the brain contain inspiratory neurons?",
         options: ["The dorsal respiratory group only", "The ventral respiratory group only", "Both the dorsal and ventral respiratory groups", "Neither the dorsal nor ventral respiratory group"],
         answer: "", // c
       },
@@ -2301,9 +2301,9 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 16,
-        question: "The amount of carbon dioxide in systemic arterial blood is less than 50% of that in mixed venous blood. (true/false)",
-        options: [],
-        answer: "", // false
+        question: "The amount of carbon dioxide in systemic arterial blood is less than 50% of that in mixed venous blood.",
+        options: ["true", "false"],
+        answer: "false", // false
       },
 
       {
@@ -2344,9 +2344,9 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 23,
-        question: "In gas exchange in both the lungs and respiring tissues, oxygen and carbon dioxide always move down their partial pressure gradients. (true/false)",
-        options: [],
-        answer: "", // true
+        question: "In gas exchange in both the lungs and respiring tissues, oxygen and carbon dioxide always move down their partial pressure gradients.",
+        options: ["true", "false"],
+        answer: "true", // true
       },
       {
         id: 24,
@@ -2394,7 +2394,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 2,
-        question: "Which of the following is not one of the mechanisms by which a solute can be exchanged between the plasma and the renal tubules?",
+        question: "Which is not one of the mechanisms by which a solute can be exchanged between the plasma and the renal tubules?",
         options: ["Glomerular filtration", "Secretion", "Excretion", "Reabsorption"],
         answer: "", // b
       },
@@ -2406,7 +2406,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 4,
-        question: "Which of the following does not favor a large glomerular filtration rate?",
+        question: "Which does not favor a large glomerular filtration rate?",
         options: ["Slit pores", "Fenestrations", "High glomerular hydrostatic pressure", "High resistance in the afferent arteriole", "High resistance in the efferent arteriole"],
         answer: "", // b
       },
@@ -2419,13 +2419,13 @@ export const quizzes: Quiz[] = [
 
       {
         id: 6,
-        question: "In which of the following are microvilli most abundant?",
+        question: "In what are microvilli most abundant?",
         options: ["Bowman’s capsule", "Glomerular capillaries", "Distal tubule", "Proximal tubule", "Collecting duct"],
         answer: "", // a
       },
       {
         id: 7,
-        question: "Which of the following would occur if mean arterial pressure increased from 95 mm Hg to 125 mm Hg?",
+        question: "Which would occur if mean arterial pressure increased from 95 mm Hg to 125 mm Hg?",
         options: [
           "Glomerular filtration rate would increase because of the increased glomerular capillary hydrostatic pressure.",
           "Glomerular filtration rate would decrease because of the increased Bowman’s capsule hydrostatic pressure.",
@@ -2448,13 +2448,13 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 10,
-        question: "A substance S is freely filterable and is excreted at a rate (in moles/min) that is lower than the filtered load. On the basis of this information alone, which of the following is the most precise conclusion that can justifiably be drawn regarding the kidneys’ processing of S?",
+        question: "A substance S is freely filterable and is excreted at a rate (in moles/min) that is lower than the filtered load. On the basis of this information alone, Which is the most precise conclusion that can justifiably be drawn regarding the kidneys’ processing of S?",
         options: ["S is neither reabsorbed nor secreted.", "S is definitely reabsorbed and may be secreted.", "S is definitely secreted and may be reabsorbed.", "S is definitely both reabsorbed and secreted."],
         answer: "", // b
       },
       {
         id: 11,
-        question: "Which of the following observations would enable you to definitely conclude that a substance X is being secreted?",
+        question: "Which observations would enable you to definitely conclude that a substance X is being secreted?",
         options: ["The clearance of X is greater than the GFR.", "The concentration of X in the urine is greater than its concentration in the plasma.", "The concentration of X in the plasma is decreasing over time.", "Either a or c", "Any of the above"],
         answer: "", // a
       },
@@ -2473,9 +2473,9 @@ export const quizzes: Quiz[] = [
 
       {
         id: 14,
-        question: "Urinary excretion is the elimination of urine from the bladder. (true/false)",
-        options: [],
-        answer: "", // true
+        question: "Urinary excretion is the elimination of urine from the bladder.",
+        options: ["true", "false"],
+        answer: "true", // true
       },
       {
         id: 15,
@@ -2509,9 +2509,9 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 20,
-        question: "The glomerular filtration pressure is synonymous with the hydrostatic pressure inside glomerular capillaries. (true/false)",
-        options: [],
-        answer: "", // false
+        question: "The glomerular filtration pressure is synonymous with the hydrostatic pressure inside glomerular capillaries.",
+        options: ["true", "false"],
+        answer: "false", // false
       },
       {
         id: 21,
@@ -2559,13 +2559,13 @@ export const quizzes: Quiz[] = [
     questions: [
       {
         id: 1,
-        question: "Which of the following would be expected to trigger a decrease in the secretion of renin?",
+        question: "Which would be expected to trigger a decrease in the secretion of renin?",
         options: ["A decrease in the mean arterial pressure", "A decrease in the pressure inside the afferent arteriole", "A decrease in the activity of renal sympathetic nerves", "A decrease in the concentration of sodium chloride in tubular fluid", "A decrease in GFR"],
         answer: "", // c
       },
       {
         id: 2,
-        question: "Which of the following would be expected to trigger a decrease in the secretion of ADH?",
+        question: "Which would be expected to trigger a decrease in the secretion of ADH?",
         options: ["Ingestion of a large quantity of pure water", "Sweating", "Hemorrhage", "A decrease in mean arterial pressure", "Both a and c"],
         answer: "", // a
       },
@@ -2577,19 +2577,19 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 4,
-        question: "Which of the following tends to be accompanied by an increase in the rate at which bicarbonate is excreted in the urine?",
+        question: "Which tends to be accompanied by an increase in the rate at which bicarbonate is excreted in the urine?",
         options: ["A decrease in hydrogen ion secretion", "A decrease in the plasma bicarbonate concentration", "An increase in the production of ammonia by renal tubule epithelial cells", "Both a and b", "All of the above"],
         answer: "", // d
       },
       {
         id: 5,
-        question: "Assuming that arterial partial pressure of carbon dioxide is normal, metabolic acidosis promotes which of the following?",
+        question: "Assuming that arterial partial pressure of carbon dioxide is normal, metabolic acidosis promotes ____?",
         options: ["Increased hydrogen ion secretion by the renal tubule", "Decreased alveolar ventilation", "Increased bicarbonate reabsorption", "Both a and c", "All of the above"],
         answer: "", // d
       },
       {
         id: 6,
-        question: "Which of the following tends to promote an increase in sodium excretion?",
+        question: "Which tends to promote an increase in sodium excretion?",
         options: ["An increase in the glomerular filtration rate", "An increase in plasma renin concentration", "An increase in the secretion of atrial natriuretic peptide", "Both a and c", "All of the above"],
         answer: "", // d
       },
@@ -2624,13 +2624,13 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 11,
-        question: "An increase in mean arterial pressure stimulates which of the following?",
+        question: "An increase in mean arterial pressure stimulates ____?",
         options: ["ADH release", "Angiotensin II production", "Aldosterone release", "Renin release", "Increased water excretion in urine"],
         answer: "Increased water excretion in urine",
       },
       {
         id: 12,
-        question: "Which of the following does not stimulate aldosterone release?",
+        question: "Which does not stimulate aldosterone release?",
         options: ["Atrial natriuretic peptide", "An increase in plasma potassium", "An increase in renin secretion", "An increase in angiotensin II production"],
         answer: "Atrial natriuretic peptide",
       },
@@ -2648,13 +2648,13 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 15,
-        question: "A person has the following symptoms: arterial pH = 7.45, partical pressure of carbon dioxide = 44 mm Hg, plasma bicarbonate concentration = 27 mM. What is the diagnosis?",
+        question: "A person has these symptoms: arterial pH = 7.45, partical pressure of carbon dioxide = 44 mm Hg, plasma bicarbonate concentration = 27 mM. What is the diagnosis?",
         options: ["Respiratory acidosis", "Respiratory alkalosis", "Metabolic acidosis", "Metabolic alkalosis"],
         answer: "Metabolic alkalosis",
       },
       {
         id: 16,
-        question: "An increase in the reabsorption of solutes (increases/decreases) water reabsorption.",
+        question: "An increase in solutes reabsorption ____ water reabsorption.",
         options: ["increases", "decreases"],
         answer: "increases",
       },
@@ -2666,7 +2666,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 18,
-        question: "Epithelial cells of the descending limb of the loop of Henle actively transport solutes from tubular fluid to the surrounding peritubular space. (true/false)",
+        question: "Epithelial cells of the descending limb of the loop of Henle actively transport solutes from tubular fluid to the surrounding peritubular space.",
         options: ["true", "false"],
         answer: "false",
       },
@@ -2684,7 +2684,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 21,
-        question: "If the plasma volume is below normal, an increase in water reabsorption will be sufficient to restore it to normal. (true/false)",
+        question: "If the plasma volume is below normal, an increase in water reabsorption will be sufficient to restore it to normal.",
         options: ["true", "false"],
         answer: "false",
       },
@@ -2702,43 +2702,43 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 24,
-        question: "ADH increases water permeability of the loop of Henle. (true/false)",
+        question: "ADH increases water permeability of the loop of Henle.",
         options: ["true", "false"],
         answer: "false",
       },
       {
         id: 25,
-        question: "Potassium secretion is (stimulated/inhibited) by aldosterone.",
+        question: "Potassium secretion is ____ by aldosterone.",
         options: ["stimulated", "inhibited"],
         answer: "stimulated",
       },
       {
         id: 26,
-        question: "Calcitonin (increases/decreases) plasma calcium levels.",
+        question: "Calcitonin ____ plasma calcium levels.",
         options: ["increases", "decreases"],
         answer: "decreases",
       },
       {
         id: 27,
-        question: "Resorption of bone (increases/decreases) plasma calcium levels.",
+        question: "Resorption of bone ____ plasma calcium levels.",
         options: ["increases", "decreases"],
         answer: "increases",
       },
       {
         id: 28,
-        question: "By adding new bicarbonate to the blood, the kidneys can bring about a compensatory (increase/decrease) in the plasma pH.",
+        question: "By adding new bicarbonate to the blood, the kidneys can bring about a compensatory ____ in the plasma pH.",
         options: ["increase", "decrease"],
         answer: "increase",
       },
       {
         id: 29,
-        question: "The kidneys can excrete urine that is pure water. (true/false)",
+        question: "The kidneys can excrete urine that is pure water.",
         options: ["true", "false"],
         answer: "false",
       },
       {
         id: 30,
-        question: "There is no limit to the amount of hydrogen ions the kidneys can excrete. (true/false)",
+        question: "There is no limit to the amount of hydrogen ions the kidneys can excrete.",
         options: ["true", "false"],
         answer: "false",
       },
@@ -2760,7 +2760,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 2,
-        question: "Blockage of the flow of bile into the duodenum interferes with the digestion of which of the following?",
+        question: "Bile flow blockage into the duodenum interferes with the digestion of ____?",
         options: ["Carbohydrates only", "Lipids only", "Proteins only", "Carbohydrates and lipids only", "Carbohydrates and proteins only"],
         answer: "Lipids only",
         answerImage: "/images/Figure 20.11 Pancreas",
@@ -2768,41 +2768,35 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 3,
-        question: "Which of the following is an accurate statement regarding the various phases of gastrointestinal control?",
-        options: [
-          "The autonomic nervous system is involved in cephalic-phase regulation only.",
-          "The autonomic nervous system is involved in gastric-phase regulation only.",
-          "The autonomic nervous system is involved in intestinal-phase regulation only.",
-          "The autonomic nervous system is ­involved in gastric-phase and intestinal-phase regulation only.",
-          "The autonomic nervous system is involved in all three phases of regulation.",
-        ],
-        answer: "The autonomic nervous system is involved in all three phases of regulation.",
+        question: "The autonomic nervous system is involved in ___?",
+        options: ["Cephalic-phase regulation only.", "Gastric-phase regulation only.", "Intestinal-phase regulation only.", "Gastric-phase and intestinal-phase regulation only.", "All three phases of regulation."],
+        answer: "All three phases of regulation.",
         answerExplanation: "The autonomic nervous system influences all three phases of digestive regulation—cephalic, gastric, and intestinal—via parasympathetic and sympathetic pathways.",
       },
       {
         id: 4,
-        question: "Failure of the salivary glands to secrete amylase would make it impossible to ­digest which of the following?",
+        question: "Salivary glands failure to secrete amylase would make it impossible to digest ____?",
         options: ["Proteins", "Fats", "Disaccharides", "Starch", "None of the above"],
         answer: "None of the above",
         answerExplanation: "Salivary amylase begins starch digestion, but pancreatic amylase fully compensates. Therefore, digestion of proteins, fats, disaccharides, and starch would still occur normally. Thus, none would be impossible to digest.",
       },
       {
         id: 5,
-        question: "Which of the following tends to inhibit acid secretion by the stomach?",
-        options: ["An increase in the osmolarity of duodenal contents", "Entry of stomach acid into the duodenum", "The arrival of food in the stomach", "Both an increase in the osmolarity of duodenal contents and entry of stomach acid into the duodenum", "All of the above"],
+        question: "Which tends to inhibits stomach acid secretion?",
+        options: ["A duodenal contents osmolarity increase", "Stomach acid entering the duodenum", "Food arriving in the stomach", "Both A duodenal contents osmolarity increase and stomach acid entering the duodenum", "All of the above"],
         answer: "Both an increase in the osmolarity of duodenal contents and entry of stomach acid into the duodenum",
         answerExplanation: "Two stimuli inhibit acid secretion via the enterogastric reflex: Increased duodenal osmolarity. Entry of acidic chyme into the duodenum. Arrival of food in the stomach stimulates acid secretion, not inhibits it.",
       },
       {
         id: 6,
-        question: "Which of the following best illustrates the phenomenon of potentiation?",
+        question: "Which illustrates potentiation?",
         options: [
           "Bile secretion is normally stimulated by both secretin and CCK.",
           "Secretin and CCK act primarily on ­different parts of the hepatic secretory apparatus.",
           "Secretin and CCK both stimulate bile duct cells to secrete fluid.",
-          "The secretion of fluid by bile duct cells is greater when both CCK and secretin are present, compared to when either hormone is present alone (at the same concentration).",
+          "The bile duct cells fluid secretion is greater when both CCK and secretin are present, compared to when either hormone is present alone (at the same concentration).",
         ],
-        answer: "The secretion of fluid by bile duct cells is greater when both CCK and secretin are present, compared to when either hormone is present alone (at the same concentration).",
+        answer: "The bile duct cells fluid secretion is greater when both CCK and secretin are present, compared to when either hormone is present alone (at the same concentration).",
         answerExplanation: "Potentiation occurs when two hormones together create a greater effect than either alone. CCK + secretin produce a larger bile duct fluid secretion than either hormone at the same concentration.",
       },
       {
@@ -2815,7 +2809,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 8,
-        question: "Which of the following is an example of a zymogen?",
+        question: "Which is an example of a zymogen?",
         options: ["Enterokinase", "Chymotrypsinogen", "Salivary amylase", "Cholecystokinin", "All of the above"],
         answer: "Chymotrypsinogen",
         answerExplanation: "A zymogen is an inactive enzyme precursor. Chymotrypsinogen is the inactive form of chymotrypsin. The others (enterokinase, salivary amylase, CCK) are active enzymes or hormones.",
@@ -2829,31 +2823,31 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 10,
-        question: "Which of the following is a digestion product of amylase?",
+        question: "Which is a digestion product of amylase?",
         options: ["Maltose", "Glucose", "Sucrose", "Lactose", "Fructose"],
         answer: "Maltose",
         answerExplanation: "Amylase breaks starch into disaccharides such as maltose, not glucose or other simple sugars directly.",
       },
       {
         id: 11,
-        question: "Increases in which of the following can induce satiety?",
+        question: "Increases in which can induce satiety?",
         options: ["Alpha melanocyte stimulating hormone", "Thyroid stimulating hormone", "Leptin", "Both alpha melanocyte stimulating hormone and leptin", "All of the above"],
         answer: "Both alpha melanocyte stimulating hormone and leptin",
         answerExplanation: "Both alpha-MSH (a melanocortin that suppresses appetite in the hypothalamus) and leptin (a hormone from adipose tissue that signals long-term energy stores) promote satiety. TSH does not regulate hunger.",
       },
       {
         id: 12,
-        question: "Through the action of pancreatic amylase alone, starch can be broken down to a form that can be absorbed completely. (true/false)",
+        question: "Through the action of pancreatic amylase alone, starch can be broken down to a form that can be absorbed completely.",
         options: ["true", "false"],
         answer: "false",
         answerExplanation: "Pancreatic amylase breaks starch into maltose and small oligosaccharides, but final digestion to absorbable monosaccharides requires brush border enzymes. Therefore it cannot complete digestion alone.",
       },
       {
         id: 13,
-        question: "The glands that secrete acid in the ­stomach are examples of accessory glands. (true/false)",
+        question: "Stomach glands that secrete acid are accessory glands.",
         options: ["true", "false"],
         answer: "false",
-        answerExplanation: "The stomach’s acid-secreting glands are part of the primary digestive tract, not accessory glands (which include the liver, gallbladder, and pancreas). Therefore, the statement is false.",
+        answerExplanation: "The stomach's acid-secreting glands are part of the primary digestive tract, not accessory glands (which include the liver, gallbladder, and pancreas). Therefore, the statement is false.",
       },
       {
         id: 14,
@@ -2893,14 +2887,14 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 19,
-        question: "The lamina propria is located within the (mucosa/submucosa).",
+        question: "The lamina propria is located within the ____.",
         options: ["mucosa", "submucosa"],
         answer: "mucosa",
         answerExplanation: "The lamina propria is the connective tissue layer within the mucosa, beneath the epithelium.",
       },
       {
         id: 20,
-        question: "Gastrin (stimulates/inhibits) the secretion of acid by the stomach.",
+        question: "Gastrin ____ the secretion of stomach acid.",
         options: ["stimulates", "inhibits"],
         answer: "stimulates",
         answerExplanation: "Gastrin stimulates acid secretion by acting on parietal cells and promoting histamine release from ECL cells.",
@@ -2915,7 +2909,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 22,
-        question: "The small intestine is periodically swept of its contents by (segmentation/migrating motility complexes).",
+        question: "The small intestine is periodically swept of its contents by ____.",
         options: ["segmentation", "migrating motility complexes"],
         answer: "migrating motility complexes",
         answerImage: "/images/Figure 20.30 Peristalsis and Segmentation",
@@ -2923,7 +2917,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 23,
-        question: "The term enterohepatic circulation refers to the conduction of blood from the intestine to the liver via the hepatic portal vein. (true/false)",
+        question: "Enterohepatic circulation is blood conduction from intestine to liver via the hepatic portal vein.",
         options: ["true", "false"],
         answer: "false",
         answerExplanation: "Enterohepatic circulation refers primarily to recycling of bile salts between the intestine and liver—not blood flow through the hepatic portal vein. Thus the statement is false.",
@@ -2937,14 +2931,14 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 25,
-        question: "Chewing is under voluntary control but is also controlled by reflex neural pathways. (true/false)",
+        question: "Chewing is under voluntary control but is also controlled by reflex neural pathways. ",
         options: ["true", "false"],
         answer: "true",
         answerExplanation: "Yes—chewing is voluntary but also maintained by brainstem reflex circuits that rhythmically control jaw motion. This makes the statement true.",
       },
       {
         id: 26,
-        question: "Disaccharides are broken down to monosaccharides by (pancreatic enzymes/brush border enzymes).",
+        question: "Disaccharides are broken down to monosaccharides by ____.",
         options: ["pancreatic enzymes", "brush border enzymes"],
         answer: "brush border enzymes",
         answerExplanation: "Disaccharides (like lactose, maltose, sucrose) are digested by brush border enzymes into absorbable monosaccharides. Pancreatic enzymes cannot perform this final step.",
@@ -2960,56 +2954,56 @@ export const quizzes: Quiz[] = [
     questions: [
       {
         id: 1,
-        question: "Which of the following is an example of a permissive effect of a hormone?",
+        question: "Which is an example of a permissive effect of a hormone?",
         options: ["The effect of thyroid hormones on growth", "The effect of insulin on glucose uptake by cells", "The effect of sex hormones on the ­secretion of growth hormone", "Both effect of thyroid hormones on growth and effect of sex hormones on the ­secretion of growth hormone", "All of the above"],
         answer: "Both effect of thyroid hormones on growth and effect of sex hormones on the ­secretion of growth hormone",
         answerExplanation: "A permissive effect means one hormone enables another hormone to act more effectively. Thyroid hormones make growth hormone’s effects stronger, and sex hormones enhance GH secretion—so both are examples of permissive interactions.",
       },
       {
         id: 2,
-        question: "Which of the following is an example of a glucose-sparing effect of cortisol?",
-        options: ["Inhibition of ACTH release", "Stimulation of gluconeogenesis by the liver", "Stimulation of lipolysis", "Stimulation of glycogen breakdown", "Stimulation of protein synthesis"],
+        question: "Which is an example of a glucose-sparing effect of cortisol?",
+        options: ["Inhibition of ACTH release", "Stimulation of liver gluconeogenesis", "Stimulation of lipolysis", "Stimulation of glycogen breakdown", "Stimulation of protein synthesis"],
         answer: "Stimulation of lipolysis",
         answerExplanation: "A glucose-sparing effect shifts cells away from burning glucose. Cortisol achieves this by stimulating lipolysis, providing fatty acids for fuel and preserving glucose for the brain.",
       },
       {
         id: 3,
-        question: "Which of the following cells of the ­pancreas secrete insulin?",
+        question: "Which cells of the ­pancreas secrete insulin?",
         options: ["Alpha cells", "Beta cells", "Delta cells", "Exocrine cells", "Duct cells"],
         answer: "Beta cells",
         answerExplanation: "Beta cells in the pancreatic islets produce insulin. Alpha cells produce glucagon, and delta cells produce somatostatin.",
       },
       {
         id: 4,
-        question: "Stress stimulates secretion of which of the following hormones?",
+        question: "Stress stimulates secretion of which hormones?",
         options: ["Growth hormone", "Epinephrine", "Thyroid hormones", "ACTH", "All of the above"],
         answer: "All of the above",
         answerExplanation: "Stress activates both the sympathetic nervous system and the HPA axis, increasing epinephrine, ACTH (and thus cortisol), and growth hormone. Therefore, all listed hormones rise during stress.",
       },
       {
         id: 5,
-        question: "Hypoglycemia inhibits secretion of which of the following?",
+        question: "Hypoglycemia inhibits secretion of ____?",
         options: ["Growth hormone", "Insulin", "Epinephrine", "Glucagon", "All of the above"],
         answer: "Insulin",
         answerExplanation: "Low blood glucose suppresses insulin secretion while stimulating glucagon, epinephrine, and GH. So insulin is inhibited.",
       },
       {
         id: 6,
-        question: "In the postabsorptive state, the central nervous system uses which of the following as its primary source of energy?",
+        question: "In the postabsorptive state, the central nervous system uses ____ as its primary source of energy?",
         options: ["Fatty acids", "Amino acids", "Glucose", "Glycerol", "Ketones"],
         answer: "Glucose",
         answerExplanation: "During fasting, most tissues switch to fat, but the CNS still relies primarily on glucose, except in prolonged starvation when ketones partially substitute.",
       },
       {
         id: 7,
-        question: "Which of the following cell types is directly responsible for building new bone material?",
+        question: "Which cell types is directly responsible for building new bone material?",
         options: ["Osteoblasts", "Osteoclasts", "Osteocytes", "Chondrocytes"],
         answer: "Osteoblasts",
         answerExplanation: "Osteoblasts synthesize and lay down new bone matrix. Osteoclasts break down bone.",
       },
       {
         id: 8,
-        question: "Which of the following is true of adulthood?",
+        question: "Which is true of adulthood?",
         options: ["Growth hormone exerts no effects on body tissues.", "The secretion of growth hormone ceases altogether.", "Growth hormone cannot stimulate increases in the length of long bones.", "The structure of bone becomes permanently fixed.", "None of the above"],
         answer: "Growth hormone cannot stimulate increases in the length of long bones.",
         answerExplanation: "In adults, growth plates have closed, so GH cannot increase the length of long bones, though it still affects metabolism and soft tissue growth.",
@@ -3023,10 +3017,10 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 10,
-        question: "Which of the following hormones is a steroid?",
+        question: "Which hormones is a steroid?",
         options: ["Thyroid hormones", "Insulin", "Glucagon", "Growth hormone", "Cortisol"],
         answer: "Cortisol",
-        answerExplanation: "Cortisol is a steroid hormone produced by the adrenal cortex. Thyroid hormones are amine derivatives; insulin, glucagon, and GH are peptides.",
+        answerExplanation: "The adrenal cortex produces the steroid hormone cortisol. Thyroid hormones are amine derivatives; insulin, glucagon, and GH are peptides.",
       },
       {
         id: 11,
@@ -3044,7 +3038,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 13,
-        question: "Insulin and glucagon both help regulate the plasma glucose concentration. (true/false)",
+        question: "Insulin and glucagon both help regulate the plasma glucose concentration. ",
         options: ["true", "false"],
         answer: "true",
         answerExplanation: "True. They act as opposing regulators to maintain plasma glucose homeostasis.",
@@ -3121,7 +3115,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 24,
-        question: "Stimulation of gluconeogenesis by glucagon is an example of a glucose-sparing effect. (true/false)",
+        question: "Stimulation of gluconeogenesis by glucagon is an example of a glucose-sparing effect.",
         options: ["true", "false"],
         answer: "false",
         answerExplanation: "Glucose-sparing means using less glucose, but gluconeogenesis produces glucose, increasing availability rather than sparing its use.",
@@ -3144,21 +3138,21 @@ export const quizzes: Quiz[] = [
     questions: [
       {
         id: 1,
-        question: "In both males and females, gonadotropin secretion by the anterior pituitary is stimulated by which of the following?",
+        question: "In both males and females, gonadotropin secretion by the anterior pituitary is stimulated by ____?",
         options: ["Inhibin", "Androgens", "GnRH", "FSH", "GHRH"],
         answer: "GnRH",
         answerExplanation: "GnRH from the hypothalamus stimulates the anterior pituitary to release the gonadotropins FSH and LH.",
       },
       {
         id: 2,
-        question: "In the embryo, which of the following effects is promoted by testosterone?",
+        question: "In the embryo, which effects are promoted by testosterone?",
         options: ["Development of the primitive gonads into testes", "Regression of Müllerian ducts", "Development of Müllerian ducts into male reproductive organs", "Development of Wolffian ducts into male reproductive organs", "Expression of the srY gene"],
         answer: "Development of Wolffian ducts into male reproductive organs",
         answerExplanation: "Testosterone stabilizes and stimulates the Wolffian ducts, causing them to develop into male internal reproductive structures.",
       },
       {
         id: 3,
-        question: "The testes are housed in a structure called the",
+        question: "The testes are housed in the",
         options: ["prostate gland.", "scrotum.", "penis.", "epididymis.", "vas deferens."],
         answer: "scrotum.",
         answerImage: "/images/Figure 22.6 Male Reproductive System",
@@ -3215,7 +3209,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 11,
-        question: "In meiosis I, maternal and paternal chromosomes are segregated into separate daughter cells. (true/false)",
+        question: "In meiosis I, maternal and paternal chromosomes are segregated into separate daughter cells.",
         options: ["true", "false"],
         answer: "false",
         answerExplanation: "Meiosis I separates homologous chromosomes, not specifically maternal vs. paternal sets into separate cells.",
@@ -3243,7 +3237,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 15,
-        question: "GnRH, which is secreted by the hypothalamus, stimulates the secretion of both FSH and LH from the anterior pituitary. (true/false)",
+        question: "GnRH, which is secreted by the hypothalamus, stimulates the secretion of both FSH and LH from the anterior pituitary.",
         options: ["true", "false"],
         answer: "true",
         answerExplanation: "GnRH stimulates release of both FSH and LH from the anterior pituitary.",
@@ -3272,7 +3266,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 19,
-        question: "Erection is accompanied by a(n) (increase/decrease) in the activity of sympathetic neurons projecting to blood vessels in the penis.",
+        question: "Erection is accompanied by a(n) ____ in the activity of sympathetic neurons projecting to blood vessels in the penis.",
         options: ["increase", "decrease"],
         answer: "decrease",
         answerExplanation: "Erection occurs with decreased sympathetic activity and increased parasympathetic activity.",
@@ -3321,7 +3315,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 26,
-        question: "During the (proliferative/secretory) phase of the uterine cycle, the lining of the uterus thickens under the influence of ­rising estrogen levels.",
+        question: "During the ____ phase of the uterine cycle, the lining of the uterus thickens under the influence of ­rising estrogen levels.",
         options: ["proliferative", "secretory"],
         answer: "proliferative",
         answerExplanation: "In the proliferative phase, estrogen causes thickening of the endometrial lining.",
@@ -3370,7 +3364,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 33,
-        question: "During the last six months of pregnancy, estrogens and progesterone are secreted by the (ovaries/placenta).",
+        question: "During pregnancy's last six months, estrogens and progesterone are secreted by (ovaries/placenta).",
         options: ["placenta"],
         answer: "placenta",
         answerExplanation: "After the first trimester, the placenta becomes the major source of estrogen and progesterone.",
@@ -3399,7 +3393,7 @@ export const quizzes: Quiz[] = [
     questions: [
       {
         id: 1,
-        question: "Which of the following class of pathogens consists of only unicellular organisms?",
+        question: "Which class of pathogens consists of only unicellular organisms?",
         options: ["Virus", "Bacteria", "Fungi", "Parasites", "None of the above"],
         answer: "Bacteria",
         answerImage: "/images/Figure 23.4 Pathogens",
@@ -3407,14 +3401,14 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 2,
-        question: "Which of the following conditions would lead to the most serious immunodeficiency disease?",
+        question: "Which conditions would lead to the most serious immunodeficiency disease?",
         options: ["Lack of IgG", "Lack of neutrophils", "Lack of B cells", "Lack of cytotoxic T cells", "Lack of helper T cells"],
         answer: "Lack of helper T cells",
         answerExplanation: "Helper T cells (CD4⁺) are required to activate B cells, cytotoxic T cells, and macrophages. Without them, almost all adaptive immunity fails.",
       },
       {
         id: 3,
-        question: "Which of the following molecules can opsonize antigen?",
+        question: "Which molecules can opsonize antigen?",
         options: ["A T cell receptor", "Interferon", "An antibody", "A perforin", "Interleukin-2"],
         answer: "An antibody",
         answerImage: "/images/Figure 23.16 Opsonization",
@@ -3429,7 +3423,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 5,
-        question: "Which of the following is not true about humoral immunity?",
+        question: "Which is not true about humoral immunity?",
         options: ["It involves B cells.", "It involves antibodies.", "It involves cytotoxic T cells.", "It can provide passive immunity when transferred from one person to another."],
         answer: "It involves cytotoxic T cells.",
         answerExplanation: "Humoral immunity involves B cells and antibodies; cytotoxic T cells belong to cell-mediated immunity.",
@@ -3450,14 +3444,14 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 8,
-        question: "An individual with type AB blood",
+        question: "Type AB blood",
         options: ["is considered a universal blood donor.", "is considered a universal blood recipient.", "produces antibodies to the B antigen.", "produces antibodies to the A antigen.", "is Rh-positive."],
         answer: "is considered a universal blood recipient.",
         answerExplanation: "AB blood has no anti-A or anti-B antibodies, so the person can receive all ABO types (universal recipient).",
       },
       {
         id: 9,
-        question: "Which of the following events can result in lifelong immunity?",
+        question: "Which can result in lifelong immunity?",
         options: ["Passage of maternal antibodies to a developing fetus", "An inflammatory response to a splinter", "Phagocytosis of bacteria by a neutrophil", "Administration of the polio vaccine", "Administration of antibodies against the rabies virus"],
         answer: "Administration of the polio vaccine",
         answerExplanation: "Vaccines such as polio stimulate active immunity and immunologic memory, providing long-term protection.",
@@ -3478,14 +3472,14 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 12,
-        question: "Which of the following is not true about helper T cells?",
+        question: "Which is not true about helper T cells?",
         options: ["They function in both the cell-­mediated and humoral immune responses.", "They secrete antibody.", "They bear surface CD4 molecules.", "They are subject to infection by HIV.", "When activated, they secrete IL-2 and other cytokines."],
         answer: "They secrete antibody.",
         answerExplanation: "Helper T cells do not secrete antibodies; B cells do. Helper T cells regulate both arms of adaptive immunity.",
       },
       {
         id: 13,
-        question: "Which of the following is not an antigen-presenting cell?",
+        question: "Which is not an antigen-presenting cell?",
         options: ["Macrophage", "Dendritic cell", "Mast cell", "Activated B cells", "Thymus cells"],
         answer: "Thymus cells",
         answerExplanation: "Thymus cells are not antigen-presenting cells; macrophages, dendritic cells, and activated B cells are.",
@@ -3499,7 +3493,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 15,
-        question: "Which of the following is an autoimmune disease in which myelinated neurons become the target of the immune response?",
+        question: "Which is an autoimmune disease in which myelinated neurons become the target of the immune response?",
         options: ["Myasthenia gravis", "Multiple sclerosis", "Diabetes mellitus", "Rheumatoid arthritis"],
         answer: "Multiple sclerosis",
         answerExplanation: "Multiple sclerosis is an autoimmune disease where the immune system attacks CNS myelin.",
@@ -3534,7 +3528,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 20,
-        question: "Evidence exists of interactions among the immune system, the nervous system, and the endocrine system. (true/false)",
+        question: "Evidence exists of interactions among the immune system, the nervous system, and the endocrine system.",
         options: ["true", "false"],
         answer: "true",
         answerExplanation: "Immune, nervous, and endocrine systems communicate through cytokines, hormones, and neural signals.",
@@ -3570,7 +3564,7 @@ export const quizzes: Quiz[] = [
     questions: [
       {
         id: 1,
-        question: "Which of the following best describes type 1 DM?",
+        question: "Which best describes type 1 DM?",
         options: ["Bacterial infection of the adrenal medulla", "Viral infection of the adrenal medulla", "Autoimmune disease of the endocrine pancreas", "Autoimmune disease of the exocrine pancreas", "Disease of chronic obesity"],
         answer: "Autoimmune disease of the endocrine pancreas",
         answerImage: "/images/Table 24.1 Type 1 and Type 2 Diabetes Mellitus.png",
@@ -3578,7 +3572,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 2,
-        question: "Which of the following is not a symptom of ketoacidosis?",
+        question: "Which is not a symptom of ketoacidosis?",
         options: ["Acetone breath", "Increased ventilation", "Increased lipolysis", "Muscle tremors", "Increased sympathetic activity"],
         answer: "Muscle tremors",
         answerExplanation: "Ketoacidosis causes acetone breath, Kussmaul (increased) ventilation, increased lipolysis, and high sympathetic activity. Muscle tremors are not a characteristic symptom.",
@@ -3606,7 +3600,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 6,
-        question: "Proliferative retinopathy is caused by which of the following?",
+        question: "Proliferative retinopathy is caused by ____?",
         options: [
           "Microaneurysms causing blood vessels in the retina to leak",
           "Extensive angiogenesis in the retina resulting in weak, fragile blood vessels that leak",
@@ -3627,21 +3621,21 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 8,
-        question: "Which of the following is not a phagocyte?",
+        question: "Which is not a phagocyte?",
         options: ["Fibroblasts", "Neutrophils", "Macrophages", "Monocytes"],
         answer: "Fibroblasts",
         answerExplanation: "Neutrophils, macrophages, and monocytes are phagocytic immune cells. Fibroblasts are structural connective-tissue cells, not phagocytes.",
       },
       {
         id: 9,
-        question: "Which of the following is not used to treat type 2 DM?",
+        question: "Which is not used to treat type 2 DM?",
         options: ["Sulfonylureas", "Biguanides", "α-Glucosidase inhibitors", "Thiazolidinediones", "Phenylephrine"],
         answer: "Phenylephrine",
         answerExplanation: "Sulfonylureas, biguanides, α-glucosidase inhibitors, and thiazolidinediones all treat type 2 diabetes. Phenylephrine is a decongestant and does not treat diabetes.",
       },
       {
         id: 10,
-        question: "Which of the following is an enzyme ­currently being studied as a target for gene therapy of diabetes mellitus?",
+        question: "Which is an enzyme ­currently being studied as a target for gene therapy of diabetes mellitus?",
         options: ["Hexokinase", "Protein kinase C", "Aldose reductase", "AMP-activated protein kinase", "Tyrosine kinase"],
         answer: "Aldose reductase",
         answerExplanation: "Aldose reductase is an enzyme involved in the polyol pathway, which contributes to diabetic complications. It is being studied as a potential gene therapy target to reduce long-term tissue damage.",
@@ -3655,8 +3649,8 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 12,
-        question: "Which is an autoimmune disease, type 1 or type 2 diabetes mellitus?",
-        options: ["Type 1 diabetes mellitus"],
+        question: "____ is an autoimmune disease.",
+        options: ["Type 1 diabetes mellitus", "Type 2 diabetes mellitus"],
         answer: "Type 1 diabetes mellitus",
         answerExplanation: "Type 1 diabetes mellitus is an autoimmune disorder in which the immune system destroys pancreatic β-cells. Type 2 is not autoimmune.",
       },
@@ -3704,7 +3698,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 19,
-        question: "True or False: Weight-loss surgery can reverse some cases of type 2 DM.",
+        question: "Weight-loss surgery can reverse some cases of type 2 DM.",
         options: ["true", "false"],
         answer: "true",
         answerExplanation: "Bariatric (weight-loss) surgery can significantly improve insulin sensitivity and sometimes reverse type 2 diabetes, especially in early stages.",
