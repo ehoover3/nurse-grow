@@ -57,8 +57,8 @@ export const quizzes: Quiz[] = [
         options: [
           "Stomach lining cell acid secretion is suppressed when stomach contents acidity increases.",
           "A rise in blood pressure stimulates the elimination of water in the urine, which reduces the blood pressure.",
-          "An increase in the concentration of H⁺ in blood causes an increase in H+ excretion in urine.",
-          "An increase in the blood carbon dioxide concentration stimulates breathing, which increases the rate at which carbon dioxide is eliminated from the body.",
+          "Increase in the concentration of H⁺ in blood causes an increase in H+ excretion in urine.",
+          "Increase in the blood carbon dioxide concentration stimulates breathing, which increases the rate at which carbon dioxide is eliminated from the body.",
           "Uterus contractions push the fetus against the cervix, which triggers release of oxytocin into the bloodstream; oxytocin then stimulates stronger uterus contractions.",
         ],
         answer: "Uterus contractions push the fetus against the cervix, which triggers release of oxytocin into the bloodstream; oxytocin then stimulates stronger uterus contractions.",
@@ -291,7 +291,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 25,
-        question: "The mRNA codon that is transcribed from the DNA triplet ATC is           .",
+        question: "The mRNA codon transcribed from the DNA triplet ATC is           .",
         options: ["UAG", "", "", ""],
         answer: "UAG",
       },
@@ -1617,8 +1617,8 @@ export const quizzes: Quiz[] = [
       {
         id: 5,
         question: "Which is not a determinant of whole muscle tension?",
-        options: ["The number of muscle fibers contracting", "The tension produced by each contracting fiber", "The proportion of each motor unit that is contracting at any given time", "The extent of fatigue", "The frequency of action potentials in the motor neurons"],
-        answer: "The proportion of each motor unit that is contracting at any given time",
+        options: ["The number of muscle fibers contracting", "The tension produced by each contracting fiber", "The proportion of each motor unit contracting at any given time", "The extent of fatigue", "The frequency of action potentials in the motor neurons"],
+        answer: "The proportion of each motor unit contracting at any given time",
       },
       {
         id: 6,
@@ -1700,7 +1700,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 19,
-        question: "A reduction in the number of active crossbridges is responsible for a decrease in force-generating capacity of a muscle fiber that is significantly (longer/shorter) than its optimum length.",
+        question: "A reduction in the number of active crossbridges is responsible for a decrease in force-generating capacity of a muscle fiber significantly (longer/shorter) than its optimum length.",
         options: ["longer"],
         answer: "longer",
       },
@@ -1787,8 +1787,8 @@ export const quizzes: Quiz[] = [
       {
         id: 11,
         question: "Which is most likely to cause a decrease in the stroke volume of the left ventricle?",
-        options: ["An increase in mean arterial pressure", "An increase in end-diastolic pressure", "An increase in end-diastolic volume", "An increase in the activity of sympathetic nerves to the heart", "An increase in central venous pressure"],
-        answer: "An increase in mean arterial pressure",
+        options: ["Increase in mean arterial pressure", "Increase in end-diastolic pressure", "Increase in end-diastolic volume", "Increase in the activity of sympathetic nerves to the heart", "Increase in central venous pressure"],
+        answer: "Increase in mean arterial pressure",
       },
       {
         id: 12,
@@ -1909,13 +1909,13 @@ export const quizzes: Quiz[] = [
       {
         id: 3,
         question: "Which tends to promote edema in systemic tissues?",
-        options: ["A decrease in the concentration of plasma proteins", "An increase in pressure in the vena cava", "An increase in arterial pressure", "Leakage of proteins from capillaries into the interstitial fluid", "All of the above"],
+        options: ["A decrease in the concentration of plasma proteins", "Increase in pressure in the vena cava", "Increase in arterial pressure", "Leakage of proteins from capillaries into the interstitial fluid", "All of the above"],
         answer: "All of the above",
       },
       {
         id: 4,
         question: "Which tends to cause a decrease in ventricular end-diastolic volume?",
-        options: ["An increase in venous pressure", "An increase in skeletal muscle pump activity", "A decrease in filling time", "An increase in blood volume", "An increase in venomotor tone"],
+        options: ["Increase in venous pressure", "Increase in skeletal muscle pump activity", "A decrease in filling time", "Increase in blood volume", "Increase in venomotor tone"],
         answer: "A decrease in filling time",
       },
       {
@@ -1933,7 +1933,7 @@ export const quizzes: Quiz[] = [
       {
         id: 7,
         question: "Which tends to cause a decrease in mean arterial pressure?",
-        options: ["A drop in total peripheral resistance", "An increase in stroke volume of the left ventricle", "An increase in heart rate", "An increase in venous return", "An increase in sympathetic activity"],
+        options: ["A drop in total peripheral resistance", "Increase in stroke volume of the left ventricle", "Increase in heart rate", "Increase in venous return", "Increase in sympathetic activity"],
         answer: "A drop in total peripheral resistance",
       },
       {
@@ -1958,7 +1958,7 @@ export const quizzes: Quiz[] = [
       {
         id: 11,
         question: "If arterial pressure is elevated, baroreceptor signals trigger which responses?",
-        options: ["A rise in vasopressin secretion", "A fall in plasma angiotensin II levels", "Increased activity in sympathetic ­vasoconstrictor nerves", "An increase in epinephrine secretion", "Increased total peripheral resistance"],
+        options: ["A rise in vasopressin secretion", "A fall in plasma angiotensin II levels", "Increased activity in sympathetic ­vasoconstrictor nerves", "Increase in epinephrine secretion", "Increased total peripheral resistance"],
         answer: "A fall in plasma angiotensin II levels",
       },
       {
@@ -1999,7 +1999,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 18,
-        question: "An increase in the hydrostatic pressure of blood in capillaries tends to increase the rate at which fluid is filtered across capillary walls.",
+        question: "Increase in the hydrostatic pressure of blood in capillaries tends to increase the rate at which fluid is filtered across capillary walls.",
         options: ["true", "false"],
         answer: "true",
       },
@@ -2218,7 +2218,7 @@ export const quizzes: Quiz[] = [
       {
         id: 3,
         question: "In respiring tissues, an increase in blood partial pressure of carbon dioxide causes all of the following except",
-        options: ["An increase in the hydrogen ion concentration.", "An increase in the bicarbonate concentration.", "An increase in the carbaminohemoglobin concentration.", "An increase in the affinity of hemoglobin for oxygen.", "An increase in hemoglobin unloading of oxygen."],
+        options: ["Increase in the hydrogen ion concentration.", "Increase in the bicarbonate concentration.", "Increase in the carbaminohemoglobin concentration.", "Increase in the affinity of hemoglobin for oxygen.", "Increase in hemoglobin unloading of oxygen."],
         answer: "", // d
       },
       {
@@ -2230,13 +2230,13 @@ export const quizzes: Quiz[] = [
       {
         id: 5,
         question: "During hyperventilation, which would be expected to happen?",
-        options: ["An increase in the partial pressure of oxygen of arterial blood", "An increase in the partial pressure of carbon dioxide of arterial blood", "An increase in the acidity of arterial blood", "An increase in the bicarbonate concentration of arterial blood", "A decrease in the pH of arterial blood"],
+        options: ["Increase in the partial pressure of oxygen of arterial blood", "Increase in the partial pressure of carbon dioxide of arterial blood", "Increase in the acidity of arterial blood", "Increase in the bicarbonate concentration of arterial blood", "A decrease in the pH of arterial blood"],
         answer: "", // a
       },
       {
         id: 6,
         question: "Which would be expected to cause a decrease in the percent saturation of hemoglobin?",
-        options: ["An increase in partial pressure of oxygen", "A decrease in blood pH", "A decrease in partial pressure of carbon dioxide", "A decrease in temperature", "All of the above"],
+        options: ["Increase in partial pressure of oxygen", "A decrease in blood pH", "A decrease in partial pressure of carbon dioxide", "A decrease in temperature", "All of the above"],
         answer: "", // b
       },
       {
@@ -2248,7 +2248,7 @@ export const quizzes: Quiz[] = [
       {
         id: 8,
         question: "Suppose a person’s arterial partial pressure of oxygen adn partial pressure of carbon dioxide are normal (partial pressure of oxygen = 100 mm Hg; partial pressure of carbon dioxide = 40 mm Hg;). Which would most likely stimulate an increase in ventilation?",
-        options: ["A decrease in partial pressure of oxygen to 90 mm Hg", "A decrease in partial pressure of carbon dioxide to 35 mm Hg", "An increase in partial pressure of oxygen to 110 mm Hg", "An increase in partial pressure of carbon dioxide to 45 mm Hg"],
+        options: ["A decrease in partial pressure of oxygen to 90 mm Hg", "A decrease in partial pressure of carbon dioxide to 35 mm Hg", "Increase in partial pressure of oxygen to 110 mm Hg", "Increase in partial pressure of carbon dioxide to 45 mm Hg"],
         answer: "", // d
       },
       {
@@ -2295,7 +2295,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 15,
-        question: "Under resting conditions, tissues normally extract (exactly half/more than half/less than half) of the oxygen that is delivered to them in arterial blood.",
+        question: "Under resting conditions, tissues normally extract (exactly half/more than half/less than half) of the oxygen delivered to them in arterial blood.",
         options: [],
         answer: "", // less than half
       },
@@ -2368,13 +2368,13 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 27,
-        question: "An increase in the partial pressure of oxygen of alveolar air would be expected to trigger local (bronchoconstriction/bronchodilation) in airways.",
+        question: "Increase in the partial pressure of oxygen of alveolar air would be expected to trigger local (bronchoconstriction/bronchodilation) in airways.",
         options: [],
         answer: "", // bronchoconstriction
       },
       {
         id: 28,
-        question: "An increase in the partial pressure of oxygen of alveolar air would be expected to trigger local (vasoconstriction/vasodilation).",
+        question: "Increase in the partial pressure of oxygen of alveolar air would be expected to trigger local (vasoconstriction/vasodilation).",
         options: [],
         answer: "", // vasodilation
       },
@@ -2448,7 +2448,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 10,
-        question: "A substance S is freely filterable and is excreted at a rate (in moles/min) that is lower than the filtered load. On the basis of this information alone, Which is the most precise conclusion that can justifiably be drawn regarding the kidneys’ processing of S?",
+        question: "A substance S is freely filterable and is excreted at a rate (in moles/min) lower than the filtered load. On the basis of this information alone, Which is the most precise conclusion that can justifiably be drawn regarding the kidneys’ processing of S?",
         options: ["S is neither reabsorbed nor secreted.", "S is definitely reabsorbed and may be secreted.", "S is definitely secreted and may be reabsorbed.", "S is definitely both reabsorbed and secreted."],
         answer: "", // b
       },
@@ -2539,7 +2539,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 25,
-        question: "An increase in the flow rate through the macula densa causes a(n) (increase/decrease) in the glomerular filtration rate.",
+        question: "Increase in the flow rate through the macula densa causes a(n) (increase/decrease) in the glomerular filtration rate.",
         options: [],
         answer: "", // decrease
       },
@@ -2578,7 +2578,7 @@ export const quizzes: Quiz[] = [
       {
         id: 4,
         question: "Which tends to be accompanied by an increase in the rate at which bicarbonate is excreted in the urine?",
-        options: ["A decrease in hydrogen ion secretion", "A decrease in the plasma bicarbonate concentration", "An increase in the production of ammonia by renal tubule epithelial cells", "Both a and b", "All of the above"],
+        options: ["A decrease in hydrogen ion secretion", "A decrease in the plasma bicarbonate concentration", "Increase in the production of ammonia by renal tubule epithelial cells", "Both a and b", "All of the above"],
         answer: "", // d
       },
       {
@@ -2590,7 +2590,7 @@ export const quizzes: Quiz[] = [
       {
         id: 6,
         question: "Which tends to promote an increase in sodium excretion?",
-        options: ["An increase in the glomerular filtration rate", "An increase in plasma renin concentration", "An increase in the secretion of atrial natriuretic peptide", "Both a and c", "All of the above"],
+        options: ["Increase in the glomerular filtration rate", "Increase in plasma renin concentration", "Increase in the secretion of atrial natriuretic peptide", "Both a and c", "All of the above"],
         answer: "", // d
       },
       {
@@ -2612,7 +2612,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 9,
-        question: "In the cytosol of intercalated cells, the carbon dioxide that is converted to carbonic acid can come from",
+        question: "In the cytosol of intercalated cells, the carbon dioxide converted to carbonic acid can come from",
         options: ["The lumen of the distal tubule and the collecting duct.", "Metabolism inside the intercalated cell.", "Catabolism of glutamine.", "Both a and b", "All of the above"],
         answer: "", // b
       },
@@ -2624,14 +2624,14 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 11,
-        question: "An increase in mean arterial pressure stimulates ____?",
+        question: "Increase in mean arterial pressure stimulates ____?",
         options: ["ADH release", "Angiotensin II production", "Aldosterone release", "Renin release", "Increased water excretion in urine"],
         answer: "Increased water excretion in urine",
       },
       {
         id: 12,
         question: "Which does not stimulate aldosterone release?",
-        options: ["Atrial natriuretic peptide", "An increase in plasma potassium", "An increase in renin secretion", "An increase in angiotensin II production"],
+        options: ["Atrial natriuretic peptide", "Increase in plasma potassium", "Increase in renin secretion", "Increase in angiotensin II production"],
         answer: "Atrial natriuretic peptide",
       },
       {
@@ -2654,7 +2654,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 16,
-        question: "An increase in solutes reabsorption ____ water reabsorption.",
+        question: "Increase in solutes reabsorption ____ water reabsorption.",
         options: ["increases", "decreases"],
         answer: "increases",
       },
@@ -2732,7 +2732,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 29,
-        question: "The kidneys can excrete urine that is pure water.",
+        question: "The kidneys can excrete urine to pure water.",
         options: ["true", "false"],
         answer: "false",
       },
@@ -2968,7 +2968,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 3,
-        question: "Which cells of the ­pancreas secrete insulin?",
+        question: "Which ­pancreas cells secrete insulin?",
         options: ["Alpha cells", "Beta cells", "Delta cells", "Exocrine cells", "Duct cells"],
         answer: "Beta cells",
         answerExplanation: "Beta cells in the pancreatic islets produce insulin. Alpha cells produce glucagon, and delta cells produce somatostatin.",
@@ -2982,7 +2982,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 5,
-        question: "Hypoglycemia inhibits secretion of ____?",
+        question: "Hypoglycemia inhibits secreting ____?",
         options: ["Growth hormone", "Insulin", "Epinephrine", "Glucagon", "All of the above"],
         answer: "Insulin",
         answerExplanation: "Low blood glucose suppresses insulin secretion while stimulating glucagon, epinephrine, and GH. So insulin is inhibited.",
@@ -3004,8 +3004,8 @@ export const quizzes: Quiz[] = [
       {
         id: 8,
         question: "Which is true of adulthood?",
-        options: ["Growth hormone exerts no effects on body tissues.", "The secretion of growth hormone ceases altogether.", "Growth hormone cannot stimulate increases in the length of long bones.", "The structure of bone becomes permanently fixed.", "None of the above"],
-        answer: "Growth hormone cannot stimulate increases in the length of long bones.",
+        options: ["Growth hormone exerts no effects on body tissues.", "The secretion of growth hormone ceases altogether.", "Growth hormone cannot stimulate increases in long bones length.", "Bone structure becomes permanently fixed.", "None of the above"],
+        answer: "Growth hormone cannot stimulate increases in long bones length.",
         answerExplanation: "In adults, growth plates have closed, so GH cannot increase the length of long bones, though it still affects metabolism and soft tissue growth.",
       },
       {
@@ -3052,28 +3052,28 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 15,
-        question: "Conversion of amino acids to fatty acids is more likely to occur in the (absorptive/postabsorptive) state.",
+        question: "Conversion of amino acids to fatty acids occurs more likely in ____ state.",
         options: ["absorptive", "postabsorptive"],
         answer: "absorptive",
         answerExplanation: "This occurs in the absorptive state, when excess nutrients are converted into storage molecules like fat.",
       },
       {
         id: 16,
-        question: "Conversion of amino acids to glucose is more likely to occur in the (absorptive/postabsorptive) state.",
+        question: "Conversion of amino acids to glucose occurs more likely in ____ state.",
         options: ["absorptive", "postabsorptive"],
         answer: "postabsorptive",
         answerExplanation: "This occurs in the postabsorptive state, when the body needs to generate glucose through gluconeogenesis.",
       },
       {
         id: 17,
-        question: "An increase in plasma thyroid hormone levels tends to make the body’s energy balance more (positive/negative).",
+        question: "Increase in plasma thyroid hormone levels tends to make the body’s energy balance more (positive/negative).",
         options: ["positive", "negative"],
         answer: "negative",
         answerExplanation: "Increased thyroid hormone raises metabolic rate, causing the body to burn more energy—making energy balance more negative.",
       },
       {
         id: 18,
-        question: "Energy that is taken into the body is either stored or appears as work or           .",
+        question: "Energy taken into the body is either stored or appears as work or           .",
         options: ["heat"],
         answer: "heat",
         answerExplanation: "All other energy taken in is released as heat, maintaining body temperature.",
