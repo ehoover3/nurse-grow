@@ -13,9 +13,17 @@ try {
   let originalContent = content;
 
   const replacements = [
-    { from: /\bTEST\b/g, to: "T3ST" },
     { from: /\binformation\b/g, to: "info" },
     { from: /\bin order to\b/g, to: "to" },
+    { from: /\bpartial pressure of oxygen\b/g, to: "oxygen partial pressure" },
+    { from: /\bpartial pressure of carbon dioxide\b/g, to: "carbon dioxide partial pressure" },
+    { from: /\bcarbon dioxide\b/g, to: "CO₂" },
+    { from: /\blower than that of\b/g, to: "lower than" },
+    { from: /\bsecretion of ADH\b/g, to: "ADH secretion" },
+    { from: /\bsecretion of atrial natriuretic peptide\b/g, to: "atrial natriuretic peptide secretion" },
+    { from: /\bsecretion of renin\b/g, to: "renin secretion" },
+    { from: /\bsecretion of stomach acid\b/g, to: "stomach acid secretion" },
+    { from: /\bAssume that\b/g, to: "Assume" },
   ];
 
   let totalChanges = 0;
