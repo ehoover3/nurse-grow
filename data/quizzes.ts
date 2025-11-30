@@ -1,8 +1,14 @@
+export type TooltipTerm = {
+  label: string;
+  meaning: string;
+};
+
 export type Question = {
   id: number;
   question: string;
   options: string[];
   answer: string;
+  tooltipTerms?: TooltipTerm[];
   answerImage?: string;
   answerExplanation?: string;
   notes?: string;
@@ -25,10 +31,14 @@ export const quizzes: Quiz[] = [
     questions: [
       {
         id: 1,
-        question: "What is the largest organ in the human body?",
-        options: ["Liver", "Skin", "Heart", "Brain"],
-        answer: "Skin",
-        answerImage: "/images/Figure 1.3 Glands.png",
+        question: "Which electrolyte is most abundant in bone? {Ca}",
+        options: ["{Na}", "{Ca}", "{K}", "Cl"],
+        answer: "{Ca}",
+        tooltipTerms: [
+          { label: "Ca", meaning: "Calcium" },
+          { label: "K", meaning: "Potassium" },
+          { label: "Na", meaning: "Sodium" },
+        ],
       },
       {
         id: 2,
@@ -44,7 +54,6 @@ export const quizzes: Quiz[] = [
       },
     ],
   },
-
   {
     slug: "physiology-chapter-1",
     title: "Introduction to Physiology",
@@ -62,6 +71,7 @@ export const quizzes: Quiz[] = [
           "Uterus contractions push the fetus against the cervix, which triggers release of oxytocin into the bloodstream; oxytocin then stimulates stronger uterus contractions.",
         ],
         answer: "Uterus contractions push the fetus against the cervix, which triggers release of oxytocin into the bloodstream; oxytocin then stimulates stronger uterus contractions.",
+        tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
       {
         id: 2,
@@ -340,6 +350,7 @@ export const quizzes: Quiz[] = [
         question: "When glucose is oxidized in cells, O₂ reacts with",
         options: ["Carbon to form CO₂", "Hydrogen to form H₂O", "Components of the electron transport chain.", "Inorganic phosphate to form ATP.", "Acetyl CoA to form acetate."],
         answer: "Hydrogen to form H₂O",
+        tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
       {
         id: 2,
@@ -396,6 +407,7 @@ export const quizzes: Quiz[] = [
         question: "In which is CO₂ generated?",
         options: ["Glycolysis only", "Linking step only", "Krebs cycle only", "Glycolysis and Krebs cycle", "Linking step and Krebs cycle"],
         answer: "Linking step and Krebs cycle",
+        tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
       {
         id: 11,
@@ -1036,13 +1048,13 @@ export const quizzes: Quiz[] = [
     questions: [
       {
         id: 1,
-        question: "Suppose that the electrochemical force for anion X(X⁻) acts to move the anion out of the cell. If a neurotransmitter binding to its receptor opened channels for X⁻ on the postsynaptic cell, then the response would",
+        question: "If electrochemical force moves an anion out of the cell and if a neurotransmitter binding to its receptor opened channels for the anion on the postsynaptic cell, then the response would",
         options: ["Be an EPSP.", "Be an IPSP.", "Be stabilization of the membrane.", "Not occur."],
         answer: "Be an EPSP.",
       },
       {
         id: 2,
-        question: "Suppose that all the calcium could be removed from the extracellular fluid surrounding a neuron. Such removal would inhibit the ability of a neuron to",
+        question: "Suppose all the calcium could be removed from the extracellular fluid surrounding a neuron. Such removal would inhibit the ability of a neuron to",
         options: ["Produce action potentials.", "Release neurotransmitter.", "Respond to the binding of a neurotransmitter to its receptor.", "Degrade neurotransmitters."],
         answer: "Release neurotransmitter.",
       },
@@ -1967,6 +1979,7 @@ export const quizzes: Quiz[] = [
         question: "During exercise, CO₂ produced by muscle cells causes vasodilation in skeletal muscle. This is an example of",
         options: ["Active hyperemia.", "Reactive hyperemia.", "Flow autoregulation.", "Extrinsic control of vascular resistance.", "Starling forces."],
         answer: "Active hyperemia.",
+        tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
       {
         id: 13,
@@ -2066,6 +2079,7 @@ export const quizzes: Quiz[] = [
         question: "            is an enzyme that converts CO₂ and water into carbonic acid.",
         options: [],
         answer: "", // 8 Carbonic anhydrase
+        tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
     ],
   },
@@ -2080,6 +2094,7 @@ export const quizzes: Quiz[] = [
         question: "Which is a component of internal respiration?",
         options: ["Ventilation", "Transport of O₂ in the blood", "Diffusion of CO₂ from tissues to blood", "Diffusion of O₂ from blood to tissues", "Oxidative phosphorylation"],
         answer: "", // 1 e
+        tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
       {
         id: 2,
@@ -2209,6 +2224,7 @@ export const quizzes: Quiz[] = [
         question: "Under steady-state conditions, the rate at which O₂ enters pulmonary capillaries from alveolar air is equal to",
         options: ["The rate at which O₂ is delivered to alveoli in inspired air.", "The rate at which O₂ is carried out of the alveoli in expired air.", "The rate at which O₂ is consumed in respiring tissues.", "The rate at which CO₂ is produced in respiring tissues.", "The rate at which CO₂ leaves the pulmonary capillaries and enters alveolar air."],
         answer: "", // c
+        tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
       {
         id: 2,
@@ -2221,6 +2237,7 @@ export const quizzes: Quiz[] = [
         question: "In respiring tissues, an increase in blood CO₂ partial pressure causes all of the following except",
         options: ["Increase in the hydrogen ion concentration.", "Increase in the bicarbonate concentration.", "Increase in the carbaminohemoglobin concentration.", "Increase in the affinity of hemoglobin for O₂.", "Increase in hemoglobin unloading of O₂."],
         answer: "", // d
+        tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
       {
         id: 4,
@@ -2233,24 +2250,28 @@ export const quizzes: Quiz[] = [
         question: "During hyperventilation, which would be expected to happen?",
         options: ["Increase in the O₂ partial pressure of arterial blood", "Increase in the CO₂ partial pressure of arterial blood", "Increase in the acidity of arterial blood", "Increase in the bicarbonate concentration of arterial blood", "Decrease in the pH of arterial blood"],
         answer: "", // a
+        tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
       {
         id: 6,
         question: "Which would be expected to cause a decrease in the percent saturation of hemoglobin?",
         options: ["Increase in O₂ partial pressure", "Decrease in blood pH", "Decrease in CO₂ partial pressure", "Decrease in temperature", "All of the above"],
         answer: "", // b
+        tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
       {
         id: 7,
-        question: "Suppose that alveolar O₂ partial pressure = 100 mm Hg and CO₂ partial pressure = 60 mm Hg. Which is true?",
+        question: "Suppose alveolar O₂ partial pressure = 100 mm Hg and CO₂ partial pressure = 60 mm Hg. Which is true?",
         options: ["pH will be less than normal.", "Percent saturation of hemoglobin by O₂ will be less than normal.", "Bicarbonate concentration will be greater than normal.", "Both a and c are true.", "All of the above."],
         answer: "", // e
+        tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
       {
         id: 8,
         question: "A person's arterial O₂ partial pressure and CO₂ partial pressure are normal (O₂ partial pressure = 100 mm Hg; CO₂ partial pressure = 40 mm Hg;). Which would most likely stimulate an increase in ventilation?",
         options: ["Decrease in O₂ partial pressure to 90 mm Hg", "Decrease in CO₂ partial pressure to 35 mm Hg", "Increase in O₂ partial pressure to 110 mm Hg", "Increase in CO₂ partial pressure to 45 mm Hg"],
         answer: "Increase in CO₂ partial pressure to 45 mm Hg",
+        tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
       {
         id: 9,
@@ -2263,6 +2284,7 @@ export const quizzes: Quiz[] = [
           "Direct stimulation by hydrogen ions in arterial blood.",
         ],
         answer: "", // c
+        tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
       {
         id: 10,
@@ -2275,12 +2297,14 @@ export const quizzes: Quiz[] = [
         question: "The normal ratio of bicarbonate concentration to CO₂ concentration in arterial blood is",
         options: ["1:5.", "5:1.", "10:1.", "20:1.", "1:20."],
         answer: "", // d
+        tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
       {
         id: 12,
         question: "Which can hemoglobin bind and transport in blood?",
         options: ["O₂", "CO₂", "Hydrogen ions", "Both a and c", "All of the above"],
         answer: "", // e
+        tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
       {
         id: 13,
@@ -2305,6 +2329,7 @@ export const quizzes: Quiz[] = [
         question: "The amount of CO₂ in systemic arterial blood is less than 50% of that in mixed venous blood.",
         options: ["true", "false"],
         answer: "false", // false
+        tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
 
       {
@@ -2312,12 +2337,14 @@ export const quizzes: Quiz[] = [
         question: "When the CO₂ partial pressure of the blood increases, the concentration of bicarbonate (increases/decreases), and the concentration of hydrogen ions (increases/decreases).",
         options: [],
         answer: "", // increases, increases
+        tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
       {
         id: 18,
         question: "The enzyme that catalyzes the conversion of CO₂ to carbonic acid is          .",
         options: [],
         answer: "", // carbonic anhydrase
+        tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
       {
         id: 19,
@@ -2330,24 +2357,28 @@ export const quizzes: Quiz[] = [
         question: "When a person hypoventilates, the CO₂ partial pressure of arterial blood (increases/decreases).",
         options: [],
         answer: "", // increases
+        tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
       {
         id: 21,
         question: "Decrease in alveolar ventilation would be expected to cause a(n) (increase/decrease) in arterial O₂ partial pressure and a(n) (increase/decrease) in arterial CO₂ partial pressure.",
         options: [],
         answer: "", // decrease, increase
+        tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
       {
         id: 22,
         question: "Hemoglobin with CO₂ bound to it is called           .",
         options: [],
         answer: "", // carbaminohemoglobin
+        tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
       {
         id: 23,
         question: "In gas exchange in both the lungs and respiring tissues, O₂ and CO₂ always move down their partial pressure gradients.",
         options: ["true", "false"],
         answer: "true", // true
+        tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
       {
         id: 24,
@@ -2366,6 +2397,7 @@ export const quizzes: Quiz[] = [
         question: "In respiratory acidosis, arterial CO₂ partial pressure is (higher/lower) than normal.",
         options: [],
         answer: "", // higher
+        tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
       {
         id: 27,
@@ -2449,10 +2481,11 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 10,
-        question: "A substance S is freely filtered and excreted at a lower rate than filtered load. On the basis of this info alone, Which is the most precise conclusion that can justifiably be drawn regarding the kidneys’ processing of S?",
-        options: ["S is not reabsorbed nor secreted.", "S is definitely reabsorbed and may be secreted.", "S is definitely secreted and may be reabsorbed.", "S is definitely both reabsorbed and secreted."],
-        answer: "", // b
+        question: "A substance is freely filtered and excreted at a lower rate than filtered load. How are the kidneys processing the substance?",
+        options: ["Is not reabsorbed nor secreted.", "It is definitely reabsorbed and may be secreted.", "It is definitely secreted and may be reabsorbed.", "It is definitely both reabsorbed and secreted."],
+        answer: "S is definitely reabsorbed and may be secreted.",
       },
+
       {
         id: 11,
         question: "Which observations would enable you to definitely conclude that a substance X is being secreted?",
@@ -2587,6 +2620,7 @@ export const quizzes: Quiz[] = [
         question: "Assuming that arterial CO₂ partial pressure is normal, metabolic acidosis promotes ____?",
         options: ["Increased hydrogen ion secretion by the renal tubule", "Decreased alveolar ventilation", "Increased bicarbonate reabsorption", "Both a and c", "All of the above"],
         answer: "", // d
+        tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
       {
         id: 6,
@@ -2602,13 +2636,8 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 8,
-        question: "Because sweat is essentially a salt solution with an osmolarity lower than plasma, severe sweating leads to a reduction in plasma volume and an increase in plasma osmolarity. How do these changes affect the ADH secretion?",
-        options: [
-          "The decrease in plasma volume inhibits ADH secretion, but the increase in osmolarity stimulates it.",
-          "The decrease in plasma volume stimulates ADH secretion, but the increase in osmolarity inhibits it.",
-          "Both the decrease in plasma volume and the increase in osmolarity stimulate ADH secretion.",
-          "Both the decrease in plasma volume and the increase in osmolarity inhibit ADH secretion.",
-        ],
+        question: "Sweat is basically a salt solution with a lower osmolarity than plasma. Severe sweating leads to reduced plasma volume and increased plasma osmolarity. How does this affect ADH secretion?",
+        options: ["Decrease in plasma volume inhibits ADH secretion, but the increase in osmolarity stimulates it.", "Decrease in plasma volume stimulates ADH secretion, but the increase in osmolarity inhibits it.", "Both decrease in plasma volume and increase in osmolarity stimulate ADH secretion.", "Both decrease in plasma volume and increase in osmolarity inhibit ADH secretion."],
         answer: "", // c
       },
       {
@@ -2616,12 +2645,14 @@ export const quizzes: Quiz[] = [
         question: "In the cytosol of intercalated cells, the CO₂ converted to carbonic acid can come from",
         options: ["The lumen of the distal tubule and the collecting duct.", "Metabolism inside the intercalated cell.", "Catabolism of glutamine.", "Both a and b", "All of the above"],
         answer: "", // b
+        tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
       {
         id: 10,
         question: "In the lumen of the proximal tubule, secreted hydrogen ions are primarily buffered by",
         options: ["Bicarbonate.", "Phosphates.", "Proteins.", "Sulfates.", "CO₂."],
         answer: "", // a
+        tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
       {
         id: 11,
@@ -2652,6 +2683,7 @@ export const quizzes: Quiz[] = [
         question: "A person has these symptoms: arterial pH = 7.45, partical pressure of CO₂ = 44 mm Hg, plasma bicarbonate concentration = 27 mM. What is the diagnosis?",
         options: ["Respiratory acidosis", "Respiratory alkalosis", "Metabolic acidosis", "Metabolic alkalosis"],
         answer: "Metabolic alkalosis",
+        tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
       {
         id: 16,

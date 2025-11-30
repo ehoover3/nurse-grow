@@ -1,11 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Quiz } from "../data/quizzes";
+import { Quiz, TooltipTerm } from "../data/quizzes";
 import { useRouter } from "next/navigation";
 import Button from "../components/Button";
 import shuffleArray from "../utils/shuffleArray";
 import { Variant } from "../components/Button";
+import Tooltip from "./Tooltip";
 
 type QuizGameProps = {
   quiz: Quiz;
@@ -23,8 +24,28 @@ type AnswerOptionsProps = {
   quizState: QuizState;
   userSelectedAnswer: string | null;
   setUserSelectedAnswer: (answer: string) => void;
+  tooltipTerms?: TooltipTerm[];
 };
 
+/** ----------------------------------------
+ * Tooltip Parsing
+ * ---------------------------------------- */
+export function parseWithTooltips(text: string, tooltipTerms: TooltipTerm[] = []) {
+  return text.split(/(\{.*?\})/g).map((part, i) => {
+    const match = part.match(/\{(.*?)\}/);
+    if (!match) return part;
+
+    const label = match[1];
+    const term = tooltipTerms.find((t) => t.label === label);
+    if (!term) return label;
+
+    return <Tooltip key={i} label={label} meaning={term.meaning} />;
+  });
+}
+
+/** ----------------------------------------
+ * Shuffle Answer Options
+ * ---------------------------------------- */
 const shuffleQuizAnswerOptions = (questions: Quiz["questions"]): Quiz["questions"] => {
   return questions.map((question) => ({
     ...question,
@@ -32,18 +53,25 @@ const shuffleQuizAnswerOptions = (questions: Quiz["questions"]): Quiz["questions
   }));
 };
 
-function Question({ question }: { question: string }) {
-  return <p className='text-lg mb-4'>{question}</p>;
+/** ----------------------------------------
+ * Question Component
+ * ---------------------------------------- */
+function Question({ question, tooltipTerms }: { question: string; tooltipTerms?: TooltipTerm[] }) {
+  return <p className='text-lg mb-4'>{parseWithTooltips(question, tooltipTerms ?? [])}</p>;
 }
 
-function AnswerOptions({ currentQuestion, quizState, userSelectedAnswer, setUserSelectedAnswer }: AnswerOptionsProps) {
+/** ----------------------------------------
+ * Answer Options Component
+ * ---------------------------------------- */
+function AnswerOptions({ currentQuestion, quizState, userSelectedAnswer, setUserSelectedAnswer, tooltipTerms }: AnswerOptionsProps) {
   return (
     <div className='grid gap-2'>
-      {currentQuestion.options.map((option: any) => {
+      {currentQuestion.options.map((option) => {
         const isAnswerSelected = quizState === QuizState.SELECT_ANSWER;
         const isCheckButtonClicked = quizState === QuizState.CONTINUE_BUTTON;
         const isUserPick = userSelectedAnswer === option;
         const isCorrect = option === currentQuestion.answer;
+
         let variant: Variant = "white";
 
         if (isAnswerSelected && isUserPick) {
@@ -53,9 +81,10 @@ function AnswerOptions({ currentQuestion, quizState, userSelectedAnswer, setUser
         } else if (isCheckButtonClicked && isUserPick) {
           variant = "red";
         }
+
         return (
           <Button key={option} onClick={() => isAnswerSelected && setUserSelectedAnswer(option)} disabled={!isAnswerSelected} variant={variant} className='border w-full text-left p-2 rounded'>
-            {option}
+            {parseWithTooltips(option, tooltipTerms ?? [])}
           </Button>
         );
       })}
@@ -63,8 +92,12 @@ function AnswerOptions({ currentQuestion, quizState, userSelectedAnswer, setUser
   );
 }
 
+/** ----------------------------------------
+ * Main Quiz Component
+ * ---------------------------------------- */
 export default function QuizGame({ quiz }: QuizGameProps) {
   const router = useRouter();
+
   const [questionsToAsk, setQuestionsToAsk] = useState<Quiz["questions"]>(() => quiz.questions);
   const [isMounted, setIsMounted] = useState(false);
   const [questionsToAskIndex, setQuestionsToAskIndex] = useState(0);
@@ -72,8 +105,12 @@ export default function QuizGame({ quiz }: QuizGameProps) {
   const [userSelectedAnswer, setUserSelectedAnswer] = useState<string | null>(null);
   const [quizState, setQuizState] = useState<QuizState>(QuizState.SELECT_ANSWER);
   const [score, setScore] = useState(0);
+
   const currentQuestion = questionsToAsk[questionsToAskIndex] || quiz.questions[0];
 
+  /** ----------------------------------------
+   * Mount + Shuffle
+   * ---------------------------------------- */
   useEffect(() => {
     if (!isMounted) {
       setQuestionsToAsk(shuffleQuizAnswerOptions(quiz.questions));
@@ -81,6 +118,9 @@ export default function QuizGame({ quiz }: QuizGameProps) {
     }
   }, [quiz.questions, isMounted]);
 
+  /** ----------------------------------------
+   * Check Logic
+   * ---------------------------------------- */
   const handleCheck = {
     check: () => {
       if (!userSelectedAnswer) return;
@@ -93,11 +133,16 @@ export default function QuizGame({ quiz }: QuizGameProps) {
     incorrect: () => setQuestionsToRetry((prev) => [...prev, currentQuestion]),
   };
 
+  /** ----------------------------------------
+   * Continue Logic
+   * ---------------------------------------- */
   const handleContinue = {
     continue: () => {
       const nextIndex = questionsToAskIndex + 1;
+
       if (nextIndex < questionsToAsk.length) return handleContinue.askNext();
       if (questionsToRetry.length > 0) return handleContinue.reask();
+
       setQuizState(QuizState.VIEW_SUMMARY);
     },
     askNext: () => {
@@ -114,6 +159,9 @@ export default function QuizGame({ quiz }: QuizGameProps) {
     },
   };
 
+  /** ----------------------------------------
+   * Restart + Exit
+   * ---------------------------------------- */
   const restartQuiz = () => {
     setQuestionsToAsk(shuffleQuizAnswerOptions(quiz.questions));
     setQuestionsToAskIndex(0);
@@ -125,13 +173,18 @@ export default function QuizGame({ quiz }: QuizGameProps) {
 
   const exitQuiz = () => router.push("/");
 
+  /** ----------------------------------------
+   * Quiz Screen
+   * ---------------------------------------- */
   const quizScreen = (
     <div className='mt-8'>
       <h2 className='text-2xl font-bold mb-2'>
         Question {questionsToAskIndex + 1} / {quiz.questions.length}
       </h2>
-      <Question question={currentQuestion.question} />
-      <AnswerOptions currentQuestion={currentQuestion} quizState={quizState} userSelectedAnswer={userSelectedAnswer} setUserSelectedAnswer={setUserSelectedAnswer} />
+
+      <Question question={currentQuestion.question} tooltipTerms={currentQuestion.tooltipTerms ?? []} />
+
+      <AnswerOptions currentQuestion={currentQuestion} quizState={quizState} userSelectedAnswer={userSelectedAnswer} setUserSelectedAnswer={setUserSelectedAnswer} tooltipTerms={currentQuestion.tooltipTerms ?? []} />
 
       <div className='mt-4'>
         {quizState === QuizState.SELECT_ANSWER ? (
@@ -146,7 +199,7 @@ export default function QuizGame({ quiz }: QuizGameProps) {
 
         {quizState === QuizState.CONTINUE_BUTTON && currentQuestion.answerImage && (
           <div className='mt-4'>
-            <img src={currentQuestion.answerImage} alt='Answer explanation' className='max-w-full h-auto rounded border' />{" "}
+            <img src={currentQuestion.answerImage} alt='Answer explanation' className='max-w-full h-auto rounded border' />
           </div>
         )}
 
@@ -155,16 +208,21 @@ export default function QuizGame({ quiz }: QuizGameProps) {
     </div>
   );
 
+  /** ----------------------------------------
+   * Summary Screen
+   * ---------------------------------------- */
   const summaryScreen = (
     <div className='flex flex-col items-center gap-4 mt-8'>
       <h2 className='text-2xl font-bold mb-2'>Quiz Finished!</h2>
       <p className='text-xl mb-4'>
         You answered {score} / {quiz.questions.length} correctly on the first attempt
       </p>
+
       <div className='flex gap-4'>
         <button onClick={restartQuiz} className='px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition'>
           Retry Quiz
         </button>
+
         <button onClick={exitQuiz} className='px-4 py-2 bg-gray-300 text-black rounded hover:bg-gray-400 transition'>
           Back to Quizzes
         </button>
@@ -172,11 +230,15 @@ export default function QuizGame({ quiz }: QuizGameProps) {
     </div>
   );
 
+  /** ----------------------------------------
+   * Return
+   * ---------------------------------------- */
   return (
     <div className='p-8 relative'>
       <button onClick={exitQuiz} className='absolute top-4 left-4 text-xl font-bold text-gray-700 hover:text-gray-900' aria-label='Back to quiz list'>
         ✕
       </button>
+
       {quizState !== QuizState.VIEW_SUMMARY ? quizScreen : summaryScreen}
     </div>
   );

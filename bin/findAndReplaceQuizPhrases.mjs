@@ -24,6 +24,7 @@ try {
     { from: /\bsecretion of renin\b/g, to: "renin secretion" },
     { from: /\bsecretion of stomach acid\b/g, to: "stomach acid secretion" },
     { from: /\bAssume that\b/g, to: "Assume" },
+    { from: /\Suppose that\b/g, to: "Suppose" },
   ];
 
   let totalChanges = 0;
