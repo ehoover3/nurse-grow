@@ -32,12 +32,12 @@ export const quizzes: Quiz[] = [
       {
         id: 1,
         question: "Which electrolyte is most abundant in bone? {Ca}",
-        options: ["{Na}", "{Ca}", "{K}", "Cl"],
+        options: ["{CO₂}", "{Ca}", "{O₂}", "{K}"],
         answer: "{Ca}",
         tooltipTerms: [
-          { label: "Ca", meaning: "Calcium" },
+          { label: "CO₂", meaning: "Carbon Dioxide" },
+          { label: "O₂", meaning: "Oxygen" },
           { label: "K", meaning: "Potassium" },
-          { label: "Na", meaning: "Sodium" },
         ],
       },
       {
@@ -75,9 +75,10 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 2,
-        question: "The hormone aldosterone stimulates the reabsorption of sodium ions from a kidney tubule's lumen. This hormone acts on ____",
+        question: "The hormone aldosterone stimulates the reabsorption of {Na} ions from a kidney tubule's lumen. This hormone acts on ____",
         options: ["Neurons.", "Muscle cells.", "Epithelial cells.", "Connective tissue cells."],
         answer: "Epithelial cells.",
+        tooltipTerms: [{ label: "Na", meaning: "Sodium" }],
       },
       {
         id: 3,
@@ -350,7 +351,10 @@ export const quizzes: Quiz[] = [
         question: "When glucose is oxidized in cells, O₂ reacts with",
         options: ["Carbon to form CO₂", "Hydrogen to form H₂O", "Components of the electron transport chain.", "Inorganic phosphate to form ATP.", "Acetyl CoA to form acetate."],
         answer: "Hydrogen to form H₂O",
-        tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
+        tooltipTerms: [
+          { label: "CO₂", meaning: "Carbon Dioxide" },
+          { label: "O₂", meaning: "Oxygen" },
+        ],
       },
       {
         id: 2,
@@ -391,10 +395,10 @@ export const quizzes: Quiz[] = [
 
       {
         id: 8,
-        question: "In the following reaction, NAD⁺ receives electrons from the substance AH₂:\nNAD⁺ + AH₂ E→ NADH + H⁺ + A\nwhere E is the enzyme that catalyzes the reaction. In this reaction, which substance undergoes oxidation?",
+        question: "In this reaction, what is oxidized? NAD⁺ + AH₂ → NADH + H⁺ + A”",
         options: ["NAD⁺", "NADH", "AH2", "A"],
         answer: "AH2",
-        notes: "The has a symbol issue.  The E should be above the right arrow.",
+        answerExplanation: "AH₂ is oxidized because it loses electrons (and hydrogen) and becomes A, while NAD⁺ gains those electrons and is reduced to NADH.",
       },
       {
         id: 9,
@@ -494,8 +498,12 @@ export const quizzes: Quiz[] = [
       {
         id: 1,
         question: "Which is located in greater concentration inside cells compared to outside?",
-        options: ["Potassium ions", "Sodium ions", "Proteins", "Potassium and sodium ions are both located in greater concentration inside cells.", "Potassium ions and proteins are both located in greater concentration inside cells."],
-        answer: "Potassium ions and proteins are both located in greater concentration inside cells.",
+        options: ["{K} ions", "{Na} ions", "Proteins", "{K} and {Na} ions are both located in greater concentration inside cells.", "{K} ions and proteins are both located in greater concentration inside cells."],
+        answer: "K ions and proteins are both located in greater concentration inside cells.",
+        tooltipTerms: [
+          { label: "K", meaning: "Potassium" },
+          { label: "Na", meaning: "Sodium" },
+        ],
       },
       {
         id: 2,
@@ -505,9 +513,13 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 3,
-        question: "Given that the potassium equilibrium potential is -94 mV and the sodium equilibrium potential is +60 mV, which statements is true for forces acting on sodium and potassium when a cell is at -70 mV?",
-        options: ["The electrochemical gradient for Na⁺ tries to move it into the cell.", "The electrochemical gradient for K⁺ tries to move it into the cell.", "Both a and b are correct.", "Neither a nor b is correct."],
-        answer: "The electrochemical gradient for Na⁺ tries to move it into the cell.",
+        question: "If a cell is at -70 mV, {K}⁺ tends to leave and {Na}⁺ tends to enter. Which is true for {N}a⁺ and {K}⁺ movement?",
+        options: ["Na⁺ moves in", "K⁺ moves in", "Both", "Neither"],
+        answer: "Na⁺ moves in",
+        tooltipTerms: [
+          { label: "K", meaning: "Potassium" },
+          { label: "Na", meaning: "Sodium" },
+        ],
       },
       {
         id: 4,
@@ -536,9 +548,13 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 8,
-        question: "Movement of Na⁺ in sodium-linked glucose transport, in sodium-proton exchange, and via the sodium-potassium pump are all examples of",
+        question: "Movement of {Na}⁺ in {Na}-linked glucose transport, in {Na}-proton exchange, and via the {Na}-{K} pump are all examples of",
         options: ["Primary active transport.", "Passive transport.", "Mediated transport.", "Simple diffusion."],
         answer: "Mediated transport.",
+        tooltipTerms: [
+          { label: "K", meaning: "Potassium" },
+          { label: "Na", meaning: "Sodium" },
+        ],
       },
       {
         id: 9,
@@ -710,9 +726,10 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 16,
-        question: "Following activation of the phosphatidylinositol system, (IP₃/DAG) liberates calcium from intracellular stores.",
+        question: "Following activation of the phosphatidylinositol system, (IP₃/DAG) liberates {Ca} from intracellular stores.",
         options: [],
         answer: "IP3",
+        tooltipTerms: [{ label: "Ca", meaning: "Calcium" }],
       },
       {
         id: 17,
@@ -861,8 +878,12 @@ export const quizzes: Quiz[] = [
       {
         id: 1,
         question: "Depolarization of a neuron to threshold stimulates",
-        options: ["Opening of sodium channels.", "Delayed closing of sodium channels.", "Delayed opening of potassium channels.", "Both a and c.", "All of the above."],
+        options: ["Opening of {Na} channels.", "Delayed closing of {Na} channels.", "Delayed opening of {K} channels.", "Both a and c.", "All of the above."],
         answer: "All of the above.",
+        tooltipTerms: [
+          { label: "K", meaning: "Potassium" },
+          { label: "Na", meaning: "Sodium" },
+        ],
       },
       {
         id: 2,
@@ -879,8 +900,12 @@ export const quizzes: Quiz[] = [
       {
         id: 4,
         question: "An action potential's depolarization phase is caused by ____",
-        options: ["Opening of potassium channels.", "Closing of potassium channels.", "Opening of sodium channels.", "Closing of sodium channels."],
-        answer: "Opening of sodium channels.",
+        options: ["Opening of {K} channels.", "Closing of {K} channels.", "Opening of {Na} channels.", "Closing of {Na} channels."],
+        answer: "Opening of {Na} channels.",
+        tooltipTerms: [
+          { label: "K", meaning: "Potassium" },
+          { label: "Na", meaning: "Sodium" },
+        ],
       },
       {
         id: 5,
@@ -902,15 +927,20 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 8,
-        question: "Oubain is a poison that blocks the Na⁺/K⁺ pump. If this pump is blocked, then the concentration of potassium inside the cell would",
+        question: "Oubain is a poison that blocks the {Na}⁺/{K}⁺ pump. If this pump is blocked, then the concentration of {K} inside the cell would",
         options: ["Increase.", "Decrease.", "Not change."],
         answer: "Decrease.",
+        tooltipTerms: [
+          { label: "K", meaning: "Potassium" },
+          { label: "Na", meaning: "Sodium" },
+        ],
       },
       {
         id: 9,
-        question: "If potassium concentrations in the extracellular fluid of the brain increased, activity in the brain would",
+        question: "If {K} concentrations in the extracellular fluid of the brain increased, activity in the brain would",
         options: ["Increase.", "Decrease.", "Not change."],
         answer: "Increase.",
+        tooltipTerms: [{ label: "K", meaning: "Potassium" }],
       },
       {
         id: 10,
@@ -926,9 +956,10 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 12,
-        question: "Which best describes the status of sodium channels at the resting membrane potential?",
+        question: "Which best describes the status of {Na} channels at the resting membrane potential?",
         options: ["Activation gates are open and inactivation gates are closed.", "Activation gates are closed and inactivation gates are open.", "Activation gates and inactivation gates are closed.", "Activation gates and inactivation gates are open."],
         answer: "Activation gates are closed and inactivation gates are open.",
+        tooltipTerms: [{ label: "Na", meaning: "Sodium" }],
       },
       {
         id: 13,
@@ -939,8 +970,12 @@ export const quizzes: Quiz[] = [
       {
         id: 14,
         question: "Of the following ions, which is (are) ­located in greater concentration inside the cell?",
-        options: ["Sodium only", "Potassium only", "Chloride only", "Sodium and potassium", "Potassium and chloride"],
-        answer: "Potassium only",
+        options: ["{Na} only", "{K} only", "Chloride only", "{Na} and potassium", "{K} and chloride"],
+        answer: "{K} only",
+        tooltipTerms: [
+          { label: "K", meaning: "Potassium" },
+          { label: "Na", meaning: "Sodium" },
+        ],
       },
       {
         id: 15,
@@ -968,9 +1003,10 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 19,
-        question: "Voltage-gated calcium channels are located in which region(s) of a neuron?",
+        question: "Voltage-gated {Ca} channels are located in which region(s) of a neuron?",
         options: ["axon terminal"],
         answer: "axon terminal",
+        tooltipTerms: [{ label: "Ca", meaning: "Calcium" }],
       },
       {
         id: 20,
@@ -992,9 +1028,14 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 23,
-        question: "Which ion is closer to equilibrium at the resting membrane potential of -70 mV: sodium or potassium?",
-        options: ["potassium"],
-        answer: "potassium",
+        question: "Which ion is closer to equilibrium at the resting membrane potential of -70 mV: {Na} or {K}?",
+        options: ["{K}"],
+        answer: "{K}",
+        tooltipTerms: [
+          { label: "Na", meaning: "Sodium" },
+
+          { label: "K", meaning: "Potassium" },
+        ],
       },
       {
         id: 24,
@@ -1004,21 +1045,27 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 25,
-        question: "The electrochemical force for potassium ions when membrane potential is at peak of an action potential is (greater than/less than) the electrochemical force for potassium ions when membrane potential is at rest.",
+        question: "The electrochemical force on {K}⁺ at the peak of an action potential is ____ the force at rest.",
         options: ["greater than", "less than"],
         answer: "greater than",
+        tooltipTerms: [{ label: "K", meaning: "Potassium" }],
       },
       {
         id: 26,
-        question: "Both sodium and potassium channels have inactivation gates that close shortly after the activation gates open.",
+        question: "Both {Na} and {K} channels have inactivation gates that close shortly after the activation gates open.",
         options: ["true", "false"],
         answer: "false",
+        tooltipTerms: [
+          { label: "K", meaning: "Potassium" },
+          { label: "Na", meaning: "Sodium" },
+        ],
       },
       {
         id: 27,
-        question: "When sodium inactivation gates are closed, a second action potential is impossible.",
+        question: "When {Na} inactivation gates are closed, a second action potential is impossible.",
         options: ["true", "false"],
         answer: "true",
+        tooltipTerms: [{ label: "Na", meaning: "Sodium" }],
       },
       {
         id: 28,
@@ -1034,9 +1081,10 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 30,
-        question: "When a neuron is at the peak of an action potential (+30 mV) the direction of the electrical force for potassium ions is (into/out of) the cell.",
+        question: "When a neuron is at the peak of an action potential (+30 mV) the direction of the electrical force for {K} ions is (into/out of) the cell.",
         options: ["out of"],
         answer: "out of",
+        tooltipTerms: [{ label: "K", meaning: "Potassium" }],
       },
     ],
   },
@@ -1048,33 +1096,41 @@ export const quizzes: Quiz[] = [
     questions: [
       {
         id: 1,
-        question: "If electrochemical force moves an anion out of the cell and if a neurotransmitter binding to its receptor opened channels for the anion on the postsynaptic cell, then the response would",
-        options: ["Be an EPSP.", "Be an IPSP.", "Be stabilization of the membrane.", "Not occur."],
-        answer: "Be an EPSP.",
+        question: "If an anion’s electrochemical force drives it out of the cell, opening its channels would cause:",
+        options: ["An EPSP.", "An IPSP.", "Stabilization of the membrane.", "Not occur."],
+        answer: "An EPSP.",
       },
       {
         id: 2,
-        question: "Suppose all the calcium could be removed from the extracellular fluid surrounding a neuron. Such removal would inhibit the ability of a neuron to",
+        question: "Suppose all the {Ca} could be removed from the extracellular fluid surrounding a neuron. Such removal would inhibit the ability of a neuron to",
         options: ["Produce action potentials.", "Release neurotransmitter.", "Respond to the binding of a neurotransmitter to its receptor.", "Degrade neurotransmitters."],
         answer: "Release neurotransmitter.",
+        tooltipTerms: [{ label: "Ca", meaning: "Calcium" }],
       },
       {
         id: 3,
         question: "Synaptic vesicles",
-        options: ["Store calcium.", "Release neurotransmitters by exocytosis.", "Degrade neurotransmitters.", "Form gap junctions.", "Synthesize neurotransmitters."],
+        options: ["Store {Ca}.", "Release neurotransmitters by exocytosis.", "Degrade neurotransmitters.", "Form gap junctions.", "Synthesize neurotransmitters."],
         answer: "Release neurotransmitters by exocytosis.",
+        tooltipTerms: [{ label: "Ca", meaning: "Calcium" }],
       },
       {
         id: 4,
-        question: "If sodium channels closed in response to a stimulus, then",
+        question: "If {Na} channels closed in response to a stimulus, then",
         options: ["The neuron would be depolarized.", "The neuron would be hyperpolarized.", "The membrane potential would be stabilized.", "A second messenger would be produced.", "The neuron would remain at rest."],
         answer: "The neuron would be hyperpolarized.",
+        tooltipTerms: [{ label: "Na", meaning: "Sodium" }],
       },
       {
         id: 5,
         question: "A fast EPSP is most commonly produced by",
-        options: ["The opening of sodium-selective channels.", "The opening of potassium-selective channels.", "The opening of chloride channels.", "The opening of channels selective for both sodium and potassium.", "The opening of calcium-selective channels."],
-        answer: "The opening of channels selective for both sodium and potassium.",
+        options: ["The opening of sodium-selective channels.", "The opening of potassium-selective channels.", "The opening of chloride channels.", "The opening of channels selective for both {Na} and {K}.", "The opening of calcium-selective channels."],
+        answer: "The opening of channels selective for both {Na} and {K}.",
+        tooltipTerms: [
+          { label: "Na", meaning: "Sodium" },
+
+          { label: "K", meaning: "Potassium" },
+        ],
       },
       {
         id: 6,
@@ -1114,9 +1170,13 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 12,
-        question: "When the opening of ion channels allows both sodium and potassium ions to move through, no change in membrane potential occurs because sodium moves into the cell and potassium moves out of the cell.",
+        question: "When ion channels open to allow {Na} and {K} ions to move through, no change in membrane potential occurs because {Na} moves in the cell and {K} moves out.",
         options: ["true", "false"],
         answer: "false",
+        tooltipTerms: [
+          { label: "K", meaning: "Potassium" },
+          { label: "Na", meaning: "Sodium" },
+        ],
       },
       {
         id: 13,
@@ -1144,8 +1204,8 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 17,
-        question: "Given that release of an inhibitory neurotransmitter is altered by presynaptic facilitation, the response in the postsynaptic cell will be a (larger/smaller) degree of hyperpolarization.",
-        options: ["larger"],
+        question: "Presynaptic facilitation reduces release of an inhibitory transmitter. The postsynaptic hyperpolarization becomes:",
+        options: ["larger", "smaller", "unchanged", "absent"],
         answer: "larger",
       },
       {
@@ -1554,9 +1614,10 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 6,
-        question: "Which second messengers stimulates the release of calcium from intracellular stores?",
+        question: "Which second messengers stimulates the release of {Ca} from intracellular stores?",
         options: ["cAMP", "Inositol triphosphate", "Diacylglycerol"],
         answer: "Inositol triphosphate",
+        tooltipTerms: [{ label: "Ca", meaning: "Calcium" }],
       },
       {
         id: 7,
@@ -1642,8 +1703,9 @@ export const quizzes: Quiz[] = [
       {
         id: 7,
         question: "Which is true for the ­excitation-contraction coupling of all muscle types (skeletal, cardiac, and smooth)?",
-        options: ["An action potential causes calcium levels in the cytosol to increase.", "Calcium binds to troponin.", "Thick and thin filaments slide past each other.", "Both an action potential causes calcium levels in the cytosol to increase and thick and thin filaments slide past each other."],
+        options: ["An action potential causes {Ca} levels in the cytosol to increase.", "{Ca} binds to troponin.", "Thick and thin filaments slide past each other.", "Both an action potential causes calcium levels in the cytosol to increase and thick and thin filaments slide past each other."],
         answer: "Both an action potential causes calcium levels in the cytosol to increase and thick and thin filaments slide past each other.",
+        tooltipTerms: [{ label: "Ca", meaning: "Calcium" }],
       },
       {
         id: 8,
@@ -1665,9 +1727,10 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 11,
-        question: "In skeletal muscle, when calcium is released from the sarcoplasmic reticulum, it binds to (troponin/tropomyosin) to initiate the crossbridge cycle.",
+        question: "In skeletal muscle, when {Ca} is released from the sarcoplasmic reticulum, it binds to (troponin/tropomyosin) to initiate the crossbridge cycle.",
         options: ["troponin"],
         answer: "troponin",
+        tooltipTerms: [{ label: "Ca", meaning: "Calcium" }],
       },
       {
         id: 12,
@@ -2268,19 +2331,22 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 8,
-        question: "A person's arterial O₂ partial pressure and CO₂ partial pressure are normal (O₂ partial pressure = 100 mm Hg; CO₂ partial pressure = 40 mm Hg;). Which would most likely stimulate an increase in ventilation?",
+        question: "A person has normal arterial {O₂} (100 mm Hg) and {CO₂} (40 mm Hg). Which would likely increase ventilation?",
         options: ["Decrease in O₂ partial pressure to 90 mm Hg", "Decrease in CO₂ partial pressure to 35 mm Hg", "Increase in O₂ partial pressure to 110 mm Hg", "Increase in CO₂ partial pressure to 45 mm Hg"],
         answer: "Increase in CO₂ partial pressure to 45 mm Hg",
-        tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
+        tooltipTerms: [
+          { label: "CO₂", meaning: "Carbon Dioxide" },
+          { label: "O₂", meaning: "Oxygen" },
+        ],
       },
       {
         id: 9,
-        question: "A rise in arterial CO₂ partial pressure triggers an increase in ventilation by stimulating both central and peripheral chemoreceptors. The response of central chemoreceptors is due to",
+        question: "What causes central chemoreceptors to respond when arterial CO₂ rises?",
         options: [
-          "Diffusion of CO₂ into brain extracellular fluid, which stimulates chemoreceptors directly.",
-          "Diffusion of hydrogen ions into brain extracellular fluid, which stimulates chemoreceptors directly.",
-          "Diffusion of CO₂ into brain extracellular fluid, which reacts with water to form hydrogen ions, which stimulate chemoreceptors directly.",
-          "Diffusion of CO₂ into brain extracellular fluid, which reacts with water to form bicarbonate ions, which stimulate chemoreceptors directly.",
+          "CO₂ diffuses into brain extracellular fluid, which stimulates chemoreceptors directly.",
+          "Hydrogen ions diffuses into brain extracellular fluid, which stimulates chemoreceptors directly.",
+          "CO₂ diffuses into brain extracellular fluid, which reacts with water to form hydrogen ions, which stimulate chemoreceptors directly.",
+          "CO₂ diffuses into brain extracellular fluid, which reacts with water to form bicarbonate ions, which stimulate chemoreceptors directly.",
           "Direct stimulation by hydrogen ions in arterial blood.",
         ],
         answer: "", // c
@@ -2314,8 +2380,8 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 14,
-        question: "Under normal conditions, the rate at which O₂ is brought into the alveoli in inspired air is (the same as/greater than/less than) the rate at which it is consumed in respiring tissues.",
-        options: [],
+        question: "Under normal conditions, the rate O₂ is brought in alveoli in inspired air is ____ the rate it is consumed in respiring tissues.",
+        options: ["the same as", "greater than", "less than"],
         answer: "", // the same as
       },
       {
@@ -2594,8 +2660,9 @@ export const quizzes: Quiz[] = [
       {
         id: 1,
         question: "Which would be expected to trigger a decrease in renin secretion?",
-        options: ["Decrease in the mean arterial pressure", "Decrease in the pressure inside the afferent arteriole", "Decrease in the activity of renal sympathetic nerves", "Decrease in the concentration of sodium chloride in tubular fluid", "Decrease in GFR"],
+        options: ["Decrease in the mean arterial pressure", "Decrease in the pressure inside the afferent arteriole", "Decrease in the activity of renal sympathetic nerves", "Decrease in the concentration of {Na} chloride in tubular fluid", "Decrease in GFR"],
         answer: "", // c
+        tooltipTerms: [{ label: "Na", meaning: "Sodium" }],
       },
       {
         id: 2,
@@ -2605,9 +2672,9 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 3,
-        question: "Assume fluid enters the distal tubule with 100 mOsm osmolarity, and max osmolarity of medullary interstitial fluid is 1100 mOsm. As plasma ADH levels rise, what happens to urine osmolarity?",
-        options: ["It approaches 100 mOsm as a lower limit.", "It approaches 1100 mOsm as an upper limit.", "It eventually exceeds 1100 mOsm.", "It approaches 300 mOsm, the normal osmolarity of plasma."],
-        answer: "", // b
+        question: "Fluid enters the distal tubule at 100 mOsm; the medulla reaches 1100 mOsm. As ADH increases, urine osmolarity will:",
+        options: ["Approaches 100 mOsm as a lower limit.", "Approaches 1100 mOsm as an upper limit.", "Exceeds 1100 mOsm.", "Approaches 300 mOsm, normal plasma osmolarity."],
+        answer: "Approaches 1100 mOsm as an upper limit.",
       },
       {
         id: 4,
@@ -2624,9 +2691,10 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 6,
-        question: "Which tends to promote an increase in sodium excretion?",
+        question: "Which tends to promote an increase in {Na} excretion?",
         options: ["Increase in the glomerular filtration rate", "Increase in plasma renin concentration", "Increase in the atrial natriuretic peptide secretion", "Both a and c", "All of the above"],
         answer: "", // d
+        tooltipTerms: [{ label: "Na", meaning: "Sodium" }],
       },
       {
         id: 7,
@@ -2636,10 +2704,11 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 8,
-        question: "Sweat is basically a salt solution with a lower osmolarity than plasma. Severe sweating leads to reduced plasma volume and increased plasma osmolarity. How does this affect ADH secretion?",
+        question: "Severe sweating lowers plasma volume and raises plasma osmolarity. How does this affect ADH?",
         options: ["Decrease in plasma volume inhibits ADH secretion, but the increase in osmolarity stimulates it.", "Decrease in plasma volume stimulates ADH secretion, but the increase in osmolarity inhibits it.", "Both decrease in plasma volume and increase in osmolarity stimulate ADH secretion.", "Both decrease in plasma volume and increase in osmolarity inhibit ADH secretion."],
         answer: "", // c
       },
+
       {
         id: 9,
         question: "In the cytosol of intercalated cells, the CO₂ converted to carbonic acid can come from",
@@ -2711,9 +2780,10 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 20,
-        question: "Stretching of the atria of the heart promotes the ____ secretion, a hormone that promotes sodium excretion.",
+        question: "Stretching of the atria of the heart promotes the ____ secretion, a hormone that promotes {Na} excretion.",
         options: ["atrial natriuretic peptide"],
         answer: "atrial natriuretic peptide",
+        tooltipTerms: [{ label: "Na", meaning: "Sodium" }],
       },
       {
         id: 21,
@@ -2741,21 +2811,24 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 25,
-        question: "Potassium secretion is ____ by aldosterone.",
+        question: "{K} secretion is ____ by aldosterone.",
         options: ["stimulated", "inhibited"],
         answer: "stimulated",
+        tooltipTerms: [{ label: "K", meaning: "Potassium" }],
       },
       {
         id: 26,
-        question: "Calcitonin ____ plasma calcium levels.",
+        question: "Calcitonin ____ plasma {Ca} levels.",
         options: ["increases", "decreases"],
         answer: "decreases",
+        tooltipTerms: [{ label: "Ca", meaning: "Calcium" }],
       },
       {
         id: 27,
-        question: "Resorption of bone ____ plasma calcium levels.",
+        question: "Resorption of bone ____ plasma {Ca} levels.",
         options: ["increases", "decreases"],
         answer: "increases",
+        tooltipTerms: [{ label: "Ca", meaning: "Calcium" }],
       },
       {
         id: 28,
@@ -2789,7 +2862,8 @@ export const quizzes: Quiz[] = [
         question: "What do sodium, fatty acids, and vitamin A have in common?",
         options: ["They are not enzymatically modified prior to their absorption into the bloodstream.", "They cross the apical membranes of enterocytes by simple diffusion.", "They are transported into blood ­capillaries in the villi.", "They are all hydrophilic.", "All of the above"],
         answer: "They are not enzymatically modified prior to their absorption into the bloodstream.",
-        answerExplanation: "Sodium, fatty acids, and vitamin A do not require enzymatic modification before absorption. Sodium is absorbed as an ion. Fatty acids and vitamin A are absorbed in their existing forms after emulsification. They do not all diffuse simply, nor are they all hydrophilic.",
+        answerExplanation: "Sodium, fatty acids, and vitamin A do not require enzymatic modification before absorption. {Na} is absorbed as an ion. Fatty acids and vitamin A are absorbed in their existing forms after emulsification. They do not all diffuse simply, nor are they all hydrophilic.",
+        tooltipTerms: [{ label: "Na", meaning: "Sodium" }],
       },
       {
         id: 2,
@@ -3781,9 +3855,13 @@ export const quizzes: Quiz[] = [
       {
         id: 18,
         question: "How do sulfonylureas increase insulin secretion?",
-        options: ["They cause closing of potassium channels on the beta cell membrane, which depolarizes the cell."],
-        answer: "They cause closing of potassium channels on the beta cell membrane, which depolarizes the cell.",
-        answerExplanation: "Sulfonylureas close ATP-sensitive potassium channels on pancreatic β-cells. This depolarizes the membrane, triggers calcium influx, and stimulates insulin release.",
+        options: ["They cause closing of {K} channels on the beta cell membrane, which depolarizes the cell."],
+        answer: "They cause closing of {K} channels on the beta cell membrane, which depolarizes the cell.",
+        answerExplanation: "Sulfonylureas close ATP-sensitive {K} channels on pancreatic β-cells. This depolarizes the membrane, triggers {Ca} influx, and stimulates insulin release.",
+        tooltipTerms: [
+          { label: "Ca", meaning: "Calcium" },
+          { label: "K", meaning: "Potassium" },
+        ],
       },
       {
         id: 19,

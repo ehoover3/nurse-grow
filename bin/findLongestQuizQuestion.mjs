@@ -59,16 +59,28 @@ try {
     };
 
     const min = lengths[0];
-    const q1 = percentile(lengths, 0.25);
+    const tenth = percentile(lengths, 0.1);
+    const twentieth = percentile(lengths, 0.2);
+    const thirtieth = percentile(lengths, 0.3);
+    const fortieth = percentile(lengths, 0.4);
     const median = percentile(lengths, 0.5);
-    const q3 = percentile(lengths, 0.75);
+    const sixtieth = percentile(lengths, 0.6);
+    const seventieth = percentile(lengths, 0.7);
+    const eightieth = percentile(lengths, 0.8);
+    const ninetieth = percentile(lengths, 0.9);
     const max = lengths[lengths.length - 1];
 
     console.log("\n📊 Five-number summary of question lengths:");
     console.log(`0th percentile: ${min}`);
-    console.log(`25th percentile: ${q1}`);
+    console.log(`10th percentile: ${tenth}`);
+    console.log(`20th percentile: ${twentieth}`);
+    console.log(`30th percentile: ${thirtieth}`);
+    console.log(`40th percentile: ${fortieth}`);
     console.log(`50th percentile: ${median}`);
-    console.log(`75th percentile: ${q3}`);
+    console.log(`60th percentile: ${sixtieth}`);
+    console.log(`70th percentile: ${seventieth}`);
+    console.log(`80th percentile: ${eightieth}`);
+    console.log(`90th percentile: ${ninetieth}`);
     console.log(`100th percentile: ${max}`);
   }
 } catch (err) {

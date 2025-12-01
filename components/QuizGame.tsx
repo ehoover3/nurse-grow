@@ -31,13 +31,17 @@ type AnswerOptionsProps = {
  * Tooltip Parsing
  * ---------------------------------------- */
 export function parseWithTooltips(text: string, tooltipTerms: TooltipTerm[] = []) {
+  // Match {anything inside curly braces}
   return text.split(/(\{.*?\})/g).map((part, i) => {
-    const match = part.match(/\{(.*?)\}/);
+    const match = part.match(/^\{(.+?)\}$/); // exact, whole-brace match
     if (!match) return part;
 
-    const label = match[1];
+    const label = match[1]; // inside { }
+
+    // EXACT match only — no substring matching
     const term = tooltipTerms.find((t) => t.label === label);
-    if (!term) return label;
+
+    if (!term) return label; // fallback: show raw text
 
     return <Tooltip key={i} label={label} meaning={term.meaning} />;
   });
