@@ -65,17 +65,17 @@ export const quizzes: Quiz[] = [
         question: "Which is positive feedback?",
         options: [
           "Stomach lining cell acid secretion is suppressed when stomach contents acidity increases.",
-          "A rise in blood pressure stimulates the elimination of water in the urine, which reduces the blood pressure.",
-          "Increase in the concentration of H⁺ in blood causes an increase in H+ excretion in urine.",
-          "Increase in the blood CO₂ concentration stimulates breathing, which increases the rate at which CO₂ is eliminated from the body.",
-          "Uterus contractions push the fetus against the cervix, which triggers release of oxytocin into the bloodstream; oxytocin then stimulates stronger uterus contractions.",
+          "A rise in blood pressure stimulates water elimination in urine, which reduces blood pressure.",
+          "Increase in H⁺ concentration in blood causes an increase in H+ excretion in urine.",
+          "Increase in blood CO₂ concentration stimulates breathing, which increases the rate at which CO₂ is eliminated from the body.",
+          "Uterus contractions push the fetus against the cervix, which triggers oxytocin release in the bloodstream; oxytocin then stimulates stronger uterus contractions.",
         ],
-        answer: "Uterus contractions push the fetus against the cervix, which triggers release of oxytocin into the bloodstream; oxytocin then stimulates stronger uterus contractions.",
+        answer: "Uterus contractions push the fetus against the cervix, which triggers oxytocin release in the bloodstream; oxytocin then stimulates stronger uterus contractions.",
         tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
       {
         id: 2,
-        question: "The hormone aldosterone stimulates the reabsorption of {Na} ions from a kidney tubule's lumen. This hormone acts on ____",
+        question: "The hormone aldosterone stimulates {Na} ions reabsorption from a kidney tubule's lumen. This hormone acts on ____",
         options: ["Neurons.", "Muscle cells.", "Epithelial cells.", "Connective tissue cells."],
         answer: "Epithelial cells.",
         tooltipTerms: [{ label: "Na", meaning: "Sodium" }],
@@ -89,7 +89,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 4,
-        question: "Which cell type is specialized for contraction and generation of force?",
+        question: "Which cell type is specialized for contraction and force generation?",
         options: ["Muscle", "Epithelial", "Connective tissue", "Nerve"],
         answer: "Muscle",
       },
@@ -138,7 +138,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 12,
-        question: "A hormone that causes movement of glucose from plasma to cells is           .",
+        question: "A hormone that causes glucose movement from plasma to cells is ____.",
         options: ["glycogen", "insulin", "glucagon", "vasopressin"],
         answer: "insulin",
       },
@@ -165,7 +165,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 3,
-        question: "Which molecules is not a component of a phospholipid?",
+        question: "Which molecules is not a phospholipid component?",
         options: ["Cholesterol", "Glycerol", "Phosphate", "Fatty acid"],
         answer: "Cholesterol",
       },
@@ -215,7 +215,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 11,
-        question: "For proteins to be synthesized in ­association with the rough endoplasmic reticulum, the leader sequence must bind to a            on the membrane of the ­endoplasmic reticulum.",
+        question: "For proteins to synthesize with rough endoplasmic reticulum, the leader sequence must bind to a ____ on endoplasmic reticulum membrane.",
         options: ["transport vesicle", "secretory vesicle", "coated vesicle", "signal recognition protein", "promoter"],
         answer: "signal recognition protein",
       },
@@ -314,7 +314,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 27,
-        question: "The first section of a polypeptide to be translated is called the _          ; it is ­important in directing the translated protein to its final destination.",
+        question: "The first polypeptide translated part is the ____ that directs the protein to its final destination.",
         options: ["leader sequence", "", "", ""],
         answer: "leader sequence",
       },
@@ -364,13 +364,13 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 3,
-        question: "The enzyme pyruvate dehydrogenase, which converts pyruvate to acetyl CoA, can be activated or inactivated by phosphorylation or dephosphorylation. This is an example of",
+        question: "The enzyme pyruvate dehydrogenase converts pyruvate to acetyl CoA.  It can be activated or inactivated by phosphorylation or dephosphorylation. This is",
         options: ["Allosteric regulation.", "Substrate-level phosphorylation.", "Oxidative phosphorylation.", "Saturation.", "Covalent regulation."],
         answer: "Covalent regulation.",
       },
       {
         id: 4,
-        question: "The following reactions occur in conjunction with step 5 of the Krebs cycle:\nGDP + Pᵢ → GTP\nGTP + ADP → GDP + ATP\nThe net reaction in this process is",
+        question: "These reactions occur in during Krebs cycle's step 5:\nGDP + Pᵢ → GTP\nGTP + ADP → GDP + ATP\nThe net reaction is",
         options: ["Pᵢ + GTP → GDP", "Pᵢ + GDP → GTP", "GTP + ADP → GDP + ATP", "ADP + Pᵢ → ATP", "GDP + Pᵢ → ATP"],
         answer: "GDP + Pᵢ → ATP",
       },
@@ -543,8 +543,8 @@ export const quizzes: Quiz[] = [
       {
         id: 7,
         question: "A solution is hypotonic if",
-        options: ["The concentration of all solutes contained in it is less than 300 mOsm.", "The concentration of all permeant solutes contained in it is less than 300 mOsm.", "The concentration of all impermeant solutes contained in it is less than 300 mOsm.", "Osmolarity is less than 300 mOsm."],
-        answer: "The concentration of all impermeant solutes contained in it is less than 300 mOsm.",
+        options: ["All solutes concentration contained in it is less than 300 mOsm.", "All permeant solutes concentration contained in it is less than 300 mOsm.", "All impermeant solutes concentration contained in it is less than 300 mOsm.", "Osmolarity is less than 300 mOsm."],
+        answer: "All impermeant solutes concentration contained in it is less than 300 mOsm.",
       },
       {
         id: 8,
@@ -673,7 +673,7 @@ export const quizzes: Quiz[] = [
       {
         id: 8,
         question: "The response of a target cell to a messenger depends on ____?",
-        options: ["Concentration of the messenger", "Concentration of receptors on the target cell", "Affinity of the receptor for the messenger", "Both a and c", "All of the above"],
+        options: ["Messenger concentration", "Target cll receptor concentration", "Receptor affinity for the messenger", "All of the above"],
         answer: "All of the above",
       },
       {
@@ -893,7 +893,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 3,
-        question: "If a cation is equally distributed across the cell membrane (that is, its concentration inside the cell equals its concentration outside the cell), then which statements is false?",
+        question: "If a cation is equally distributed across the cell membrane (concentration in and out of the cell are equal), then which statements is false?",
         options: ["At −70 mV, the chemical force on the ion is zero.", "At −70 mV, the electrical force on the ion acts to move it into the cell.", "At +30 mV, the chemical force on the ion is zero.", "The equilibrium potential for the ion is zero.", "At −70 mV, the electrochemical force on the ion acts to move it out of the cell."],
         answer: "At −70 mV, the electrochemical force on the ion acts to move it out of the cell.",
       },
@@ -921,13 +921,13 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 7,
-        question: "If the membrane potential of a neuron ­becomes more negative than it was at rest, then the neuron is                 . In this state, the neuron is                  excitable.",
+        question: "If a neuron's membrane potential becomes more negative than at rest, it is ____ and ____.",
         options: ["depolarized; more", "hyperpolarized; more", "depolarized; less", "hyperpolarized; less"],
         answer: "hyperpolarized; less",
       },
       {
         id: 8,
-        question: "Oubain is a poison that blocks the {Na}⁺/{K}⁺ pump. If this pump is blocked, then the concentration of {K} inside the cell would",
+        question: "Oubain is a poison that blocks the {Na}⁺/{K}⁺ pump. If this pump is blocked, then {K} concentration inside the cell would",
         options: ["Increase.", "Decrease.", "Not change."],
         answer: "Decrease.",
         tooltipTerms: [
@@ -1010,7 +1010,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 20,
-        question: "(Schwann cells/Oligodendrocytes) form myelin in the peripheral nervous system, and (Schwann cells/oligodendrocytes) form myelin in the central nervous system.",
+        question: "____ form myelin in peripheral nervous system, and ____ form myelin in the central nervous system.",
         options: ["Schwann cells, Oligodendrocytes", "Oligodendrocytes, Schwann cells"],
         answer: "Schwann cells, Oligodendrocytes",
       },
@@ -1022,8 +1022,8 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 22,
-        question: "If an anion is present in greater concentration outside the cell compared to inside the cell, would the equilibrium ­potential for that anion be positive, ­negative, or zero?",
-        options: ["negative"],
+        question: "If an anion is more concentrated outside the cell, its equilibrium is ____",
+        options: ["negative", "positive", "zero"],
         answer: "negative",
       },
       {
@@ -1152,7 +1152,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 9,
-        question: "What happens to the concentration of neurotransmitter in the synaptic cleft when the frequency of action potentials increases in the presynaptic neuron?",
+        question: "What happens to synaptic cleft neurotransmitter concentration when presynaptic neuron action potentials frequency increases?",
         options: ["It increases", "It decreases", "It remains constant"],
         answer: "It increases",
       },
@@ -1170,7 +1170,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 12,
-        question: "When ion channels open to allow {Na} and {K} ions to move through, no change in membrane potential occurs because {Na} moves in the cell and {K} moves out.",
+        question: "When open ion channels allow {Na} and {K} ions to move through, there is no change in membrane potential.",
         options: ["true", "false"],
         answer: "false",
         tooltipTerms: [
@@ -1186,7 +1186,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 14,
-        question: "Whether a synapse is excitatory or inhibitory is determined by the mechanism of coupling between the neurotransmitter receptor and ion channels in the postsynaptic cell.",
+        question: "A synapse is excitatory or inhibitory by the coupling between neurotransmitter receptor and ion channels in postsynaptic cell.",
         options: ["true", "false"],
         answer: "true",
       },
@@ -1590,9 +1590,10 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 2,
-        question: "According to the concept of dual innervation by the autonomic nervous system, if sympathetic activity inhibits pancreatic secretions, then the parasympathetic nervous system should",
+        question: "If sympathetic activity inhibits pancreatic secretions, then the parasympathetic nervous system should",
         options: ["Inhibit pancreatic secretions as well.", "Stimulate pancreatic secretions.", "Have no effect on pancreatic secretions."],
         answer: "Stimulate pancreatic secretions.",
+        answerExplanation: "The autonomic nervous system has dual innervation by the sympathetic and parasympathetic nervous system.",
       },
       {
         id: 3,
@@ -1672,8 +1673,8 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 3,
-        question: "Which would tend to ­reduce the concentration of lactic acid that accumulates in a muscle cell as a ­result of contractile activity?",
-        options: ["Increasing the concentration of glycolytic enzymes", "Decreasing the O₂ supply to the cell", "Increasing the diameter of the cell", "Increasing the number of mitochondria in the cell", "All of the above"],
+        question: "Which would tend to ­reduce the lactic acid concentration that accumulates in a muscle cell as a ­result of contractile activity?",
+        options: ["Increasing the glycolytic enzymes concentration", "Decreasing the O₂ supply to the cell", "Increasing the diameter of the cell", "Increasing the number of mitochondria in the cell", "All of the above"],
         answer: "Increasing the number of mitochondria in the cell",
       },
       {
@@ -1776,9 +1777,10 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 19,
-        question: "A reduction in the number of active crossbridges is responsible for a decrease in force-generating capacity of a muscle fiber significantly (longer/shorter) than its optimum length.",
-        options: ["longer"],
+        question: "Force drops when a muscle is stretched too far because it’s ____ than optimal.",
+        options: ["longer", "shorter"],
         answer: "longer",
+        answerExplanation: "When muscle fiber is stretched past optimal length, fewer crossbridges can form",
       },
       {
         id: 20,
@@ -1856,7 +1858,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 10,
-        question: "As a wave of action potentials travels from the atria to the ventricles, it is momentarily delayed by about 0.1 second as a result of slow conduction through",
+        question: "The atria-to-ventricle delay (~0.1 s) happens at the ____.",
         options: ["The SA node.", "The AV node.", "The atrioventricular bundle.", "The left and right bundle branches.", "Purkinje fibers."],
         answer: "The AV node.",
       },
@@ -1985,7 +1987,7 @@ export const quizzes: Quiz[] = [
       {
         id: 3,
         question: "Which tends to promote edema in systemic tissues?",
-        options: ["Decrease in the concentration of plasma proteins", "Increase in pressure in the vena cava", "Increase in arterial pressure", "Leakage of proteins from capillaries into the interstitial fluid", "All of the above"],
+        options: ["Decrease in plasma proteins concentration", "Increase in pressure in the vena cava", "Increase in arterial pressure", "Leakage of proteins from capillaries into the interstitial fluid", "All of the above"],
         answer: "All of the above",
       },
       {
@@ -2070,7 +2072,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 17,
-        question: "Over the course of a day, capillary ­filtration and absorption occur at the same rate, so that the net volume of fluid filtered from capillaries is zero.",
+        question: "In a day, capillary ­filtration and absorption occur at the same rate, so net volume of fluid filtered from capillaries is zero.",
         options: ["true", "false"],
         answer: "true",
       },
@@ -2310,14 +2312,14 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 5,
-        question: "During hyperventilation, which would be expected to happen?",
-        options: ["Increase in the O₂ partial pressure of arterial blood", "Increase in the CO₂ partial pressure of arterial blood", "Increase in the acidity of arterial blood", "Increase in the bicarbonate concentration of arterial blood", "Decrease in the pH of arterial blood"],
+        question: "During hyperventilation, which would happen?",
+        options: ["Increase in the O₂ partial pressure of arterial blood", "Increase in the CO₂ partial pressure of arterial blood", "Increase in the acidity of arterial blood", "Increase in arterial blood bicarbonate concentration", "Decrease in the pH of arterial blood"],
         answer: "", // a
         tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
       {
         id: 6,
-        question: "Which would be expected to cause a decrease in the percent saturation of hemoglobin?",
+        question: "Which would cause a decrease in the percent saturation of hemoglobin?",
         options: ["Increase in O₂ partial pressure", "Decrease in blood pH", "Decrease in CO₂ partial pressure", "Decrease in temperature", "All of the above"],
         answer: "", // b
         tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
@@ -2400,9 +2402,9 @@ export const quizzes: Quiz[] = [
 
       {
         id: 17,
-        question: "When the CO₂ partial pressure of the blood increases, the concentration of bicarbonate (increases/decreases), and the concentration of hydrogen ions (increases/decreases).",
-        options: [],
-        answer: "", // increases, increases
+        question: "When blood CO₂ partial pressure increases, bicarbonate concentration (), and hydrogen ions concentration (increases/decreases).",
+        options: ["increases, increases"],
+        answer: "increases, increaes", // increases, increases
         tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
       {
@@ -2427,9 +2429,9 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 21,
-        question: "Decrease in alveolar ventilation would be expected to cause a(n) (increase/decrease) in arterial O₂ partial pressure and a(n) (increase/decrease) in arterial CO₂ partial pressure.",
-        options: [],
-        answer: "", // decrease, increase
+        question: "Decrease in alveolar ventilation would cause ____ in arterial O₂ partial pressure and ____ in arterial CO₂ partial pressure.",
+        options: ["decrease, increase"],
+        answer: "decrease, increase",
         tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
       {
@@ -2467,13 +2469,13 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 27,
-        question: "Increase in the O₂ partial pressure of alveolar air would be expected to trigger local (bronchoconstriction/bronchodilation) in airways.",
+        question: "Increase in the O₂ partial pressure of alveolar air would trigger local (bronchoconstriction/bronchodilation) in airways.",
         options: [],
         answer: "", // bronchoconstriction
       },
       {
         id: 28,
-        question: "Increase in the O₂ partial pressure of alveolar air would be expected to trigger local (vasoconstriction/vasodilation).",
+        question: "Increase in the O₂ partial pressure of alveolar air would trigger local (vasoconstriction/vasodilation).",
         options: [],
         answer: "", // vasodilation
       },
@@ -2535,7 +2537,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 8,
-        question: "The normal fasting plasma glucose concentration is 100 mg/dL, and the renal threshold is 300 mg/dL. If the plasma concentration doubles to 200 mg/dL, then",
+        question: "Normal fasting plasma glucose concentration is 100 mg/dL, and renal threshold is 300 mg/dL. If plasma concentration doubles to 200 mg/dL, then",
         options: ["The rate at which glucose is reabsorbed will double.", "The capacity of the renal tubule for transporting glucose will be exceeded.", "Urinary water excretion will increase.", "Glucose clearance will increase.", "The filtered load of glucose is halved."],
         answer: "", // c
       },
@@ -2597,7 +2599,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 18,
-        question: "The glomerular filtration rate tends to (increase/decrease) as the concentration of proteins in the plasma increases.",
+        question: "The glomerular filtration rate tends to (increase/decrease) as plasma proteins concentration increases.",
         options: [],
         answer: "", // decrease
       },
@@ -2621,9 +2623,9 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 22,
-        question: "If the clearance of a substance is greater than the glomerular filtration rate, then that substance must have undergone (reabsorption/secretion) in the renal tubules.",
-        options: [],
-        answer: "", // secretion
+        question: "When clearance > glomerular filtration rate, then the substance is ____ in renal tubules.",
+        options: ["reabsorped", "secreted"],
+        answer: "secreted",
       },
       {
         id: 23,
@@ -2659,14 +2661,14 @@ export const quizzes: Quiz[] = [
     questions: [
       {
         id: 1,
-        question: "Which would be expected to trigger a decrease in renin secretion?",
-        options: ["Decrease in the mean arterial pressure", "Decrease in the pressure inside the afferent arteriole", "Decrease in the activity of renal sympathetic nerves", "Decrease in the concentration of {Na} chloride in tubular fluid", "Decrease in GFR"],
+        question: "Which would trigger a decrease in renin secretion?",
+        options: ["Decrease in the mean arterial pressure", "Decrease in the pressure inside the afferent arteriole", "Decrease in the activity of renal sympathetic nerves", "Decrease in {NaCl} concentration in tubular fluid", "Decrease in GFR"],
         answer: "", // c
-        tooltipTerms: [{ label: "Na", meaning: "Sodium" }],
+        tooltipTerms: [{ label: "Na", meaning: "Sodium Chloride" }],
       },
       {
         id: 2,
-        question: "Which would be expected to trigger a decrease in the ADH secretion?",
+        question: "Which would trigger a decrease in the ADH secretion?",
         options: ["Ingestion of a large quantity of pure water", "Sweating", "Hemorrhage", "Decrease in mean arterial pressure", "Both a and c"],
         answer: "", // a
       },
@@ -3457,14 +3459,14 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 31,
-        question: "Before implantation, the morula develops into a(n) __________, which consists of an inner cell mass contained within a hollow, fluid-filled outer cell layer.",
+        question: "Before implantation, morula develop into ____, which has an inner cell mass in a hollow, fluid-filled outer cell layer.",
         options: ["blastocyst"],
         answer: "blastocyst",
         answerExplanation: "A blastocyst forms before implantation, containing the inner cell mass and trophoblast.",
       },
       {
         id: 32,
-        question: "Secretory-phase uterine conditions are promoted by (estrogen/progesterone), which inhibits gonadotropin secretion during the last half of the ovarian cycle.",
+        question: "Secretory-phase uterine conditions are promoted by ____, which inhibits gonadotropin secretion during the last half of the ovarian cycle.",
         options: ["estrogen", "progesterone"],
         answer: "progesterone",
         answerExplanation: "Progesterone promotes secretory transformation of the endometrium and suppresses gonadotropins.",
@@ -3677,7 +3679,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 18,
-        question: "A person who experiences life-threatening allergic reactions to bee sting venom might be given an experimental drug designed to (block/enhance) the binding of IgE to mast cells.",
+        question: "A patient with severe bee sting allergies is given a drug to ____ IgE binding to mast cells.",
         options: ["block", "enhance"],
         answer: "block",
         answerExplanation: "Blocking IgE binding prevents mast-cell degranulation, reducing severe allergic reactions.",

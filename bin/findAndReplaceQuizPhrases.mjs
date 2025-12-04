@@ -25,6 +25,10 @@ try {
     { from: /\bsecretion of stomach acid\b/g, to: "stomach acid secretion" },
     { from: /\bAssume that\b/g, to: "Assume" },
     { from: /\Suppose that\b/g, to: "Suppose" },
+    { from: /\would be expected to\b/g, to: "would" },
+    { from: /\contained within\b/g, to: "in" },
+    { from: /\so that\b/g, to: "so" },
+    { from: /\Over the course of a day\b/g, to: "In a day" },
   ];
 
   let totalChanges = 0;
