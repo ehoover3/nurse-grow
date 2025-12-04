@@ -364,7 +364,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 3,
-        question: "The enzyme pyruvate dehydrogenase converts pyruvate to acetyl CoA.  It can be activated or inactivated by phosphorylation or dephosphorylation. This is",
+        question: "Enzyme pyruvate dehydrogenase converts pyruvate to acetyl CoA.  It can be activated or inactivated by phosphorylation or dephosphorylation. This is",
         options: ["Allosteric regulation.", "Substrate-level phosphorylation.", "Oxidative phosphorylation.", "Saturation.", "Covalent regulation."],
         answer: "Covalent regulation.",
       },
@@ -2751,7 +2751,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 15,
-        question: "A person has these symptoms: arterial pH = 7.45, partical pressure of CO₂ = 44 mm Hg, plasma bicarbonate concentration = 27 mM. What is the diagnosis?",
+        question: "A person symptoms are: arterial pH = 7.45, partical pressure of CO₂ = 44 mm Hg, plasma bicarbonate concentration = 27 mM. What is the diagnosis?",
         options: ["Respiratory acidosis", "Respiratory alkalosis", "Metabolic acidosis", "Metabolic alkalosis"],
         answer: "Metabolic alkalosis",
         tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
@@ -3752,9 +3752,18 @@ export const quizzes: Quiz[] = [
       {
         id: 4,
         question: "What are the “three polys” of diabetes mellitus?",
-        options: ["Polydipsia, polyphagia, polyuria", "Polyglycemia, polylipemia, polyuria", "Polydipsia, polyglycemia, polycythemia", "Polycythemia, polyphagia, polyuria", "Polyphagia, polyinsulinemia, polydipsia"],
-        answer: "Polydipsia, polyphagia, polyuria",
+        options: ["{Polydipsia}, {Polyphagia}, {Polyuria}", "{Polyglycemia}, {Polylipemia}, {Polyuria}", "{Polycythemia}, {Polyglycemia}, {Polydipsia}", "{Polycythemia}, {Polyphagia}, {Polyuria}", "{Polydipsia}, {Polyinsulinemia}, {Polyphagia}"],
+        answer: "{Polydipsia}, {Polyphagia}, {Polyuria}",
         answerExplanation: "The classic symptoms of uncontrolled diabetes are polydipsia (excessive thirst), polyphagia (excessive hunger), and polyuria (excessive urination) due to high blood glucose and osmotic diuresis.",
+        tooltipTerms: [
+          { label: "Polycythemia", meaning: "Too many red blood cells in the blood." },
+          { label: "Polydipsia", meaning: "Excessive thirst." },
+          { label: "Polyinsulinemia", meaning: "Abnormally high insulin levels in the blood." },
+          { label: "Polyglycemia", meaning: "High blood glucose levels" },
+          { label: "Polylipemia", meaning: "High levels of fats/lipids in the blood." },
+          { label: "Polyphagia", meaning: "Excessive hunger or eating." },
+          { label: "Polyuria", meaning: "Excessive urination." },
+        ],
       },
       {
         id: 5,
@@ -3766,23 +3775,37 @@ export const quizzes: Quiz[] = [
       {
         id: 6,
         question: "Proliferative retinopathy is caused by ____?",
-        options: [
-          "Microaneurysms causing blood vessels in the retina to leak",
-          "Extensive angiogenesis in the retina resulting in weak, fragile blood vessels that leak",
-          "Increased production of rods and cones such that they overlap and interfere with each other’s function",
-          "Extensive development of the choroid, putting pressure on the optic nerve",
-          "Extensive development of the retinal pigmented epithelium, putting pressure on the optic nerve",
-        ],
-        answer: "Extensive angiogenesis in the retina resulting in weak, fragile blood vessels that leak",
+        options: ["Leaking retinal blood vessel {microaneurysms}", "Extensive retina {angiogenesis} resulting in weak, fragile, leaky blood vessels", "Too many rods and cones overlapping", "Extensive choroid development, putting pressure on the optic nerve", "Extensive retinal pigmented epithelium development, putting pressure on the optic nerve"],
+        answer: "Extensive retina {angiogenesis} resulting in weak, fragile, leaky blood vessels",
         answerImage: "/images/Figure 24.8 Diabetic retinopathy.png",
         answerExplanation: "Proliferative diabetic retinopathy occurs when excessive angiogenesis produces weak, fragile new vessels, which easily leak or bleed, damaging retinal tissue.",
+        tooltipTerms: [
+          {
+            label: "angiogenesis",
+            meaning: "process by which new blood vessels form from existing blood vessels",
+          },
+          {
+            label: "microaneurysms",
+            meaning: "tiny bulges in the walls of small blood vessels",
+          },
+        ],
       },
       {
         id: 7,
-        question: "What is an early symptom of nephropathy used for diagnostic purposes?",
-        options: ["Glucose in the urine", "Albumin in the urine", "Blood in the urine", "Excessive thirst", "Dehydration"],
+        question: "What is an early symptom of {nephropathy} used for diagnostic purposes?",
+        options: ["Glucose in the urine", "{Albumin} in the urine", "Blood in the urine", "Excessive thirst", "Dehydration"],
         answer: "Albumin in the urine",
         answerExplanation: "An early sign of diabetic kidney disease is albumin in the urine (microalbuminuria), which indicates damage to the glomerular filtration barrier.",
+        tooltipTerms: [
+          {
+            label: "nephropathy",
+            meaning: "kidney disease or damage",
+          },
+          {
+            label: "Albumin",
+            meaning: "Albumin is a protein made by the liver that circulates in the blood.",
+          },
+        ],
       },
       {
         id: 8,
@@ -3800,7 +3823,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 10,
-        question: "Which is an enzyme ­currently being studied as a target for gene therapy of diabetes mellitus?",
+        question: "Which is an enzyme currently being studied as a target for gene therapy of diabetes mellitus?",
         options: ["Hexokinase", "Protein kinase C", "Aldose reductase", "AMP-activated protein kinase", "Tyrosine kinase"],
         answer: "Aldose reductase",
         answerExplanation: "Aldose reductase is an enzyme involved in the polyol pathway, which contributes to diabetic complications. It is being studied as a potential gene therapy target to reduce long-term tissue damage.",
@@ -3821,14 +3844,14 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 13,
-        question: "The non-enzymatic addition of glucose to a protein is called            .",
+        question: "The non-enzymatic addition of glucose to a protein is called ____.",
         options: ["glycosylation"],
         answer: "glycosylation",
         answerExplanation: "Glycosylation is the non-enzymatic attachment of glucose to proteins, a process that increases with chronic hyperglycemia and is used to measure HbA1c.",
       },
       {
         id: 14,
-        question: "Acidosis occurs in diabetes due to the production of            .",
+        question: "Acidosis occurs in diabetes due to the production of ____.",
         options: ["ketones"],
         answer: "ketones",
         answerExplanation: "In uncontrolled diabetes, the body uses fats for energy, producing ketones, which are acidic and lead to metabolic acidosis.",
@@ -3842,7 +3865,7 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 16,
-        question: "Amputation in diabetes occurs secondary to            .",
+        question: "Amputation in diabetes occurs secondary to ____.",
         options: ["Acceptable answers include delayed wound healing; diabetic neuropathy; gangrene; or diabetic foot ulcer."],
         answer: "Acceptable answers include delayed wound healing; diabetic neuropathy; gangrene; or diabetic foot ulcer.",
         answerExplanation: "Amputations often result from delayed wound healing, neuropathy, and infections, which can progress to ulcers or gangrene due to poor circulation and nerve damage.",

@@ -112,9 +112,6 @@ export default function QuizGame({ quiz }: QuizGameProps) {
 
   const currentQuestion = questionsToAsk[questionsToAskIndex] || quiz.questions[0];
 
-  /** ----------------------------------------
-   * Mount + Shuffle
-   * ---------------------------------------- */
   useEffect(() => {
     if (!isMounted) {
       setQuestionsToAsk(shuffleQuizAnswerOptions(quiz.questions));
@@ -122,9 +119,6 @@ export default function QuizGame({ quiz }: QuizGameProps) {
     }
   }, [quiz.questions, isMounted]);
 
-  /** ----------------------------------------
-   * Check Logic
-   * ---------------------------------------- */
   const handleCheck = {
     check: () => {
       if (!userSelectedAnswer) return;
@@ -137,9 +131,6 @@ export default function QuizGame({ quiz }: QuizGameProps) {
     incorrect: () => setQuestionsToRetry((prev) => [...prev, currentQuestion]),
   };
 
-  /** ----------------------------------------
-   * Continue Logic
-   * ---------------------------------------- */
   const handleContinue = {
     continue: () => {
       const nextIndex = questionsToAskIndex + 1;
@@ -163,9 +154,6 @@ export default function QuizGame({ quiz }: QuizGameProps) {
     },
   };
 
-  /** ----------------------------------------
-   * Restart + Exit
-   * ---------------------------------------- */
   const restartQuiz = () => {
     setQuestionsToAsk(shuffleQuizAnswerOptions(quiz.questions));
     setQuestionsToAskIndex(0);
