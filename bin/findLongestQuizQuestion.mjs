@@ -32,17 +32,6 @@ try {
     }
   }
 
-  if (longestQuestion) {
-    console.log("✅ Longest question found:");
-    console.log(`Length: ${longestLength} characters`);
-    console.log("Question:");
-    console.log("----------");
-    console.log(longestQuestion);
-    console.log("----------\n");
-  } else {
-    console.log("⚠ No questions found in the file.");
-  }
-
   console.log(`Total questions scanned: ${questionsFound.length}`);
 
   if (lengths.length > 0) {
@@ -69,8 +58,8 @@ try {
     const eightieth = percentile(lengths, 0.8);
     const ninetieth = percentile(lengths, 0.9);
     const max = lengths[lengths.length - 1];
-
-    console.log("\n📊 Five-number summary of question lengths:");
+    console.log("----------");
+    console.log("📊 Five-number summary of question lengths:");
     console.log(`0th percentile: ${min}`);
     console.log(`10th percentile: ${tenth}`);
     console.log(`20th percentile: ${twentieth}`);
@@ -82,6 +71,16 @@ try {
     console.log(`80th percentile: ${eightieth}`);
     console.log(`90th percentile: ${ninetieth}`);
     console.log(`100th percentile: ${max}`);
+  }
+
+  if (longestQuestion) {
+    console.log("✅ Longest question found:");
+    console.log(`Length: ${longestLength} characters`);
+    console.log("Question:");
+    console.log(longestQuestion);
+    console.log("----------\n");
+  } else {
+    console.log("⚠ No questions found in the file.");
   }
 } catch (err) {
   console.error("❌ Error reading file:", err);
