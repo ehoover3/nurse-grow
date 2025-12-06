@@ -41,9 +41,18 @@ type MatchingQuestionProps = {
   disabled: boolean;
 };
 
+const shuffleArrayCopy = <T,>(arr: T[]): T[] => {
+  return [...arr].sort(() => Math.random() - 0.5);
+};
+
 function MatchingQuestion({ pairs, userMatches, setUserMatches, disabled }: MatchingQuestionProps) {
-  const leftSide = pairs.map((p) => p.left);
-  const rightSide = pairs.map((p) => p.right);
+  // Extract original left/right
+  const originalLeft = pairs.map((p) => p.left);
+  const originalRight = pairs.map((p) => p.right);
+
+  // Shuffle each side independently ONCE
+  const [leftSide] = useState<string[]>(() => shuffleArrayCopy(originalLeft));
+  const [rightSide] = useState<string[]>(() => shuffleArrayCopy(originalRight));
 
   const [state, setState] = useState<MatchState>({
     matched: {},
@@ -52,28 +61,25 @@ function MatchingQuestion({ pairs, userMatches, setUserMatches, disabled }: Matc
     wrongAttempt: false,
   });
 
-  // Handle clicking a left item
   const selectLeft = (left: string) => {
-    if (state.matched[left]) return; // already matched
+    if (state.matched[left]) return;
     if (disabled) return;
     setState((s) => ({ ...s, selectedLeft: left }));
   };
 
-  // Handle clicking a right item
   const selectRight = (right: string) => {
-    if (Object.values(state.matched).includes(right)) return; // already matched
+    if (Object.values(state.matched).includes(right)) return;
     if (disabled) return;
     setState((s) => ({ ...s, selectedRight: right }));
   };
 
-  // Run matching logic whenever left & right selected
   useEffect(() => {
     if (!state.selectedLeft || !state.selectedRight) return;
 
     const correctPair = pairs.find((p) => p.left === state.selectedLeft && p.right === state.selectedRight);
 
     if (correctPair) {
-      // Correct!
+      // Correct match
       const newMatched = {
         ...state.matched,
         [correctPair.left]: correctPair.right,
@@ -86,10 +92,9 @@ function MatchingQuestion({ pairs, userMatches, setUserMatches, disabled }: Matc
         wrongAttempt: false,
       });
 
-      // Expose results to parent
       setUserMatches(newMatched);
     } else {
-      // Incorrect → flash red for 800ms
+      // Flash red
       setState((s) => ({ ...s, wrongAttempt: true }));
       const t = setTimeout(() => {
         setState((s) => ({
@@ -99,6 +104,7 @@ function MatchingQuestion({ pairs, userMatches, setUserMatches, disabled }: Matc
           wrongAttempt: false,
         }));
       }, 700);
+
       return () => clearTimeout(t);
     }
   }, [state.selectedLeft, state.selectedRight]);
@@ -106,46 +112,40 @@ function MatchingQuestion({ pairs, userMatches, setUserMatches, disabled }: Matc
   const isMatchedLeft = (l: string) => state.matched[l] !== undefined;
   const isMatchedRight = (r: string) => Object.values(state.matched).includes(r);
 
+  const getLeftStyles = (left: string) => {
+    const sel = state.selectedLeft === left;
+    const match = isMatchedLeft(left);
+    const wrong = state.wrongAttempt && sel;
+
+    return ["border rounded p-2 cursor-pointer text-left transition", match && "bg-green-300 border-green-500 opacity-70", sel && !match && "bg-green-200 border-green-500", wrong && "bg-red-300 border-red-500", !sel && !match && !wrong && "bg-white"].filter(Boolean).join(" ");
+  };
+
+  const getRightStyles = (right: string) => {
+    const sel = state.selectedRight === right;
+    const match = isMatchedRight(right);
+    const wrong = state.wrongAttempt && sel;
+
+    return ["border rounded p-2 cursor-pointer text-left transition", match && "bg-green-300 border-green-500 opacity-70", sel && !match && "bg-green-200 border-green-500", wrong && "bg-red-300 border-red-500", !sel && !match && !wrong && "bg-white"].filter(Boolean).join(" ");
+  };
+
   return (
     <div className='grid grid-cols-2 gap-6 mt-4'>
       {/* LEFT COLUMN */}
       <div className='flex flex-col gap-3'>
-        {leftSide.map((left) => {
-          const isSelected = state.selectedLeft === left;
-          const isMatched = isMatchedLeft(left);
-
-          let styles = "border rounded p-2 cursor-pointer text-left transition";
-          if (isMatched) styles += " bg-green-300 border-green-500 opacity-70";
-          else if (isSelected) styles += " bg-green-200 border-green-500";
-          else if (state.wrongAttempt && isSelected) styles += " bg-red-300 border-red-500";
-          else styles += " bg-white";
-
-          return (
-            <div key={left} className={styles} onClick={() => selectLeft(left)}>
-              {left}
-            </div>
-          );
-        })}
+        {leftSide.map((left) => (
+          <div key={left} className={getLeftStyles(left)} onClick={() => selectLeft(left)}>
+            {left}
+          </div>
+        ))}
       </div>
 
       {/* RIGHT COLUMN */}
       <div className='flex flex-col gap-3'>
-        {rightSide.map((right) => {
-          const isSelected = state.selectedRight === right;
-          const isMatched = isMatchedRight(right);
-
-          let styles = "border rounded p-2 cursor-pointer text-left transition";
-          if (isMatched) styles += " bg-green-300 border-green-500 opacity-70";
-          else if (isSelected) styles += " bg-green-200 border-green-500";
-          else if (state.wrongAttempt && isSelected) styles += " bg-red-300 border-red-500";
-          else styles += " bg-white";
-
-          return (
-            <div key={right} className={styles} onClick={() => selectRight(right)}>
-              {right}
-            </div>
-          );
-        })}
+        {rightSide.map((right) => (
+          <div key={right} className={getRightStyles(right)} onClick={() => selectRight(right)}>
+            {right}
+          </div>
+        ))}
       </div>
     </div>
   );
