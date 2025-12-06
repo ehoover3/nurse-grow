@@ -12,6 +12,13 @@ type QuizGameProps = {
   quiz: Quiz;
 };
 
+type MatchState = {
+  matched: Record<string, string>; // correct matches {left: right}
+  selectedLeft: string | null;
+  selectedRight: string | null;
+  wrongAttempt: boolean;
+};
+
 enum QuizState {
   SELECT_ANSWER,
   CHECK_BUTTON,
@@ -27,22 +34,139 @@ type AnswerOptionsProps = {
   tooltipTerms?: TooltipTerm[];
 };
 
+type MatchingQuestionProps = {
+  pairs: { left: string; right: string }[];
+  userMatches: Record<string, string>;
+  setUserMatches: (m: Record<string, string>) => void;
+  disabled: boolean;
+};
+
+function MatchingQuestion({ pairs, userMatches, setUserMatches, disabled }: MatchingQuestionProps) {
+  const leftSide = pairs.map((p) => p.left);
+  const rightSide = pairs.map((p) => p.right);
+
+  const [state, setState] = useState<MatchState>({
+    matched: {},
+    selectedLeft: null,
+    selectedRight: null,
+    wrongAttempt: false,
+  });
+
+  // Handle clicking a left item
+  const selectLeft = (left: string) => {
+    if (state.matched[left]) return; // already matched
+    if (disabled) return;
+    setState((s) => ({ ...s, selectedLeft: left }));
+  };
+
+  // Handle clicking a right item
+  const selectRight = (right: string) => {
+    if (Object.values(state.matched).includes(right)) return; // already matched
+    if (disabled) return;
+    setState((s) => ({ ...s, selectedRight: right }));
+  };
+
+  // Run matching logic whenever left & right selected
+  useEffect(() => {
+    if (!state.selectedLeft || !state.selectedRight) return;
+
+    const correctPair = pairs.find((p) => p.left === state.selectedLeft && p.right === state.selectedRight);
+
+    if (correctPair) {
+      // Correct!
+      const newMatched = {
+        ...state.matched,
+        [correctPair.left]: correctPair.right,
+      };
+
+      setState({
+        matched: newMatched,
+        selectedLeft: null,
+        selectedRight: null,
+        wrongAttempt: false,
+      });
+
+      // Expose results to parent
+      setUserMatches(newMatched);
+    } else {
+      // Incorrect → flash red for 800ms
+      setState((s) => ({ ...s, wrongAttempt: true }));
+      const t = setTimeout(() => {
+        setState((s) => ({
+          ...s,
+          selectedLeft: null,
+          selectedRight: null,
+          wrongAttempt: false,
+        }));
+      }, 700);
+      return () => clearTimeout(t);
+    }
+  }, [state.selectedLeft, state.selectedRight]);
+
+  const isMatchedLeft = (l: string) => state.matched[l] !== undefined;
+  const isMatchedRight = (r: string) => Object.values(state.matched).includes(r);
+
+  return (
+    <div className='grid grid-cols-2 gap-6 mt-4'>
+      {/* LEFT COLUMN */}
+      <div className='flex flex-col gap-3'>
+        {leftSide.map((left) => {
+          const isSelected = state.selectedLeft === left;
+          const isMatched = isMatchedLeft(left);
+
+          let styles = "border rounded p-2 cursor-pointer text-left transition";
+          if (isMatched) styles += " bg-green-300 border-green-500 opacity-70";
+          else if (isSelected) styles += " bg-green-200 border-green-500";
+          else if (state.wrongAttempt && isSelected) styles += " bg-red-300 border-red-500";
+          else styles += " bg-white";
+
+          return (
+            <div key={left} className={styles} onClick={() => selectLeft(left)}>
+              {left}
+            </div>
+          );
+        })}
+      </div>
+
+      {/* RIGHT COLUMN */}
+      <div className='flex flex-col gap-3'>
+        {rightSide.map((right) => {
+          const isSelected = state.selectedRight === right;
+          const isMatched = isMatchedRight(right);
+
+          let styles = "border rounded p-2 cursor-pointer text-left transition";
+          if (isMatched) styles += " bg-green-300 border-green-500 opacity-70";
+          else if (isSelected) styles += " bg-green-200 border-green-500";
+          else if (state.wrongAttempt && isSelected) styles += " bg-red-300 border-red-500";
+          else styles += " bg-white";
+
+          return (
+            <div key={right} className={styles} onClick={() => selectRight(right)}>
+              {right}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 export function addTooltips(text: string, tooltipTerms: TooltipTerm[] = []) {
   return text.split(/(\{.*?\})/g).map((part, i) => {
-    const match = part.match(/^\{(.+?)\}$/); // exact, whole-brace match
+    const match = part.match(/^\{(.+?)\}$/);
     if (!match) return part;
-    const label = match[1]; // inside { }
-    const term = tooltipTerms.find((t) => t.label === label); // EXACT match only — no substring matching
-    if (!term) return label; // fallback: show raw text
+    const label = match[1];
+    const term = tooltipTerms.find((t) => t.label === label);
+    if (!term) return label;
 
     return <Tooltip key={i} label={label} meaning={term.meaning} />;
   });
 }
 
 const shuffleAnswerOptions = (questions: Quiz["questions"]): Quiz["questions"] => {
-  return questions.map((question) => ({
-    ...question,
-    options: shuffleArray(question.options),
+  return questions.map((q) => ({
+    ...q,
+    options: q.options ? shuffleArray(q.options) : q.options,
   }));
 };
 
@@ -51,26 +175,24 @@ function Question({ question, tooltipTerms }: { question: string; tooltipTerms?:
 }
 
 function AnswerOptions({ currentQuestion, quizState, userSelectedAnswer, setUserSelectedAnswer, tooltipTerms }: AnswerOptionsProps) {
+  if (!currentQuestion.options) return null;
+
   return (
     <div className='grid gap-2'>
       {currentQuestion.options.map((option) => {
-        const isAnswerSelected = quizState === QuizState.SELECT_ANSWER;
-        const isCheckButtonClicked = quizState === QuizState.CONTINUE_BUTTON;
+        const isSelecting = quizState === QuizState.SELECT_ANSWER;
+        const isShowingResults = quizState === QuizState.CONTINUE_BUTTON;
         const isUserPick = userSelectedAnswer === option;
         const isCorrect = option === currentQuestion.answer;
 
         let variant: Variant = "white";
 
-        if (isAnswerSelected && isUserPick) {
-          variant = "darkGray";
-        } else if (isCheckButtonClicked && isCorrect) {
-          variant = "brightGreen";
-        } else if (isCheckButtonClicked && isUserPick) {
-          variant = "red";
-        }
+        if (isSelecting && isUserPick) variant = "darkGray";
+        else if (isShowingResults && isCorrect) variant = "brightGreen";
+        else if (isShowingResults && isUserPick) variant = "red";
 
         return (
-          <Button key={option} onClick={() => isAnswerSelected && setUserSelectedAnswer(option)} disabled={!isAnswerSelected} variant={variant} className='border w-full text-left p-2 rounded'>
+          <Button key={option} onClick={() => isSelecting && setUserSelectedAnswer(option)} disabled={!isSelecting} variant={variant} className='border w-full text-left p-2 rounded'>
             {addTooltips(option, tooltipTerms ?? [])}
           </Button>
         );
@@ -82,11 +204,12 @@ function AnswerOptions({ currentQuestion, quizState, userSelectedAnswer, setUser
 export default function QuizGame({ quiz }: QuizGameProps) {
   const router = useRouter();
 
-  const [questionsToAsk, setQuestionsToAsk] = useState<Quiz["questions"]>(() => quiz.questions);
+  const [questionsToAsk, setQuestionsToAsk] = useState<Quiz["questions"]>(quiz.questions);
   const [isMounted, setIsMounted] = useState(false);
   const [questionsToAskIndex, setQuestionsToAskIndex] = useState(0);
   const [questionsToRetry, setQuestionsToRetry] = useState<Quiz["questions"]>([]);
   const [userSelectedAnswer, setUserSelectedAnswer] = useState<string | null>(null);
+  const [userMatches, setUserMatches] = useState<Record<string, string>>({});
   const [quizState, setQuizState] = useState<QuizState>(QuizState.SELECT_ANSWER);
   const [score, setScore] = useState(0);
 
@@ -101,10 +224,21 @@ export default function QuizGame({ quiz }: QuizGameProps) {
 
   const handleCheck = {
     check: () => {
-      if (!userSelectedAnswer) return;
-      const isCorrect = userSelectedAnswer === currentQuestion.answer;
-      if (isCorrect) handleCheck.correct();
-      else handleCheck.incorrect();
+      // MULTIPLE CHOICE
+      if (currentQuestion.type === "multiple-choice") {
+        if (!userSelectedAnswer) return;
+        const isCorrect = userSelectedAnswer === currentQuestion.answer;
+        if (isCorrect) handleCheck.correct();
+        else handleCheck.incorrect();
+      }
+
+      // MATCHING QUESTIONS
+      if (currentQuestion.type === "matching") {
+        const correct = currentQuestion.pairs!.every((pair) => userMatches[pair.left] === pair.right);
+        if (correct) handleCheck.correct();
+        else handleCheck.incorrect();
+      }
+
       setQuizState(QuizState.CONTINUE_BUTTON);
     },
     correct: () => setScore((prev) => prev + 1),
@@ -123,6 +257,7 @@ export default function QuizGame({ quiz }: QuizGameProps) {
     askNext: () => {
       setQuestionsToAskIndex((i) => i + 1);
       setUserSelectedAnswer(null);
+      setUserMatches({});
       setQuizState(QuizState.SELECT_ANSWER);
     },
     reask: () => {
@@ -130,6 +265,7 @@ export default function QuizGame({ quiz }: QuizGameProps) {
       setQuestionsToAskIndex(0);
       setQuestionsToRetry([]);
       setUserSelectedAnswer(null);
+      setUserMatches({});
       setQuizState(QuizState.SELECT_ANSWER);
     },
   };
@@ -138,6 +274,7 @@ export default function QuizGame({ quiz }: QuizGameProps) {
     setQuestionsToAsk(shuffleAnswerOptions(quiz.questions));
     setQuestionsToAskIndex(0);
     setUserSelectedAnswer(null);
+    setUserMatches({});
     setQuizState(QuizState.SELECT_ANSWER);
     setQuestionsToRetry([]);
     setScore(0);
@@ -153,11 +290,15 @@ export default function QuizGame({ quiz }: QuizGameProps) {
 
       <Question question={currentQuestion.question} tooltipTerms={currentQuestion.tooltipTerms ?? []} />
 
-      <AnswerOptions currentQuestion={currentQuestion} quizState={quizState} userSelectedAnswer={userSelectedAnswer} setUserSelectedAnswer={setUserSelectedAnswer} tooltipTerms={currentQuestion.tooltipTerms ?? []} />
+      {/* MULTIPLE CHOICE */}
+      {currentQuestion.type === "multiple-choice" && <AnswerOptions currentQuestion={currentQuestion} quizState={quizState} userSelectedAnswer={userSelectedAnswer} setUserSelectedAnswer={setUserSelectedAnswer} tooltipTerms={currentQuestion.tooltipTerms ?? []} />}
+
+      {/* MATCHING */}
+      {currentQuestion.type === "matching" && <MatchingQuestion pairs={currentQuestion.pairs ?? []} userMatches={userMatches} setUserMatches={setUserMatches} disabled={quizState !== QuizState.SELECT_ANSWER} />}
 
       <div className='mt-4'>
         {quizState === QuizState.SELECT_ANSWER ? (
-          <Button variant='skyBlue' onClick={handleCheck.check} disabled={!userSelectedAnswer}>
+          <Button variant='skyBlue' onClick={handleCheck.check} disabled={(currentQuestion.type === "multiple-choice" && !userSelectedAnswer) || (currentQuestion.type === "matching" && Object.keys(userMatches).length !== currentQuestion.pairs?.length)}>
             CHECK
           </Button>
         ) : (
@@ -201,6 +342,7 @@ export default function QuizGame({ quiz }: QuizGameProps) {
       <button onClick={exitQuiz} className='absolute top-4 left-4 text-xl font-bold text-gray-700 hover:text-gray-900' aria-label='Back to quiz list'>
         ✕
       </button>
+
       {quizState !== QuizState.VIEW_SUMMARY ? quizScreen : summaryScreen}
     </div>
   );

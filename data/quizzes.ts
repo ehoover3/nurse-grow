@@ -3,17 +3,33 @@ export type TooltipTerm = {
   meaning: string;
 };
 
-export type Question = {
-  id: number;
-  type: string;
-  question: string;
-  options: string[];
-  answer: string;
-  tooltipTerms?: TooltipTerm[];
-  answerImage?: string;
-  answerExplanation?: string;
-  notes?: string;
+export type MatchingPair = {
+  left: string;
+  right: string;
 };
+
+export type Question =
+  | {
+      id: number;
+      type: "multiple-choice";
+      question: string;
+      options?: string[] | undefined;
+      answer: string | undefined;
+      tooltipTerms?: TooltipTerm[];
+      answerImage?: string;
+      answerExplanation?: string;
+    }
+  | {
+      id: number;
+      type: "matching";
+      question: string;
+      options?: string[] | undefined;
+      pairs: MatchingPair[];
+      answer?: string | undefined;
+      answerImage?: string;
+      tooltipTerms?: TooltipTerm[];
+      answerExplanation?: string;
+    };
 
 export type Quiz = {
   slug: string;
@@ -32,7 +48,6 @@ export const quizzes: Quiz[] = [
     questions: [
       {
         id: 1,
-
         type: "multiple-choice",
         question: "Metabolic Alkalosis",
         options: ["Respiratory Acidosis", "Respiratory Alkalosis", "Metabolic Acidosis", "Metabolic Alkalosis"],
@@ -41,13 +56,23 @@ export const quizzes: Quiz[] = [
       },
       {
         id: 2,
+        type: "matching",
+        question: "Match the organ to its function:",
+        pairs: [
+          { left: "Heart", right: "Pumps blood" },
+          { left: "Lungs", right: "Gas exchange" },
+          { left: "Kidneys", right: "Filter blood" },
+        ],
+      },
+      {
+        id: 3,
         type: "multiple-choice",
         question: "How many chambers does the human heart have?",
         options: ["2", "3", "4", "5"],
         answer: "4",
       },
       {
-        id: 3,
+        id: 4,
         type: "multiple-choice",
         question: "Which transports blood?",
         options: ["Respiratory", "Circulatory", "Digestive", "Nervous"],
@@ -78,7 +103,7 @@ export const quizzes: Quiz[] = [
       {
         id: 2,
         type: "multiple-choice",
-        question: "{Aldosterone} acts on which kidney cells",
+        question: "{Aldosterone} acts on which kidney cells?",
         options: ["Neurons", "Muscle cells", "Epithelial cells", "Connective tissue cells"],
         answer: "Epithelial cells",
         tooltipTerms: [
@@ -89,7 +114,7 @@ export const quizzes: Quiz[] = [
       {
         id: 3,
         type: "multiple-choice",
-        question: "Hormones are secreted",
+        question: "Where are hormones secreted?",
         options: ["Into the blood", "From exocrine glands", "From endocrine glands", "Both into the blood and from exocrine glands", "Both into the blood and from endocrine glands"],
         answer: "Both into the blood and from endocrine glands",
         answerImage: "/images/Figure 1.3 Glands.png",
@@ -104,7 +129,7 @@ export const quizzes: Quiz[] = [
       {
         id: 5,
         type: "multiple-choice",
-        question: "Normal blood glucose level is",
+        question: "What is normal blood glucose level?",
         options: ["50 mg/dL", "100 mg/dL", "50 mg/mL", "100 mg/mL", "50 mg/L"],
         answer: "100 mg/dL",
       },
@@ -112,37 +137,37 @@ export const quizzes: Quiz[] = [
       {
         id: 6,
         type: "multiple-choice",
-        question: "The body's internal environment is synonymous with",
+        question: "What is the body's internal environment is synonymous with?",
         options: ["Extracellular Fluid", "Intracellular Fluid"],
         answer: "Extracellular Fluid",
       },
       {
         id: 7,
         type: "multiple-choice",
-        question: "Maintaining the internal environment is ____",
+        question: "What is maintaining the internal environment?",
         options: ["Exocytosis", "Gluconeogenesis", "Homeostasis", "Ionotropic"],
         answer: "Homeostasis",
       },
       {
         id: 8,
         type: "multiple-choice",
-        question: "Plasma is extracellular fluid",
-        options: ["True", "False"],
-        answer: "True",
+        question: "Is plasma extracellular fluid?",
+        options: ["Yes", "No"],
+        answer: "Yes",
       },
       {
         id: 9,
         type: "multiple-choice",
-        question: "In homeostasis, physiology variables are constant",
-        options: ["True", "False"],
-        answer: "False",
+        question: "In homeostasis, are physiology variables constant?",
+        options: ["Yes", "No"],
+        answer: "No",
       },
       {
         id: 10,
         type: "multiple-choice",
-        question: "{Elastin} is found in ____ tissue",
-        options: ["epithelial", "connective"],
-        answer: "connective",
+        question: "What tissue type is {Elastin} found in?",
+        options: ["Epithelial", "Connective"],
+        answer: "Connective",
         tooltipTerms: [{ label: "Elastin", meaning: "A protein" }],
       },
       {
@@ -254,11 +279,10 @@ export const quizzes: Quiz[] = [
       {
         id: 11,
         type: "multiple-choice",
-        question: "For proteins to synthesize with rough endoplasmic reticulum, the leader sequence must bind to a ____ on endoplasmic reticulum membrane",
-        options: ["transport vesicle", "secretory vesicle", "coated vesicle", "signal recognition protein", "promoter"],
-        answer: "signal recognition protein",
+        question: "For a protein to enter the rough ER, its leader sequence must bind to a ____",
+        options: ["Transport Vesicle", "Secretory Vesicle", "Coated Vesicle", "Signal Recognition Protein", "Promoter"],
+        answer: "Signal Recognition Protein",
       },
-
       {
         id: 12,
         type: "multiple-choice",
@@ -621,7 +645,7 @@ export const quizzes: Quiz[] = [
       {
         id: 6,
         type: "multiple-choice",
-        question: "Assuming that only impermeant solutes are present, which will occur when a cell is placed in a solution whose osmolarity is 200 mOsm?",
+        question: "Assume  only impermeant solutes are present, which occurs when a cell is placed in a 200 mOsm osmolarity solution?",
         options: ["Water will move into the cell", "Water will move out of the cell", "Water will not cross the cell membrane"],
         answer: "Water will move into the cell",
       },
@@ -706,7 +730,7 @@ export const quizzes: Quiz[] = [
       {
         id: 17,
         type: "multiple-choice",
-        question: "When water diffuses across a membrane, it normally flows from a region of higher osmotic pressure to a region of lower osmotic pressure",
+        question: "Water diffuses from high to low osmotic pressure",
         options: ["True", "False"],
         answer: "False",
       },
@@ -1024,9 +1048,9 @@ export const quizzes: Quiz[] = [
       {
         id: 3,
         type: "multiple-choice",
-        question: "If a cation is equally distributed across the cell membrane (concentration in and out of the cell are equal), then which statements is false?",
+        question: "If a cation has equal intra- and exracellular concentrations, then which statement is true?",
         options: ["At −70 mV, the chemical force on the ion is zero", "At −70 mV, the electrical force on the ion acts to move it into the cell", "At +30 mV, the chemical force on the ion is zero", "The equilibrium potential for the ion is zero", "At −70 mV, the electrochemical force on the ion acts to move it out of the cell"],
-        answer: "At −70 mV, the electrochemical force on the ion acts to move it out of the cell",
+        answer: "The equilibrium potential for the ion is zero",
       },
       {
         id: 4,
@@ -1239,9 +1263,9 @@ export const quizzes: Quiz[] = [
       {
         id: 30,
         type: "multiple-choice",
-        question: "When a neuron is at the peak of an action potential (+30 mV) the direction of the electrical force for {K} ions is (into/out of) the cell",
-        options: ["out of"],
-        answer: "out of",
+        question: "When a neuron is at an action potential peak (+30 mV) the electrical force direction for {K} ions is ____ the cell",
+        options: ["Into", "Out Of"],
+        answer: "Out Of",
         tooltipTerms: [{ label: "K", meaning: "Potassium" }],
       },
     ],
@@ -1732,9 +1756,9 @@ export const quizzes: Quiz[] = [
       {
         id: 18,
         type: "multiple-choice",
-        question: "Info about touch detected on the left side of the body is transmitted to the brain in the dorsal columns on the ____ side of the spinal cord",
-        options: ["left"],
-        answer: "left",
+        question: "Info about touch detected on body's left side is transmitted to the brain in dorsal columns on the spinal cord's ____ side",
+        options: ["Left", "Right"],
+        answer: "Left",
       },
       {
         id: 19,
@@ -1746,9 +1770,9 @@ export const quizzes: Quiz[] = [
       {
         id: 20,
         type: "multiple-choice",
-        question: "The first neurons that support production of action potentials in the visual pathway are (photoreceptors/bipolar cells/ganglion cells)",
-        options: ["ganglion cells"],
-        answer: "ganglion cells",
+        question: "The first neurons that support production of action potentials in the visual pathway are ____",
+        options: ["Ganglion Cells", "Bipolar Cells", "Photoreceptors"],
+        answer: "Ganglion Cells",
       },
       {
         id: 21,
@@ -2354,9 +2378,9 @@ export const quizzes: Quiz[] = [
       {
         id: 13,
         type: "multiple-choice",
-        question: "Total peripheral resistance (increases/decreases) when general vasodilation of smaller arteries and arterioles occurs in systemic tissues",
-        options: ["decreases"],
-        answer: "decreases",
+        question: "Total peripheral resistance ____ when general vasodilation of smaller arteries and arterioles occurs in systemic tissues",
+        options: ["Increases", "Decreases"],
+        answer: "Decreases",
       },
       {
         id: 14,
@@ -2389,9 +2413,9 @@ export const quizzes: Quiz[] = [
       {
         id: 18,
         type: "multiple-choice",
-        question: "Increase in the hydrostatic pressure of blood in capillaries tends to increase the rate at which fluid is filtered across capillary walls",
-        options: ["True", "False"],
-        answer: "True",
+        question: "Does higher blood capillary hydrostatic pressure increase filtration?",
+        options: ["Yes", "No"],
+        answer: "Yes",
       },
       {
         id: 19,
@@ -2743,9 +2767,9 @@ export const quizzes: Quiz[] = [
       {
         id: 15,
         type: "multiple-choice",
-        question: "Under resting conditions, tissues normally extract (exactly half/more than half/less than half) of the O₂ delivered to them in arterial blood",
-        options: [],
-        answer: "", // less than half
+        question: "Under resting conditions, tissues normally extract ____ of O₂ delivered to them in arterial blood",
+        options: ["Exactly Half", "More Than Half", "Less Than Half"],
+        answer: "Less Than Half",
       },
       {
         id: 16,
@@ -2978,9 +3002,9 @@ export const quizzes: Quiz[] = [
       {
         id: 17,
         type: "multiple-choice",
-        question: "The hydrostatic pressure in glomerular capillaries is (higher/lower) than the ­corresponding pressure in most capillaries of the body",
-        options: [],
-        answer: "", // higher
+        question: "Glomerular capillary hydrostatic pressure is ____ than in most body capillaries.",
+        options: ["Higher", "Lower"],
+        answer: "Higher",
       },
       {
         id: 18,
@@ -3211,7 +3235,7 @@ export const quizzes: Quiz[] = [
       {
         id: 22,
         type: "multiple-choice",
-        question: "____ stimulates the insertion of Na⁺/K⁺ pumps into the plasma membrane of principal cells of the distal tubules and collecting ducts",
+        question: "____ stimulates the insertion of Na⁺/K⁺ pumps into plasma membrane of principal cells of the distal tubules and collecting ducts",
         options: ["Aldosterone"],
         answer: "Aldosterone",
       },
@@ -3406,18 +3430,18 @@ export const quizzes: Quiz[] = [
       {
         id: 15,
         type: "multiple-choice",
-        question: "The (submucosal/myenteric) nerve plexus is located within the muscularis externa",
-        options: ["submucosal", "myenteric"],
-        answer: "myenteric",
+        question: "The ____ nerve plexus is located within the muscularis externa",
+        options: ["Submucosal", "Myenteric"],
+        answer: "Myenteric",
         answerImage: "/images/Figure 20.3 Gastrointestial Wall.png",
         answerExplanation: "The myenteric (Auerbach’s) plexus lies between the circular and longitudinal muscle layers of the muscularis externa. The submucosal plexus is located in the submucosa",
       },
       {
         id: 16,
         type: "multiple-choice",
-        question: "The________ is the outermost layer of the gastrointestinal wall, consisting of the mesothelium and an underlying layer of connective tissue",
-        options: ["serosa"],
-        answer: "serosa",
+        question: "What is the outermost layer of the gastrointestinal wall?",
+        options: ["Serosa"],
+        answer: "Serosa",
         answerExplanation: "The serosa is the external layer of the GI tract, consisting of a mesothelium over connective tissue",
       },
       {
@@ -3812,17 +3836,17 @@ export const quizzes: Quiz[] = [
       {
         id: 12,
         type: "multiple-choice",
-        question: "The srY gene codes for (testosterone ­receptors/testis-determining factor), which determine(s) whether an embryo develops testes or ovaries",
-        options: ["testosterone", "testis-determining factor"],
-        answer: "testis-determining factor",
+        question: "The srY gene codes for ____, which determine(s) whether an embryo develops testes or ovaries",
+        options: ["Testosterone Receptors", "Testis-Determining Factor"],
+        answer: "Testis-Determining Factor",
         answerExplanation: "The SRY gene codes for TDF, which triggers testis development",
       },
       {
         id: 13,
         type: "multiple-choice",
-        question: "In the absence of testosterone and MIS, the Müllerian ducts (persist/degenerate) in the embryo, and female structures eventually develop",
-        options: ["persist"],
-        answer: "persist",
+        question: "In the absence of testosterone and MIS, the Müllerian ducts ____",
+        options: ["Persist", "Degenerate"],
+        answer: "Persist",
         answerExplanation: "Without testosterone and MIS, the Müllerian ducts persist and develop into female structures",
       },
       {
@@ -3877,64 +3901,64 @@ export const quizzes: Quiz[] = [
       {
         id: 20,
         type: "multiple-choice",
-        question: "Once sperm are deposited in the female reproductive tract, they cannot fertilize the oocyte until they have undergone a process called ",
-        options: ["capacitation"],
-        answer: "capacitation",
+        question: "Sperm must undergo ____ before they can fertilize an oocyte",
+        options: ["Capacitation"],
+        answer: "Capacitation",
         answerExplanation: "Capacitation is a process in the female reproductive tract that enables sperm to fertilize the oocyte",
       },
       {
         id: 21,
         type: "multiple-choice",
-        question: "Fertilization usually occurs in the (uterus/uterine tube)",
-        options: ["uterus", "uterine tube"],
-        answer: "uterine tube",
+        question: "Where does fertilization usually occur?",
+        options: ["Uterus", "Uterine Tube"],
+        answer: "Uterine Tube",
         answerExplanation: "Fertilization normally occurs in the ampulla of the uterine tube",
       },
       {
         id: 22,
         type: "multiple-choice",
-        question: "The second half of the ovarian cycle is called the (luteal/follicular) phase",
-        options: ["luteal phase"],
-        answer: "luteal phase",
+        question: "The second half of the ovarian cycle is called the ____ phase",
+        options: ["Luteal Phase", "Follicular Phase"],
+        answer: "Luteal Phase",
         answerExplanation: "The second half of the ovarian cycle (after ovulation) is the luteal phase",
       },
       {
         id: 23,
         type: "multiple-choice",
-        question: "In a follicle, the oocyte is surrounded by a layer of (granulosa/theca) cells that provide it with nourishment and regulate its development",
-        options: ["granulosa", "theca"],
-        answer: "granulosa",
+        question: "In a follicle, which cells surround and nourish the oocyte?",
+        options: ["Granulosa", "Theca"],
+        answer: "Granulosa",
         answerExplanation: "Granulosa cells surround the oocyte and regulate its nutrient environment",
       },
       {
         id: 24,
         type: "multiple-choice",
-        question: "(FSH/LH) stimulates theca cells to secrete androgens, which are converted to estrogens by granulosa cells",
-        options: ["LH"],
+        question: "____ stimulates theca cells to secrete androgens, which are converted to estrogens by granulosa cells",
+        options: ["LH", "FSH"],
         answer: "LH",
         answerExplanation: "LH stimulates theca cells to produce androgens, which granulosa cells convert to estrogens",
       },
       {
         id: 25,
         type: "multiple-choice",
-        question: "The inner layer of the uterine wall is called the (endometrium/myometrium)",
-        options: ["endometrium", "myometrium"],
-        answer: "endometrium",
+        question: "What is the uterine inner wall layer called?",
+        options: ["Endometrium", "Myometrium"],
+        answer: "Endometrium",
         answerExplanation: "The endometrium is the inner lining where implantation occurs",
       },
       {
         id: 26,
         type: "multiple-choice",
-        question: "During the ____ phase of the uterine cycle, the lining of the uterus thickens under the influence of ­rising estrogen levels",
-        options: ["proliferative", "secretory"],
-        answer: "proliferative",
+        question: "During the ____ phase of the uterine cycle, the lining of the uterus thickens under the influence of rising estrogen levels",
+        options: ["Proliferative", "Secretory"],
+        answer: "Proliferative",
         answerExplanation: "In the proliferative phase, estrogen causes thickening of the endometrial lining",
       },
       {
         id: 27,
         type: "multiple-choice",
-        question: "Ovulation is triggered by (FSH/LH)",
-        options: ["LH"],
+        question: "What triggers ovulation?",
+        options: ["LH", "FSH"],
         answer: "LH",
         answerExplanation: "The LH surge triggers ovulation",
       },
@@ -3942,40 +3966,40 @@ export const quizzes: Quiz[] = [
         id: 28,
         type: "multiple-choice",
         question: "The corpus luteum secretes estrogens and (LH/progesterone)",
-        options: ["LH", "progesterone"],
-        answer: "progesterone",
+        options: ["LH", "Progesterone"],
+        answer: "Progesterone",
         answerExplanation: "The corpus luteum secretes progesterone (and some estrogen), not LH",
       },
       {
         id: 29,
         type: "multiple-choice",
-        question: "In the late follicular phase, LH secretion is stimulated by (estrogens/progesterone)",
-        options: ["estrogens", "progesterone"],
-        answer: "estrogens",
+        question: "In the late follicular phase, LH secretion is stimulated by ____",
+        options: ["Estrogens", "Progesterone"],
+        answer: "Estrogens",
         answerExplanation: "High estrogen levels in the late follicular phase stimulate the LH surge",
       },
       {
         id: 30,
         type: "multiple-choice",
         question: "Degeneration of the corpus luteum causes hormonal changes that trigger (ovulation/menstruation)",
-        options: ["ovulation", "menstruation"],
-        answer: "menstruation",
+        options: ["Ovulation", "Menstruation"],
+        answer: "Menstruation",
         answerExplanation: "Falling progesterone and estrogen from corpus luteum degeneration triggers menstruation",
       },
       {
         id: 31,
         type: "multiple-choice",
         question: "Before implantation, morula develop into ____, which has an inner cell mass in a hollow, fluid-filled outer cell layer",
-        options: ["blastocyst"],
-        answer: "blastocyst",
+        options: ["Blastocyst"],
+        answer: "Blastocyst",
         answerExplanation: "A blastocyst forms before implantation, containing the inner cell mass and trophoblast",
       },
       {
         id: 32,
         type: "multiple-choice",
-        question: "Secretory-phase uterine conditions are promoted by ____, which inhibits gonadotropin secretion during the last half of the ovarian cycle",
-        options: ["estrogen", "progesterone"],
-        answer: "progesterone",
+        question: "Secretory-phase uterine conditions are promoted by ____, which inhibits gonadotropin secretion",
+        options: ["Estrogen", "Progesterone"],
+        answer: "Progesterone",
         answerExplanation: "Progesterone promotes secretory transformation of the endometrium and suppresses gonadotropins",
       },
       {
@@ -4458,9 +4482,9 @@ export const quizzes: Quiz[] = [
       {
         id: 19,
         type: "multiple-choice",
-        question: "Weight-loss surgery can reverse some cases of type 2 DM",
-        options: ["True", "False"],
-        answer: "True",
+        question: "Can weight-loss surgery reverse some type II diabetes cases?",
+        options: ["Yes", "No"],
+        answer: "Yes",
         answerExplanation: "Bariatric (weight-loss) surgery can significantly improve insulin sensitivity and sometimes reverse type 2 diabetes, especially in early stages",
       },
       {
