@@ -1,35 +1,17 @@
-export type TooltipTerm = {
-  label: string;
-  meaning: string;
+export type Question = {
+  id: number;
+  type: "multiple-choice" | "matching";
+  question: string;
+  // Multiple-choice
+  options?: string[];
+  answer?: string;
+  // Matching
+  pairs?: { left: string; right: string }[];
+  // All
+  tooltipTerms?: { label: string; meaning: string }[];
+  answerImage?: string;
+  answerExplanation?: string;
 };
-
-export type MatchingPair = {
-  left: string;
-  right: string;
-};
-
-export type Question =
-  | {
-      id: number;
-      type: "multiple-choice";
-      question: string;
-      options?: string[] | undefined;
-      answer: string | undefined;
-      tooltipTerms?: TooltipTerm[];
-      answerImage?: string;
-      answerExplanation?: string;
-    }
-  | {
-      id: number;
-      type: "matching";
-      question: string;
-      options?: string[] | undefined;
-      pairs: MatchingPair[];
-      answer?: string | undefined;
-      answerImage?: string;
-      tooltipTerms?: TooltipTerm[];
-      answerExplanation?: string;
-    };
 
 export type Quiz = {
   slug: string;
@@ -255,13 +237,6 @@ export const quizzes: Quiz[] = [
         options: ["Initiator Codon", "Termination Codon", "Promoter Sequence", "Centromere", "Leader Sequence"],
         answer: "Promoter Sequence",
       },
-      // *******************************************
-      // ************CONTINUE AUDIT HERE************
-      // type: "multiple-choice",questions are <= 50 characters
-      // options are all capitalized
-      // options have no ""
-      // NEXT PASS THROUGH:  Minimize answer option character lengths
-      // *******************************************
       {
         id: 10,
         type: "multiple-choice",
