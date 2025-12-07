@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Button, { Variant } from "../components/Button";
+import Button, { Variant } from "./Button";
 import { useRouter } from "next/navigation";
 import { QuizType } from "../data/quizzes";
 import shuffleArray from "../utils/shuffleArray";
@@ -19,10 +19,6 @@ type MultipleChoiceProps = {
   userSelectedAnswer: string | null;
   setUserSelectedAnswer: (answer: string | null) => void;
   tooltipTerms?: { label: string; meaning: string }[];
-};
-
-type HeaderProps = {
-  exitQuiz: () => void;
 };
 
 type MatchingState = {
@@ -80,8 +76,19 @@ function Tooltip(text: string, tooltipTerms: { label: string; meaning: string }[
 }
 
 const shuffleArrayCopy = <T,>(arr: T[]): T[] => [...arr].sort(() => Math.random() - 0.5);
-
 const shuffleAnswerOptions = (questions: QuizType["questions"]): QuizType["questions"] => questions.map((q) => ({ ...q, options: q.options ? shuffleArray(q.options) : q.options }));
+
+export function Header({ exitQuiz }: any) {
+  return (
+    <header className='w-full flex items-center justify-between p-4 border-b border-gray-200'>
+      <button onClick={exitQuiz} aria-label='Back to quiz list'>
+        ✕
+      </button>
+      <div>Progress Bar</div>
+      <div>Points</div>
+    </header>
+  );
+}
 
 function Question({ question, tooltipTerms }: { question: string; tooltipTerms?: { label: string; meaning: string }[] }) {
   return <p className='text-lg mb-4'>{Tooltip(question, tooltipTerms ?? [])}</p>;
@@ -175,18 +182,6 @@ export function Matching({ pairs, setUserMatches, disabled }: MatchingProps) {
         ))}
       </div>
     </div>
-  );
-}
-
-export function Header({ exitQuiz }: HeaderProps) {
-  return (
-    <header className='w-full flex items-center justify-between p-4 border-b border-gray-200'>
-      <button onClick={exitQuiz} aria-label='Back to quiz list'>
-        ✕
-      </button>
-      <div>Progress Bar</div>
-      <div>Points</div>
-    </header>
   );
 }
 

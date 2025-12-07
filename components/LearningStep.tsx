@@ -1,20 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import React from "react";
-
-type Quiz = {
-  slug: string;
-  title: string;
-  description: string;
-  image: string;
-};
 
 type QuizCardProps = {
-  quiz: Quiz;
+  quiz: {
+    slug: string;
+    title: string;
+    description: string;
+    image: string;
+  };
 };
 
-export default function QuizCard({ quiz }: QuizCardProps) {
+export default function LearningStep({ quiz }: QuizCardProps) {
   return (
     <Link href={`/quiz/${quiz.slug}`}>
       <div className='border p-4 rounded-xl shadow hover:shadow-lg transition'>

@@ -1,6 +1,6 @@
 import React from "react";
 import { quizzes, QuizType } from "../data/quizzes";
-import QuizCard from "../components/QuizCard";
+import LearningStep from "../components/LearningStep";
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
 
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'>
         {quizzes.map((quiz: QuizType) => (
-          <QuizCard key={quiz.slug} quiz={quiz} />
+          <LearningStep key={quiz.slug} quiz={quiz} />
         ))}
       </div>
     </main>

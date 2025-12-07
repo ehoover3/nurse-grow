@@ -1,5 +1,5 @@
 import { quizzes } from "../../../data/quizzes";
-import Quiz from "../../../components/QuizGame";
+import Quiz from "../../../components/Quiz";
 
 type QuizPageProps = {
   params: Promise<{ slug: string }>;
