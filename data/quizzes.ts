@@ -47,13 +47,6 @@ export const quizzes: QuizType[] = [
           { left: "Brain", right: "Thinks" },
         ],
       },
-      {
-        id: 3,
-        type: "multiple-choice",
-        question: "How many chambers does the human heart have?",
-        options: ["2", "3", "4", "5"],
-        answer: "4",
-      },
     ],
   },
   {

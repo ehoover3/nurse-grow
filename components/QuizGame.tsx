@@ -17,12 +17,16 @@ type MultipleChoiceProps = {
   currentQuestion: QuizType["questions"][number];
   quizState: QuizState;
   userSelectedAnswer: string | null;
-  setUserSelectedAnswer: (answer: string) => void;
+  setUserSelectedAnswer: (answer: string | null) => void;
   tooltipTerms?: { label: string; meaning: string }[];
 };
 
+type HeaderProps = {
+  exitQuiz: () => void;
+};
+
 type MatchingState = {
-  matched: Record<string, string>; // correct matches {left: right}
+  matched: Record<string, string>;
   selectedLeft: string | null;
   selectedRight: string | null;
   wrongAttempt: boolean;
@@ -35,39 +39,52 @@ type MatchingProps = {
   disabled: boolean;
 };
 
-function Tooltip({ label, meaning }: { label: string; meaning: string }) {
-  return (
-    <span className='relative group cursor-help font-semibold underline decoration-dotted'>
-      {label}
-      <span className='absolute left-0 top-full mt-1 hidden group-hover:block p-2 bg-gray-800 text-white text-xs rounded shadow-lg z-20 w-max'>{meaning}</span>
-    </span>
-  );
-}
-
-const shuffleArrayCopy = <T,>(arr: T[]): T[] => {
-  return [...arr].sort(() => Math.random() - 0.5);
+type SummaryScreenProps = {
+  exitQuiz: () => void;
 };
 
-function addTooltips(text: string, tooltipTerms: { label: string; meaning: string }[] = []) {
+type AskQuestionScreenProps = {
+  currentQuestion: QuizType["questions"][number];
+  questionsToAskIndex: number;
+  totalQuestions: number;
+  quizState: QuizState;
+  userSelectedAnswer: string | null;
+  setUserSelectedAnswer: (answer: string | null) => void;
+  userMatches: Record<string, string>;
+  setUserMatches: (matches: Record<string, string>) => void;
+  exitQuiz: () => void;
+  questionsToAsk: QuizType["questions"];
+  setQuestionsToAsk: React.Dispatch<React.SetStateAction<QuizType["questions"]>>;
+  questionsToRetry: QuizType["questions"];
+  setQuestionsToRetry: React.Dispatch<React.SetStateAction<QuizType["questions"]>>;
+  score: number;
+  setScore: React.Dispatch<React.SetStateAction<number>>;
+  setQuestionsToAskIndex: React.Dispatch<React.SetStateAction<number>>;
+  setQuizState: React.Dispatch<React.SetStateAction<QuizState>>;
+};
+
+function Tooltip(text: string, tooltipTerms: { label: string; meaning: string }[] = []) {
   return text.split(/(\{.*?\})/g).map((part, i) => {
     const match = part.match(/^\{(.+?)\}$/);
     if (!match) return part;
     const label = match[1];
     const term = tooltipTerms.find((t) => t.label === label);
     if (!term) return label;
-    return <Tooltip key={i} label={label} meaning={term.meaning} />;
+    return (
+      <span className='relative group cursor-help font-semibold underline decoration-dotted' key={i}>
+        {label}
+        <span className='absolute left-0 top-full mt-1 hidden group-hover:block p-2 bg-gray-800 text-white text-xs rounded shadow-lg z-20 w-max'>{term.meaning}</span>
+      </span>
+    );
   });
 }
 
-const shuffleAnswerOptions = (questions: QuizType["questions"]): QuizType["questions"] => {
-  return questions.map((q) => ({
-    ...q,
-    options: q.options ? shuffleArray(q.options) : q.options,
-  }));
-};
+const shuffleArrayCopy = <T,>(arr: T[]): T[] => [...arr].sort(() => Math.random() - 0.5);
+
+const shuffleAnswerOptions = (questions: QuizType["questions"]): QuizType["questions"] => questions.map((q) => ({ ...q, options: q.options ? shuffleArray(q.options) : q.options }));
 
 function Question({ question, tooltipTerms }: { question: string; tooltipTerms?: { label: string; meaning: string }[] }) {
-  return <p className='text-lg mb-4'>{addTooltips(question, tooltipTerms ?? [])}</p>;
+  return <p className='text-lg mb-4'>{Tooltip(question, tooltipTerms ?? [])}</p>;
 }
 
 function MultipleChoice({ currentQuestion, quizState, userSelectedAnswer, setUserSelectedAnswer, tooltipTerms }: MultipleChoiceProps) {
@@ -85,7 +102,7 @@ function MultipleChoice({ currentQuestion, quizState, userSelectedAnswer, setUse
         else if (isShowingResults && isUserPick) variant = "red";
         return (
           <Button key={option} onClick={() => isSelecting && setUserSelectedAnswer(option)} disabled={!isSelecting} variant={variant} className='border w-full text-left p-2 rounded'>
-            {addTooltips(option, tooltipTerms ?? [])}
+            {Tooltip(option, tooltipTerms ?? [])}
           </Button>
         );
       })}
@@ -94,10 +111,8 @@ function MultipleChoice({ currentQuestion, quizState, userSelectedAnswer, setUse
 }
 
 export function Matching({ pairs, setUserMatches, disabled }: MatchingProps) {
-  // Extract original left/right
   const originalLeft = pairs.map((p) => p.left);
   const originalRight = pairs.map((p) => p.right);
-  // Shuffle each side independently ONCE
   const [leftSide] = useState<string[]>(() => shuffleArrayCopy(originalLeft));
   const [rightSide] = useState<string[]>(() => shuffleArrayCopy(originalRight));
   const [state, setState] = useState<MatchingState>({
@@ -107,41 +122,24 @@ export function Matching({ pairs, setUserMatches, disabled }: MatchingProps) {
     wrongAttempt: false,
   });
   const selectLeft = (left: string) => {
-    if (state.matched[left]) return;
-    if (disabled) return;
+    if (state.matched[left] || disabled) return;
     setState((s) => ({ ...s, selectedLeft: left }));
   };
   const selectRight = (right: string) => {
-    if (Object.values(state.matched).includes(right)) return;
-    if (disabled) return;
+    if (Object.values(state.matched).includes(right) || disabled) return;
     setState((s) => ({ ...s, selectedRight: right }));
   };
   useEffect(() => {
     if (!state.selectedLeft || !state.selectedRight) return;
     const correctPair = pairs.find((p) => p.left === state.selectedLeft && p.right === state.selectedRight);
     if (correctPair) {
-      // Correct match
-      const newMatched = {
-        ...state.matched,
-        [correctPair.left]: correctPair.right,
-      };
-      setState({
-        matched: newMatched,
-        selectedLeft: null,
-        selectedRight: null,
-        wrongAttempt: false,
-      });
+      const newMatched = { ...state.matched, [correctPair.left]: correctPair.right };
+      setState({ matched: newMatched, selectedLeft: null, selectedRight: null, wrongAttempt: false });
       setUserMatches(newMatched);
     } else {
-      // Flash red
       setState((s) => ({ ...s, wrongAttempt: true }));
       const t = setTimeout(() => {
-        setState((s) => ({
-          ...s,
-          selectedLeft: null,
-          selectedRight: null,
-          wrongAttempt: false,
-        }));
+        setState((s) => ({ ...s, selectedLeft: null, selectedRight: null, wrongAttempt: false }));
       }, 700);
       return () => clearTimeout(t);
     }
@@ -162,7 +160,6 @@ export function Matching({ pairs, setUserMatches, disabled }: MatchingProps) {
   };
   return (
     <div className='grid grid-cols-2 gap-6 mt-4'>
-      {/* LEFT COLUMN */}
       <div className='flex flex-col gap-3'>
         {leftSide.map((left) => (
           <div key={left} className={getLeftStyles(left)} onClick={() => selectLeft(left)}>
@@ -170,7 +167,6 @@ export function Matching({ pairs, setUserMatches, disabled }: MatchingProps) {
           </div>
         ))}
       </div>
-      {/* RIGHT COLUMN */}
       <div className='flex flex-col gap-3'>
         {rightSide.map((right) => (
           <div key={right} className={getRightStyles(right)} onClick={() => selectRight(right)}>
@@ -182,7 +178,7 @@ export function Matching({ pairs, setUserMatches, disabled }: MatchingProps) {
   );
 }
 
-export function Header(exitQuiz: any) {
+export function Header({ exitQuiz }: HeaderProps) {
   return (
     <header className='w-full flex items-center justify-between p-4 border-b border-gray-200'>
       <button onClick={exitQuiz} aria-label='Back to quiz list'>
@@ -194,116 +190,8 @@ export function Header(exitQuiz: any) {
   );
 }
 
-type SummaryScreenProps = {
-  score: number;
-  totalQuestions: number;
-  restartQuiz: () => void;
-  exitQuiz: () => void;
-};
-
-type AskQuestionModeProps = {
-  currentQuestion: QuizType["questions"][number];
-  questionsToAskIndex: number;
-  totalQuestions: number;
-  quizState: QuizState;
-  userSelectedAnswer: string | null;
-  setUserSelectedAnswer: (answer: string) => void;
-  userMatches: Record<string, string>;
-  setUserMatches: (matches: Record<string, string>) => void;
-  handleCheck: () => void;
-  handleContinue: () => void;
-  exitQuiz: any;
-};
-
-function AskQuestionScreen({ currentQuestion, questionsToAskIndex, totalQuestions, quizState, userSelectedAnswer, setUserSelectedAnswer, userMatches, setUserMatches, handleCheck, handleContinue, exitQuiz }: AskQuestionModeProps) {
-  return (
-    <div className='p-8 relative'>
-      <Header exitQuiz={exitQuiz} />
-      <div className='mt-8'>
-        <h2 className='text-2xl font-bold mb-2'>
-          Question {questionsToAskIndex + 1} / {totalQuestions}
-        </h2>
-
-        <Question question={currentQuestion.question} tooltipTerms={currentQuestion.tooltipTerms ?? []} />
-
-        {currentQuestion.type === "multiple-choice" && <MultipleChoice currentQuestion={currentQuestion} quizState={quizState} userSelectedAnswer={userSelectedAnswer} setUserSelectedAnswer={setUserSelectedAnswer} tooltipTerms={currentQuestion.tooltipTerms ?? []} />}
-
-        {currentQuestion.type === "matching" && <Matching pairs={currentQuestion.pairs ?? []} userMatches={userMatches} setUserMatches={setUserMatches} disabled={quizState !== QuizState.SELECT_ANSWER} />}
-
-        <div className='mt-4'>
-          {quizState === QuizState.SELECT_ANSWER ? (
-            <Button variant='skyBlue' onClick={handleCheck} disabled={(currentQuestion.type === "multiple-choice" && !userSelectedAnswer) || (currentQuestion.type === "matching" && Object.keys(userMatches).length !== currentQuestion.pairs?.length)}>
-              CHECK
-            </Button>
-          ) : (
-            <Button variant='skyBlue' onClick={handleContinue}>
-              CONTINUE
-            </Button>
-          )}
-
-          {quizState === QuizState.CONTINUE_BUTTON && currentQuestion.answerImage && (
-            <div className='mt-4'>
-              <img src={currentQuestion.answerImage} alt='Answer explanation' className='max-w-full h-auto rounded border' />
-            </div>
-          )}
-
-          {quizState === QuizState.CONTINUE_BUTTON && currentQuestion.answerExplanation && <div className='mt-4'>{currentQuestion.answerExplanation}</div>}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function SummaryScreen({ score, totalQuestions, restartQuiz, exitQuiz }: SummaryScreenProps) {
-  return (
-    <div className='p-8 relative'>
-      <Header exitQuiz={exitQuiz} />
-
-      <div className='flex flex-col items-center gap-4 mt-8'>
-        <h2 className='text-2xl font-bold mb-2'>Quiz Finished!</h2>
-        <p className='text-xl mb-4'>
-          You answered {score} / {totalQuestions} correctly on the first attempt
-        </p>
-
-        <div className='flex gap-4'>
-          <button onClick={restartQuiz} className='px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition'>
-            Retry Quiz
-          </button>
-
-          <button onClick={exitQuiz} className='px-4 py-2 bg-gray-300 text-black rounded hover:bg-gray-400 transition'>
-            Back to Quizzes
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ErrorScreen({ quizState }: any) {
-  return <div className='p-8 text-red-600 font-bold'>Error: Unknown quiz state "{quizState}"</div>;
-}
-
-export default function Quiz({ quiz }: { quiz: QuizType }) {
-  const router = useRouter();
-  const [questionsToAsk, setQuestionsToAsk] = useState<QuizType["questions"]>(quiz.questions);
-  const [isMounted, setIsMounted] = useState(false);
-  const [questionsToAskIndex, setQuestionsToAskIndex] = useState(0);
-  const [questionsToRetry, setQuestionsToRetry] = useState<QuizType["questions"]>([]);
-  const [userSelectedAnswer, setUserSelectedAnswer] = useState<string | null>(null);
-  const [userMatches, setUserMatches] = useState<Record<string, string>>({});
-  const [quizState, setQuizState] = useState<QuizState>(QuizState.SELECT_ANSWER);
-  const [score, setScore] = useState(0);
-
-  const currentQuestion = questionsToAsk[questionsToAskIndex] || quiz.questions[0];
-
-  useEffect(() => {
-    if (!isMounted) {
-      setQuestionsToAsk(shuffleAnswerOptions(quiz.questions));
-      setIsMounted(true);
-    }
-  }, [quiz.questions, isMounted]);
-
-  const handleCheckFn = () => {
+function AskQuestionScreen({ currentQuestion, questionsToAskIndex, totalQuestions, quizState, userSelectedAnswer, setUserSelectedAnswer, userMatches, setUserMatches, exitQuiz, questionsToAsk, setQuestionsToAsk, questionsToRetry, setQuestionsToRetry, score, setScore, setQuestionsToAskIndex, setQuizState }: AskQuestionScreenProps) {
+  const handleCheck = () => {
     if (currentQuestion.type === "multiple-choice") {
       if (!userSelectedAnswer) return;
       userSelectedAnswer === currentQuestion.answer ? setScore((s) => s + 1) : setQuestionsToRetry((prev) => [...prev, currentQuestion]);
@@ -315,7 +203,7 @@ export default function Quiz({ quiz }: { quiz: QuizType }) {
     setQuizState(QuizState.CONTINUE_BUTTON);
   };
 
-  const handleContinueFn = () => {
+  const handleContinue = () => {
     const nextIndex = questionsToAskIndex + 1;
     if (nextIndex < questionsToAsk.length) {
       setQuestionsToAskIndex(nextIndex);
@@ -334,27 +222,101 @@ export default function Quiz({ quiz }: { quiz: QuizType }) {
     }
   };
 
-  const restartQuiz = () => {
-    setQuestionsToAsk(shuffleAnswerOptions(quiz.questions));
-    setQuestionsToAskIndex(0);
-    setUserSelectedAnswer(null);
-    setUserMatches({});
-    setQuizState(QuizState.SELECT_ANSWER);
-    setQuestionsToRetry([]);
-    setScore(0);
-  };
+  return (
+    <div className='p-8 relative'>
+      <Header exitQuiz={exitQuiz} />
+      <div className='mt-8'>
+        <h2 className='text-2xl font-bold mb-2'>
+          Question {questionsToAskIndex + 1} / {totalQuestions}
+        </h2>
+        <Question question={currentQuestion.question} tooltipTerms={currentQuestion.tooltipTerms ?? []} />
+        {currentQuestion.type === "multiple-choice" && <MultipleChoice currentQuestion={currentQuestion} quizState={quizState} userSelectedAnswer={userSelectedAnswer} setUserSelectedAnswer={setUserSelectedAnswer} tooltipTerms={currentQuestion.tooltipTerms ?? []} />}
+        {currentQuestion.type === "matching" && <Matching pairs={currentQuestion.pairs ?? []} userMatches={userMatches} setUserMatches={setUserMatches} disabled={quizState !== QuizState.SELECT_ANSWER} />}
+        <div className='mt-4'>
+          {quizState === QuizState.SELECT_ANSWER ? (
+            <Button variant='skyBlue' onClick={handleCheck} disabled={(currentQuestion.type === "multiple-choice" && !userSelectedAnswer) || (currentQuestion.type === "matching" && Object.keys(userMatches).length !== currentQuestion.pairs?.length)}>
+              CHECK
+            </Button>
+          ) : (
+            <Button variant='skyBlue' onClick={handleContinue}>
+              CONTINUE
+            </Button>
+          )}
+          {quizState === QuizState.CONTINUE_BUTTON && currentQuestion.answerImage && (
+            <div className='mt-4'>
+              <img src={currentQuestion.answerImage} alt='Answer explanation' className='max-w-full h-auto rounded border' />
+            </div>
+          )}
+          {quizState === QuizState.CONTINUE_BUTTON && currentQuestion.answerExplanation && <div className='mt-4'>{currentQuestion.answerExplanation}</div>}
+        </div>
+      </div>
+    </div>
+  );
+}
 
+function SummaryScreen({ exitQuiz }: SummaryScreenProps) {
+  return (
+    <div className='p-8 relative'>
+      <div className='flex flex-col items-center gap-4 mt-8'>
+        <h2 className='text-2xl font-bold mb-2'>Lesson Complete!</h2>
+        <div className='flex gap-4'>
+          <button onClick={exitQuiz} className='px-4 py-2 bg-gray-300 text-black rounded hover:bg-gray-400 transition'>
+            Continue
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ErrorScreen({ quizState }: any) {
+  return <div className='p-8 text-red-600 font-bold'>Error: Unknown quiz state "{quizState}"</div>;
+}
+
+export default function Quiz({ quiz }: { quiz: QuizType }) {
+  const router = useRouter();
+  const [questionsToAsk, setQuestionsToAsk] = useState<QuizType["questions"]>([]);
+  const [questionsToAskIndex, setQuestionsToAskIndex] = useState(0);
+  const [questionsToRetry, setQuestionsToRetry] = useState<QuizType["questions"]>([]);
+  const [userSelectedAnswer, setUserSelectedAnswer] = useState<string | null>(null);
+  const [userMatches, setUserMatches] = useState<Record<string, string>>({});
+  const [quizState, setQuizState] = useState<QuizState>(QuizState.SELECT_ANSWER);
+  const [score, setScore] = useState(0);
   const exitQuiz = () => router.push("/");
+
+  useEffect(() => {
+    setQuestionsToAsk(shuffleAnswerOptions(quiz.questions));
+  }, [quiz.questions]);
+
+  const currentQuestion = questionsToAsk[questionsToAskIndex] || quiz.questions[0];
 
   switch (quizState) {
     case QuizState.SELECT_ANSWER:
     case QuizState.CHECK_BUTTON:
     case QuizState.CONTINUE_BUTTON:
-      return <AskQuestionScreen exitQuiz={exitQuiz} currentQuestion={currentQuestion} questionsToAskIndex={questionsToAskIndex} totalQuestions={quiz.questions.length} quizState={quizState} userSelectedAnswer={userSelectedAnswer} setUserSelectedAnswer={setUserSelectedAnswer} userMatches={userMatches} setUserMatches={setUserMatches} handleCheck={handleCheckFn} handleContinue={handleContinueFn} />;
-
+      return (
+        <AskQuestionScreen
+          exitQuiz={exitQuiz}
+          currentQuestion={currentQuestion}
+          questionsToAskIndex={questionsToAskIndex}
+          totalQuestions={quiz.questions.length}
+          quizState={quizState}
+          userSelectedAnswer={userSelectedAnswer}
+          setUserSelectedAnswer={setUserSelectedAnswer}
+          userMatches={userMatches}
+          setUserMatches={setUserMatches}
+          questionsToAsk={questionsToAsk}
+          setQuestionsToAsk={setQuestionsToAsk}
+          questionsToRetry={questionsToRetry}
+          setQuestionsToRetry={setQuestionsToRetry}
+          score={score}
+          setScore={setScore}
+          setQuestionsToAskIndex={setQuestionsToAskIndex}
+          setQuizState={setQuizState}
+        />
+      );
     case QuizState.VIEW_SUMMARY:
-      return <SummaryScreen score={score} totalQuestions={quiz.questions.length} restartQuiz={restartQuiz} exitQuiz={exitQuiz} />;
-
+      return <SummaryScreen exitQuiz={exitQuiz} />;
     default:
       return <ErrorScreen quizState={quizState} />;
   }
