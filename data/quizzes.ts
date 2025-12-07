@@ -1,4 +1,4 @@
-export type Question = {
+type QuestionType = {
   id: number;
   type: "multiple-choice" | "matching";
   question: string;
@@ -13,15 +13,15 @@ export type Question = {
   answerExplanation?: string;
 };
 
-export type Quiz = {
+export type QuizType = {
   slug: string;
   title: string;
   description: string;
   image: string;
-  questions: Question[];
+  questions: QuestionType[];
 };
 
-export const quizzes: Quiz[] = [
+export const quizzes: QuizType[] = [
   {
     slug: "test",
     title: "TEST",
@@ -44,6 +44,7 @@ export const quizzes: Quiz[] = [
           { left: "Heart", right: "Pumps blood" },
           { left: "Lungs", right: "Gas exchange" },
           { left: "Kidneys", right: "Filter blood" },
+          { left: "Brain", right: "Thinks" },
         ],
       },
       {
@@ -2174,9 +2175,9 @@ export const quizzes: Quiz[] = [
       {
         id: 17,
         type: "multiple-choice",
-        question: "The valve located at the junction between the left ventricle and the aorta is an example of a(n) (atrioventricular/semilunar) valve",
-        options: ["semilunar"],
-        answer: "semilunar",
+        question: "What is the valve between the left ventricle and aorta?",
+        options: ["Atrioventricular", "Semilunar"],
+        answer: "Semilunar",
       },
       {
         id: 18,
@@ -3174,9 +3175,9 @@ export const quizzes: Quiz[] = [
       {
         id: 18,
         type: "multiple-choice",
-        question: "The loop of Henle descending limb's epithelial cells actively transport solutes from tubular fluid to surrounding peritubular space",
-        options: ["True", "False"],
-        answer: "False",
+        question: "Do the loop of Henle descending limb cells actively transport solutes?",
+        options: ["Yes", "No"],
+        answer: "No",
       },
       {
         id: 19,
@@ -3210,7 +3211,7 @@ export const quizzes: Quiz[] = [
       {
         id: 23,
         type: "multiple-choice",
-        question: "____ stimulates the insertion of water pores into the plasma membrane of epithelial cells of the distal tubules and collecting ducts",
+        question: "____ stimulates water pores insertion in distal tubules and collecting ducts epithelial cells plasma membrane",
         options: ["Antidiuretic hormone (ADH)"],
         answer: "Antidiuretic hormone (ADH)",
       },
@@ -3473,9 +3474,9 @@ export const quizzes: Quiz[] = [
       {
         id: 24,
         type: "multiple-choice",
-        question: "Nerves and hormones exert their effects on gastrointestinal motility primarily by altering the (frequency/amplitude) of slow waves",
-        options: ["frequency", "amplitude"],
-        answer: "amplitude",
+        question: "Nerves and hormones exert their effects on gastrointestinal motility primarily by altering the slow waves ____",
+        options: ["Frequency", "Amplitude"],
+        answer: "Amplitude",
         answerExplanation: "GI nerves and hormones change the amplitude of slow waves (strength of contraction), not the frequency of slow wave generation",
       },
       {

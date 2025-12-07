@@ -1,5 +1,5 @@
 import { quizzes } from "../../../data/quizzes";
-import QuizGame from "../../../components/QuizGame";
+import Quiz from "../../../components/QuizGame";
 
 type QuizPageProps = {
   params: Promise<{ slug: string }>;
@@ -18,7 +18,7 @@ export default async function QuizPage({ params }: QuizPageProps) {
       <h1 className='text-3xl font-bold mb-4'>{quiz.title}</h1>
       <p className='text-gray-700 mb-6'>{quiz.description}</p>
 
-      <QuizGame quiz={quiz} />
+      <Quiz quiz={quiz} />
     </main>
   );
 }
