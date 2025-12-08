@@ -166,7 +166,7 @@ export function Matching({ pairs, userMatches, setUserMatches, disabled }: Match
   );
 }
 
-function ActionButtons({ quizState, currentQuestion, userSelectedAnswer, userMatches, handleCheck, handleContinue }: any) {
+function UserButtons({ quizState, currentQuestion, userSelectedAnswer, userMatches, handleCheck, handleContinue }: any) {
   const isMC = currentQuestion.type === "multiple-choice";
   const isMatching = currentQuestion.type === "matching";
   const disableCheck = (isMC && !userSelectedAnswer) || (isMatching && Object.keys(userMatches).length !== currentQuestion.pairs?.length);
@@ -250,12 +250,7 @@ export function AskQuestionScreen({ exitQuiz, quizState, setQuizState, quiz }: A
         {currentQuestion.type === "multiple-choice" && <MultipleChoice currentQuestion={currentQuestion} quizState={quizState} userSelectedAnswer={userSelectedAnswer} setUserSelectedAnswer={setUserSelectedAnswer} tooltipTerms={currentQuestion.tooltipTerms ?? []} />}
         {currentQuestion.type === "matching" && <Matching pairs={currentQuestion.pairs ?? []} userMatches={userMatches} setUserMatches={setUserMatches} disabled={quizState !== QuizState.SELECT_ANSWER} />}
         <div className='mt-4'>
-          <ActionButtons quizState={quizState} currentQuestion={currentQuestion} userSelectedAnswer={userSelectedAnswer} userMatches={userMatches} handleCheck={handleCheck} handleContinue={handleContinue} />
-          {quizState === QuizState.CONTINUE_BUTTON && currentQuestion.answerImage && (
-            <div className='mt-4'>
-              <img src={currentQuestion.answerImage} alt='Answer explanation' className='max-w-full h-auto rounded border' />
-            </div>
-          )}
+          <UserButtons quizState={quizState} currentQuestion={currentQuestion} userSelectedAnswer={userSelectedAnswer} userMatches={userMatches} handleCheck={handleCheck} handleContinue={handleContinue} />
           <AnswerFeedback quizState={quizState} currentQuestion={currentQuestion} />
         </div>
       </div>
