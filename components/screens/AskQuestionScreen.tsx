@@ -56,10 +56,7 @@ function Tooltip(text: string, tooltipTerms: { label: string; meaning: string }[
   });
 }
 
-const shuffleArrayCopy = <T,>(arr: T[]): T[] => [...arr].sort(() => Math.random() - 0.5);
-const shuffleAnswerOptions = (questions: QuizType["questions"]): QuizType["questions"] => questions.map((q) => ({ ...q, options: q.options ? shuffleArray(q.options) : q.options }));
-
-function ExitButton({ onClick }: ExitButtonProps) {
+function HeaderExitButton({ onClick }: ExitButtonProps) {
   return (
     <button onClick={onClick} aria-label='Exit quiz'>
       ✕
@@ -67,7 +64,7 @@ function ExitButton({ onClick }: ExitButtonProps) {
   );
 }
 
-function ProgressBar({ progress }: ProgressBarProps) {
+function HeaderProgressBar({ progress }: ProgressBarProps) {
   return (
     <section className='w-full sm:flex-1'>
       <div className='w-full bg-gray-200 rounded-full h-4 overflow-hidden'>
@@ -77,7 +74,7 @@ function ProgressBar({ progress }: ProgressBarProps) {
   );
 }
 
-function ScoreDisplay({ score, totalQuestions }: ScoreDisplayProps) {
+function HeaderScoreDisplay({ score, totalQuestions }: ScoreDisplayProps) {
   return (
     <section className='text-sm text-gray-700'>
       {score} / {totalQuestions} correct
@@ -89,9 +86,9 @@ function Header({ exitQuiz, score, totalQuestions }: any) {
   const progress = totalQuestions > 0 ? (score / totalQuestions) * 100 : 0;
   return (
     <header className='w-full flex flex-col sm:flex-row items-center justify-between p-4 border-b border-gray-200 gap-2'>
-      <ExitButton onClick={exitQuiz} />
-      <ProgressBar progress={progress} />
-      <ScoreDisplay score={score} totalQuestions={totalQuestions} />
+      <HeaderExitButton onClick={exitQuiz} />
+      <HeaderProgressBar progress={progress} />
+      <HeaderScoreDisplay score={score} totalQuestions={totalQuestions} />
     </header>
   );
 }
@@ -123,6 +120,7 @@ function MultipleChoice({ currentQuestion, quizState, userSelectedAnswer, setUse
   );
 }
 
+const shuffleArrayCopy = <T,>(arr: T[]): T[] => [...arr].sort(() => Math.random() - 0.5);
 export function Matching({ pairs, userMatches, setUserMatches, disabled }: MatchingProps) {
   const originalLeft = pairs.map((p) => p.left);
   const originalRight = pairs.map((p) => p.right);
@@ -229,6 +227,7 @@ function AnswerFeedback({ quizState, currentQuestion }: any) {
   );
 }
 
+const shuffleAnswerOptions = (questions: QuizType["questions"]): QuizType["questions"] => questions.map((q) => ({ ...q, options: q.options ? shuffleArray(q.options) : q.options }));
 export function AskQuestionScreen({ exitQuiz, quizState, setQuizState, quiz }: AskQuestionScreenProps) {
   const [score, setScore] = useState(0);
   const [questionsToAsk, setQuestionsToAsk] = useState<QuizType["questions"]>([]);
