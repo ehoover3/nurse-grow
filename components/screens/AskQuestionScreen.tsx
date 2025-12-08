@@ -58,10 +58,10 @@ export function Header({ exitQuiz, score, totalQuestions }: any) {
       <button onClick={exitQuiz} aria-label='Back to quiz list'>
         ✕
       </button>
-      <div>
+      <section>
         Correct: {score} / {totalQuestions}
-      </div>
-      <div>Points</div>
+      </section>
+      <section>Points</section>
     </header>
   );
 }
@@ -166,6 +166,39 @@ export function Matching({ pairs, userMatches, setUserMatches, disabled }: Match
   );
 }
 
+function ActionButtons({ quizState, currentQuestion, userSelectedAnswer, userMatches, handleCheck, handleContinue }: any) {
+  const isMC = currentQuestion.type === "multiple-choice";
+  const isMatching = currentQuestion.type === "matching";
+  const disableCheck = (isMC && !userSelectedAnswer) || (isMatching && Object.keys(userMatches).length !== currentQuestion.pairs?.length);
+  return (
+    <div className='mt-4'>
+      {quizState === QuizState.SELECT_ANSWER ? (
+        <Button variant='skyBlue' onClick={handleCheck} disabled={disableCheck}>
+          CHECK
+        </Button>
+      ) : (
+        <Button variant='skyBlue' onClick={handleContinue}>
+          CONTINUE
+        </Button>
+      )}
+    </div>
+  );
+}
+
+function AnswerFeedback({ quizState, currentQuestion }: any) {
+  if (quizState !== QuizState.CONTINUE_BUTTON) return null;
+  return (
+    <>
+      {currentQuestion.answerImage && (
+        <div className='mt-4'>
+          <img src={currentQuestion.answerImage} alt='Answer explanation' className='max-w-full h-auto rounded border' />
+        </div>
+      )}
+      {currentQuestion.answerExplanation && <div className='mt-4'>{currentQuestion.answerExplanation}</div>}
+    </>
+  );
+}
+
 export function AskQuestionScreen({ exitQuiz, quizState, setQuizState, quiz }: AskQuestionScreenProps) {
   const [score, setScore] = useState(0);
   const [questionsToAsk, setQuestionsToAsk] = useState<QuizType["questions"]>([]);
@@ -217,21 +250,13 @@ export function AskQuestionScreen({ exitQuiz, quizState, setQuizState, quiz }: A
         {currentQuestion.type === "multiple-choice" && <MultipleChoice currentQuestion={currentQuestion} quizState={quizState} userSelectedAnswer={userSelectedAnswer} setUserSelectedAnswer={setUserSelectedAnswer} tooltipTerms={currentQuestion.tooltipTerms ?? []} />}
         {currentQuestion.type === "matching" && <Matching pairs={currentQuestion.pairs ?? []} userMatches={userMatches} setUserMatches={setUserMatches} disabled={quizState !== QuizState.SELECT_ANSWER} />}
         <div className='mt-4'>
-          {quizState === QuizState.SELECT_ANSWER ? (
-            <Button variant='skyBlue' onClick={handleCheck} disabled={(currentQuestion.type === "multiple-choice" && !userSelectedAnswer) || (currentQuestion.type === "matching" && Object.keys(userMatches).length !== currentQuestion.pairs?.length)}>
-              CHECK
-            </Button>
-          ) : (
-            <Button variant='skyBlue' onClick={handleContinue}>
-              CONTINUE
-            </Button>
-          )}
+          <ActionButtons quizState={quizState} currentQuestion={currentQuestion} userSelectedAnswer={userSelectedAnswer} userMatches={userMatches} handleCheck={handleCheck} handleContinue={handleContinue} />
           {quizState === QuizState.CONTINUE_BUTTON && currentQuestion.answerImage && (
             <div className='mt-4'>
               <img src={currentQuestion.answerImage} alt='Answer explanation' className='max-w-full h-auto rounded border' />
             </div>
           )}
-          {quizState === QuizState.CONTINUE_BUTTON && currentQuestion.answerExplanation && <div className='mt-4'>{currentQuestion.answerExplanation}</div>}
+          <AnswerFeedback quizState={quizState} currentQuestion={currentQuestion} />
         </div>
       </div>
     </div>
