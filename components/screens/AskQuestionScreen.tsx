@@ -96,8 +96,8 @@ function HeaderProgressBar({ progress }: HeaderProgressBarProps) {
 
 function HeaderScoreDisplay({ score, totalQuestions }: HeaderScoreDisplayProps) {
   return (
-    <section className='text-sm text-gray-700'>
-      {score} / {totalQuestions} correct
+    <section className='text-sm text-gray-700 dark:text-white'>
+      {score} / {totalQuestions} Correct
     </section>
   );
 }
@@ -141,7 +141,7 @@ function MultipleChoice({ currentQuestion, quizState, userSelectedAnswer, setUse
 }
 
 const shuffleArrayCopy = <T,>(arr: T[]): T[] => [...arr].sort(() => Math.random() - 0.5);
-export function Matching({ pairs, userMatches, setUserMatches, disabled }: MatchingProps) {
+function Matching({ pairs, userMatches, setUserMatches, disabled }: MatchingProps) {
   const originalLeft = pairs.map((p) => p.left);
   const originalRight = pairs.map((p) => p.right);
   const [leftSide] = useState<string[]>(() => shuffleArrayCopy(originalLeft));
@@ -294,13 +294,11 @@ export function AskQuestionScreen({ exitQuiz, quizState, setQuizState, quiz }: A
   return (
     <div className='p-8 relative'>
       <Header exitQuiz={exitQuiz} score={score} totalQuestions={totalQuestions} />
-      <div className='mt-8'>
-        <Question question={currentQuestion.question} tooltipTerms={currentQuestion.tooltipTerms ?? []} />
-        {currentQuestion.type === "multiple-choice" && <MultipleChoice currentQuestion={currentQuestion} quizState={quizState} userSelectedAnswer={userSelectedAnswer} setUserSelectedAnswer={setUserSelectedAnswer} tooltipTerms={currentQuestion.tooltipTerms ?? []} />}
-        {currentQuestion.type === "matching" && <Matching pairs={currentQuestion.pairs ?? []} userMatches={userMatches} setUserMatches={setUserMatches} disabled={quizState !== QuizState.SELECT_ANSWER} />}
-        <UserButtons quizState={quizState} currentQuestion={currentQuestion} userSelectedAnswer={userSelectedAnswer} userMatches={userMatches} handleCheck={handleCheck} handleContinue={handleContinue} />
-        <AnswerFeedback quizState={quizState} currentQuestion={currentQuestion} />
-      </div>
+      <Question question={currentQuestion.question} tooltipTerms={currentQuestion.tooltipTerms ?? []} />
+      {currentQuestion.type === "multiple-choice" && <MultipleChoice currentQuestion={currentQuestion} quizState={quizState} userSelectedAnswer={userSelectedAnswer} setUserSelectedAnswer={setUserSelectedAnswer} tooltipTerms={currentQuestion.tooltipTerms ?? []} />}
+      {currentQuestion.type === "matching" && <Matching pairs={currentQuestion.pairs ?? []} userMatches={userMatches} setUserMatches={setUserMatches} disabled={quizState !== QuizState.SELECT_ANSWER} />}
+      <UserButtons quizState={quizState} currentQuestion={currentQuestion} userSelectedAnswer={userSelectedAnswer} userMatches={userMatches} handleCheck={handleCheck} handleContinue={handleContinue} />
+      <AnswerFeedback quizState={quizState} currentQuestion={currentQuestion} />
     </div>
   );
 }
