@@ -12,13 +12,6 @@ type MultipleChoiceProps = {
   tooltipTerms?: { label: string; meaning: string }[];
 };
 
-type MatchingState = {
-  matched: Record<string, string>;
-  selectedLeft: string | null;
-  selectedRight: string | null;
-  wrongAttempt: boolean;
-};
-
 type MatchingProps = {
   pairs: { left: string; right: string }[];
   userMatches: Record<string, string>;
@@ -52,16 +45,25 @@ function Tooltip(text: string, tooltipTerms: { label: string; meaning: string }[
 const shuffleArrayCopy = <T,>(arr: T[]): T[] => [...arr].sort(() => Math.random() - 0.5);
 const shuffleAnswerOptions = (questions: QuizType["questions"]): QuizType["questions"] => questions.map((q) => ({ ...q, options: q.options ? shuffleArray(q.options) : q.options }));
 
-export function Header({ exitQuiz, score, totalQuestions }: any) {
+import React from "react";
+
+function Header({ exitQuiz, score, totalQuestions }: any) {
+  const progress = totalQuestions > 0 ? (score / totalQuestions) * 100 : 0;
   return (
-    <header className='w-full flex items-center justify-between p-4 border-b border-gray-200'>
+    <header className='w-full flex flex-col sm:flex-row items-center justify-between p-4 border-b border-gray-200 gap-2'>
       <button onClick={exitQuiz} aria-label='Back to quiz list'>
         ✕
       </button>
-      <section>
-        Correct: {score} / {totalQuestions}
+
+      <section className='w-full sm:flex-1'>
+        <div className='w-full bg-gray-200 rounded-full h-4 overflow-hidden'>
+          <div className='h-full bg-green-500 transition-all duration-300' style={{ width: `${progress}%` }} />
+        </div>
       </section>
-      <section>Points</section>
+
+      <section className='text-sm text-gray-700'>
+        {score} / {totalQuestions} correct
+      </section>
     </header>
   );
 }
@@ -98,52 +100,52 @@ export function Matching({ pairs, userMatches, setUserMatches, disabled }: Match
   const originalRight = pairs.map((p) => p.right);
   const [leftSide] = useState<string[]>(() => shuffleArrayCopy(originalLeft));
   const [rightSide] = useState<string[]>(() => shuffleArrayCopy(originalRight));
-  const [state, setState] = useState<MatchingState>({
-    matched: {},
-    selectedLeft: null,
-    selectedRight: null,
-    wrongAttempt: false,
-  });
+  const [selectedLeft, setSelectedLeft] = useState<string | null>(null);
+  const [selectedRight, setSelectedRight] = useState<string | null>(null);
+  const [wrongAttempt, setWrongAttempt] = useState(false);
 
   const selectLeft = (left: string) => {
-    if (state.matched[left] || disabled) return;
-    setState((s) => ({ ...s, selectedLeft: left }));
+    if (userMatches[left] || disabled) return;
+    setSelectedLeft(left);
   };
 
   const selectRight = (right: string) => {
-    if (Object.values(state.matched).includes(right) || disabled) return;
-    setState((s) => ({ ...s, selectedRight: right }));
+    if (Object.values(userMatches).includes(right) || disabled) return;
+    setSelectedRight(right);
   };
 
   useEffect(() => {
-    if (!state.selectedLeft || !state.selectedRight) return;
-    const correctPair = pairs.find((p) => p.left === state.selectedLeft && p.right === state.selectedRight);
+    if (!selectedLeft || !selectedRight) return;
+    const correctPair = pairs.find((p) => p.left === selectedLeft && p.right === selectedRight);
     if (correctPair) {
-      const newMatched = { ...state.matched, [correctPair.left]: correctPair.right };
-      setState({ matched: newMatched, selectedLeft: null, selectedRight: null, wrongAttempt: false });
-      setUserMatches(newMatched);
+      setUserMatches({ ...userMatches, [correctPair.left]: correctPair.right });
+      setSelectedLeft(null);
+      setSelectedRight(null);
+      setWrongAttempt(false);
     } else {
-      setState((s) => ({ ...s, wrongAttempt: true }));
+      setWrongAttempt(true);
       const t = setTimeout(() => {
-        setState((s) => ({ ...s, selectedLeft: null, selectedRight: null, wrongAttempt: false }));
+        setSelectedLeft(null);
+        setSelectedRight(null);
+        setWrongAttempt(false);
       }, 700);
       return () => clearTimeout(t);
     }
-  }, [state.selectedLeft, state.selectedRight]);
+  }, [selectedLeft, selectedRight]);
 
-  const isMatchedLeft = (l: string) => state.matched[l] !== undefined;
-  const isMatchedRight = (r: string) => Object.values(state.matched).includes(r);
+  const isMatchedLeft = (l: string) => userMatches[l] !== undefined;
+  const isMatchedRight = (r: string) => Object.values(userMatches).includes(r);
   const baseWhite = "bg-white dark:bg-white dark:text-black";
   const getLeftStyles = (left: string) => {
-    const sel = state.selectedLeft === left;
+    const sel = selectedLeft === left;
     const match = isMatchedLeft(left);
-    const wrong = state.wrongAttempt && sel;
+    const wrong = wrongAttempt && sel;
     return ["border rounded p-2 cursor-pointer text-left transition", match && "bg-green-300 border-green-500 opacity-70", sel && !match && "bg-green-200 border-green-500", wrong && "bg-red-300 border-red-500", !sel && !match && !wrong && baseWhite].filter(Boolean).join(" ");
   };
   const getRightStyles = (right: string) => {
-    const sel = state.selectedRight === right;
+    const sel = selectedRight === right;
     const match = isMatchedRight(right);
-    const wrong = state.wrongAttempt && sel;
+    const wrong = wrongAttempt && sel;
     return ["border rounded p-2 cursor-pointer text-left transition", match && "bg-green-300 border-green-500 opacity-70", sel && !match && "bg-green-200 border-green-500", wrong && "bg-red-300 border-red-500", !sel && !match && !wrong && baseWhite].filter(Boolean).join(" ");
   };
   return (
@@ -167,9 +169,9 @@ export function Matching({ pairs, userMatches, setUserMatches, disabled }: Match
 }
 
 function UserButtons({ quizState, currentQuestion, userSelectedAnswer, userMatches, handleCheck, handleContinue }: any) {
-  const isMC = currentQuestion.type === "multiple-choice";
+  const isMultipleChoice = currentQuestion.type === "multiple-choice";
   const isMatching = currentQuestion.type === "matching";
-  const disableCheck = (isMC && !userSelectedAnswer) || (isMatching && Object.keys(userMatches).length !== currentQuestion.pairs?.length);
+  const disableCheck = (isMultipleChoice && !userSelectedAnswer) || (isMatching && Object.keys(userMatches).length !== currentQuestion.pairs?.length);
   return (
     <div className='mt-4'>
       {quizState === QuizState.SELECT_ANSWER ? (
@@ -249,10 +251,8 @@ export function AskQuestionScreen({ exitQuiz, quizState, setQuizState, quiz }: A
         <Question question={currentQuestion.question} tooltipTerms={currentQuestion.tooltipTerms ?? []} />
         {currentQuestion.type === "multiple-choice" && <MultipleChoice currentQuestion={currentQuestion} quizState={quizState} userSelectedAnswer={userSelectedAnswer} setUserSelectedAnswer={setUserSelectedAnswer} tooltipTerms={currentQuestion.tooltipTerms ?? []} />}
         {currentQuestion.type === "matching" && <Matching pairs={currentQuestion.pairs ?? []} userMatches={userMatches} setUserMatches={setUserMatches} disabled={quizState !== QuizState.SELECT_ANSWER} />}
-        <div className='mt-4'>
-          <UserButtons quizState={quizState} currentQuestion={currentQuestion} userSelectedAnswer={userSelectedAnswer} userMatches={userMatches} handleCheck={handleCheck} handleContinue={handleContinue} />
-          <AnswerFeedback quizState={quizState} currentQuestion={currentQuestion} />
-        </div>
+        <UserButtons quizState={quizState} currentQuestion={currentQuestion} userSelectedAnswer={userSelectedAnswer} userMatches={userMatches} handleCheck={handleCheck} handleContinue={handleContinue} />
+        <AnswerFeedback quizState={quizState} currentQuestion={currentQuestion} />
       </div>
     </div>
   );
