@@ -5,15 +5,21 @@ import shuffleArray from "../../utils/shuffleArray";
 import { QuizState } from "../Quiz";
 import { QuizType } from "@/data/quizzes";
 
-type ExitButtonProps = {
+type HeaderExitButtonProps = {
   onClick: () => void;
 };
 
-type ProgressBarProps = {
+type HeaderProgressBarProps = {
   progress: number;
 };
 
-type ScoreDisplayProps = {
+type HeaderScoreDisplayProps = {
+  score: number;
+  totalQuestions: number;
+};
+
+type HeaderProps = {
+  exitQuiz: () => void;
   score: number;
   totalQuestions: number;
 };
@@ -33,11 +39,25 @@ type MatchingProps = {
   disabled: boolean;
 };
 
+type UserButtonsProps = {
+  quizState: QuizState;
+  currentQuestion: QuizType["questions"][number];
+  userSelectedAnswer: string | null;
+  userMatches: Record<string, string>;
+  handleCheck: () => void;
+  handleContinue: () => void;
+};
+
 type AskQuestionScreenProps = {
   exitQuiz: () => void;
   quizState: QuizState;
   setQuizState: React.Dispatch<React.SetStateAction<QuizState>>;
   quiz: QuizType;
+};
+
+type AnswerFeedbackProps = {
+  quizState: QuizState;
+  currentQuestion: QuizType["questions"][number];
 };
 
 function Tooltip(text: string, tooltipTerms: { label: string; meaning: string }[] = []) {
@@ -56,7 +76,7 @@ function Tooltip(text: string, tooltipTerms: { label: string; meaning: string }[
   });
 }
 
-function HeaderExitButton({ onClick }: ExitButtonProps) {
+function HeaderExitButton({ onClick }: HeaderExitButtonProps) {
   return (
     <button onClick={onClick} aria-label='Exit quiz'>
       ✕
@@ -64,7 +84,7 @@ function HeaderExitButton({ onClick }: ExitButtonProps) {
   );
 }
 
-function HeaderProgressBar({ progress }: ProgressBarProps) {
+function HeaderProgressBar({ progress }: HeaderProgressBarProps) {
   return (
     <section className='w-full sm:flex-1'>
       <div className='w-full bg-gray-200 rounded-full h-4 overflow-hidden'>
@@ -74,7 +94,7 @@ function HeaderProgressBar({ progress }: ProgressBarProps) {
   );
 }
 
-function HeaderScoreDisplay({ score, totalQuestions }: ScoreDisplayProps) {
+function HeaderScoreDisplay({ score, totalQuestions }: HeaderScoreDisplayProps) {
   return (
     <section className='text-sm text-gray-700'>
       {score} / {totalQuestions} correct
@@ -82,7 +102,7 @@ function HeaderScoreDisplay({ score, totalQuestions }: ScoreDisplayProps) {
   );
 }
 
-function Header({ exitQuiz, score, totalQuestions }: any) {
+function Header({ exitQuiz, score, totalQuestions }: HeaderProps) {
   const progress = totalQuestions > 0 ? (score / totalQuestions) * 100 : 0;
   return (
     <header className='w-full flex flex-col sm:flex-row items-center justify-between p-4 border-b border-gray-200 gap-2'>
@@ -194,7 +214,7 @@ export function Matching({ pairs, userMatches, setUserMatches, disabled }: Match
   );
 }
 
-function UserButtons({ quizState, currentQuestion, userSelectedAnswer, userMatches, handleCheck, handleContinue }: any) {
+function UserButtons({ quizState, currentQuestion, userSelectedAnswer, userMatches, handleCheck, handleContinue }: UserButtonsProps) {
   const isMultipleChoice = currentQuestion.type === "multiple-choice";
   const isMatching = currentQuestion.type === "matching";
   const disableCheck = (isMultipleChoice && !userSelectedAnswer) || (isMatching && Object.keys(userMatches).length !== currentQuestion.pairs?.length);
@@ -213,7 +233,7 @@ function UserButtons({ quizState, currentQuestion, userSelectedAnswer, userMatch
   );
 }
 
-function AnswerFeedback({ quizState, currentQuestion }: any) {
+function AnswerFeedback({ quizState, currentQuestion }: AnswerFeedbackProps) {
   if (quizState !== QuizState.CONTINUE_BUTTON) return null;
   return (
     <>
