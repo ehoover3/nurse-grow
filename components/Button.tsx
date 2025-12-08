@@ -167,7 +167,7 @@ export default function DuoButton({ children, onClick, disabled = false, variant
     <button
       onClick={onClick}
       disabled={disabled}
-      className={base}
+      className={`${base} ${className}`}
       style={{
         backgroundColor: bgColor,
         borderColor: borderColor,

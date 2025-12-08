@@ -122,17 +122,21 @@ function MultipleChoice({ currentQuestion, quizState, userSelectedAnswer, setUse
   return (
     <div className='grid gap-2'>
       {currentQuestion.options.map((option) => {
+        const text = option.text;
+        const image = option.image;
         const isSelecting = quizState === QuizState.SELECT_ANSWER;
         const isShowingResults = quizState === QuizState.CONTINUE_BUTTON;
-        const isUserPick = userSelectedAnswer === option;
-        const isCorrect = option === currentQuestion.answer;
+        const isUserPick = userSelectedAnswer === text;
+        const isCorrect = text === currentQuestion.answer;
         let variant: Variant = "white";
         if (isSelecting && isUserPick) variant = "darkGray";
         else if (isShowingResults && isCorrect) variant = "brightGreen";
         else if (isShowingResults && isUserPick) variant = "red";
+
         return (
-          <Button key={option} onClick={() => isSelecting && setUserSelectedAnswer(option)} disabled={!isSelecting} variant={variant} className='border w-full text-left p-2 rounded'>
-            {Tooltip(option, tooltipTerms ?? [])}
+          <Button key={text} onClick={() => isSelecting && setUserSelectedAnswer(text)} disabled={!isSelecting} variant={variant} className='border w-full p-2 rounded flex flex-col items-center gap-2'>
+            {Boolean(image && image.trim()) && <img src={image} alt='' className='w-48 h-48 object-contain rounded' />}
+            <span>{Tooltip(text, tooltipTerms ?? [])}</span>
           </Button>
         );
       })}
