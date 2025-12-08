@@ -10,8 +10,8 @@ type ButtonProps = {
   isCorrect?: boolean;
 };
 
-export default function DuoButton({ children, onClick, disabled = false, variant = "brightGreen", className = "", style }: ButtonProps) {
-  const base = "px-4 py-3 rounded-[16px] font-medium transition-all inline-flex justify-center items-center " + "border-2 border-b-6 active:border-b-2 shadow-sm disabled:cursor-not-allowed disabled:text-white";
+export default function Button({ children, onClick, disabled = false, variant = "brightGreen", className = "", style }: ButtonProps) {
+  const base = "px-4 py-3 rounded-[16px] font-medium transition-all inline-flex border-2 border-b-6 active:border-b-2 shadow-sm disabled:cursor-not-allowed disabled:text-white";
 
   const variants: Record<Variant, { bg: string; hoverBg: string; border: string; hoverBorder: string; disabledBg?: string; disabledBorder?: string; text: string }> = {
     brightGreen: {

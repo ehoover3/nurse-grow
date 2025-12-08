@@ -37,6 +37,7 @@ type MatchingProps = {
   userMatches: Record<string, string>;
   setUserMatches: (m: Record<string, string>) => void;
   disabled: boolean;
+  setQuizState: React.Dispatch<React.SetStateAction<QuizState>>;
 };
 
 type UserButtonsProps = {
@@ -134,8 +135,8 @@ function MultipleChoice({ currentQuestion, quizState, userSelectedAnswer, setUse
         else if (isShowingResults && isUserPick) variant = "red";
 
         return (
-          <Button key={text} onClick={() => isSelecting && setUserSelectedAnswer(text)} disabled={!isSelecting} variant={variant} className='border w-full p-2 rounded flex flex-col items-center gap-2'>
-            {Boolean(image && image.trim()) && <img src={image} alt='' className='w-48 h-48 object-contain rounded' />}
+          <Button key={text} onClick={() => isSelecting && setUserSelectedAnswer(text)} disabled={!isSelecting} variant={variant} className='border w-full p-3 rounded flex flex-col items-center text-left'>
+            {Boolean(image && image.trim()) && <img src={image} alt='' className='h-48 object-contain rounded' />}
             <span>{Tooltip(text, tooltipTerms ?? [])}</span>
           </Button>
         );
@@ -145,7 +146,7 @@ function MultipleChoice({ currentQuestion, quizState, userSelectedAnswer, setUse
 }
 
 const shuffleArrayCopy = <T,>(arr: T[]): T[] => [...arr].sort(() => Math.random() - 0.5);
-function Matching({ pairs, userMatches, setUserMatches, disabled }: MatchingProps) {
+function Matching({ pairs, userMatches, setUserMatches, disabled, setQuizState }: MatchingProps) {
   const originalLeft = pairs.map((p) => p.left);
   const originalRight = pairs.map((p) => p.right);
   const [leftSide] = useState<string[]>(() => shuffleArrayCopy(originalLeft));
@@ -166,12 +167,21 @@ function Matching({ pairs, userMatches, setUserMatches, disabled }: MatchingProp
 
   useEffect(() => {
     if (!selectedLeft || !selectedRight) return;
+
     const correctPair = pairs.find((p) => p.left === selectedLeft && p.right === selectedRight);
+
     if (correctPair) {
-      setUserMatches({ ...userMatches, [correctPair.left]: correctPair.right });
+      const newMatches = { ...userMatches, [correctPair.left]: correctPair.right };
+      setUserMatches(newMatches);
       setSelectedLeft(null);
       setSelectedRight(null);
       setWrongAttempt(false);
+
+      // Auto-advance if all pairs are matched
+      const allMatched = pairs.every((p) => newMatches[p.left] === p.right);
+      if (allMatched) {
+        setQuizState(QuizState.CONTINUE_BUTTON);
+      }
     } else {
       setWrongAttempt(true);
       const t = setTimeout(() => {
@@ -300,7 +310,7 @@ export function AskQuestionScreen({ exitQuiz, quizState, setQuizState, quiz }: A
       <Header exitQuiz={exitQuiz} score={score} totalQuestions={totalQuestions} />
       <Question question={currentQuestion.question} tooltipTerms={currentQuestion.tooltipTerms ?? []} />
       {currentQuestion.type === "multiple-choice" && <MultipleChoice currentQuestion={currentQuestion} quizState={quizState} userSelectedAnswer={userSelectedAnswer} setUserSelectedAnswer={setUserSelectedAnswer} tooltipTerms={currentQuestion.tooltipTerms ?? []} />}
-      {currentQuestion.type === "matching" && <Matching pairs={currentQuestion.pairs ?? []} userMatches={userMatches} setUserMatches={setUserMatches} disabled={quizState !== QuizState.SELECT_ANSWER} />}
+      {currentQuestion.type === "matching" && <Matching pairs={currentQuestion.pairs ?? []} userMatches={userMatches} setUserMatches={setUserMatches} disabled={quizState !== QuizState.SELECT_ANSWER} setQuizState={setQuizState} />}
       <UserButtons quizState={quizState} currentQuestion={currentQuestion} userSelectedAnswer={userSelectedAnswer} userMatches={userMatches} handleCheck={handleCheck} handleContinue={handleContinue} />
       <AnswerFeedback quizState={quizState} currentQuestion={currentQuestion} />
     </div>
