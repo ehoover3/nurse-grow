@@ -43,7 +43,6 @@ export const quizzes: QuizType[] = [
         pairs: [
           { left: "Heart", right: "Pumps blood" },
           { left: "Lungs", right: "Gas exchange" },
-          { left: "Kidneys", right: "Filter blood" },
           { left: "Brain", right: "Thinks" },
         ],
       },
