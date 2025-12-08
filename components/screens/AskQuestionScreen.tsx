@@ -1,8 +1,22 @@
+import React from "react";
 import { useState, useEffect } from "react";
 import Button, { Variant } from "../Button";
 import shuffleArray from "../../utils/shuffleArray";
 import { QuizState } from "../Quiz";
 import { QuizType } from "@/data/quizzes";
+
+type ExitButtonProps = {
+  onClick: () => void;
+};
+
+type ProgressBarProps = {
+  progress: number;
+};
+
+type ScoreDisplayProps = {
+  score: number;
+  totalQuestions: number;
+};
 
 type MultipleChoiceProps = {
   currentQuestion: QuizType["questions"][number];
@@ -45,25 +59,39 @@ function Tooltip(text: string, tooltipTerms: { label: string; meaning: string }[
 const shuffleArrayCopy = <T,>(arr: T[]): T[] => [...arr].sort(() => Math.random() - 0.5);
 const shuffleAnswerOptions = (questions: QuizType["questions"]): QuizType["questions"] => questions.map((q) => ({ ...q, options: q.options ? shuffleArray(q.options) : q.options }));
 
-import React from "react";
+function ExitButton({ onClick }: ExitButtonProps) {
+  return (
+    <button onClick={onClick} aria-label='Exit quiz'>
+      ✕
+    </button>
+  );
+}
+
+function ProgressBar({ progress }: ProgressBarProps) {
+  return (
+    <section className='w-full sm:flex-1'>
+      <div className='w-full bg-gray-200 rounded-full h-4 overflow-hidden'>
+        <div className='h-full bg-green-500 transition-all duration-300' style={{ width: `${progress}%` }} />
+      </div>
+    </section>
+  );
+}
+
+function ScoreDisplay({ score, totalQuestions }: ScoreDisplayProps) {
+  return (
+    <section className='text-sm text-gray-700'>
+      {score} / {totalQuestions} correct
+    </section>
+  );
+}
 
 function Header({ exitQuiz, score, totalQuestions }: any) {
   const progress = totalQuestions > 0 ? (score / totalQuestions) * 100 : 0;
   return (
     <header className='w-full flex flex-col sm:flex-row items-center justify-between p-4 border-b border-gray-200 gap-2'>
-      <button onClick={exitQuiz} aria-label='Back to quiz list'>
-        ✕
-      </button>
-
-      <section className='w-full sm:flex-1'>
-        <div className='w-full bg-gray-200 rounded-full h-4 overflow-hidden'>
-          <div className='h-full bg-green-500 transition-all duration-300' style={{ width: `${progress}%` }} />
-        </div>
-      </section>
-
-      <section className='text-sm text-gray-700'>
-        {score} / {totalQuestions} correct
-      </section>
+      <ExitButton onClick={exitQuiz} />
+      <ProgressBar progress={progress} />
+      <ScoreDisplay score={score} totalQuestions={totalQuestions} />
     </header>
   );
 }
