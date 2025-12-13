@@ -48,6 +48,11 @@ type MatchingProps = {
   handleContinue: any;
 };
 
+type WordBankItem = {
+  text: string;
+  image?: string;
+};
+
 type AskQuestionScreenProps = {
   exitQuiz: () => void;
   quizState: QuizState;
@@ -256,17 +261,17 @@ function QuestionType_Matching({ pairs, userMatches, setUserMatches, setQuizStat
 }
 
 function QuestionType_WordOrder({ currentQuestion, quizState, setQuizState, onScoreIncrement, handleContinue }: { currentQuestion: QuizType["questions"][number]; quizState: QuizState; setQuizState: React.Dispatch<React.SetStateAction<QuizState>>; onScoreIncrement: () => void; handleContinue: any }) {
-  const [availableWords, setAvailableWords] = useState<string[]>([]);
-  const [answerWords, setAnswerWords] = useState<string[]>([]);
+  const [availableWords, setAvailableWords] = useState<WordBankItem[]>([]);
+  const [answerWords, setAnswerWords] = useState<WordBankItem[]>([]);
   const [result, setResult] = useState<boolean | null>(null);
 
   useEffect(() => {
-    setAvailableWords(shuffleArray(currentQuestion.wordBank || []));
+    setAvailableWords(shuffleArray(currentQuestion.wordBank ?? []));
     setAnswerWords([]);
     setResult(null);
   }, [currentQuestion]);
 
-  const addWord = (word: string) => {
+  const addWord = (word: WordBankItem) => {
     if (quizState !== QuizState.SELECT_ANSWER) return;
     setAvailableWords((prev) => prev.filter((w) => w !== word));
     setAnswerWords((prev) => [...prev, word]);
@@ -281,8 +286,11 @@ function QuestionType_WordOrder({ currentQuestion, quizState, setQuizState, onSc
 
   const checkAnswer = () => {
     if (!currentQuestion.correctAnswer) return;
-    const isCorrect = answerWords.length === currentQuestion.correctAnswer.length && answerWords.every((w, i) => w === currentQuestion.correctAnswer![i]);
+
+    const isCorrect = answerWords.length === currentQuestion.correctAnswer.length && answerWords.every((w, i) => w.text === currentQuestion.correctAnswer![i]);
+
     setResult(isCorrect);
+
     if (isCorrect) {
       onScoreIncrement();
       setQuizState(QuizState.CONTINUE_BUTTON);
@@ -290,8 +298,9 @@ function QuestionType_WordOrder({ currentQuestion, quizState, setQuizState, onSc
       setQuizState(QuizState.SELECT_ANSWER);
     }
   };
+
   const reset = () => {
-    setAvailableWords(shuffleArray(currentQuestion.wordBank || []));
+    setAvailableWords(shuffleArray(currentQuestion.wordBank ?? []));
     setAnswerWords([]);
     setResult(null);
   };
@@ -301,9 +310,11 @@ function QuestionType_WordOrder({ currentQuestion, quizState, setQuizState, onSc
       {/* Answer Area */}
       <div className='min-h-[60px] p-3 border rounded-xl flex flex-wrap gap-2 bg-gray-50'>
         {answerWords.length === 0 && <span className='text-gray-400'>Tap words to build your answer</span>}
+
         {answerWords.map((word, index) => (
-          <button key={`${word}-${index}`} onClick={() => removeWord(index)} className='px-3 py-1 rounded-lg bg-blue-600 text-white shadow'>
-            {word}
+          <button key={`${word.text}-${index}`} onClick={() => removeWord(index)} className='px-3 py-1 rounded-lg bg-blue-600 text-white shadow flex items-center gap-2'>
+            {word.image && <img src={word.image} alt='' className='h-6 w-6 object-contain' />}
+            {word.text}
           </button>
         ))}
       </div>
@@ -311,8 +322,9 @@ function QuestionType_WordOrder({ currentQuestion, quizState, setQuizState, onSc
       {/* Word Bank */}
       <div className='p-3 border rounded-xl flex flex-wrap gap-2'>
         {availableWords.map((word) => (
-          <button key={word} onClick={() => addWord(word)} className='px-3 py-1 rounded-lg bg-gray-200 hover:bg-gray-300'>
-            {word}
+          <button key={word.text} onClick={() => addWord(word)} className='px-3 py-1 rounded-lg bg-gray-200 hover:bg-gray-300 flex items-center gap-2'>
+            {word.image && <img src={word.image} alt='' className='h-6 w-6 object-contain' />}
+            {word.text}
           </button>
         ))}
       </div>

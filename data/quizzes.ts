@@ -8,7 +8,7 @@ type QuestionType = {
   // Matching
   pairs?: { left: string; right: string }[];
   // Word-order
-  wordBank?: string[];
+  wordBank?: { text: string; image?: string }[];
   correctAnswer?: string[];
   // All
   tooltipTerms?: { label: string; meaning: string }[];
@@ -47,8 +47,14 @@ export const quizzes: QuizType[] = [
         id: 2,
         type: "word-order",
         question: "Put the order of the GI Tract in order:",
-        wordBank: ["Mouth", "Brain", "Stomach", "Intestine"],
-        correctAnswer: ["Mouth", "Stomach", "Intestine"],
+        wordBank: [
+          { text: "Mouth", image: "/images/Mouth.png" },
+          { text: "Brain", image: "/images/Brain.png" },
+          { text: "Stomach", image: "/images/Stomach" },
+          { text: "Small Intestine", image: "/images/SmallIntestines.png" },
+          { text: "Large Intestine", image: "/images/LargeIntestines.png" },
+        ],
+        correctAnswer: ["Mouth", "Stomach", "Small Intestine", "Large Intestine"],
       },
       {
         id: 3,
