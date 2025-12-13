@@ -47,8 +47,8 @@ export const quizzes: QuizType[] = [
         id: 2,
         type: "word-order",
         question: "Put the order of the GI Tract in order:",
-        wordBank: ["Mouth", "Esophagus", "Brain", "Small Intestine", "Stomach", "Leg", "Large Intestine", "Anus"],
-        correctAnswer: ["Mouth", "Esophagus", "Stomach", "Small Intestine", "Large Intestine", "Anus"],
+        wordBank: ["Mouth", "Brain", "Stomach", "Intestine"],
+        correctAnswer: ["Mouth", "Stomach", "Intestine"],
       },
       {
         id: 3,

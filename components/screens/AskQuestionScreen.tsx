@@ -30,6 +30,10 @@ type MultipleChoiceProps = {
   userSelectedAnswer: string | null;
   setUserSelectedAnswer: (answer: string | null) => void;
   tooltipTerms?: { label: string; meaning: string }[];
+  setQuizState: any;
+  handleCheck: any;
+  userMatches: any;
+  handleContinue: any;
 };
 
 type MatchingProps = {
@@ -38,15 +42,11 @@ type MatchingProps = {
   setUserMatches: (m: Record<string, string>) => void;
   disabled: boolean;
   setQuizState: React.Dispatch<React.SetStateAction<QuizState>>;
-};
-
-type UserButtonsProps = {
-  quizState: QuizState;
-  currentQuestion: QuizType["questions"][number];
-  userSelectedAnswer: string | null;
-  userMatches: Record<string, string>;
-  handleCheck: () => void;
-  handleContinue: () => void;
+  quizState: any;
+  currentQuestion: any;
+  handleCheck: any;
+  userSelectedAnswer: any;
+  handleContinue: any;
 };
 
 type AskQuestionScreenProps = {
@@ -118,8 +118,9 @@ function Question({ question, tooltipTerms }: { question: string; tooltipTerms?:
   return <p className='text-lg font-bold mb-4'>{Tooltip(question, tooltipTerms ?? [])}</p>;
 }
 
-function MultipleChoice({ currentQuestion, quizState, userSelectedAnswer, setUserSelectedAnswer, tooltipTerms }: MultipleChoiceProps) {
+function MultipleChoice({ currentQuestion, quizState, userSelectedAnswer, setUserSelectedAnswer, tooltipTerms, handleCheck, handleContinue }: MultipleChoiceProps) {
   if (!currentQuestion.options) return null;
+  const disableCheck = !userSelectedAnswer;
   return (
     <div className='grid gap-2'>
       {currentQuestion.options.map((option) => {
@@ -141,12 +142,24 @@ function MultipleChoice({ currentQuestion, quizState, userSelectedAnswer, setUse
           </Button>
         );
       })}
+
+      <div className='mt-4'>
+        {quizState === QuizState.SELECT_ANSWER ? (
+          <Button variant='skyBlue' onClick={handleCheck} disabled={disableCheck}>
+            CHECK
+          </Button>
+        ) : (
+          <Button variant='skyBlue' onClick={handleContinue}>
+            CONTINUE
+          </Button>
+        )}
+      </div>
     </div>
   );
 }
 
 const shuffleArrayCopy = <T,>(arr: T[]): T[] => [...arr].sort(() => Math.random() - 0.5);
-function Matching({ pairs, userMatches, setUserMatches, disabled, setQuizState }: MatchingProps) {
+function Matching({ pairs, userMatches, setUserMatches, disabled, setQuizState, quizState, currentQuestion, handleCheck, handleContinue }: MatchingProps) {
   const originalLeft = pairs.map((p) => p.left);
   const originalRight = pairs.map((p) => p.right);
   const [leftSide] = useState<string[]>(() => shuffleArrayCopy(originalLeft));
@@ -208,6 +221,8 @@ function Matching({ pairs, userMatches, setUserMatches, disabled, setQuizState }
     const wrong = wrongAttempt && sel;
     return ["border rounded p-2 cursor-pointer text-left transition", match && "bg-green-300 border-green-500 opacity-70", sel && !match && "bg-green-200 border-green-500", wrong && "bg-red-300 border-red-500", !sel && !match && !wrong && baseWhite].filter(Boolean).join(" ");
   };
+  const disableCheck = Object.keys(userMatches).length !== currentQuestion.pairs?.length;
+
   return (
     <div className='grid grid-cols-2 gap-6 mt-4'>
       <div className='flex flex-col gap-3'>
@@ -224,11 +239,23 @@ function Matching({ pairs, userMatches, setUserMatches, disabled, setQuizState }
           </div>
         ))}
       </div>
+
+      <div className='mt-4'>
+        {quizState === QuizState.SELECT_ANSWER ? (
+          <Button variant='skyBlue' onClick={handleCheck} disabled={disableCheck}>
+            CHECK
+          </Button>
+        ) : (
+          <Button variant='skyBlue' onClick={handleContinue}>
+            CONTINUE
+          </Button>
+        )}
+      </div>
     </div>
   );
 }
 
-function WordOrderQuestion({ currentQuestion, quizState, setQuizState, onScoreIncrement }: { currentQuestion: QuizType["questions"][number]; quizState: QuizState; setQuizState: React.Dispatch<React.SetStateAction<QuizState>>; onScoreIncrement: () => void }) {
+function WordOrderQuestion({ currentQuestion, quizState, setQuizState, onScoreIncrement, handleContinue }: { currentQuestion: QuizType["questions"][number]; quizState: QuizState; setQuizState: React.Dispatch<React.SetStateAction<QuizState>>; onScoreIncrement: () => void; handleContinue: any }) {
   const [availableWords, setAvailableWords] = useState<string[]>([]);
   const [answerWords, setAnswerWords] = useState<string[]>([]);
   const [result, setResult] = useState<boolean | null>(null);
@@ -292,9 +319,16 @@ function WordOrderQuestion({ currentQuestion, quizState, setQuizState, onScoreIn
 
       {/* Actions */}
       <div className='flex gap-2'>
-        <Button variant='green' onClick={checkAnswer} disabled={answerWords.length === 0}>
-          CHECK
-        </Button>
+        {quizState === QuizState.SELECT_ANSWER ? (
+          <Button variant='green' onClick={checkAnswer} disabled={answerWords.length === 0}>
+            CHECK
+          </Button>
+        ) : (
+          <Button variant='skyBlue' onClick={handleContinue}>
+            CONTINUE
+          </Button>
+        )}
+
         <Button variant='gray' onClick={reset}>
           RESET
         </Button>
@@ -302,25 +336,6 @@ function WordOrderQuestion({ currentQuestion, quizState, setQuizState, onScoreIn
 
       {/* Result */}
       {result !== null && <div className={`p-3 rounded-xl text-white ${result ? "bg-green-600" : "bg-red-600"}`}>{result ? "Correct!" : "Not quite — try again."}</div>}
-    </div>
-  );
-}
-
-function UserButtons({ quizState, currentQuestion, userSelectedAnswer, userMatches, handleCheck, handleContinue }: UserButtonsProps) {
-  const isMultipleChoice = currentQuestion.type === "multiple-choice";
-  const isMatching = currentQuestion.type === "matching";
-  const disableCheck = (isMultipleChoice && !userSelectedAnswer) || (isMatching && Object.keys(userMatches).length !== currentQuestion.pairs?.length);
-  return (
-    <div className='mt-4'>
-      {quizState === QuizState.SELECT_ANSWER ? (
-        <Button variant='skyBlue' onClick={handleCheck} disabled={disableCheck}>
-          CHECK
-        </Button>
-      ) : (
-        <Button variant='skyBlue' onClick={handleContinue}>
-          CONTINUE
-        </Button>
-      )}
     </div>
   );
 }
@@ -387,10 +402,10 @@ export function AskQuestionScreen({ exitQuiz, quizState, setQuizState, quiz }: A
     <div className='p-8 relative'>
       <Header exitQuiz={exitQuiz} score={score} totalQuestions={totalQuestions} />
       <Question question={currentQuestion.question} tooltipTerms={currentQuestion.tooltipTerms ?? []} />
-      {currentQuestion.type === "multiple-choice" && <MultipleChoice currentQuestion={currentQuestion} quizState={quizState} userSelectedAnswer={userSelectedAnswer} setUserSelectedAnswer={setUserSelectedAnswer} tooltipTerms={currentQuestion.tooltipTerms ?? []} />}
-      {currentQuestion.type === "matching" && <Matching pairs={currentQuestion.pairs ?? []} userMatches={userMatches} setUserMatches={setUserMatches} disabled={quizState !== QuizState.SELECT_ANSWER} setQuizState={setQuizState} />}
-      {currentQuestion.type === "word-order" && <WordOrderQuestion currentQuestion={currentQuestion} quizState={quizState} setQuizState={setQuizState} onScoreIncrement={() => setScore((s) => s + 1)} />}
-      <UserButtons quizState={quizState} currentQuestion={currentQuestion} userSelectedAnswer={userSelectedAnswer} userMatches={userMatches} handleCheck={handleCheck} handleContinue={handleContinue} />
+      {currentQuestion.type === "multiple-choice" && <MultipleChoice quizState={quizState} setQuizState={setQuizState} currentQuestion={currentQuestion} userSelectedAnswer={userSelectedAnswer} userMatches={userMatches} setUserSelectedAnswer={setUserSelectedAnswer} tooltipTerms={currentQuestion.tooltipTerms ?? []} handleCheck={handleCheck} handleContinue={handleContinue} />}
+
+      {currentQuestion.type === "matching" && <Matching quizState={quizState} setQuizState={setQuizState} currentQuestion={currentQuestion} userSelectedAnswer={userSelectedAnswer} pairs={currentQuestion.pairs ?? []} userMatches={userMatches} setUserMatches={setUserMatches} disabled={quizState !== QuizState.SELECT_ANSWER} handleCheck={handleCheck} handleContinue={handleContinue} />}
+      {currentQuestion.type === "word-order" && <WordOrderQuestion currentQuestion={currentQuestion} quizState={quizState} setQuizState={setQuizState} onScoreIncrement={() => setScore((s) => s + 1)} handleContinue={handleContinue} />}
       <AnswerFeedback quizState={quizState} currentQuestion={currentQuestion} />
     </div>
   );
