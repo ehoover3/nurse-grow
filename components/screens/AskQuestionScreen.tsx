@@ -228,6 +228,84 @@ function Matching({ pairs, userMatches, setUserMatches, disabled, setQuizState }
   );
 }
 
+function WordOrderQuestion({ currentQuestion, quizState, setQuizState, onScoreIncrement }: { currentQuestion: QuizType["questions"][number]; quizState: QuizState; setQuizState: React.Dispatch<React.SetStateAction<QuizState>>; onScoreIncrement: () => void }) {
+  const [availableWords, setAvailableWords] = useState<string[]>([]);
+  const [answerWords, setAnswerWords] = useState<string[]>([]);
+  const [result, setResult] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    setAvailableWords(shuffleArray(currentQuestion.wordBank || []));
+    setAnswerWords([]);
+    setResult(null);
+  }, [currentQuestion]);
+
+  const addWord = (word: string) => {
+    if (quizState !== QuizState.SELECT_ANSWER) return;
+    setAvailableWords((prev) => prev.filter((w) => w !== word));
+    setAnswerWords((prev) => [...prev, word]);
+  };
+
+  const removeWord = (index: number) => {
+    if (quizState !== QuizState.SELECT_ANSWER) return;
+    const word = answerWords[index];
+    setAnswerWords((prev) => prev.filter((_, i) => i !== index));
+    setAvailableWords((prev) => [...prev, word]);
+  };
+
+  const checkAnswer = () => {
+    if (!currentQuestion.correctAnswer) return;
+    const isCorrect = answerWords.length === currentQuestion.correctAnswer.length && answerWords.every((w, i) => w === currentQuestion.correctAnswer![i]);
+    setResult(isCorrect);
+    if (isCorrect) {
+      onScoreIncrement();
+      setQuizState(QuizState.CONTINUE_BUTTON);
+    } else {
+      setQuizState(QuizState.SELECT_ANSWER);
+    }
+  };
+  const reset = () => {
+    setAvailableWords(shuffleArray(currentQuestion.wordBank || []));
+    setAnswerWords([]);
+    setResult(null);
+  };
+
+  return (
+    <div className='space-y-4'>
+      {/* Answer Area */}
+      <div className='min-h-[60px] p-3 border rounded-xl flex flex-wrap gap-2 bg-gray-50'>
+        {answerWords.length === 0 && <span className='text-gray-400'>Tap words to build your answer</span>}
+        {answerWords.map((word, index) => (
+          <button key={`${word}-${index}`} onClick={() => removeWord(index)} className='px-3 py-1 rounded-lg bg-blue-600 text-white shadow'>
+            {word}
+          </button>
+        ))}
+      </div>
+
+      {/* Word Bank */}
+      <div className='p-3 border rounded-xl flex flex-wrap gap-2'>
+        {availableWords.map((word) => (
+          <button key={word} onClick={() => addWord(word)} className='px-3 py-1 rounded-lg bg-gray-200 hover:bg-gray-300'>
+            {word}
+          </button>
+        ))}
+      </div>
+
+      {/* Actions */}
+      <div className='flex gap-2'>
+        <Button variant='green' onClick={checkAnswer} disabled={answerWords.length === 0}>
+          CHECK
+        </Button>
+        <Button variant='gray' onClick={reset}>
+          RESET
+        </Button>
+      </div>
+
+      {/* Result */}
+      {result !== null && <div className={`p-3 rounded-xl text-white ${result ? "bg-green-600" : "bg-red-600"}`}>{result ? "Correct!" : "Not quite — try again."}</div>}
+    </div>
+  );
+}
+
 function UserButtons({ quizState, currentQuestion, userSelectedAnswer, userMatches, handleCheck, handleContinue }: UserButtonsProps) {
   const isMultipleChoice = currentQuestion.type === "multiple-choice";
   const isMatching = currentQuestion.type === "matching";
@@ -311,6 +389,7 @@ export function AskQuestionScreen({ exitQuiz, quizState, setQuizState, quiz }: A
       <Question question={currentQuestion.question} tooltipTerms={currentQuestion.tooltipTerms ?? []} />
       {currentQuestion.type === "multiple-choice" && <MultipleChoice currentQuestion={currentQuestion} quizState={quizState} userSelectedAnswer={userSelectedAnswer} setUserSelectedAnswer={setUserSelectedAnswer} tooltipTerms={currentQuestion.tooltipTerms ?? []} />}
       {currentQuestion.type === "matching" && <Matching pairs={currentQuestion.pairs ?? []} userMatches={userMatches} setUserMatches={setUserMatches} disabled={quizState !== QuizState.SELECT_ANSWER} setQuizState={setQuizState} />}
+      {currentQuestion.type === "word-order" && <WordOrderQuestion currentQuestion={currentQuestion} quizState={quizState} setQuizState={setQuizState} onScoreIncrement={() => setScore((s) => s + 1)} />}
       <UserButtons quizState={quizState} currentQuestion={currentQuestion} userSelectedAnswer={userSelectedAnswer} userMatches={userMatches} handleCheck={handleCheck} handleContinue={handleContinue} />
       <AnswerFeedback quizState={quizState} currentQuestion={currentQuestion} />
     </div>

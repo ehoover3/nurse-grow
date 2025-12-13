@@ -1,12 +1,15 @@
 type QuestionType = {
   id: number;
-  type: "multiple-choice" | "matching";
+  type: "multiple-choice" | "matching" | "word-order";
   question: string;
   // Multiple-choice
   options?: { text: string; image: string }[];
   answer?: string;
   // Matching
   pairs?: { left: string; right: string }[];
+  // Word-order
+  wordBank?: string[];
+  correctAnswer?: string[];
   // All
   tooltipTerms?: { label: string; meaning: string }[];
   answerImage?: string;
@@ -42,6 +45,13 @@ export const quizzes: QuizType[] = [
       },
       {
         id: 2,
+        type: "word-order",
+        question: "Put the order of the GI Tract in order:",
+        wordBank: ["Mouth", "Esophagus", "Brain", "Small Intestine", "Stomach", "Leg", "Large Intestine", "Anus"],
+        correctAnswer: ["Mouth", "Esophagus", "Stomach", "Small Intestine", "Large Intestine", "Anus"],
+      },
+      {
+        id: 3,
         type: "matching",
         question: "Match the organ to its function:",
         pairs: [
