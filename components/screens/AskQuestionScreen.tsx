@@ -115,7 +115,7 @@ function Header({ exitQuiz, score, totalQuestions }: HeaderProps) {
 }
 
 function Question({ question, tooltipTerms }: { question: string; tooltipTerms?: { label: string; meaning: string }[] }) {
-  return <p className='text-lg mb-4'>{Tooltip(question, tooltipTerms ?? [])}</p>;
+  return <p className='text-lg font-bold mb-4'>{Tooltip(question, tooltipTerms ?? [])}</p>;
 }
 
 function MultipleChoice({ currentQuestion, quizState, userSelectedAnswer, setUserSelectedAnswer, tooltipTerms }: MultipleChoiceProps) {
