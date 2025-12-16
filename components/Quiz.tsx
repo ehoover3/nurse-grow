@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { QuizType } from "../data/quizzes";
-import { AskQuestionScreen } from "./screens/AskQuestionScreen";
+import { AskQuestionScreen } from "./screens/askQuestionScreen";
 import { SummaryScreen } from "./screens/SummaryScreen";
 import { ErrorScreen } from "./screens/ErrorScreens";
 
