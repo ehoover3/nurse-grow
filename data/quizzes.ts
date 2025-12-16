@@ -39,11 +39,8 @@ type RPGObject = {
   id: string;
   label: string;
   dialogue: string[];
-
-  /** Horizontal position (percentage from left) */
+  portrait?: string;
   x: number;
-
-  /** Vertical position (pixels from bottom of scene) */
   y: number;
 };
 
@@ -74,34 +71,38 @@ export const quizzes: QuizType[] = [
         multipleChoiceAnswer: "Metabolic Alkalosis",
         tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
-    {
-  id: 4,
-  type: "rpg-interaction",
-  question: "Explore the room and talk to both objects.",
-  rpgRequiredInteractions: 2,
-  rpgObjects: [
-    {
-      id: "chest",
-      label: "Treasure Chest",
-      x: 30,
-      y: 48,
-      dialogue: [
-        "You open the chest.",
-        "Inside is an old scroll."
-      ]
-    },
-    {
-      id: "wizard",
-      label: "Old Wizard",
-      x: 70,
-      y: 48,
-      dialogue: [
-        "Welcome, traveler.",
-        "Knowledge is the real treasure."
-      ]
-    }
-  ]
-},
+       {
+        id: 4,
+        type: "rpg-interaction",
+        question:
+          "Explore the mad scientist’s lab and uncover how the body sends and uses electrical signals.",
+        rpgRequiredInteractions: 2,
+        rpgObjects: [
+          {
+            id: "skeleton",
+            label: "A talking skeleton",
+            portrait: "/images/characters/Skeleton.png",
+            x: 30,
+            y: 48,
+            dialogue: [
+              "Ah-ha! Observe the bones in action!",
+              "Bones create red blood cells.",
+              "Bones support the body.",
+            ],
+          },
+          {
+            id: "twitching-muscle",
+            label: "Twitching Muscle Apparatus",
+            x: 70,
+            y: 48,
+            dialogue: [
+              "Marvel at the muscle fiber!",
+              "Muscle contraction occurs when calcium ions are released inside the cell.",
+              "This allows actin and myosin to slide past each other.",
+            ],
+          },
+        ],
+      },
       {
         id: 2,
         type: "word-order",

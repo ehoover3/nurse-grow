@@ -6,6 +6,9 @@ type RPGObject = {
   label: string;
   dialogue: string[];
 
+  /** Optional dialogue portrait */
+  portrait?: string;
+
   /** Horizontal position (% from left of scene) */
   x: number;
 
@@ -23,7 +26,6 @@ type Props = {
   onScoreIncrement: () => void;
 };
 
-const PLAYER_RADIUS_PX = 12;
 const PLAYER_FRONT_OFFSET_PX = 20;
 const WALK_DURATION_MS = 500;
 
@@ -33,14 +35,14 @@ export default function QuestionType_RPGInteraction({ currentQuestion, quizState
 
   const [playerPos, setPlayerPos] = useState({ x: 50, y: 16 });
   const [interacted, setInteracted] = useState<Record<string, boolean>>({});
-  const [activeDialogue, setActiveDialogue] = useState<string[] | null>(null);
+  const [activeObject, setActiveObject] = useState<RPGObject | null>(null);
   const [isWalking, setIsWalking] = useState(false);
 
   const handleInteract = (obj: RPGObject) => {
     if (isWalking) return;
 
     setIsWalking(true);
-    setActiveDialogue(null);
+    setActiveObject(null);
 
     // Move player to directly in front of the object
     setPlayerPos({
@@ -50,7 +52,7 @@ export default function QuestionType_RPGInteraction({ currentQuestion, quizState
 
     window.setTimeout(() => {
       setInteracted((prev) => ({ ...prev, [obj.id]: true }));
-      setActiveDialogue(obj.dialogue);
+      setActiveObject(obj);
       setIsWalking(false);
     }, WALK_DURATION_MS);
   };
@@ -86,8 +88,7 @@ export default function QuestionType_RPGInteraction({ currentQuestion, quizState
 
         {/* Player */}
         <div
-          className='absolute w-6 h-6 rounded-full bg-blue-500
-                     transition-all ease-in-out'
+          className='absolute w-6 h-6 rounded-full bg-blue-500 transition-all ease-in-out'
           style={{
             left: `${playerPos.x}%`,
             bottom: `${playerPos.y}px`,
@@ -98,16 +99,27 @@ export default function QuestionType_RPGInteraction({ currentQuestion, quizState
       </div>
 
       {/* Dialogue Box */}
-      {activeDialogue && (
-        <div className='p-4 border rounded bg-white'>
-          {activeDialogue.map((line, i) => (
-            <p key={i}>{line}</p>
-          ))}
+      {activeObject && (
+        <div className='flex gap-4 p-4 border rounded bg-white items-start'>
+          {/* Portrait */}
+          {activeObject.portrait && <img src={activeObject.portrait} alt={activeObject.label} className='w-24 h-24 object-contain' />}
+
+          {/* Dialogue */}
+          <div className='grid gap-2'>
+            <p className='font-semibold'>{activeObject.label}</p>
+            {activeObject.dialogue.map((line, i) => (
+              <p key={i}>{line}</p>
+            ))}
+          </div>
         </div>
       )}
 
       {/* Continue */}
-      <button disabled={!completed} onClick={handleContinue} className={`self-end px-4 py-2 rounded ${completed ? "bg-blue-600 text-white" : "bg-gray-300 text-gray-600"}`}>
+      <button
+        disabled={!completed}
+        onClick={handleContinue}
+        className={`self-end px-4 py-2 rounded
+          ${completed ? "bg-blue-600 text-white" : "bg-gray-300 text-gray-600"}`}>
         Continue
       </button>
     </div>
