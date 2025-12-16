@@ -2,18 +2,35 @@ type QuestionType = {
   id: number;
   type: "multiple-choice" | "matching" | "word-order" | "rpg-interaction";
   question: string;
+
   tooltipTerms?: { label: string; meaning: string }[];
-  // question types
+
+  // ───────────────
+  // Multiple Choice
+  // ───────────────
   multipleChoiceOptions?: { text: string; image: string }[];
   multipleChoiceAnswer?: string;
+
+  // ─────────
+  // Matching
+  // ─────────
   matchingPairs?: { left: string; right: string }[];
+
+  // ───────────────
+  // Word / Sequence
+  // ───────────────
   sequentialOrderWordBank?: { text: string; image?: string }[];
   sequentialOrderAnswer?: string[];
-  // 🆕 RPG interaction
+
+  // ───────────────
+  // RPG Interaction
+  // ───────────────
   rpgObjects?: RPGObject[];
   rpgRequiredInteractions?: number;
 
-  // feedback
+  // ─────────
+  // Feedback
+  // ─────────
   feedbackImage?: string;
   feedbackExplanation?: string;
 };
@@ -22,6 +39,12 @@ type RPGObject = {
   id: string;
   label: string;
   dialogue: string[];
+
+  /** Horizontal position (percentage from left) */
+  x: number;
+
+  /** Vertical position (pixels from bottom of scene) */
+  y: number;
 };
 
 export type QuizType = {
@@ -51,25 +74,34 @@ export const quizzes: QuizType[] = [
         multipleChoiceAnswer: "Metabolic Alkalosis",
         tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
-      {
-        id: 4,
-        type: "rpg-interaction",
-        question: "Explore the room and talk to both objects.",
-        rpgRequiredInteractions: 2,
-        rpgObjects: [
-          {
-            id: "chest",
-            label: "Treasure Chest",
-            dialogue: ["You found a dusty chest.", "Inside is an old scroll."],
-          },
-          {
-            id: "npc",
-            label: "Old Wizard",
-            dialogue: ["Welcome, traveler.", "Knowledge is the real treasure."],
-          },
-        ],
-        feedbackExplanation: "Great job! You explored and gathered all the information.",
-      },
+    {
+  id: 4,
+  type: "rpg-interaction",
+  question: "Explore the room and talk to both objects.",
+  rpgRequiredInteractions: 2,
+  rpgObjects: [
+    {
+      id: "chest",
+      label: "Treasure Chest",
+      x: 30,
+      y: 48,
+      dialogue: [
+        "You open the chest.",
+        "Inside is an old scroll."
+      ]
+    },
+    {
+      id: "wizard",
+      label: "Old Wizard",
+      x: 70,
+      y: 48,
+      dialogue: [
+        "Welcome, traveler.",
+        "Knowledge is the real treasure."
+      ]
+    }
+  ]
+},
       {
         id: 2,
         type: "word-order",
