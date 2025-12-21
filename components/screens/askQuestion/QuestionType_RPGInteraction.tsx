@@ -1,5 +1,3 @@
-// QuestionType_RPGInteraction.tsx
-
 import React, { useState } from "react";
 import { QuizState } from "../../Quiz";
 
@@ -7,15 +5,20 @@ import { QuizState } from "../../Quiz";
    Types
 ───────────────────────────────────────────── */
 
+type RPGChoice = {
+  text: string;
+  correct: boolean;
+  explanation: string;
+};
+
 type RPGObject = {
   id: string;
   label: string;
   dialogue: string[];
   portrait?: string;
-
-  /** Grid position */
   gridX: number;
   gridY: number;
+  choices?: RPGChoice[];
 };
 
 type Props = {
@@ -26,31 +29,22 @@ type Props = {
   quizState: QuizState;
   setQuizState: (s: QuizState) => void;
   onScoreIncrement: () => void;
-
-  /** REQUIRED: parent-provided continue handler */
   handleContinue: () => void;
 };
 
-/* ─────────────────────────────────────────────
-   Grid Configuration
-───────────────────────────────────────────── */
+/* ───────────────────────────────────────────── */
 
 const GRID_COLS = 10;
 const GRID_ROWS = 6;
 const WALK_DURATION_MS = 500;
 
-/* ─────────────────────────────────────────────
-   Helpers
-───────────────────────────────────────────── */
-
-/** Convert grid coordinate → centered percentage */
 const gridToPercent = (value: number, total: number) => ((value + 0.5) / total) * 100;
 
 /* ─────────────────────────────────────────────
    Component
 ───────────────────────────────────────────── */
 
-export default function QuestionType_RPGInteraction({ currentQuestion, quizState, setQuizState, onScoreIncrement, handleContinue }: Props) {
+export default function QuestionType_RPGInteraction({ currentQuestion, quizState, onScoreIncrement, handleContinue }: Props) {
   const objects = currentQuestion.rpgObjects ?? [];
   const required = currentQuestion.rpgRequiredInteractions ?? objects.length;
 
@@ -59,39 +53,48 @@ export default function QuestionType_RPGInteraction({ currentQuestion, quizState
   const [activeObject, setActiveObject] = useState<RPGObject | null>(null);
   const [isWalking, setIsWalking] = useState(false);
 
-  /* ─────────────────────────────────────────────
-     Tile Click → Move → Auto Interact
-  ────────────────────────────────────────────── */
+  const [selectedChoice, setSelectedChoice] = useState<number | null>(null);
+  const [choiceFeedback, setChoiceFeedback] = useState<string | null>(null);
+  const [choiceCorrect, setChoiceCorrect] = useState(false);
+
+  /* ───────────────────────────────────────────── */
 
   const handleTileClick = (x: number, y: number) => {
     if (isWalking || quizState !== QuizState.SELECT_ANSWER) return;
 
     setIsWalking(true);
     setActiveObject(null);
+    setSelectedChoice(null);
+    setChoiceFeedback(null);
+    setChoiceCorrect(false);
     setPlayerPos({ x, y });
 
     window.setTimeout(() => {
       const obj = objects.find((o) => o.gridX === x && o.gridY === y);
-
       if (obj && !interacted[obj.id]) {
-        setInteracted((prev) => ({ ...prev, [obj.id]: true }));
         setActiveObject(obj);
       }
-
       setIsWalking(false);
     }, WALK_DURATION_MS);
   };
 
-  const interactionCount = Object.values(interacted).filter(Boolean).length;
-  const completed = interactionCount >= required;
+  const handleChoiceSelect = (index: number) => {
+    if (!activeObject?.choices) return;
 
-  /* ─────────────────────────────────────────────
-     Continue (ADVANCES QUESTION)
-  ────────────────────────────────────────────── */
+    const choice = activeObject.choices[index];
+    setSelectedChoice(index);
+    setChoiceFeedback(choice.explanation);
+    setChoiceCorrect(choice.correct);
+
+    if (choice.correct) {
+      setInteracted((prev) => ({ ...prev, [activeObject.id]: true }));
+    }
+  };
+
+  const completed = Object.values(interacted).filter(Boolean).length >= required;
 
   const handleContinueClick = () => {
     if (!completed) return;
-
     onScoreIncrement();
     handleContinue();
   };
@@ -101,25 +104,22 @@ export default function QuestionType_RPGInteraction({ currentQuestion, quizState
   ────────────────────────────────────────────── */
 
   return (
-    <div className='grid gap-6 text-slate-900'>
+    <div className='grid gap-6'>
       {/* Scene */}
       <div
-        className='relative grid border rounded bg-slate-200 overflow-hidden'
+        className='relative grid border rounded bg-slate-200'
         style={{
           gridTemplateColumns: `repeat(${GRID_COLS}, 1fr)`,
           gridTemplateRows: `repeat(${GRID_ROWS}, 1fr)`,
           height: 256,
         }}>
-        {/* Floor Tiles */}
         {Array.from({ length: GRID_ROWS }).map((_, row) => Array.from({ length: GRID_COLS }).map((_, col) => <button key={`${col}-${row}`} onClick={() => handleTileClick(col, row)} className='border border-slate-300 hover:bg-slate-300' />))}
 
-        {/* Objects */}
         {objects.map((obj) => (
           <div
             key={obj.id}
-            className={`absolute px-2 py-1 text-xs rounded border pointer-events-none
-              text-slate-900 bg-white
-              ${interacted[obj.id] ? "bg-green-100 border-green-400 text-green-900" : "border-slate-300"}`}
+            className={`absolute px-2 py-1 text-xs rounded border
+              ${interacted[obj.id] ? "bg-green-100 border-green-400" : "bg-white border-slate-300"}`}
             style={{
               left: `${gridToPercent(obj.gridX, GRID_COLS)}%`,
               top: `${gridToPercent(obj.gridY, GRID_ROWS)}%`,
@@ -129,9 +129,8 @@ export default function QuestionType_RPGInteraction({ currentQuestion, quizState
           </div>
         ))}
 
-        {/* Player */}
         <div
-          className='absolute w-6 h-6 rounded-full bg-blue-500 transition-all ease-in-out'
+          className='absolute w-6 h-6 rounded-full bg-blue-500 transition-all'
           style={{
             left: `${gridToPercent(playerPos.x, GRID_COLS)}%`,
             top: `${gridToPercent(playerPos.y, GRID_ROWS)}%`,
@@ -141,19 +140,35 @@ export default function QuestionType_RPGInteraction({ currentQuestion, quizState
         />
       </div>
 
-      {/* Dialogue */}
+      {/* Dialogue + Choices */}
       {activeObject && (
-        <div className='flex gap-4 p-4 border rounded bg-white text-slate-900 items-start'>
-          {activeObject.portrait && <img src={activeObject.portrait} alt={activeObject.label} className='w-24 h-24 object-contain' />}
+        <div className='p-4 border rounded bg-slate-50 text-slate-900 grid gap-3 shadow-sm'>
+          <p className='font-semibold text-slate-900'>{activeObject.label}</p>
 
-          <div className='grid gap-2'>
-            <p className='font-semibold text-slate-900'>{activeObject.label}</p>
-            {activeObject.dialogue.map((line, i) => (
-              <p key={i} className='text-slate-700'>
-                {line}
-              </p>
-            ))}
-          </div>
+          {activeObject.dialogue.map((line, i) => (
+            <p key={i} className='text-slate-800'>
+              {line}
+            </p>
+          ))}
+
+          {activeObject.choices?.map((choice, index) => (
+            <button
+              key={index}
+              onClick={() => handleChoiceSelect(index)}
+              disabled={choiceCorrect}
+              className={`p-3 text-left rounded border
+                ${selectedChoice === index ? (choice.correct ? "bg-green-100 border-green-400 text-green-900" : "bg-red-100 border-red-400 text-red-900") : "bg-white border-slate-300 hover:bg-slate-100 text-slate-900"}`}>
+              {choice.text}
+            </button>
+          ))}
+
+          {choiceFeedback && (
+            <div
+              className={`p-3 rounded text-sm
+                ${choiceCorrect ? "bg-green-50 text-green-900" : "bg-red-50 text-red-900"}`}>
+              {choiceFeedback}
+            </div>
+          )}
         </div>
       )}
 
@@ -162,7 +177,7 @@ export default function QuestionType_RPGInteraction({ currentQuestion, quizState
         disabled={!completed}
         onClick={handleContinueClick}
         className={`self-end px-4 py-2 rounded font-semibold
-          ${completed ? "bg-blue-600 text-white hover:bg-blue-700" : "bg-gray-300 text-gray-700 cursor-not-allowed"}`}>
+          ${completed ? "bg-blue-600 text-white hover:bg-blue-700" : "bg-gray-300 text-gray-600 cursor-not-allowed"}`}>
         Continue
       </button>
     </div>

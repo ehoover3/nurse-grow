@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nurse Questions",
+  title: "Disaster Doctor",
   description: "An education app to help become a nurse",
 };
 

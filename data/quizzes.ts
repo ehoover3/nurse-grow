@@ -25,6 +25,7 @@ type QuestionType = {
   // ───────────────
   // RPG Interaction
   // ───────────────
+
   rpgObjects?: RPGObject[];
   rpgRequiredInteractions?: number;
 
@@ -35,14 +36,20 @@ type QuestionType = {
   feedbackExplanation?: string;
 };
 
+type RPGChoice = {
+  text: string;
+  correct: boolean;
+  explanation: string;
+};
+
 type RPGObject = {
   id: string;
   label: string;
   dialogue: string[];
   portrait?: string;
-
-  gridX: number; // column
-  gridY: number; // row
+  gridX: number;
+  gridY: number;
+  choices?: RPGChoice[];
 };
 
 export type QuizType = {
@@ -57,13 +64,13 @@ export const quizzes: QuizType[] = [
   {
     slug: "disaster-doctor-floor-1",
     title: "Disaster Doctor: Rising Waters",
-    description: "Heavy rain is flooding the lower floors. Learn how the human body responds to stress, injury, and movement under pressure.",
+    description: "Heavy rain is flooding the lower floors. Use anatomy and physiology to assess and stabilize residents before it’s too late.",
     image: "/images/disaster-doctor/flooded-lobby.png",
     questions: [
       {
         id: 1,
         type: "rpg-interaction",
-        question: "Floodwater is pouring into the lobby. Several residents are trapped on Floor 1. Move through the area and assess what’s going wrong inside their bodies before the water rises higher.",
+        question: "Floodwater is pouring into the lobby. Several residents are trapped. Move through the area and assess what’s happening inside their bodies.",
         rpgRequiredInteractions: 3,
         rpgObjects: [
           {
@@ -72,7 +79,29 @@ export const quizzes: QuizType[] = [
             portrait: "/images/characters/PanickedResident.png",
             gridX: 2,
             gridY: 3,
-            dialogue: ["I can’t catch my breath!", "My heart is racing and I feel dizzy!", "When the body senses danger, the sympathetic nervous system activates.", "This releases adrenaline, increasing heart rate and breathing to prepare for survival."],
+            dialogue: ["I can’t catch my breath!", "My heart is racing!"],
+            choices: [
+              {
+                text: "Sympathetic nervous system activation",
+                correct: true,
+                explanation: "Stress activates the sympathetic nervous system, releasing adrenaline and increasing heart rate and breathing.",
+              },
+              {
+                text: "Parasympathetic dominance",
+                correct: false,
+                explanation: "The parasympathetic system slows the heart and promotes rest, which does not match these symptoms.",
+              },
+              {
+                text: "Respiratory infection",
+                correct: false,
+                explanation: "There are no signs of infection such as fever or cough.",
+              },
+              {
+                text: "Cardiac muscle failure",
+                correct: false,
+                explanation: "This presentation fits acute stress, not heart failure.",
+              },
+            ],
           },
           {
             id: "injured-leg",
@@ -80,23 +109,67 @@ export const quizzes: QuizType[] = [
             portrait: "/images/characters/InjuredResident.png",
             gridX: 6,
             gridY: 4,
-            dialogue: ["I slipped when the water rushed in!", "I can’t stand up—my leg won’t support me.", "Skeletal muscles contract when nerves release signals at the neuromuscular junction.", "If nerves, muscles, or blood flow are disrupted, movement becomes weak or impossible."],
+            dialogue: ["I slipped and can’t stand up.", "My leg won’t support me."],
+            choices: [
+              {
+                text: "Disrupted neuromuscular signaling",
+                correct: true,
+                explanation: "Movement requires intact nerve signaling and muscle contraction. Injury can disrupt this pathway.",
+              },
+              {
+                text: "Lung hypoxia",
+                correct: false,
+                explanation: "There are no respiratory symptoms.",
+              },
+              {
+                text: "Digestive system failure",
+                correct: false,
+                explanation: "Digestion is unrelated to leg movement.",
+              },
+              {
+                text: "Hormonal imbalance",
+                correct: false,
+                explanation: "This injury is acute and mechanical, not endocrine.",
+              },
+            ],
           },
           {
             id: "electrical-panel",
             label: "Flooded Electrical Panel",
             gridX: 8,
             gridY: 1,
-            dialogue: ["Sparks flash as water reaches exposed wiring.", "Electrical signals in the human body rely on controlled ion movement across membranes.", "Just like faulty wiring, disrupted electrical signaling in nerves can cause serious dysfunction."],
+            dialogue: ["Water crackles around exposed wiring."],
+            choices: [
+              {
+                text: "Electrical signaling depends on ion movement",
+                correct: true,
+                explanation: "Nerves rely on controlled ion flow across membranes, similar to electrical circuits.",
+              },
+              {
+                text: "Bones generate electricity",
+                correct: false,
+                explanation: "Bones do not generate electrical signals.",
+              },
+              {
+                text: "Blood conducts nerve impulses",
+                correct: false,
+                explanation: "Nerve impulses travel along neurons, not through blood.",
+              },
+              {
+                text: "Muscles fire independently of nerves",
+                correct: false,
+                explanation: "Muscles require nerve input to contract.",
+              },
+            ],
           },
         ],
-        feedbackImage: "/images/disaster-doctor/evacuation.png",
-        feedbackExplanation: "You stabilized the situation by understanding how stress, muscle control, and electrical signaling affect the body. These systems will become even more critical as the flood rises.",
+        feedbackExplanation: "You stabilized the lobby by identifying how stress, injury, and electrical signaling affect the human body.",
       },
+
       {
         id: 2,
         type: "rpg-interaction",
-        question: "The water has reached knee height. A resident collapses near the stairwell, and others report feeling weak and cold. Move quickly to assess what’s failing inside their bodies.",
+        question: "The water reaches knee height. A resident collapses near the stairwell. Others feel weak and cold. Assess the circulatory system.",
         rpgRequiredInteractions: 3,
         rpgObjects: [
           {
@@ -105,7 +178,29 @@ export const quizzes: QuizType[] = [
             portrait: "/images/characters/CollapsedResident.png",
             gridX: 4,
             gridY: 3,
-            dialogue: ["I feel lightheaded… everything is spinning.", "My hands are cold and I feel weak.", "When blood pressure drops, organs receive less oxygen.", "This can lead to shock, a life-threatening failure of circulation."],
+            dialogue: ["I feel dizzy… everything is spinning.", "My hands feel cold."],
+            choices: [
+              {
+                text: "Early circulatory shock",
+                correct: true,
+                explanation: "Low blood pressure reduces oxygen delivery, causing dizziness, weakness, and cold extremities.",
+              },
+              {
+                text: "Primary lung infection",
+                correct: false,
+                explanation: "There are no respiratory or infectious signs.",
+              },
+              {
+                text: "Digestive upset",
+                correct: false,
+                explanation: "GI issues do not cause collapse or cold extremities.",
+              },
+              {
+                text: "Normal stress response",
+                correct: false,
+                explanation: "Collapse indicates a pathological process.",
+              },
+            ],
           },
           {
             id: "rapid-pulse",
@@ -113,18 +208,61 @@ export const quizzes: QuizType[] = [
             portrait: "/images/characters/RapidPulse.png",
             gridX: 1,
             gridY: 4,
-            dialogue: ["My heart is pounding really fast!", "The heart increases its rate to compensate for low blood volume or pressure.", "This is controlled by the autonomic nervous system to maintain perfusion."],
+            dialogue: ["My heart won’t slow down!"],
+            choices: [
+              {
+                text: "Compensatory tachycardia",
+                correct: true,
+                explanation: "The heart beats faster to maintain blood flow during low pressure states.",
+              },
+              {
+                text: "Normal athletic conditioning",
+                correct: false,
+                explanation: "Athletic hearts beat slower at rest.",
+              },
+              {
+                text: "Respiratory alkalosis",
+                correct: false,
+                explanation: "No breathing-related pH disturbance is evident.",
+              },
+              {
+                text: "Cardiac arrest",
+                correct: false,
+                explanation: "The heart is clearly beating.",
+              },
+            ],
           },
           {
             id: "cold-water",
             label: "Cold Floodwater",
             gridX: 8,
             gridY: 2,
-            dialogue: ["The water is icy cold.", "Cold exposure causes blood vessels in the skin to constrict.", "This preserves core temperature but reduces blood flow to the extremities."],
+            dialogue: ["The water is painfully cold."],
+            choices: [
+              {
+                text: "Peripheral vasoconstriction",
+                correct: true,
+                explanation: "Blood vessels constrict to preserve core temperature.",
+              },
+              {
+                text: "Vasodilation",
+                correct: false,
+                explanation: "Vasodilation increases heat loss.",
+              },
+              {
+                text: "Increased sweating",
+                correct: false,
+                explanation: "Sweating occurs with heat, not cold.",
+              },
+              {
+                text: "Digestive activation",
+                correct: false,
+                explanation: "Cold stress suppresses digestion.",
+              },
+            ],
           },
         ],
-        feedbackImage: "/images/disaster-doctor/stairwell-evacuation.png",
-        feedbackExplanation: "You recognized early signs of circulatory shock. Maintaining blood pressure and oxygen delivery is critical as flooding and cold stress worsen.",
+        feedbackExplanation: "You identified early shock and compensatory responses. As flooding worsens, circulation becomes increasingly fragile.",
       },
     ],
   },
