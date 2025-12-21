@@ -118,8 +118,9 @@ export default function QuestionType_RPGInteraction({ currentQuestion, quizState
         {objects.map((obj) => (
           <div
             key={obj.id}
-            className={`absolute px-2 py-1 text-xs rounded border
-              ${interacted[obj.id] ? "bg-green-100 border-green-400" : "bg-white border-slate-300"}`}
+            className={`absolute px-2 py-1 text-xs rounded border text-slate-900
+      ${interacted[obj.id] ? "bg-green-100 border-green-400" : "bg-white border-slate-300"} 
+      shadow-sm`}
             style={{
               left: `${gridToPercent(obj.gridX, GRID_COLS)}%`,
               top: `${gridToPercent(obj.gridY, GRID_ROWS)}%`,
