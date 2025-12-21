@@ -3,9 +3,9 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { QuizType } from "../data/quizzes";
-import { AskQuestionScreen } from "./screens/askQuestionScreen";
-import { SummaryScreen } from "./screens/SummaryScreen";
-import { ErrorScreen } from "./screens/ErrorScreens";
+import { AskQuestionScreen } from "./screens/askQuestion";
+import { SummaryScreen } from "./screens/summary";
+import { ErrorScreen } from "./screens/error";
 
 export enum QuizState {
   SELECT_ANSWER,
