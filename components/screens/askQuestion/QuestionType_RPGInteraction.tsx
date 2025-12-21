@@ -143,33 +143,39 @@ export default function QuestionType_RPGInteraction({ currentQuestion, quizState
 
       {/* Dialogue + Choices */}
       {activeObject && (
-        <div className='p-4 border rounded bg-slate-50 text-slate-900 grid gap-3 shadow-sm'>
-          <p className='font-semibold text-slate-900'>{activeObject.label}</p>
+        <div className='p-4 border rounded bg-slate-50 text-slate-900 grid gap-3 shadow-sm flex'>
+          {/* Portrait */}
+          {activeObject.portrait && <img src={activeObject.portrait} alt={activeObject.label} className='w-16 h-16 rounded border mr-4 object-cover' />}
 
-          {activeObject.dialogue.map((line, i) => (
-            <p key={i} className='text-slate-800'>
-              {line}
-            </p>
-          ))}
+          {/* Dialogue and choices */}
+          <div className='flex-1 grid gap-3'>
+            <p className='font-semibold text-slate-900'>{activeObject.label}</p>
 
-          {activeObject.choices?.map((choice, index) => (
-            <button
-              key={index}
-              onClick={() => handleChoiceSelect(index)}
-              disabled={choiceCorrect}
-              className={`p-3 text-left rounded border
-                ${selectedChoice === index ? (choice.correct ? "bg-green-100 border-green-400 text-green-900" : "bg-red-100 border-red-400 text-red-900") : "bg-white border-slate-300 hover:bg-slate-100 text-slate-900"}`}>
-              {choice.text}
-            </button>
-          ))}
+            {activeObject.dialogue.map((line, i) => (
+              <p key={i} className='text-slate-800'>
+                {line}
+              </p>
+            ))}
 
-          {choiceFeedback && (
-            <div
-              className={`p-3 rounded text-sm
-                ${choiceCorrect ? "bg-green-50 text-green-900" : "bg-red-50 text-red-900"}`}>
-              {choiceFeedback}
-            </div>
-          )}
+            {activeObject.choices?.map((choice, index) => (
+              <button
+                key={index}
+                onClick={() => handleChoiceSelect(index)}
+                disabled={choiceCorrect}
+                className={`p-3 text-left rounded border
+            ${selectedChoice === index ? (choice.correct ? "bg-green-100 border-green-400 text-green-900" : "bg-red-100 border-red-400 text-red-900") : "bg-white border-slate-300 hover:bg-slate-100 text-slate-900"}`}>
+                {choice.text}
+              </button>
+            ))}
+
+            {choiceFeedback && (
+              <div
+                className={`p-3 rounded text-sm
+            ${choiceCorrect ? "bg-green-50 text-green-900" : "bg-red-50 text-red-900"}`}>
+                {choiceFeedback}
+              </div>
+            )}
+          </div>
         </div>
       )}
 

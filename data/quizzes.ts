@@ -136,6 +136,7 @@ export const quizzes: QuizType[] = [
           {
             id: "electrical-panel",
             label: "Flooded Electrical Panel",
+            portrait: "/images/interactionObjects/floodedElectricalPanel.png",
             gridX: 8,
             gridY: 1,
             dialogue: ["Water crackles around exposed wiring."],
@@ -211,14 +212,14 @@ export const quizzes: QuizType[] = [
             dialogue: ["My heart won’t slow down!"],
             choices: [
               {
-                text: "Compensatory tachycardia",
-                correct: true,
-                explanation: "The heart beats faster to maintain blood flow during low pressure states.",
-              },
-              {
                 text: "Normal athletic conditioning",
                 correct: false,
                 explanation: "Athletic hearts beat slower at rest.",
+              },
+              {
+                text: "Compensatory tachycardia",
+                correct: true,
+                explanation: "The heart beats faster to maintain blood flow during low pressure states.",
               },
               {
                 text: "Respiratory alkalosis",
