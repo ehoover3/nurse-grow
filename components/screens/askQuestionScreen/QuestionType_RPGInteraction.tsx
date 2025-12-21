@@ -1,3 +1,5 @@
+// QuestionType_RPGInteraction.tsx
+
 import React, { useState } from "react";
 import { QuizState } from "../../Quiz";
 
@@ -25,7 +27,7 @@ type Props = {
   setQuizState: (s: QuizState) => void;
   onScoreIncrement: () => void;
 
-  /** ✅ REQUIRED: parent-provided continue handler */
+  /** REQUIRED: parent-provided continue handler */
   handleContinue: () => void;
 };
 
@@ -91,7 +93,7 @@ export default function QuestionType_RPGInteraction({ currentQuestion, quizState
     if (!completed) return;
 
     onScoreIncrement();
-    handleContinue(); // ✅ THIS IS THE FIX
+    handleContinue();
   };
 
   /* ─────────────────────────────────────────────
@@ -99,24 +101,25 @@ export default function QuestionType_RPGInteraction({ currentQuestion, quizState
   ────────────────────────────────────────────── */
 
   return (
-    <div className='grid gap-6'>
+    <div className='grid gap-6 text-slate-900'>
       {/* Scene */}
       <div
-        className='relative grid border rounded bg-slate-100 overflow-hidden'
+        className='relative grid border rounded bg-slate-200 overflow-hidden'
         style={{
           gridTemplateColumns: `repeat(${GRID_COLS}, 1fr)`,
           gridTemplateRows: `repeat(${GRID_ROWS}, 1fr)`,
           height: 256,
         }}>
         {/* Floor Tiles */}
-        {Array.from({ length: GRID_ROWS }).map((_, row) => Array.from({ length: GRID_COLS }).map((_, col) => <button key={`${col}-${row}`} onClick={() => handleTileClick(col, row)} className='border border-slate-200 hover:bg-slate-200' />))}
+        {Array.from({ length: GRID_ROWS }).map((_, row) => Array.from({ length: GRID_COLS }).map((_, col) => <button key={`${col}-${row}`} onClick={() => handleTileClick(col, row)} className='border border-slate-300 hover:bg-slate-300' />))}
 
         {/* Objects */}
         {objects.map((obj) => (
           <div
             key={obj.id}
-            className={`absolute px-2 py-1 text-xs rounded border bg-white pointer-events-none
-              ${interacted[obj.id] ? "bg-green-100 border-green-400" : "border-slate-300"}`}
+            className={`absolute px-2 py-1 text-xs rounded border pointer-events-none
+              text-slate-900 bg-white
+              ${interacted[obj.id] ? "bg-green-100 border-green-400 text-green-900" : "border-slate-300"}`}
             style={{
               left: `${gridToPercent(obj.gridX, GRID_COLS)}%`,
               top: `${gridToPercent(obj.gridY, GRID_ROWS)}%`,
@@ -140,13 +143,15 @@ export default function QuestionType_RPGInteraction({ currentQuestion, quizState
 
       {/* Dialogue */}
       {activeObject && (
-        <div className='flex gap-4 p-4 border rounded bg-white items-start'>
+        <div className='flex gap-4 p-4 border rounded bg-white text-slate-900 items-start'>
           {activeObject.portrait && <img src={activeObject.portrait} alt={activeObject.label} className='w-24 h-24 object-contain' />}
 
           <div className='grid gap-2'>
-            <p className='font-semibold'>{activeObject.label}</p>
+            <p className='font-semibold text-slate-900'>{activeObject.label}</p>
             {activeObject.dialogue.map((line, i) => (
-              <p key={i}>{line}</p>
+              <p key={i} className='text-slate-700'>
+                {line}
+              </p>
             ))}
           </div>
         </div>
@@ -156,8 +161,8 @@ export default function QuestionType_RPGInteraction({ currentQuestion, quizState
       <button
         disabled={!completed}
         onClick={handleContinueClick}
-        className={`self-end px-4 py-2 rounded
-          ${completed ? "bg-blue-600 text-white" : "bg-gray-300 text-gray-600"}`}>
+        className={`self-end px-4 py-2 rounded font-semibold
+          ${completed ? "bg-blue-600 text-white hover:bg-blue-700" : "bg-gray-300 text-gray-700 cursor-not-allowed"}`}>
         Continue
       </button>
     </div>
