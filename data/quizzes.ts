@@ -40,8 +40,9 @@ type RPGObject = {
   label: string;
   dialogue: string[];
   portrait?: string;
-  x: number;
-  y: number;
+
+  gridX: number; // column
+  gridY: number; // row
 };
 
 export type QuizType = {
@@ -71,40 +72,31 @@ export const quizzes: QuizType[] = [
         multipleChoiceAnswer: "Metabolic Alkalosis",
         tooltipTerms: [{ label: "CO₂", meaning: "Carbon Dioxide" }],
       },
-       {
-        id: 4,
+      {
+        id: 2,
         type: "rpg-interaction",
-        question:
-          "Explore the mad scientist’s lab and uncover how the body sends and uses electrical signals.",
+        question: "Explore the mad scientist’s lab and uncover how the body sends and uses electrical signals.",
         rpgRequiredInteractions: 2,
         rpgObjects: [
           {
             id: "skeleton",
             label: "A talking skeleton",
             portrait: "/images/characters/Skeleton.png",
-            x: 30,
-            y: 48,
-            dialogue: [
-              "Ah-ha! Observe the bones in action!",
-              "Bones create red blood cells.",
-              "Bones support the body.",
-            ],
+            gridX: 2,
+            gridY: 1,
+            dialogue: ["Ah-ha! Observe the bones in action!", "Bones create red blood cells."],
           },
           {
             id: "twitching-muscle",
             label: "Twitching Muscle Apparatus",
-            x: 70,
-            y: 48,
-            dialogue: [
-              "Marvel at the muscle fiber!",
-              "Muscle contraction occurs when calcium ions are released inside the cell.",
-              "This allows actin and myosin to slide past each other.",
-            ],
+            gridX: 7,
+            gridY: 4,
+            dialogue: ["Marvel at the muscle fiber!", "Muscle contraction occurs when calcium ions are released inside the cell.", "This allows actin and myosin to slide past each other."],
           },
         ],
       },
       {
-        id: 2,
+        id: 3,
         type: "word-order",
         question: "Put the order of the GI Tract in order:",
         sequentialOrderWordBank: [
@@ -117,7 +109,7 @@ export const quizzes: QuizType[] = [
         sequentialOrderAnswer: ["Mouth", "Stomach", "Small Intestine", "Large Intestine"],
       },
       {
-        id: 3,
+        id: 4,
         type: "matching",
         question: "Match the organ to its function:",
         matchingPairs: [

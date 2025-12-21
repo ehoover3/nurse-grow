@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import { QuizState } from "../../Quiz";
 
+/* ─────────────────────────────────────────────
+   Types
+───────────────────────────────────────────── */
+
 type RPGObject = {
   id: string;
   label: string;
   dialogue: string[];
-
-  /** Optional dialogue portrait */
   portrait?: string;
 
-  /** Horizontal position (% from left of scene) */
-  x: number;
-
-  /** Vertical position (px from bottom of scene) */
-  y: number;
+  /** Grid position */
+  gridX: number;
+  gridY: number;
 };
 
 type Props = {
@@ -24,35 +24,58 @@ type Props = {
   quizState: QuizState;
   setQuizState: (s: QuizState) => void;
   onScoreIncrement: () => void;
+
+  /** ✅ REQUIRED: parent-provided continue handler */
+  handleContinue: () => void;
 };
 
-const PLAYER_FRONT_OFFSET_PX = 20;
+/* ─────────────────────────────────────────────
+   Grid Configuration
+───────────────────────────────────────────── */
+
+const GRID_COLS = 10;
+const GRID_ROWS = 6;
 const WALK_DURATION_MS = 500;
 
-export default function QuestionType_RPGInteraction({ currentQuestion, quizState, setQuizState, onScoreIncrement }: Props) {
+/* ─────────────────────────────────────────────
+   Helpers
+───────────────────────────────────────────── */
+
+/** Convert grid coordinate → centered percentage */
+const gridToPercent = (value: number, total: number) => ((value + 0.5) / total) * 100;
+
+/* ─────────────────────────────────────────────
+   Component
+───────────────────────────────────────────── */
+
+export default function QuestionType_RPGInteraction({ currentQuestion, quizState, setQuizState, onScoreIncrement, handleContinue }: Props) {
   const objects = currentQuestion.rpgObjects ?? [];
   const required = currentQuestion.rpgRequiredInteractions ?? objects.length;
 
-  const [playerPos, setPlayerPos] = useState({ x: 50, y: 16 });
+  const [playerPos, setPlayerPos] = useState({ x: 5, y: 4 });
   const [interacted, setInteracted] = useState<Record<string, boolean>>({});
   const [activeObject, setActiveObject] = useState<RPGObject | null>(null);
   const [isWalking, setIsWalking] = useState(false);
 
-  const handleInteract = (obj: RPGObject) => {
-    if (isWalking) return;
+  /* ─────────────────────────────────────────────
+     Tile Click → Move → Auto Interact
+  ────────────────────────────────────────────── */
+
+  const handleTileClick = (x: number, y: number) => {
+    if (isWalking || quizState !== QuizState.SELECT_ANSWER) return;
 
     setIsWalking(true);
     setActiveObject(null);
-
-    // Move player to directly in front of the object
-    setPlayerPos({
-      x: obj.x,
-      y: obj.y - PLAYER_FRONT_OFFSET_PX,
-    });
+    setPlayerPos({ x, y });
 
     window.setTimeout(() => {
-      setInteracted((prev) => ({ ...prev, [obj.id]: true }));
-      setActiveObject(obj);
+      const obj = objects.find((o) => o.gridX === x && o.gridY === y);
+
+      if (obj && !interacted[obj.id]) {
+        setInteracted((prev) => ({ ...prev, [obj.id]: true }));
+        setActiveObject(obj);
+      }
+
       setIsWalking(false);
     }, WALK_DURATION_MS);
   };
@@ -60,51 +83,66 @@ export default function QuestionType_RPGInteraction({ currentQuestion, quizState
   const interactionCount = Object.values(interacted).filter(Boolean).length;
   const completed = interactionCount >= required;
 
-  const handleContinue = () => {
+  /* ─────────────────────────────────────────────
+     Continue (ADVANCES QUESTION)
+  ────────────────────────────────────────────── */
+
+  const handleContinueClick = () => {
     if (!completed) return;
+
     onScoreIncrement();
-    setQuizState(QuizState.CONTINUE_BUTTON);
+    handleContinue(); // ✅ THIS IS THE FIX
   };
+
+  /* ─────────────────────────────────────────────
+     Render
+  ────────────────────────────────────────────── */
 
   return (
     <div className='grid gap-6'>
       {/* Scene */}
-      <div className='relative h-64 border rounded bg-slate-100 overflow-hidden'>
-        {/* RPG Objects */}
+      <div
+        className='relative grid border rounded bg-slate-100 overflow-hidden'
+        style={{
+          gridTemplateColumns: `repeat(${GRID_COLS}, 1fr)`,
+          gridTemplateRows: `repeat(${GRID_ROWS}, 1fr)`,
+          height: 256,
+        }}>
+        {/* Floor Tiles */}
+        {Array.from({ length: GRID_ROWS }).map((_, row) => Array.from({ length: GRID_COLS }).map((_, col) => <button key={`${col}-${row}`} onClick={() => handleTileClick(col, row)} className='border border-slate-200 hover:bg-slate-200' />))}
+
+        {/* Objects */}
         {objects.map((obj) => (
-          <button
+          <div
             key={obj.id}
-            onClick={() => handleInteract(obj)}
-            disabled={isWalking}
-            className={`absolute -translate-x-1/2 px-4 py-2 rounded border text-sm
-              ${interacted[obj.id] ? "bg-green-100 border-green-400" : "bg-white"}`}
+            className={`absolute px-2 py-1 text-xs rounded border bg-white pointer-events-none
+              ${interacted[obj.id] ? "bg-green-100 border-green-400" : "border-slate-300"}`}
             style={{
-              left: `${obj.x}%`,
-              bottom: `${obj.y}px`,
+              left: `${gridToPercent(obj.gridX, GRID_COLS)}%`,
+              top: `${gridToPercent(obj.gridY, GRID_ROWS)}%`,
+              transform: "translate(-50%, -50%)",
             }}>
             {obj.label}
-          </button>
+          </div>
         ))}
 
         {/* Player */}
         <div
           className='absolute w-6 h-6 rounded-full bg-blue-500 transition-all ease-in-out'
           style={{
-            left: `${playerPos.x}%`,
-            bottom: `${playerPos.y}px`,
-            transform: "translateX(-50%)",
+            left: `${gridToPercent(playerPos.x, GRID_COLS)}%`,
+            top: `${gridToPercent(playerPos.y, GRID_ROWS)}%`,
+            transform: "translate(-50%, -50%)",
             transitionDuration: `${WALK_DURATION_MS}ms`,
           }}
         />
       </div>
 
-      {/* Dialogue Box */}
+      {/* Dialogue */}
       {activeObject && (
         <div className='flex gap-4 p-4 border rounded bg-white items-start'>
-          {/* Portrait */}
           {activeObject.portrait && <img src={activeObject.portrait} alt={activeObject.label} className='w-24 h-24 object-contain' />}
 
-          {/* Dialogue */}
           <div className='grid gap-2'>
             <p className='font-semibold'>{activeObject.label}</p>
             {activeObject.dialogue.map((line, i) => (
@@ -117,7 +155,7 @@ export default function QuestionType_RPGInteraction({ currentQuestion, quizState
       {/* Continue */}
       <button
         disabled={!completed}
-        onClick={handleContinue}
+        onClick={handleContinueClick}
         className={`self-end px-4 py-2 rounded
           ${completed ? "bg-blue-600 text-white" : "bg-gray-300 text-gray-600"}`}>
         Continue

@@ -106,7 +106,7 @@ export function AskQuestionScreen({ exitQuiz, quizState, setQuizState, quiz }: A
       {currentQuestion.type === "multiple-choice" && <QuestionType_MultipleChoice currentQuestion={currentQuestion} handleCheck={handleCheck} handleContinue={handleContinue} quizState={quizState} setQuizState={setQuizState} setUserSelectedAnswer={setUserSelectedAnswer} tooltipTerms={currentQuestion.tooltipTerms ?? []} userMatches={userMatches} userSelectedAnswer={userSelectedAnswer} />}
       {currentQuestion.type === "matching" && <QuestionType_Matching currentQuestion={currentQuestion} handleCheck={handleCheck} handleContinue={handleContinue} pairs={currentQuestion.matchingPairs ?? []} quizState={quizState} setQuizState={setQuizState} setUserMatches={setUserMatches} userMatches={userMatches} userSelectedAnswer={userSelectedAnswer} />}
       {currentQuestion.type === "word-order" && <QuestionType_SequentialOrder currentQuestion={currentQuestion} handleContinue={handleContinue} onScoreIncrement={() => setScore((s) => s + 1)} quizState={quizState} setQuizState={setQuizState} />}
-      {currentQuestion.type === "rpg-interaction" && <QuestionType_RPGInteraction currentQuestion={currentQuestion} quizState={quizState} setQuizState={setQuizState} onScoreIncrement={() => setScore((s) => s + 1)} />}
+      {currentQuestion.type === "rpg-interaction" && <QuestionType_RPGInteraction currentQuestion={currentQuestion} handleContinue={handleContinue} quizState={quizState} setQuizState={setQuizState} onScoreIncrement={() => setScore((s) => s + 1)} />}
       <AnswerFeedback quizState={quizState} currentQuestion={currentQuestion} />
     </div>
   );

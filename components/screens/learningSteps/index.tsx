@@ -1,5 +1,6 @@
 "use client";
 
+import { quizzes, QuizType } from "@/data/quizzes";
 import Link from "next/link";
 
 type QuizCardProps = {
@@ -11,7 +12,17 @@ type QuizCardProps = {
   };
 };
 
-export default function LearningStep({ quiz }: QuizCardProps) {
+export default function LearningSteps() {
+  return (
+    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'>
+      {quizzes.map((quiz: QuizType) => (
+        <LearningStep key={quiz.slug} quiz={quiz} />
+      ))}
+    </div>
+  );
+}
+
+export function LearningStep({ quiz }: QuizCardProps) {
   return (
     <Link href={`/quiz/${quiz.slug}`}>
       <div className='border p-4 rounded-xl shadow hover:shadow-lg transition'>
