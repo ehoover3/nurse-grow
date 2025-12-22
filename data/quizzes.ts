@@ -93,7 +93,7 @@ export const quizzes: QuizType[] = [
               height: 48,
             },
             portrait: {
-              src: "/images/characters/world-people.png",
+              src: "/images/characters/people-spritesheet.png",
               x: 207,
               y: 36,
               width: 80,
@@ -138,6 +138,7 @@ export const quizzes: QuizType[] = [
 
             portrait: {
               src: "/images/characters/people-spritesheet.png",
+
               x: 299,
               y: 36,
               width: 128,
@@ -181,11 +182,11 @@ export const quizzes: QuizType[] = [
             },
 
             portrait: {
-              src: "/images/interactionObjects/interaction-spritesheet.png",
-              x: 128,
-              y: 0,
-              width: 64,
-              height: 64,
+              src: "/images/characters/people-spritesheet.png",
+              x: 204,
+              y: 210,
+              width: 80,
+              height: 128,
             },
             gridX: 8,
             gridY: 1,
