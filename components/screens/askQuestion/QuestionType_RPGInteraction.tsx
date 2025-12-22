@@ -11,11 +11,28 @@ type RPGChoice = {
   explanation: string;
 };
 
+type MapSprite = {
+  src: string; // sprite sheet or single image
+  x: number; // pixel x in sheet
+  y: number; // pixel y in sheet
+  width: number; // sprite width
+  height: number; // sprite height
+};
+
+type SpritePortrait = {
+  src: string; // sprite sheet image
+  x: number; // pixel x in sheet
+  y: number; // pixel y in sheet
+  width: number; // cropped width
+  height: number; // cropped height
+};
+
 type RPGObject = {
   id: string;
   label: string;
   dialogue: string[];
-  portrait?: string;
+  portrait?: SpritePortrait;
+  mapSprite?: MapSprite;
   gridX: number;
   gridY: number;
   choices?: RPGChoice[];
@@ -118,15 +135,26 @@ export default function QuestionType_RPGInteraction({ currentQuestion, quizState
         {objects.map((obj) => (
           <div
             key={obj.id}
-            className={`absolute px-2 py-1 text-xs rounded border text-slate-900
-      ${interacted[obj.id] ? "bg-green-100 border-green-400" : "bg-white border-slate-300"} 
-      shadow-sm`}
+            className='absolute'
             style={{
               left: `${gridToPercent(obj.gridX, GRID_COLS)}%`,
               top: `${gridToPercent(obj.gridY, GRID_ROWS)}%`,
               transform: "translate(-50%, -50%)",
             }}>
-            {obj.label}
+            {obj.mapSprite && (
+              <div
+                className={`border rounded shadow-sm
+          ${interacted[obj.id] ? "bg-green-100 border-green-400" : "bg-white border-slate-300"}`}
+                style={{
+                  width: obj.mapSprite.width,
+                  height: obj.mapSprite.height,
+                  backgroundImage: `url(${obj.mapSprite.src})`,
+                  backgroundPosition: `-${obj.mapSprite.x}px -${obj.mapSprite.y}px`,
+                  backgroundRepeat: "no-repeat",
+                  imageRendering: "pixelated",
+                }}
+              />
+            )}
           </div>
         ))}
 
@@ -145,7 +173,19 @@ export default function QuestionType_RPGInteraction({ currentQuestion, quizState
       {activeObject && (
         <div className='p-4 border rounded bg-slate-50 text-slate-900 grid gap-3 shadow-sm flex'>
           {/* Portrait */}
-          {activeObject.portrait && <img src={activeObject.portrait} alt={activeObject.label} className='w-16 h-16 rounded border mr-4 object-cover' />}
+          {activeObject.portrait && (
+            <div
+              className='border rounded mr-4'
+              style={{
+                width: activeObject.portrait.width,
+                height: activeObject.portrait.height,
+                backgroundImage: `url(${activeObject.portrait.src})`,
+                backgroundPosition: `-${activeObject.portrait.x}px -${activeObject.portrait.y}px`,
+                backgroundRepeat: "no-repeat",
+                imageRendering: "pixelated", // great for sprite art
+              }}
+            />
+          )}
 
           {/* Dialogue and choices */}
           <div className='flex-1 grid gap-3'>

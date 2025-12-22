@@ -42,11 +42,20 @@ type RPGChoice = {
   explanation: string;
 };
 
+type SpritePortrait = {
+  src: string; // sprite sheet image
+  x: number; // pixel X in sheet
+  y: number; // pixel Y in sheet
+  width: number; // visible width
+  height: number; // visible height
+};
+
 type RPGObject = {
   id: string;
   label: string;
   dialogue: string[];
-  portrait?: string;
+  portrait?: SpritePortrait;
+  mapSprite?: any;
   gridX: number;
   gridY: number;
   choices?: RPGChoice[];
@@ -76,7 +85,20 @@ export const quizzes: QuizType[] = [
           {
             id: "panicked-resident",
             label: "Panicked Resident",
-            portrait: "/images/characters/PanickedResident.png",
+            mapSprite: {
+              src: "/images/characters/world-people.png",
+              x: 134,
+              y: 200,
+              width: 32,
+              height: 48,
+            },
+            portrait: {
+              src: "/images/characters/world-people.png",
+              x: 207,
+              y: 36,
+              width: 80,
+              height: 128,
+            },
             gridX: 2,
             gridY: 3,
             dialogue: ["I can’t catch my breath!", "My heart is racing!"],
@@ -106,7 +128,21 @@ export const quizzes: QuizType[] = [
           {
             id: "injured-leg",
             label: "Resident with Injured Leg",
-            portrait: "/images/characters/InjuredResident.png",
+            mapSprite: {
+              src: "/images/characters/world-people.png",
+              x: 142,
+              y: 290,
+              width: 32,
+              height: 48,
+            },
+
+            portrait: {
+              src: "/images/characters/people-spritesheet.png",
+              x: 299,
+              y: 36,
+              width: 128,
+              height: 128,
+            },
             gridX: 6,
             gridY: 4,
             dialogue: ["I slipped and can’t stand up.", "My leg won’t support me."],
@@ -136,7 +172,21 @@ export const quizzes: QuizType[] = [
           {
             id: "electrical-panel",
             label: "Flooded Electrical Panel",
-            portrait: "/images/interactionObjects/floodedElectricalPanel.png",
+            mapSprite: {
+              src: "/images/characters/world-people.png",
+              x: 441,
+              y: 191,
+              width: 32,
+              height: 48,
+            },
+
+            portrait: {
+              src: "/images/interactionObjects/interaction-spritesheet.png",
+              x: 128,
+              y: 0,
+              width: 64,
+              height: 64,
+            },
             gridX: 8,
             gridY: 1,
             dialogue: ["Water crackles around exposed wiring."],
@@ -176,7 +226,21 @@ export const quizzes: QuizType[] = [
           {
             id: "collapsed-resident",
             label: "Collapsed Resident",
-            portrait: "/images/characters/CollapsedResident.png",
+            mapSprite: {
+              src: "/sprites/world-people.png",
+              x: 0,
+              y: 0,
+              width: 16,
+              height: 16,
+            },
+
+            portrait: {
+              src: "/images/interactionObjects/interaction-spritesheet.png",
+              x: 128,
+              y: 0,
+              width: 64,
+              height: 64,
+            },
             gridX: 4,
             gridY: 3,
             dialogue: ["I feel dizzy… everything is spinning.", "My hands feel cold."],
@@ -206,7 +270,21 @@ export const quizzes: QuizType[] = [
           {
             id: "rapid-pulse",
             label: "Resident with Rapid Pulse",
-            portrait: "/images/characters/RapidPulse.png",
+            mapSprite: {
+              src: "/sprites/world-people.png",
+              x: 0,
+              y: 0,
+              width: 16,
+              height: 16,
+            },
+
+            portrait: {
+              src: "/images/interactionObjects/interaction-spritesheet.png",
+              x: 128,
+              y: 0,
+              width: 64,
+              height: 64,
+            },
             gridX: 1,
             gridY: 4,
             dialogue: ["My heart won’t slow down!"],
