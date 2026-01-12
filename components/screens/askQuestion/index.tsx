@@ -50,7 +50,11 @@ function AnswerFeedback({ quizState, currentQuestion }: AnswerFeedbackProps) {
           <img src={currentQuestion.feedbackImage} alt='Answer explanation' className='max-w-full h-auto rounded border' />
         </div>
       )}
-      {currentQuestion.feedbackExplanation && <div className='mt-4'>{currentQuestion.feedbackExplanation}</div>}
+      {currentQuestion.feedbackText && (
+        <div className='mt-4' style={{ whiteSpace: "pre-line" }}>
+          {currentQuestion.feedbackText}
+        </div>
+      )}
     </>
   );
 }

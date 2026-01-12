@@ -32,7 +32,7 @@ type QuestionType = {
   // Feedback
   // ─────────
   feedbackImage?: string;
-  feedbackExplanation?: string;
+  feedbackText?: string;
 };
 
 type RPGObject = {
@@ -335,7 +335,7 @@ export const quizzes: QuizType[] = [
           { text: "Eicosanoid", image: "" },
         ],
         multipleChoiceAnswer: "Polyunsaturated Fatty Acid",
-        feedbackExplanation:
+        feedbackText:
           "A fatty acid is a long chain of carbon (C) atoms with hydrogen (H) atoms attached and a carboxyl group (-COOH) at one end. Saturated fatty acids: All carbon-carbon bonds are single bonds (C–C). No double bonds. Example: stearic acid. Monounsaturated fatty acids: One double bond (C=C) exists in the chain. Example: oleic acid. Polyunsaturated fatty acids (PUFAs): Two or more double bonds (C=C) are present. Example: linoleic acid has 2 double bonds. So, if a fatty acid has exactly 2 double bonds, it cannot be saturated or monounsaturated—it must be polyunsaturated. That’s why “Polyunsaturated fatty acid” is the correct answer",
         tooltipTerms: [{ label: "C", meaning: "Carbon" }],
       },
@@ -761,7 +761,7 @@ export const quizzes: QuizType[] = [
           { text: "A", image: "" },
         ],
         multipleChoiceAnswer: "AH2",
-        feedbackExplanation: "AH₂ is oxidized because it loses electrons (and hydrogen) and becomes A, while NAD⁺ gains those electrons and is reduced to NADH",
+        feedbackText: "AH₂ is oxidized because it loses electrons (and hydrogen) and becomes A, while NAD⁺ gains those electrons and is reduced to NADH",
       },
       {
         id: 9,
@@ -2342,7 +2342,7 @@ export const quizzes: QuizType[] = [
         ],
         multipleChoiceAnswer: "No",
         tooltipTerms: [{ label: "afferents", meaning: "Nerve fibers or neurons that carry sensory information toward the central nervous system (CNS)" }],
-        feedbackExplanation: "Afferent neurons that trigger reflexes can also send signals to the brain via ascending pathways. Reflex circuits in the spinal cord don't exclude communication to the brain, so they are not completely different sets of afferents—the same sensory neuron can participate in both.",
+        feedbackText: "Afferent neurons that trigger reflexes can also send signals to the brain via ascending pathways. Reflex circuits in the spinal cord don't exclude communication to the brain, so they are not completely different sets of afferents—the same sensory neuron can participate in both.",
       },
     ],
   },
@@ -2673,7 +2673,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Inhibit pancreatic secretions as well", "Stimulate pancreatic secretions", "Have no effect on pancreatic secretions"],
   //         multipleChoiceAnswer: "Stimulate pancreatic secretions",
-  //         feedbackExplanation: "The autonomic nervous system has dual innervation by the sympathetic and parasympathetic nervous system",
+  //         feedbackText: "The autonomic nervous system has dual innervation by the sympathetic and parasympathetic nervous system",
   //       },
   //       {
   //         id: 3,
@@ -3050,7 +3050,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "longer", "shorter"],
   //         multipleChoiceAnswer: "longer",
-  //         feedbackExplanation: "When muscle fiber is stretched past optimal length, fewer crossbridges can form",
+  //         feedbackText: "When muscle fiber is stretched past optimal length, fewer crossbridges can form",
   //       },
   //       {
   //         id: 20,
@@ -5205,7 +5205,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "They are not enzymatically modified prior to their absorption into the bloodstream", "They cross the apical membranes of enterocytes by simple diffusion", "They are transported into blood ­capillaries in the villi", "They are all hydrophilic", "All of the above"],
   //         multipleChoiceAnswer: "They are not enzymatically modified prior to their absorption into the bloodstream",
-  //         feedbackExplanation: "Sodium, fatty acids, and vitamin A do not require enzymatic modification before absorption. {Na} is absorbed as an ion. Fatty acids and vitamin A are absorbed in their existing forms after emulsification. They do not all diffuse simply, nor are they all hydrophilic",
+  //         feedbackText: "Sodium, fatty acids, and vitamin A do not require enzymatic modification before absorption. {Na} is absorbed as an ion. Fatty acids and vitamin A are absorbed in their existing forms after emulsification. They do not all diffuse simply, nor are they all hydrophilic",
   //         tooltipTerms: [{ label: "Na", meaning: "Sodium" }],
   //       },
   //       {
@@ -5221,7 +5221,7 @@ export const quizzes: QuizType[] = [
   // "Carbohydrates only", "Lipids only", "Proteins only", "Carbohydrates and lipids only", "Carbohydrates and proteins only"],
   //         multipleChoiceAnswer: "Lipids only",
   //         feedbackImage: "/images/Figure 20.11 Pancreas",
-  //         feedbackExplanation: "Bile is essential for emulsifying lipids, allowing lipase to digest fats. If bile cannot enter the duodenum, fat digestion is impaired, while carbohydrate and protein digestion continue normally",
+  //         feedbackText: "Bile is essential for emulsifying lipids, allowing lipase to digest fats. If bile cannot enter the duodenum, fat digestion is impaired, while carbohydrate and protein digestion continue normally",
   //       },
   //       {
   //         id: 3,
@@ -5235,7 +5235,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Cephalic-phase regulation only", "Gastric-phase regulation only", "Intestinal-phase regulation only", "Gastric-phase and intestinal-phase regulation only", "All 3 phases of regulation"],
   //         multipleChoiceAnswer: "All 3 phases of regulation",
-  //         feedbackExplanation: "The autonomic nervous system influences all 3 phases of digestive regulation—cephalic, gastric, and intestinal—via parasympathetic and sympathetic pathways",
+  //         feedbackText: "The autonomic nervous system influences all 3 phases of digestive regulation—cephalic, gastric, and intestinal—via parasympathetic and sympathetic pathways",
   //       },
   //       {
   //         id: 4,
@@ -5249,7 +5249,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Proteins", "Fats", "Disaccharides", "Starch", "None of the above"],
   //         multipleChoiceAnswer: "None of the above",
-  //         feedbackExplanation: "Salivary amylase begins starch digestion, but pancreatic amylase fully compensates. Therefore, digestion of proteins, fats, disaccharides, and starch would still occur normally. Thus, none would be impossible to digest",
+  //         feedbackText: "Salivary amylase begins starch digestion, but pancreatic amylase fully compensates. Therefore, digestion of proteins, fats, disaccharides, and starch would still occur normally. Thus, none would be impossible to digest",
   //       },
   //       {
   //         id: 5,
@@ -5263,7 +5263,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "A duodenal contents osmolarity increase", "Stomach acid entering the duodenum", "Food arriving in the stomach", "Both A duodenal contents osmolarity increase and stomach acid entering the duodenum", "All of the above"],
   //         multipleChoiceAnswer: "Both an increase in the osmolarity of duodenal contents and entry of stomach acid into the duodenum",
-  //         feedbackExplanation: "Two stimuli inhibit acid secretion via the enterogastric reflex: Increased duodenal osmolarity. Entry of acidic chyme into the duodenum. Arrival of food in the stomach stimulates acid secretion, not inhibits it",
+  //         feedbackText: "Two stimuli inhibit acid secretion via the enterogastric reflex: Increased duodenal osmolarity. Entry of acidic chyme into the duodenum. Arrival of food in the stomach stimulates acid secretion, not inhibits it",
   //       },
   //       {
   //         id: 6,
@@ -5282,7 +5282,7 @@ export const quizzes: QuizType[] = [
   //           "The bile duct cells fluid secretion is greater when both CCK and secretin are present, compared to when either hormone is present alone (at the same concentration)",
   //         ],
   //         multipleChoiceAnswer: "The bile duct cells fluid secretion is greater when both CCK and secretin are present, compared to when either hormone is present alone (at the same concentration)",
-  //         feedbackExplanation: "Potentiation occurs when 2 hormones together create a greater effect than either alone. CCK + secretin produce a larger bile duct fluid secretion than either hormone at the same concentration",
+  //         feedbackText: "Potentiation occurs when 2 hormones together create a greater effect than either alone. CCK + secretin produce a larger bile duct fluid secretion than either hormone at the same concentration",
   //       },
   //       {
   //         id: 7,
@@ -5297,7 +5297,7 @@ export const quizzes: QuizType[] = [
   // "Bile salts", "Lipases", "Trypsin", "Chymotrypsin", "Both trypsin and chymotrypsin"],
   //         multipleChoiceAnswer: "Both trypsin and chymotrypsin",
   //         feedbackImage: "/images/Figure 20.16 Activation of Proteases in Small Intestine",
-  //         feedbackExplanation: "Enterokinase converts trypsinogen → trypsin, and trypsin activates chymotrypsinogen → chymotrypsin. Thus, enterokinase is responsible for the activation of both trypsin and chymotrypsin",
+  //         feedbackText: "Enterokinase converts trypsinogen → trypsin, and trypsin activates chymotrypsinogen → chymotrypsin. Thus, enterokinase is responsible for the activation of both trypsin and chymotrypsin",
   //       },
   //       {
   //         id: 8,
@@ -5311,7 +5311,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Enterokinase", "Chymotrypsinogen", "Salivary amylase", "Cholecystokinin", "All of the above"],
   //         multipleChoiceAnswer: "Chymotrypsinogen",
-  //         feedbackExplanation: "A zymogen is an inactive enzyme precursor. Chymotrypsinogen is the inactive form of chymotrypsin. The others (enterokinase, salivary amylase, CCK) are active enzymes or hormones",
+  //         feedbackText: "A zymogen is an inactive enzyme precursor. Chymotrypsinogen is the inactive form of chymotrypsin. The others (enterokinase, salivary amylase, CCK) are active enzymes or hormones",
   //       },
   //       {
   //         id: 9,
@@ -5325,7 +5325,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Gastroileal reflex", "Ileogastric reflex", "Gastrocolic reflex", "Colonocolonic reflex", "Intestino-intestinal reflex"],
   //         multipleChoiceAnswer: "Gastroileal reflex",
-  //         feedbackExplanation: "The gastroileal reflex increases ileal motility when the stomach becomes more active, helping move intestinal contents forward in coordination with gastric activity",
+  //         feedbackText: "The gastroileal reflex increases ileal motility when the stomach becomes more active, helping move intestinal contents forward in coordination with gastric activity",
   //       },
   //       {
   //         id: 10,
@@ -5339,7 +5339,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Maltose", "Glucose", "Sucrose", "Lactose", "Fructose"],
   //         multipleChoiceAnswer: "Maltose",
-  //         feedbackExplanation: "Amylase breaks starch into disaccharides such as maltose, not glucose or other simple sugars directly",
+  //         feedbackText: "Amylase breaks starch into disaccharides such as maltose, not glucose or other simple sugars directly",
   //       },
   //       {
   //         id: 11,
@@ -5353,7 +5353,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Alpha melanocyte stimulating hormone", "Thyroid stimulating hormone", "Leptin", "Both alpha melanocyte stimulating hormone and leptin", "All of the above"],
   //         multipleChoiceAnswer: "Both alpha melanocyte stimulating hormone and leptin",
-  //         feedbackExplanation: "Both alpha-MSH (a melanocortin that suppresses appetite in the hypothalamus) and leptin (a hormone from adipose tissue that signals long-term energy stores) promote satiety. TSH does not regulate hunger",
+  //         feedbackText: "Both alpha-MSH (a melanocortin that suppresses appetite in the hypothalamus) and leptin (a hormone from adipose tissue that signals long-term energy stores) promote satiety. TSH does not regulate hunger",
   //       },
   //       {
   //         id: 12,
@@ -5364,7 +5364,7 @@ export const quizzes: QuizType[] = [
   //           { text: "False", image: "" },
   //         ],
   //         multipleChoiceAnswer: "False",
-  //         feedbackExplanation: "Pancreatic amylase breaks starch into maltose and small oligosaccharides, but final digestion to absorbable monosaccharides requires brush border enzymes. Therefore it cannot complete digestion alone",
+  //         feedbackText: "Pancreatic amylase breaks starch into maltose and small oligosaccharides, but final digestion to absorbable monosaccharides requires brush border enzymes. Therefore it cannot complete digestion alone",
   //       },
   //       {
   //         id: 13,
@@ -5375,7 +5375,7 @@ export const quizzes: QuizType[] = [
   //           { text: "False", image: "" },
   //         ],
   //         multipleChoiceAnswer: "False",
-  //         feedbackExplanation: "The stomach's acid-secreting glands are part of the primary digestive tract, not accessory glands (which include the liver, gallbladder, and pancreas). Therefore, the statement is false",
+  //         feedbackText: "The stomach's acid-secreting glands are part of the primary digestive tract, not accessory glands (which include the liver, gallbladder, and pancreas). Therefore, the statement is false",
   //       },
   //       {
   //         id: 14,
@@ -5389,7 +5389,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "cephalic-phase", "gastric-phase"],
   //         multipleChoiceAnswer: "cephalic-phase",
-  //         feedbackExplanation: "Receptive relaxation of the stomach occurs before food arrives and is triggered by sight, smell, and thought of food—making it a cephalic-phase response",
+  //         feedbackText: "Receptive relaxation of the stomach occurs before food arrives and is triggered by sight, smell, and thought of food—making it a cephalic-phase response",
   //       },
   //       {
   //         id: 15,
@@ -5404,7 +5404,7 @@ export const quizzes: QuizType[] = [
   // "Submucosal", "Myenteric"],
   //         multipleChoiceAnswer: "Myenteric",
   //         feedbackImage: "/images/Figure 20.3 Gastrointestial Wall.png",
-  //         feedbackExplanation: "The myenteric (Auerbach’s) plexus lies between the circular and longitudinal muscle layers of the muscularis externa. The submucosal plexus is located in the submucosa",
+  //         feedbackText: "The myenteric (Auerbach’s) plexus lies between the circular and longitudinal muscle layers of the muscularis externa. The submucosal plexus is located in the submucosa",
   //       },
   //       {
   //         id: 16,
@@ -5418,7 +5418,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Serosa"],
   //         multipleChoiceAnswer: "Serosa",
-  //         feedbackExplanation: "The serosa is the external layer of the GI tract, consisting of a mesothelium over connective tissue",
+  //         feedbackText: "The serosa is the external layer of the GI tract, consisting of a mesothelium over connective tissue",
   //       },
   //       {
   //         id: 17,
@@ -5432,7 +5432,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "secretin", "cholecystokinin"],
   //         multipleChoiceAnswer: "cholecystokinin",
-  //         feedbackExplanation: "CCK is released when fats enter the duodenum and causes the gallbladder to contract and release bile. Secretin mainly stimulates bicarbonate secretion",
+  //         feedbackText: "CCK is released when fats enter the duodenum and causes the gallbladder to contract and release bile. Secretin mainly stimulates bicarbonate secretion",
   //       },
   //       {
   //         id: 18,
@@ -5446,7 +5446,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "proteases", "lipases"],
   //         multipleChoiceAnswer: "lipases",
-  //         feedbackExplanation: "Bile salts emulsify fats, increasing surface area so pancreatic lipase can digest triglycerides. Proteases do not require bile",
+  //         feedbackText: "Bile salts emulsify fats, increasing surface area so pancreatic lipase can digest triglycerides. Proteases do not require bile",
   //       },
   //       {
   //         id: 19,
@@ -5460,7 +5460,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "mucosa", "submucosa"],
   //         multipleChoiceAnswer: "mucosa",
-  //         feedbackExplanation: "The lamina propria is the connective tissue layer within the mucosa, beneath the epithelium",
+  //         feedbackText: "The lamina propria is the connective tissue layer within the mucosa, beneath the epithelium",
   //       },
   //       {
   //         id: 20,
@@ -5474,7 +5474,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "stimulates", "inhibits"],
   //         multipleChoiceAnswer: "stimulates",
-  //         feedbackExplanation: "Gastrin stimulates acid secretion by acting on parietal cells and promoting histamine release from ECL cells",
+  //         feedbackText: "Gastrin stimulates acid secretion by acting on parietal cells and promoting histamine release from ECL cells",
   //       },
   //       {
   //         id: 21,
@@ -5489,7 +5489,7 @@ export const quizzes: QuizType[] = [
   // "chief cells", "parietal cells"],
   //         multipleChoiceAnswer: "chief cells",
   //         feedbackImage: "/images/Figure 20.15 Pepsin",
-  //         feedbackExplanation: "Chief cells release pepsinogen, which becomes pepsin in an acidic environment. Parietal cells secrete HCl and intrinsic factor",
+  //         feedbackText: "Chief cells release pepsinogen, which becomes pepsin in an acidic environment. Parietal cells secrete HCl and intrinsic factor",
   //       },
   //       {
   //         id: 22,
@@ -5504,7 +5504,7 @@ export const quizzes: QuizType[] = [
   // "segmentation", "migrating motility complexes"],
   //         multipleChoiceAnswer: "migrating motility complexes",
   //         feedbackImage: "/images/Figure 20.30 Peristalsis and Segmentation",
-  //         feedbackExplanation: "Between meals, migrating motility complexes (MMCs) sweep residual contents through the small intestine. Segmentation occurs during meals",
+  //         feedbackText: "Between meals, migrating motility complexes (MMCs) sweep residual contents through the small intestine. Segmentation occurs during meals",
   //       },
   //       {
   //         id: 23,
@@ -5515,7 +5515,7 @@ export const quizzes: QuizType[] = [
   //           { text: "False", image: "" },
   //         ],
   //         multipleChoiceAnswer: "False",
-  //         feedbackExplanation: "Enterohepatic circulation refers primarily to recycling of bile salts between the intestine and liver—not blood flow through the hepatic portal vein. Thus the statement is false",
+  //         feedbackText: "Enterohepatic circulation refers primarily to recycling of bile salts between the intestine and liver—not blood flow through the hepatic portal vein. Thus the statement is false",
   //       },
   //       {
   //         id: 24,
@@ -5529,7 +5529,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Frequency", "Amplitude"],
   //         multipleChoiceAnswer: "Amplitude",
-  //         feedbackExplanation: "GI nerves and hormones change the amplitude of slow waves (strength of contraction), not the frequency of slow wave generation",
+  //         feedbackText: "GI nerves and hormones change the amplitude of slow waves (strength of contraction), not the frequency of slow wave generation",
   //       },
   //       {
   //         id: 25,
@@ -5540,7 +5540,7 @@ export const quizzes: QuizType[] = [
   //           { text: "False", image: "" },
   //         ],
   //         multipleChoiceAnswer: "True",
-  //         feedbackExplanation: "Yes—chewing is voluntary but also maintained by brainstem reflex circuits that rhythmically control jaw motion. This makes the statement true",
+  //         feedbackText: "Yes—chewing is voluntary but also maintained by brainstem reflex circuits that rhythmically control jaw motion. This makes the statement true",
   //       },
   //       {
   //         id: 26,
@@ -5554,7 +5554,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "pancreatic enzymes", "brush border enzymes"],
   //         multipleChoiceAnswer: "brush border enzymes",
-  //         feedbackExplanation: "Disaccharides (like lactose, maltose, sucrose) are digested by brush border enzymes into absorbable monosaccharides. Pancreatic enzymes cannot perform this final step",
+  //         feedbackText: "Disaccharides (like lactose, maltose, sucrose) are digested by brush border enzymes into absorbable monosaccharides. Pancreatic enzymes cannot perform this final step",
   //       },
   //     ],
   //   },
@@ -5577,7 +5577,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "The effect of thyroid hormones on growth", "The effect of insulin on glucose uptake by cells", "The effect of sex hormones on growth hormone secretion", "Both effect of thyroid hormones on growth and effect of sex hormones on the growth hormone secretion", "All of the above"],
   //         multipleChoiceAnswer: "Both effect of thyroid hormones on growth and effect of sex hormones on the growth hormone secretion",
-  //         feedbackExplanation: "A permissive effect means one hormone enables another hormone to act more effectively. Thyroid hormones make growth hormone’s effects stronger, and sex hormones enhance GH secretion—so both are examples of permissive interactions",
+  //         feedbackText: "A permissive effect means one hormone enables another hormone to act more effectively. Thyroid hormones make growth hormone’s effects stronger, and sex hormones enhance GH secretion—so both are examples of permissive interactions",
   //       },
   //       {
   //         id: 2,
@@ -5591,7 +5591,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Inhibition of ACTH release", "Stimulation of liver gluconeogenesis", "Stimulation of lipolysis", "Stimulation of glycogen breakdown", "Stimulation of protein synthesis"],
   //         multipleChoiceAnswer: "Stimulation of lipolysis",
-  //         feedbackExplanation: "A glucose-sparing effect shifts cells away from burning glucose. Cortisol achieves this by stimulating lipolysis, providing fatty acids for fuel and preserving glucose for the brain",
+  //         feedbackText: "A glucose-sparing effect shifts cells away from burning glucose. Cortisol achieves this by stimulating lipolysis, providing fatty acids for fuel and preserving glucose for the brain",
   //       },
   //       {
   //         id: 3,
@@ -5605,7 +5605,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Alpha cells", "Beta cells", "Delta cells", "Exocrine cells", "Duct cells"],
   //         multipleChoiceAnswer: "Beta cells",
-  //         feedbackExplanation: "Beta cells in the pancreatic islets produce insulin. Alpha cells produce glucagon, and delta cells produce somatostatin",
+  //         feedbackText: "Beta cells in the pancreatic islets produce insulin. Alpha cells produce glucagon, and delta cells produce somatostatin",
   //       },
   //       {
   //         id: 4,
@@ -5619,7 +5619,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Growth hormone", "Epinephrine", "Thyroid hormones", "ACTH", "All of the above"],
   //         multipleChoiceAnswer: "All of the above",
-  //         feedbackExplanation: "Stress activates both the sympathetic nervous system and the HPA axis, increasing epinephrine, ACTH (and thus cortisol), and growth hormone. Therefore, all listed hormones rise during stress",
+  //         feedbackText: "Stress activates both the sympathetic nervous system and the HPA axis, increasing epinephrine, ACTH (and thus cortisol), and growth hormone. Therefore, all listed hormones rise during stress",
   //       },
   //       {
   //         id: 5,
@@ -5633,7 +5633,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Growth hormone", "Insulin", "Epinephrine", "Glucagon", "All of the above"],
   //         multipleChoiceAnswer: "Insulin",
-  //         feedbackExplanation: "Low blood glucose suppresses insulin secretion while stimulating glucagon, epinephrine, and GH. So insulin is inhibited",
+  //         feedbackText: "Low blood glucose suppresses insulin secretion while stimulating glucagon, epinephrine, and GH. So insulin is inhibited",
   //       },
   //       {
   //         id: 6,
@@ -5647,7 +5647,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Fatty acids", "Amino acids", "Glucose", "Glycerol", "Ketones"],
   //         multipleChoiceAnswer: "Glucose",
-  //         feedbackExplanation: "During fasting, most tissues switch to fat, but the CNS still relies primarily on glucose, except in prolonged starvation when ketones partially substitute",
+  //         feedbackText: "During fasting, most tissues switch to fat, but the CNS still relies primarily on glucose, except in prolonged starvation when ketones partially substitute",
   //       },
   //       {
   //         id: 7,
@@ -5661,7 +5661,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Osteoblasts", "Osteoclasts", "Osteocytes", "Chondrocytes"],
   //         multipleChoiceAnswer: "Osteoblasts",
-  //         feedbackExplanation: "Osteoblasts synthesize and lay down new bone matrix. Osteoclasts break down bone",
+  //         feedbackText: "Osteoblasts synthesize and lay down new bone matrix. Osteoclasts break down bone",
   //       },
   //       {
   //         id: 8,
@@ -5675,7 +5675,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Growth hormone exerts no effects on body tissues", "Growth hormone secretion ceases altogether", "Growth hormone cannot stimulate increases in long bones length", "Bone structure becomes permanently fixed", "None of the above"],
   //         multipleChoiceAnswer: "Growth hormone cannot stimulate increases in long bones length",
-  //         feedbackExplanation: "In adults, growth plates have closed, so GH cannot increase the length of long bones, though it still affects metabolism and soft tissue growth",
+  //         feedbackText: "In adults, growth plates have closed, so GH cannot increase the length of long bones, though it still affects metabolism and soft tissue growth",
   //       },
   //       {
   //         id: 9,
@@ -5689,7 +5689,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "T₃", "T₄", "Neither; T₃ and T₄ have equal activity"],
   //         multipleChoiceAnswer: "T₃",
-  //         feedbackExplanation: "T₃ is the biologically more active form at target cells. T₄ is a precursor converted to T₃",
+  //         feedbackText: "T₃ is the biologically more active form at target cells. T₄ is a precursor converted to T₃",
   //       },
   //       {
   //         id: 10,
@@ -5703,7 +5703,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Thyroid hormones", "Insulin", "Glucagon", "Growth hormone", "Cortisol"],
   //         multipleChoiceAnswer: "Cortisol",
-  //         feedbackExplanation: "The adrenal cortex produces the steroid hormone cortisol. Thyroid hormones are amine derivatives; insulin, glucagon, and GH are peptides",
+  //         feedbackText: "The adrenal cortex produces the steroid hormone cortisol. Thyroid hormones are amine derivatives; insulin, glucagon, and GH are peptides",
   //       },
   //       {
   //         id: 11,
@@ -5717,7 +5717,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "insulin", "glucagon"],
   //         multipleChoiceAnswer: "glucagon",
-  //         feedbackExplanation: "Glucagon mobilizes stored fuels by raising blood glucose and stimulating glycogenolysis and gluconeogenesis",
+  //         feedbackText: "Glucagon mobilizes stored fuels by raising blood glucose and stimulating glycogenolysis and gluconeogenesis",
   //       },
   //       {
   //         id: 12,
@@ -5731,7 +5731,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "insulin", "glucagon"],
   //         multipleChoiceAnswer: "insulin",
-  //         feedbackExplanation: "After a meal (absorptive state), insulin increases to promote nutrient storage and uptake",
+  //         feedbackText: "After a meal (absorptive state), insulin increases to promote nutrient storage and uptake",
   //       },
   //       {
   //         id: 13,
@@ -5742,7 +5742,7 @@ export const quizzes: QuizType[] = [
   //           { text: "False", image: "" },
   //         ],
   //         multipleChoiceAnswer: "True",
-  //         feedbackExplanation: "True. They act as opposing regulators to maintain plasma glucose homeostasis",
+  //         feedbackText: "True. They act as opposing regulators to maintain plasma glucose homeostasis",
   //       },
   //       {
   //         id: 14,
@@ -5756,7 +5756,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "glycerol"],
   //         multipleChoiceAnswer: "glycerol",
-  //         feedbackExplanation: "Triglycerides break down into fatty acids and glycerol, the latter of which can be used for energy or gluconeogenesis",
+  //         feedbackText: "Triglycerides break down into fatty acids and glycerol, the latter of which can be used for energy or gluconeogenesis",
   //       },
   //       {
   //         id: 15,
@@ -5770,7 +5770,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "absorptive", "postabsorptive"],
   //         multipleChoiceAnswer: "absorptive",
-  //         feedbackExplanation: "This occurs in the absorptive state, when excess nutrients are converted into storage molecules like fat",
+  //         feedbackText: "This occurs in the absorptive state, when excess nutrients are converted into storage molecules like fat",
   //       },
   //       {
   //         id: 16,
@@ -5784,7 +5784,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "absorptive", "postabsorptive"],
   //         multipleChoiceAnswer: "postabsorptive",
-  //         feedbackExplanation: "This occurs in the postabsorptive state, when the body needs to generate glucose through gluconeogenesis",
+  //         feedbackText: "This occurs in the postabsorptive state, when the body needs to generate glucose through gluconeogenesis",
   //       },
   //       {
   //         id: 17,
@@ -5798,7 +5798,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "positive", "negative"],
   //         multipleChoiceAnswer: "negative",
-  //         feedbackExplanation: "Increased thyroid hormone raises metabolic rate, causing the body to burn more energy—making energy balance more negative",
+  //         feedbackText: "Increased thyroid hormone raises metabolic rate, causing the body to burn more energy—making energy balance more negative",
   //       },
   //       {
   //         id: 18,
@@ -5812,7 +5812,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "heat"],
   //         multipleChoiceAnswer: "heat",
-  //         feedbackExplanation: "All other energy taken in is released as heat, maintaining body temperature",
+  //         feedbackText: "All other energy taken in is released as heat, maintaining body temperature",
   //       },
   //       {
   //         id: 19,
@@ -5826,7 +5826,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "stimulate", "inhibit"],
   //         multipleChoiceAnswer: "inhibit",
-  //         feedbackExplanation: "Stress increases cortisol, which inhibits GHRH and reduces growth hormone release",
+  //         feedbackText: "Stress increases cortisol, which inhibits GHRH and reduces growth hormone release",
   //       },
   //       {
   //         id: 20,
@@ -5840,7 +5840,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "(IGFs) insulin-like growth factors"],
   //         multipleChoiceAnswer: "(IGFs) insulin-like growth factors",
-  //         feedbackExplanation: "GH stimulates release of insulin-like growth factors (IGFs), which mediate most of its growth-promoting effects",
+  //         feedbackText: "GH stimulates release of insulin-like growth factors (IGFs), which mediate most of its growth-promoting effects",
   //       },
   //       {
   //         id: 21,
@@ -5854,7 +5854,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "growth hormone", "sex hormones"],
   //         multipleChoiceAnswer: "sex hormones",
-  //         feedbackExplanation: "Sex hormones (estrogen and testosterone) trigger epiphyseal plate closure during late puberty",
+  //         feedbackText: "Sex hormones (estrogen and testosterone) trigger epiphyseal plate closure during late puberty",
   //       },
   //       {
   //         id: 22,
@@ -5868,7 +5868,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "sympathetic", "parasympathetic"],
   //         multipleChoiceAnswer: "sympathetic",
-  //         feedbackExplanation: "Thyroid hormone increases sensitivity to sympathetic nervous system activity, contributing to increased heart rate and metabolic effects",
+  //         feedbackText: "Thyroid hormone increases sensitivity to sympathetic nervous system activity, contributing to increased heart rate and metabolic effects",
   //       },
   //       {
   //         id: 23,
@@ -5882,7 +5882,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "increased", "decreased"],
   //         multipleChoiceAnswer: "increased",
-  //         feedbackExplanation: "Glucocorticoids increase plasma glucose by promoting gluconeogenesis and reducing glucose uptake in peripheral tissues",
+  //         feedbackText: "Glucocorticoids increase plasma glucose by promoting gluconeogenesis and reducing glucose uptake in peripheral tissues",
   //       },
   //       {
   //         id: 24,
@@ -5893,7 +5893,7 @@ export const quizzes: QuizType[] = [
   //           { text: "False", image: "" },
   //         ],
   //         multipleChoiceAnswer: "False",
-  //         feedbackExplanation: "Glucose-sparing means using less glucose, but gluconeogenesis produces glucose, increasing availability rather than sparing its use",
+  //         feedbackText: "Glucose-sparing means using less glucose, but gluconeogenesis produces glucose, increasing availability rather than sparing its use",
   //       },
   //       {
   //         id: 25,
@@ -5907,7 +5907,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "stimulatory", "inhibitory"],
   //         multipleChoiceAnswer: "inhibitory",
-  //         feedbackExplanation: "Plasma glucocorticoids exert negative feedback, inhibiting ACTH secretion from the anterior pituitary",
+  //         feedbackText: "Plasma glucocorticoids exert negative feedback, inhibiting ACTH secretion from the anterior pituitary",
   //       },
   //     ],
   //   },
@@ -5930,7 +5930,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Inhibin", "Androgens", "GnRH", "FSH", "GHRH"],
   //         multipleChoiceAnswer: "GnRH",
-  //         feedbackExplanation: "GnRH from the hypothalamus stimulates the anterior pituitary to release the gonadotropins FSH and LH",
+  //         feedbackText: "GnRH from the hypothalamus stimulates the anterior pituitary to release the gonadotropins FSH and LH",
   //       },
   //       {
   //         id: 2,
@@ -5944,7 +5944,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Development of the primitive gonads into testes", "Regression of Müllerian ducts", "Development of Müllerian ducts into male reproductive organs", "Development of Wolffian ducts into male reproductive organs", "Expression of the srY gene"],
   //         multipleChoiceAnswer: "Development of Wolffian ducts into male reproductive organs",
-  //         feedbackExplanation: "Testosterone stabilizes and stimulates the Wolffian ducts, causing them to develop into male internal reproductive structures",
+  //         feedbackText: "Testosterone stabilizes and stimulates the Wolffian ducts, causing them to develop into male internal reproductive structures",
   //       },
   //       {
   //         id: 3,
@@ -5959,7 +5959,7 @@ export const quizzes: QuizType[] = [
   // "prostate gland", "scrotum", "penis", "epididymis", "vas deferens"],
   //         multipleChoiceAnswer: "scrotum",
   //         feedbackImage: "/images/Figure 22.6 Male Reproductive System",
-  //         feedbackExplanation: "The testes are housed in the scrotum, which helps regulate temperature for proper sperm production",
+  //         feedbackText: "The testes are housed in the scrotum, which helps regulate temperature for proper sperm production",
   //       },
   //       {
   //         id: 4,
@@ -5973,7 +5973,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "spermatids", "primary spermatocytes", "secondary spermatocytes", "spermatozoa", "spermatophytes"],
   //         multipleChoiceAnswer: "primary spermatocytes",
-  //         feedbackExplanation: "Spermatogonia first divide and differentiate into primary spermatocytes before undergoing meiosis",
+  //         feedbackText: "Spermatogonia first divide and differentiate into primary spermatocytes before undergoing meiosis",
   //       },
   //       {
   //         id: 5,
@@ -5987,7 +5987,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "estrogens", "progesterone", "androgens", "luteinizing hormone", "inhibin"],
   //         multipleChoiceAnswer: "luteinizing hormone",
-  //         feedbackExplanation: "LH is produced by the anterior pituitary, not the ovaries",
+  //         feedbackText: "LH is produced by the anterior pituitary, not the ovaries",
   //       },
   //       {
   //         id: 6,
@@ -6001,7 +6001,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "In early fetal life", "At birth", "Just before ovulation", "After ovulation but before fertilization", "After fertilization"],
   //         multipleChoiceAnswer: "Just before ovulation",
-  //         feedbackExplanation: "Meiosis I in oogenesis completes just before ovulation, producing a secondary oocyte",
+  //         feedbackText: "Meiosis I in oogenesis completes just before ovulation, producing a secondary oocyte",
   //       },
   //       {
   //         id: 7,
@@ -6015,7 +6015,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Progesterone", "FSH", "LH", "GnRH", "Estrogens"],
   //         multipleChoiceAnswer: "FSH",
-  //         feedbackExplanation: "FSH stimulates granulosa cells, supporting follicle development and estrogen production",
+  //         feedbackText: "FSH stimulates granulosa cells, supporting follicle development and estrogen production",
   //       },
   //       {
   //         id: 8,
@@ -6029,7 +6029,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Rupture of the dominant follicle", "Degeneration of the corpus luteum", "An inhibitory effect of LH on secretory activity of the corpus luteum", "The inhibitory effect of inhibin on the secretory activity of granulosa cells", "All of the above"],
   //         multipleChoiceAnswer: "Degeneration of the corpus luteum",
-  //         feedbackExplanation: "When the corpus luteum degenerates (if no pregnancy occurs), estrogen and progesterone levels fall",
+  //         feedbackText: "When the corpus luteum degenerates (if no pregnancy occurs), estrogen and progesterone levels fall",
   //       },
   //       {
   //         id: 9,
@@ -6043,7 +6043,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Menstrual phase", "Secretory phase", "Luteal phase", "Follicular phase"],
   //         multipleChoiceAnswer: "Menstrual phase",
-  //         feedbackExplanation: "The menstrual phase occurs just before the proliferative phase",
+  //         feedbackText: "The menstrual phase occurs just before the proliferative phase",
   //       },
   //       {
   //         id: 10,
@@ -6057,7 +6057,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "prolactin", "chorionic gonadotropin", "placental lactogen", "progesterone", "estrogens"],
   //         multipleChoiceAnswer: "prolactin",
-  //         feedbackExplanation: "The placenta produces hCG, placental lactogen, estrogen, and progesterone — but not prolactin",
+  //         feedbackText: "The placenta produces hCG, placental lactogen, estrogen, and progesterone — but not prolactin",
   //       },
   //       {
   //         id: 11,
@@ -6068,7 +6068,7 @@ export const quizzes: QuizType[] = [
   //           { text: "False", image: "" },
   //         ],
   //         multipleChoiceAnswer: "False",
-  //         feedbackExplanation: "Meiosis I separates homologous chromosomes, not specifically maternal vs. paternal sets into separate cells",
+  //         feedbackText: "Meiosis I separates homologous chromosomes, not specifically maternal vs. paternal sets into separate cells",
   //       },
   //       {
   //         id: 12,
@@ -6082,7 +6082,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Testosterone Receptors", "Testis-Determining Factor"],
   //         multipleChoiceAnswer: "Testis-Determining Factor",
-  //         feedbackExplanation: "The SRY gene codes for TDF, which triggers testis development",
+  //         feedbackText: "The SRY gene codes for TDF, which triggers testis development",
   //       },
   //       {
   //         id: 13,
@@ -6096,7 +6096,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Persist", "Degenerate"],
   //         multipleChoiceAnswer: "Persist",
-  //         feedbackExplanation: "Without testosterone and MIS, the Müllerian ducts persist and develop into female structures",
+  //         feedbackText: "Without testosterone and MIS, the Müllerian ducts persist and develop into female structures",
   //       },
   //       {
   //         id: 14,
@@ -6110,7 +6110,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "gonadotropins"],
   //         multipleChoiceAnswer: "gonadotropins",
-  //         feedbackExplanation: "FSH and LH are gonadotropins produced by the anterior pituitary",
+  //         feedbackText: "FSH and LH are gonadotropins produced by the anterior pituitary",
   //       },
   //       {
   //         id: 15,
@@ -6121,7 +6121,7 @@ export const quizzes: QuizType[] = [
   //           { text: "False", image: "" },
   //         ],
   //         multipleChoiceAnswer: "True",
-  //         feedbackExplanation: "GnRH stimulates release of both FSH and LH from the anterior pituitary",
+  //         feedbackText: "GnRH stimulates release of both FSH and LH from the anterior pituitary",
   //       },
   //       {
   //         id: 16,
@@ -6135,7 +6135,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Leydig cells"],
   //         multipleChoiceAnswer: "Leydig cells",
-  //         feedbackExplanation: "Leydig cells produce testosterone in response to LH",
+  //         feedbackText: "Leydig cells produce testosterone in response to LH",
   //       },
   //       {
   //         id: 17,
@@ -6149,7 +6149,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "FSH", "LH"],
   //         multipleChoiceAnswer: "FSH",
-  //         feedbackExplanation: "FSH acts on Sertoli cells to support spermatogenesis, alongside testosterone",
+  //         feedbackText: "FSH acts on Sertoli cells to support spermatogenesis, alongside testosterone",
   //       },
   //       {
   //         id: 18,
@@ -6164,7 +6164,7 @@ export const quizzes: QuizType[] = [
   // "acrosome"],
   //         multipleChoiceAnswer: "acrosome",
   //         feedbackImage: "/images/Figure 22.9 Sperm Cell",
-  //         feedbackExplanation: "The acrosome contains enzymes that help sperm penetrate the egg",
+  //         feedbackText: "The acrosome contains enzymes that help sperm penetrate the egg",
   //       },
   //       {
   //         id: 19,
@@ -6178,7 +6178,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "increase", "decrease"],
   //         multipleChoiceAnswer: "decrease",
-  //         feedbackExplanation: "Erection occurs with decreased sympathetic activity and increased parasympathetic activity",
+  //         feedbackText: "Erection occurs with decreased sympathetic activity and increased parasympathetic activity",
   //       },
   //       {
   //         id: 20,
@@ -6192,7 +6192,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Capacitation"],
   //         multipleChoiceAnswer: "Capacitation",
-  //         feedbackExplanation: "Capacitation is a process in the female reproductive tract that enables sperm to fertilize the oocyte",
+  //         feedbackText: "Capacitation is a process in the female reproductive tract that enables sperm to fertilize the oocyte",
   //       },
   //       {
   //         id: 21,
@@ -6206,7 +6206,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Uterus", "Uterine Tube"],
   //         multipleChoiceAnswer: "Uterine Tube",
-  //         feedbackExplanation: "Fertilization normally occurs in the ampulla of the uterine tube",
+  //         feedbackText: "Fertilization normally occurs in the ampulla of the uterine tube",
   //       },
   //       {
   //         id: 22,
@@ -6220,7 +6220,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Luteal Phase", "Follicular Phase"],
   //         multipleChoiceAnswer: "Luteal Phase",
-  //         feedbackExplanation: "The second half of the ovarian cycle (after ovulation) is the luteal phase",
+  //         feedbackText: "The second half of the ovarian cycle (after ovulation) is the luteal phase",
   //       },
   //       {
   //         id: 23,
@@ -6234,7 +6234,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Granulosa", "Theca"],
   //         multipleChoiceAnswer: "Granulosa",
-  //         feedbackExplanation: "Granulosa cells surround the oocyte and regulate its nutrient environment",
+  //         feedbackText: "Granulosa cells surround the oocyte and regulate its nutrient environment",
   //       },
   //       {
   //         id: 24,
@@ -6248,7 +6248,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "LH", "FSH"],
   //         multipleChoiceAnswer: "LH",
-  //         feedbackExplanation: "LH stimulates theca cells to produce androgens, which granulosa cells convert to estrogens",
+  //         feedbackText: "LH stimulates theca cells to produce androgens, which granulosa cells convert to estrogens",
   //       },
   //       {
   //         id: 25,
@@ -6262,7 +6262,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Endometrium", "Myometrium"],
   //         multipleChoiceAnswer: "Endometrium",
-  //         feedbackExplanation: "The endometrium is the inner lining where implantation occurs",
+  //         feedbackText: "The endometrium is the inner lining where implantation occurs",
   //       },
   //       {
   //         id: 26,
@@ -6276,7 +6276,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Proliferative", "Secretory"],
   //         multipleChoiceAnswer: "Proliferative",
-  //         feedbackExplanation: "In the proliferative phase, estrogen causes thickening of the endometrial lining",
+  //         feedbackText: "In the proliferative phase, estrogen causes thickening of the endometrial lining",
   //       },
   //       {
   //         id: 27,
@@ -6290,7 +6290,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "LH", "FSH"],
   //         multipleChoiceAnswer: "LH",
-  //         feedbackExplanation: "The LH surge triggers ovulation",
+  //         feedbackText: "The LH surge triggers ovulation",
   //       },
   //       {
   //         id: 28,
@@ -6304,7 +6304,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "LH", "Progesterone"],
   //         multipleChoiceAnswer: "Progesterone",
-  //         feedbackExplanation: "The corpus luteum secretes progesterone (and some estrogen), not LH",
+  //         feedbackText: "The corpus luteum secretes progesterone (and some estrogen), not LH",
   //       },
   //       {
   //         id: 29,
@@ -6318,7 +6318,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Estrogens", "Progesterone"],
   //         multipleChoiceAnswer: "Estrogens",
-  //         feedbackExplanation: "High estrogen levels in the late follicular phase stimulate the LH surge",
+  //         feedbackText: "High estrogen levels in the late follicular phase stimulate the LH surge",
   //       },
   //       {
   //         id: 30,
@@ -6332,7 +6332,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Ovulation", "Menstruation"],
   //         multipleChoiceAnswer: "Menstruation",
-  //         feedbackExplanation: "Falling progesterone and estrogen from corpus luteum degeneration triggers menstruation",
+  //         feedbackText: "Falling progesterone and estrogen from corpus luteum degeneration triggers menstruation",
   //       },
   //       {
   //         id: 31,
@@ -6346,7 +6346,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Blastocyst"],
   //         multipleChoiceAnswer: "Blastocyst",
-  //         feedbackExplanation: "A blastocyst forms before implantation, containing the inner cell mass and trophoblast",
+  //         feedbackText: "A blastocyst forms before implantation, containing the inner cell mass and trophoblast",
   //       },
   //       {
   //         id: 32,
@@ -6360,7 +6360,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Estrogen", "Progesterone"],
   //         multipleChoiceAnswer: "Progesterone",
-  //         feedbackExplanation: "Progesterone promotes secretory transformation of the endometrium and suppresses gonadotropins",
+  //         feedbackText: "Progesterone promotes secretory transformation of the endometrium and suppresses gonadotropins",
   //       },
   //       {
   //         id: 33,
@@ -6374,7 +6374,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "placenta"],
   //         multipleChoiceAnswer: "placenta",
-  //         feedbackExplanation: "After the first trimester, the placenta becomes the major source of estrogen and progesterone",
+  //         feedbackText: "After the first trimester, the placenta becomes the major source of estrogen and progesterone",
   //       },
   //       {
   //         id: 34,
@@ -6388,7 +6388,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "oxytocin"],
   //         multipleChoiceAnswer: "oxytocin",
-  //         feedbackExplanation: "Oxytocin from the posterior pituitary stimulates strong uterine contractions during labor",
+  //         feedbackText: "Oxytocin from the posterior pituitary stimulates strong uterine contractions during labor",
   //       },
   //       {
   //         id: 35,
@@ -6402,7 +6402,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "prolactin"],
   //         multipleChoiceAnswer: "prolactin",
-  //         feedbackExplanation: "Prolactin from the anterior pituitary stimulates milk production in the mammary glands",
+  //         feedbackText: "Prolactin from the anterior pituitary stimulates milk production in the mammary glands",
   //       },
   //     ],
   //   },
@@ -6425,7 +6425,7 @@ export const quizzes: QuizType[] = [
   // "Virus", "Bacteria", "Fungi", "Parasites", "None of the above"],
   //         multipleChoiceAnswer: "Bacteria",
   //         feedbackImage: "/images/Figure 23.4 Pathogens",
-  //         feedbackExplanation: "Bacteria are single-celled prokaryotic organisms, unlike viruses (acellular) or fungi/parasites (can be multicellular)",
+  //         feedbackText: "Bacteria are single-celled prokaryotic organisms, unlike viruses (acellular) or fungi/parasites (can be multicellular)",
   //       },
   //       {
   //         id: 2,
@@ -6439,7 +6439,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Lack of IgG", "Lack of neutrophils", "Lack of B cells", "Lack of cytotoxic T cells", "Lack of helper T cells"],
   //         multipleChoiceAnswer: "Lack of helper T cells",
-  //         feedbackExplanation: "Helper T cells (CD4⁺) are required to activate B cells, cytotoxic T cells, and macrophages. Without them, almost all adaptive immunity fails",
+  //         feedbackText: "Helper T cells (CD4⁺) are required to activate B cells, cytotoxic T cells, and macrophages. Without them, almost all adaptive immunity fails",
   //       },
   //       {
   //         id: 3,
@@ -6454,7 +6454,7 @@ export const quizzes: QuizType[] = [
   // "A T cell receptor", "Interferon", "An antibody", "A perforin", "Interleukin-2"],
   //         multipleChoiceAnswer: "An antibody",
   //         feedbackImage: "/images/Figure 23.16 Opsonization",
-  //         feedbackExplanation: "Antibodies bind antigens and tag (opsonize) them for phagocytosis",
+  //         feedbackText: "Antibodies bind antigens and tag (opsonize) them for phagocytosis",
   //       },
   //       {
   //         id: 4,
@@ -6468,7 +6468,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "bone marrow", "the spleen", "lymph nodes", "the appendix", "Peyer’s patches"],
   //         multipleChoiceAnswer: "bone marrow",
-  //         feedbackExplanation: "Bone marrow is a primary lymphoid organ; lymphocytes do not encounter foreign antigens there",
+  //         feedbackText: "Bone marrow is a primary lymphoid organ; lymphocytes do not encounter foreign antigens there",
   //       },
   //       {
   //         id: 5,
@@ -6482,7 +6482,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "It involves B cells", "It involves antibodies", "It involves cytotoxic T cells", "It can provide passive immunity when transferred from one person to another"],
   //         multipleChoiceAnswer: "It involves cytotoxic T cells",
-  //         feedbackExplanation: "Humoral immunity involves B cells and antibodies; cytotoxic T cells belong to cell-mediated immunity",
+  //         feedbackText: "Humoral immunity involves B cells and antibodies; cytotoxic T cells belong to cell-mediated immunity",
   //       },
   //       {
   //         id: 6,
@@ -6496,7 +6496,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "are derived from monocytes", "have class II MHC molecules", "are phagocytic", "are indirectly involved in specific immunity", "all of the above"],
   //         multipleChoiceAnswer: "all of the above",
-  //         feedbackExplanation: "Macrophages originate from monocytes, perform phagocytosis, express class II MHC, and present antigen to helper T cells",
+  //         feedbackText: "Macrophages originate from monocytes, perform phagocytosis, express class II MHC, and present antigen to helper T cells",
   //       },
   //       {
   //         id: 7,
@@ -6510,7 +6510,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "histamines", "complement proteins", "perforins", "immunoglobulins", "ready-porins"],
   //         multipleChoiceAnswer: "perforins",
-  //         feedbackExplanation: "Cytotoxic T cells kill infected cells by releasing perforins, which form pores in target membranes",
+  //         feedbackText: "Cytotoxic T cells kill infected cells by releasing perforins, which form pores in target membranes",
   //       },
   //       {
   //         id: 8,
@@ -6524,7 +6524,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "is considered a universal blood donor", "is considered a universal blood recipient", "produces antibodies to the B antigen", "produces antibodies to the A antigen", "is Rh-positive"],
   //         multipleChoiceAnswer: "is considered a universal blood recipient",
-  //         feedbackExplanation: "AB blood has no anti-A or anti-B antibodies, so the person can receive all ABO types (universal recipient)",
+  //         feedbackText: "AB blood has no anti-A or anti-B antibodies, so the person can receive all ABO types (universal recipient)",
   //       },
   //       {
   //         id: 9,
@@ -6538,7 +6538,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Passage of maternal antibodies to a developing fetus", "An inflammatory response to a splinter", "Phagocytosis of bacteria by a neutrophil", "Administration of polio vaccine", "Administration of antibodies against the rabies virus"],
   //         multipleChoiceAnswer: "Administration of polio vaccine",
-  //         feedbackExplanation: "Vaccines such as polio stimulate active immunity and immunologic memory, providing long-term protection",
+  //         feedbackText: "Vaccines such as polio stimulate active immunity and immunologic memory, providing long-term protection",
   //       },
   //       {
   //         id: 10,
@@ -6552,7 +6552,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "class I MHC molecules to cytotoxic T cells", "class II MHC molecules to helper T cells", "class I MHC molecules to helper T cells", "class II MHC molecules to CD8-bearing cells", "class II MHC molecules to cytotoxic T cells"],
   //         multipleChoiceAnswer: "class II MHC molecules to helper T cells",
-  //         feedbackExplanation: "Extracellular antigen taken up by macrophages is presented on class II MHC to helper T cells (CD4⁺)",
+  //         feedbackText: "Extracellular antigen taken up by macrophages is presented on class II MHC to helper T cells (CD4⁺)",
   //       },
   //       {
   //         id: 11,
@@ -6566,7 +6566,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Increased capillary permeability", "Fever", "Attack by cytotoxic T cells", "Release of histamine", "Lysis of microbes mediated by antibodies and complement"],
   //         multipleChoiceAnswer: "Release of histamine",
-  //         feedbackExplanation: "Local inflammation begins with mast-cell degranulation and histamine release before other immune processes occur",
+  //         feedbackText: "Local inflammation begins with mast-cell degranulation and histamine release before other immune processes occur",
   //       },
   //       {
   //         id: 12,
@@ -6580,7 +6580,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "They function in both the cell-­mediated and humoral immune responses", "They secrete antibody", "They bear surface CD4 molecules", "They are subject to infection by HIV", "When activated, they secrete IL-2 and other cytokines"],
   //         multipleChoiceAnswer: "They secrete antibody",
-  //         feedbackExplanation: "Helper T cells do not secrete antibodies; B cells do. Helper T cells regulate both arms of adaptive immunity",
+  //         feedbackText: "Helper T cells do not secrete antibodies; B cells do. Helper T cells regulate both arms of adaptive immunity",
   //       },
   //       {
   //         id: 13,
@@ -6594,7 +6594,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Macrophage", "Dendritic Cell", "Mast Cell", "Activated B Cells", "Thymus Cells"],
   //         multipleChoiceAnswer: "Thymus Cells",
-  //         feedbackExplanation: "Thymus cells are not antigen-presenting cells; macrophages, dendritic cells, and activated B cells are",
+  //         feedbackText: "Thymus cells are not antigen-presenting cells; macrophages, dendritic cells, and activated B cells are",
   //       },
   //       {
   //         id: 14,
@@ -6608,7 +6608,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "B Cells", "Cytotoxic T Cells", "NK Cells", "T Helper Cells", "Macrophages"],
   //         multipleChoiceAnswer: "Macrophages",
-  //         feedbackExplanation: "IL-2 activates T cells, B cells, and NK cells—but not macrophages directly",
+  //         feedbackText: "IL-2 activates T cells, B cells, and NK cells—but not macrophages directly",
   //       },
   //       {
   //         id: 15,
@@ -6622,7 +6622,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Myasthenia Gravis", "Multiple Sclerosis", "Diabetes Mellitus", "Rheumatoid Arthritis"],
   //         multipleChoiceAnswer: "Multiple Sclerosis",
-  //         feedbackExplanation: "Multiple sclerosis is an autoimmune disease where the immune system attacks CNS myelin",
+  //         feedbackText: "Multiple sclerosis is an autoimmune disease where the immune system attacks CNS myelin",
   //       },
   //       {
   //         id: 16 - 1,
@@ -6636,7 +6636,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Helper T Cell", "Cytotoxic T Cell", "B Cell", "Macrophage"],
   //         multipleChoiceAnswer: "Macrophage",
-  //         feedbackExplanation: "Macrophages are responsible for phagocytosis",
+  //         feedbackText: "Macrophages are responsible for phagocytosis",
   //       },
   //       {
   //         id: 16 - 2,
@@ -6650,7 +6650,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Helper T Cell", "Cytotoxic T Cell", "B Cell", "Macrophage"],
   //         multipleChoiceAnswer: "Helper T Cell",
-  //         feedbackExplanation: "Helper T cells secrete cytokines like IL-2 to coordinate immune responses",
+  //         feedbackText: "Helper T cells secrete cytokines like IL-2 to coordinate immune responses",
   //       },
   //       {
   //         id: 16 - 3,
@@ -6664,7 +6664,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Helper T Cell", "Cytotoxic T Cell", "B Cell", "Macrophage"],
   //         multipleChoiceAnswer: "Cytotoxic T Cell",
-  //         feedbackExplanation: "Cytotoxic T cells (CD8+) directly kill infected cells",
+  //         feedbackText: "Cytotoxic T cells (CD8+) directly kill infected cells",
   //       },
   //       {
   //         id: 16 - 4,
@@ -6678,7 +6678,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Helper T Cell", "Cytotoxic T Cell", "B Cell", "Macrophage"],
   //         multipleChoiceAnswer: "B Cell",
-  //         feedbackExplanation: "B cells recognize free antigen (like viruses) through their B cell receptor",
+  //         feedbackText: "B cells recognize free antigen (like viruses) through their B cell receptor",
   //       },
   //       {
   //         id: 16 - 5,
@@ -6692,7 +6692,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Helper T cell", "Cytotoxic T Cell", "B Cell", "Macrophage"],
   //         multipleChoiceAnswer: "B Cell",
-  //         feedbackExplanation: "B cells differentiate into plasma cells, which produce antibodies",
+  //         feedbackText: "B cells differentiate into plasma cells, which produce antibodies",
   //       },
   //       {
   //         id: 17 - 1,
@@ -6706,7 +6706,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Humoral", "Cell-Mediated", "Both", "Neither"],
   //         multipleChoiceAnswer: "Both",
-  //         feedbackExplanation: "Viral infections activate both humoral and cell-mediated immunity",
+  //         feedbackText: "Viral infections activate both humoral and cell-mediated immunity",
   //       },
   //       {
   //         id: 17 - 2,
@@ -6720,7 +6720,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Humoral", "Cell-Mediated", "Both", "Neither"],
   //         multipleChoiceAnswer: "Humoral",
-  //         feedbackExplanation: "The production of antibodies is a hallmark of the humoral immune response",
+  //         feedbackText: "The production of antibodies is a hallmark of the humoral immune response",
   //       },
   //       {
   //         id: 17 - 3,
@@ -6734,7 +6734,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Humoral", "Cell-Mediated", "Both", "Neither"],
   //         multipleChoiceAnswer: "Neither",
-  //         feedbackExplanation: "Neutrophil phagocytosis is part of innate immunity, not humoral or cell-mediated responses",
+  //         feedbackText: "Neutrophil phagocytosis is part of innate immunity, not humoral or cell-mediated responses",
   //       },
   //       {
   //         id: 17 - 4,
@@ -6748,7 +6748,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Humoral", "Cell-Mediated", "Both", "Neither"],
   //         multipleChoiceAnswer: "Cell-mediated",
-  //         feedbackExplanation: "Killing virus-infected cells is the main function of cell-mediated immunity",
+  //         feedbackText: "Killing virus-infected cells is the main function of cell-mediated immunity",
   //       },
   //       {
   //         id: 17 - 5,
@@ -6762,7 +6762,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Humoral", "Cell-Mediated", "Both", "Neither"],
   //         multipleChoiceAnswer: "Cell-Mediated",
-  //         feedbackExplanation: "CD8 T cells are cytotoxic T cells involved in cell-mediated immunity",
+  //         feedbackText: "CD8 T cells are cytotoxic T cells involved in cell-mediated immunity",
   //       },
   //       {
   //         id: 18,
@@ -6776,7 +6776,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Block", "Enhance"],
   //         multipleChoiceAnswer: "Block",
-  //         feedbackExplanation: "Blocking IgE binding prevents mast-cell degranulation, reducing severe allergic reactions",
+  //         feedbackText: "Blocking IgE binding prevents mast-cell degranulation, reducing severe allergic reactions",
   //       },
   //       {
   //         id: 19 - 1,
@@ -6790,7 +6790,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Class I MHC", "Class II MHC"],
   //         multipleChoiceAnswer: "Class II MHC",
-  //         feedbackExplanation: "Macrophages present antigen on class II MHC to helper T cells",
+  //         feedbackText: "Macrophages present antigen on class II MHC to helper T cells",
   //       },
   //       {
   //         id: 19 - 2,
@@ -6804,7 +6804,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Helper T Cell", "Cytotoxic T Cell"],
   //         multipleChoiceAnswer: "Helper T Cell",
-  //         feedbackExplanation: "Macrophages present antigen on class II MHC to helper T cells. Class I MHC would instead activate cytotoxic T cells",
+  //         feedbackText: "Macrophages present antigen on class II MHC to helper T cells. Class I MHC would instead activate cytotoxic T cells",
   //       },
   //       {
   //         id: 20,
@@ -6815,7 +6815,7 @@ export const quizzes: QuizType[] = [
   //           { text: "False", image: "" },
   //         ],
   //         multipleChoiceAnswer: "True",
-  //         feedbackExplanation: "Immune, nervous, and endocrine systems communicate through cytokines, hormones, and neural signals",
+  //         feedbackText: "Immune, nervous, and endocrine systems communicate through cytokines, hormones, and neural signals",
   //       },
   //       {
   //         id: 21,
@@ -6829,7 +6829,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Active", "Passive"],
   //         multipleChoiceAnswer: "Passive",
-  //         feedbackExplanation: "Antitoxin injection provides ready-made antibodies → passive immunity",
+  //         feedbackText: "Antitoxin injection provides ready-made antibodies → passive immunity",
   //       },
   //       {
   //         id: 22,
@@ -6843,7 +6843,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Phagocytosis, Endocytosis", "Endocytosis, Phagocytosis"],
   //         multipleChoiceAnswer: "Phagocytosis, Endocytosis",
-  //         feedbackExplanation: "Macrophages take up large particles via phagocytosis. B cells internalize antigen by receptor-mediated endocytosis",
+  //         feedbackText: "Macrophages take up large particles via phagocytosis. B cells internalize antigen by receptor-mediated endocytosis",
   //       },
   //       {
   //         id: 23,
@@ -6857,7 +6857,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "T Cell", "B Cell"],
   //         multipleChoiceAnswer: "T Cell",
-  //         feedbackExplanation: "The thymus is required for T-cell maturation. Removing it decreases T-cell numbers, not B-cell numbers",
+  //         feedbackText: "The thymus is required for T-cell maturation. Removing it decreases T-cell numbers, not B-cell numbers",
   //       },
   //     ],
   //   },
@@ -6880,7 +6880,7 @@ export const quizzes: QuizType[] = [
   // "Bacterial infection of the adrenal medulla", "Viral infection of the adrenal medulla", "Autoimmune disease of the endocrine pancreas", "Autoimmune disease of the exocrine pancreas", "Disease of chronic obesity"],
   //         multipleChoiceAnswer: "Autoimmune disease of the endocrine pancreas",
   //         feedbackImage: "/images/Table 24.1 Type 1 and Type 2 Diabetes Mellitus.png",
-  //         feedbackExplanation: "Type 1 diabetes is an autoimmune disease in which the immune system destroys the β-cells of the endocrine pancreas, causing little to no insulin production. The adrenal medulla is not involved",
+  //         feedbackText: "Type 1 diabetes is an autoimmune disease in which the immune system destroys the β-cells of the endocrine pancreas, causing little to no insulin production. The adrenal medulla is not involved",
   //       },
   //       {
   //         id: 2,
@@ -6894,7 +6894,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Acetone Breath", "Increased Ventilation", "Increased Lipolysis", "Muscle Tremors", "Increased Sympathetic Activity"],
   //         multipleChoiceAnswer: "Muscle Tremors",
-  //         feedbackExplanation: "Ketoacidosis causes acetone breath, Kussmaul (increased) ventilation, increased lipolysis, and high sympathetic activity. Muscle tremors are not a characteristic symptom",
+  //         feedbackText: "Ketoacidosis causes acetone breath, Kussmaul (increased) ventilation, increased lipolysis, and high sympathetic activity. Muscle tremors are not a characteristic symptom",
   //       },
   //       {
   //         id: 3,
@@ -6908,7 +6908,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Severe Hyperglycemia", "Too much insulin, which causes severe hypoglycemia", "Acidosis", "Increased sympathetic activity to blood vessels of the brain", "Vasoconstriction of blood vessels to the brain"],
   //         multipleChoiceAnswer: "Too much insulin, which causes severe hypoglycemia",
-  //         feedbackExplanation: "A diabetic coma often results from severe hypoglycemia, usually due to too much insulin. Low glucose deprives the brain of energy, causing loss of consciousness",
+  //         feedbackText: "A diabetic coma often results from severe hypoglycemia, usually due to too much insulin. Low glucose deprives the brain of energy, causing loss of consciousness",
   //       },
   //       {
   //         id: 4,
@@ -6922,7 +6922,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "{Polydipsia}, {Polyphagia}, {Polyuria}", "{Polyglycemia}, {Polylipemia}, {Polyuria}", "{Polycythemia}, {Polyglycemia}, {Polydipsia}", "{Polycythemia}, {Polyphagia}, {Polyuria}", "{Polydipsia}, {Polyinsulinemia}, {Polyphagia}"],
   //         multipleChoiceAnswer: "{Polydipsia}, {Polyphagia}, {Polyuria}",
-  //         feedbackExplanation: "The classic symptoms of uncontrolled diabetes are polydipsia (excessive thirst), polyphagia (excessive hunger), and polyuria (excessive urination) due to high blood glucose and osmotic diuresis",
+  //         feedbackText: "The classic symptoms of uncontrolled diabetes are polydipsia (excessive thirst), polyphagia (excessive hunger), and polyuria (excessive urination) due to high blood glucose and osmotic diuresis",
   //         tooltipTerms: [
   //           { label: "Polycythemia", meaning: "Too many red blood cells in the blood" },
   //           { label: "Polydipsia", meaning: "Excessive thirst" },
@@ -6945,7 +6945,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Insulin", "Hexokinase", "Hemoglobin", "Aldose Reductase", "Protein Kinase C"],
   //         multipleChoiceAnswer: "Hemoglobin",
-  //         feedbackExplanation: "Diabetes is diagnosed in part using HbA1c, which measures the glycosylation of hemoglobin. This reflects average blood glucose levels over ~3 months",
+  //         feedbackText: "Diabetes is diagnosed in part using HbA1c, which measures the glycosylation of hemoglobin. This reflects average blood glucose levels over ~3 months",
   //       },
   //       {
   //         id: 6,
@@ -6960,7 +6960,7 @@ export const quizzes: QuizType[] = [
   // "Leaking retinal blood vessel {microaneurysms}", "Extensive retina {angiogenesis} resulting in weak, fragile, leaky blood vessels", "Too many rods and cones overlapping", "Extensive choroid development, putting pressure on the optic nerve", "Extensive retinal pigmented epithelium development, putting pressure on the optic nerve"],
   //         multipleChoiceAnswer: "Extensive retina {angiogenesis} resulting in weak, fragile, leaky blood vessels",
   //         feedbackImage: "/images/Figure 24.8 Diabetic retinopathy.png",
-  //         feedbackExplanation: "Proliferative diabetic retinopathy occurs when excessive angiogenesis produces weak, fragile new vessels, which easily leak or bleed, damaging retinal tissue",
+  //         feedbackText: "Proliferative diabetic retinopathy occurs when excessive angiogenesis produces weak, fragile new vessels, which easily leak or bleed, damaging retinal tissue",
   //         tooltipTerms: [
   //           {
   //             label: "angiogenesis",
@@ -6984,7 +6984,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Glucose in Urine", "{Albumin} in Urine", "Blood in Urine", "Excessive Thirst", "Dehydration"],
   //         multipleChoiceAnswer: "Albumin in Urine",
-  //         feedbackExplanation: "An early sign of diabetic kidney disease is albumin in the urine (microalbuminuria), which indicates damage to the glomerular filtration barrier",
+  //         feedbackText: "An early sign of diabetic kidney disease is albumin in the urine (microalbuminuria), which indicates damage to the glomerular filtration barrier",
   //         tooltipTerms: [
   //           {
   //             label: "nephropathy",
@@ -7008,7 +7008,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Fibroblasts", "Neutrophils", "Macrophages", "Monocytes"],
   //         multipleChoiceAnswer: "Fibroblasts",
-  //         feedbackExplanation: "Neutrophils, macrophages, and monocytes are phagocytic immune cells. Fibroblasts are structural connective-tissue cells, not phagocytes",
+  //         feedbackText: "Neutrophils, macrophages, and monocytes are phagocytic immune cells. Fibroblasts are structural connective-tissue cells, not phagocytes",
   //       },
   //       {
   //         id: 9,
@@ -7022,7 +7022,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Sulfonylureas", "Biguanides", "α-Glucosidase Inhibitors", "Thiazolidinediones", "Phenylephrine"],
   //         multipleChoiceAnswer: "Phenylephrine",
-  //         feedbackExplanation: "Sulfonylureas, biguanides, α-glucosidase inhibitors, and thiazolidinediones all treat type 2 diabetes. Phenylephrine is a decongestant and does not treat diabetes",
+  //         feedbackText: "Sulfonylureas, biguanides, α-glucosidase inhibitors, and thiazolidinediones all treat type 2 diabetes. Phenylephrine is a decongestant and does not treat diabetes",
   //       },
   //       {
   //         id: 10,
@@ -7036,7 +7036,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Hexokinase", "Protein Kinase C", "Aldose Reductase", "AMP-Activated Protein Kinase", "Tyrosine Kinase"],
   //         multipleChoiceAnswer: "Aldose Reductase",
-  //         feedbackExplanation: "Aldose reductase is an enzyme involved in the polyol pathway, which contributes to diabetic complications. It is being studied as a potential gene therapy target to reduce long-term tissue damage",
+  //         feedbackText: "Aldose reductase is an enzyme involved in the polyol pathway, which contributes to diabetic complications. It is being studied as a potential gene therapy target to reduce long-term tissue damage",
   //       },
   //       {
   //         id: 11,
@@ -7050,7 +7050,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Type 2 Diabetes Mellitus"],
   //         multipleChoiceAnswer: "Type 2 Diabetes Mellitus",
-  //         feedbackExplanation: "Type 2 diabetes mellitus is far more common than type 1, accounting for about 90–95% of all diabetes cases",
+  //         feedbackText: "Type 2 diabetes mellitus is far more common than type 1, accounting for about 90–95% of all diabetes cases",
   //       },
   //       {
   //         id: 12,
@@ -7064,7 +7064,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Type 1 Diabetes Mellitus", "Type 2 Diabetes Mellitus"],
   //         multipleChoiceAnswer: "Type 1 Diabetes Mellitus",
-  //         feedbackExplanation: "Type 1 diabetes mellitus is an autoimmune disorder in which the immune system destroys pancreatic β-cells. Type 2 is not autoimmune",
+  //         feedbackText: "Type 1 diabetes mellitus is an autoimmune disorder in which the immune system destroys pancreatic β-cells. Type 2 is not autoimmune",
   //       },
   //       {
   //         id: 13,
@@ -7078,7 +7078,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Glycosylation"],
   //         multipleChoiceAnswer: "Glycosylation",
-  //         feedbackExplanation: "Glycosylation is the non-enzymatic attachment of glucose to proteins, a process that increases with chronic hyperglycemia and is used to measure HbA1c",
+  //         feedbackText: "Glycosylation is the non-enzymatic attachment of glucose to proteins, a process that increases with chronic hyperglycemia and is used to measure HbA1c",
   //       },
   //       {
   //         id: 14,
@@ -7092,7 +7092,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Ketones"],
   //         multipleChoiceAnswer: "Ketones",
-  //         feedbackExplanation: "In uncontrolled diabetes, the body uses fats for energy, producing ketones, which are acidic and lead to metabolic acidosis",
+  //         feedbackText: "In uncontrolled diabetes, the body uses fats for energy, producing ketones, which are acidic and lead to metabolic acidosis",
   //       },
   //       {
   //         id: 15,
@@ -7106,7 +7106,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Polyuria = excessive urination; polydipsia = excessive thirst; polyphagia = excess eating"],
   //         multipleChoiceAnswer: "Polyuria = excessive urination; polydipsia = excessive thirst; polyphagia = excess eating",
-  //         feedbackExplanation: "These are classic symptoms of diabetes: Polyuria: excessive urination due to osmotic diuresis from glucose in the filtrate. Polydipsia: excessive thirst caused by dehydration from polyuria. Polyphagia: increased hunger because cells cannot take up glucose effectively",
+  //         feedbackText: "These are classic symptoms of diabetes: Polyuria: excessive urination due to osmotic diuresis from glucose in the filtrate. Polydipsia: excessive thirst caused by dehydration from polyuria. Polyphagia: increased hunger because cells cannot take up glucose effectively",
   //       },
   //       {
   //         id: 16,
@@ -7120,7 +7120,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Acceptable answers include delayed wound healing; diabetic neuropathy; gangrene; or diabetic foot ulcer"],
   //         multipleChoiceAnswer: "Acceptable answers include delayed wound healing; diabetic neuropathy; gangrene; or diabetic foot ulcer",
-  //         feedbackExplanation: "Amputations often result from delayed wound healing, neuropathy, and infections, which can progress to ulcers or gangrene due to poor circulation and nerve damage",
+  //         feedbackText: "Amputations often result from delayed wound healing, neuropathy, and infections, which can progress to ulcers or gangrene due to poor circulation and nerve damage",
   //       },
   //       {
   //         id: 17,
@@ -7134,7 +7134,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "Three phases: inflammation, proliferation, remodeling; all these phases are delayed in diabetes"],
   //         multipleChoiceAnswer: "Three phases: inflammation, proliferation, remodeling; all these phases are delayed in diabetes",
-  //         feedbackExplanation: "The 3 phases of wound healing are inflammation, proliferation, and remodeling. All phases are slowed or impaired in diabetes due to poor blood flow, high glucose, and immune dysfunction",
+  //         feedbackText: "The 3 phases of wound healing are inflammation, proliferation, and remodeling. All phases are slowed or impaired in diabetes due to poor blood flow, high glucose, and immune dysfunction",
   //       },
   //       {
   //         id: 18,
@@ -7148,7 +7148,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "They cause closing of {K} channels on the beta cell membrane, which depolarizes the cell"],
   //         multipleChoiceAnswer: "They cause closing of {K} channels on the beta cell membrane, which depolarizes the cell",
-  //         feedbackExplanation: "Sulfonylureas close ATP-sensitive {K} channels on pancreatic β-cells. This depolarizes the membrane, triggers {Ca} influx, and stimulates insulin release",
+  //         feedbackText: "Sulfonylureas close ATP-sensitive {K} channels on pancreatic β-cells. This depolarizes the membrane, triggers {Ca} influx, and stimulates insulin release",
   //         tooltipTerms: [
   //           { label: "Ca", meaning: "Calcium" },
   //           { label: "K", meaning: "Potassium" },
@@ -7163,7 +7163,7 @@ export const quizzes: QuizType[] = [
   //           { text: "No", image: "" },
   //         ],
   //         multipleChoiceAnswer: "Yes",
-  //         feedbackExplanation: "Bariatric (weight-loss) surgery can significantly improve insulin sensitivity and sometimes reverse type 2 diabetes, especially in early stages",
+  //         feedbackText: "Bariatric (weight-loss) surgery can significantly improve insulin sensitivity and sometimes reverse type 2 diabetes, especially in early stages",
   //       },
   //       {
   //         id: 20,
@@ -7177,7 +7177,7 @@ export const quizzes: QuizType[] = [
   // { text: , image: "" },
   // "A coma from taking too much insulin, thereby dropping blood glucose levels to dangerously low levels"],
   //         multipleChoiceAnswer: "A coma resulting from taking an excess of insulin, thereby dropping blood glucose levels to dangerously low levels",
-  //         feedbackExplanation: "A diabetic coma can occur when excess insulin causes severe hypoglycemia, depriving the brain of glucose and leading to loss of consciousness",
+  //         feedbackText: "A diabetic coma can occur when excess insulin causes severe hypoglycemia, depriving the brain of glucose and leading to loss of consciousness",
   //       },
   //     ],
   //   },

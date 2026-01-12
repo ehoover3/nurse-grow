@@ -33,7 +33,7 @@ type QuestionType = {
   // Feedback
   // ─────────
   feedbackImage?: string;
-  feedbackExplanation?: string;
+  feedbackText?: string;
 };
 
 type RPGChoice = {
@@ -71,451 +71,137 @@ export type QuizType = {
 
 export const quizzes: QuizType[] = [
   {
-    slug: "disaster-doctor-floor-1",
-    title: "Comprehensive Health Assessment",
+    slug: "health-assessment-exam1",
+    title: "Health Assessment Exam 1",
     description: "Add description here.",
     image: "/images/disaster-doctor/flooded-lobby.png",
     questions: [
       {
         id: 1,
         type: "multiple-choice",
-        question: "What is systolic blood pressure?",
+        question: "The nurse is interviewing the client and asks the client what brought the client to the physician’s office.  The client states, “I have been nauseated for three days.”  How will the nurse categorize this information?",
         multipleChoiceOptions: [
-          { text: "The top number in a blood pressure measurement - the pressure when the heart beats", image: "/images/SystolicBloodPressure.png" },
-          { text: "The bottom number in a blood pressure measurement - the pressure when the heart is resting", image: "/images/DiastolicBloodPressure.png" },
+          { text: "Chief complaint", image: "" },
+          { text: "Physical exam", image: "" },
+          { text: "Past Health History", image: "" },
+          { text: "Context of care", image: "" },
         ],
-        feedbackImage: "/images/SystolicBloodPressure.png",
-        multipleChoiceAnswer: "The top number in a blood pressure measurement - the pressure when the heart beats",
+        multipleChoiceAnswer: "Chief complaint",
       },
+
       {
         id: 2,
         type: "multiple-choice",
-        question: "What is diastolic blood pressure?",
+        question: "The nurse is completing a diagram of the client’s family history.  Which of the following is a visual representation of family history?",
         multipleChoiceOptions: [
-          { text: "The top number in a blood pressure measurement - the pressure when the heart beats", image: "/images/SystolicBloodPressure.png" },
-          { text: "The bottom number in a blood pressure measurement - the pressure when the heart is resting", image: "/images/DiastolicBloodPressure.png" },
+          { text: "Chief complaint", image: "" },
+          { text: "Genogram", image: "" },
+          { text: "Reflection", image: "" },
+          { text: "Review of systems", image: "" },
         ],
-        feedbackImage: "/images/DiastolicBloodPressure.png",
-        multipleChoiceAnswer: "The bottom number in a blood pressure measurement - the pressure when the heart is resting",
+        multipleChoiceAnswer: "Genogram",
+        feedbackText: "Genograms are not helpful for the elderly, but are for pediatrics.",
       },
 
       {
-        id: 9998,
-        type: "rpg-interaction",
-        question: "Blood pressure question.",
-        rpgRequiredInteractions: 3,
-        rpgObjects: [
-          {
-            id: "panicked-resident",
-            label: "Panicked Resident",
-            mapSprite: {
-              src: "/images/characters/world-people.png",
-              x: 134,
-              y: 200,
-              width: 32,
-              height: 48,
-            },
-            portrait: {
-              src: "/images/characters/people-spritesheet.png",
-              x: 207,
-              y: 36,
-              width: 80,
-              height: 128,
-            },
-            gridX: 2,
-            gridY: 3,
-            dialogue: ["I can’t catch my breath!", "My heart is racing!"],
-            choices: [
-              {
-                text: "Sympathetic nervous system activation",
-                correct: true,
-                explanation: "Stress activates the sympathetic nervous system, releasing adrenaline and increasing heart rate and breathing.",
-              },
-              {
-                text: "Parasympathetic dominance",
-                correct: false,
-                explanation: "The parasympathetic system slows the heart and promotes rest, which does not match these symptoms.",
-              },
-              {
-                text: "Respiratory infection",
-                correct: false,
-                explanation: "There are no signs of infection such as fever or cough.",
-              },
-              {
-                text: "Cardiac muscle failure",
-                correct: false,
-                explanation: "This presentation fits acute stress, not heart failure.",
-              },
-            ],
-          },
-          {
-            id: "injured-leg",
-            label: "Resident with Injured Leg",
-            mapSprite: {
-              src: "/images/characters/world-people.png",
-              x: 142,
-              y: 290,
-              width: 32,
-              height: 48,
-            },
-
-            portrait: {
-              src: "/images/characters/people-spritesheet.png",
-
-              x: 299,
-              y: 36,
-              width: 128,
-              height: 128,
-            },
-            gridX: 6,
-            gridY: 4,
-            dialogue: ["I slipped and can’t stand up.", "My leg won’t support me."],
-            choices: [
-              {
-                text: "Disrupted neuromuscular signaling",
-                correct: true,
-                explanation: "Movement requires intact nerve signaling and muscle contraction. Injury can disrupt this pathway.",
-              },
-              {
-                text: "Lung hypoxia",
-                correct: false,
-                explanation: "There are no respiratory symptoms.",
-              },
-              {
-                text: "Digestive system failure",
-                correct: false,
-                explanation: "Digestion is unrelated to leg movement.",
-              },
-              {
-                text: "Hormonal imbalance",
-                correct: false,
-                explanation: "This injury is acute and mechanical, not endocrine.",
-              },
-            ],
-          },
-          {
-            id: "electrical-panel",
-            label: "Flooded Electrical Panel",
-            mapSprite: {
-              src: "/images/characters/world-people.png",
-              x: 441,
-              y: 191,
-              width: 32,
-              height: 48,
-            },
-
-            portrait: {
-              src: "/images/characters/people-spritesheet.png",
-              x: 204,
-              y: 210,
-              width: 80,
-              height: 128,
-            },
-            gridX: 8,
-            gridY: 1,
-            dialogue: ["Water crackles around exposed wiring."],
-            choices: [
-              {
-                text: "Electrical signaling depends on ion movement",
-                correct: true,
-                explanation: "Nerves rely on controlled ion flow across membranes, similar to electrical circuits.",
-              },
-              {
-                text: "Bones generate electricity",
-                correct: false,
-                explanation: "Bones do not generate electrical signals.",
-              },
-              {
-                text: "Blood conducts nerve impulses",
-                correct: false,
-                explanation: "Nerve impulses travel along neurons, not through blood.",
-              },
-              {
-                text: "Muscles fire independently of nerves",
-                correct: false,
-                explanation: "Muscles require nerve input to contract.",
-              },
-            ],
-          },
+        id: 3,
+        type: "multiple-choice",
+        question: "The nurse is interviewing the client and is giving the client full attention.  This is an example of?",
+        multipleChoiceOptions: [
+          { text: "Active listening", image: "" },
+          { text: "Facilitation (uh-huh,  mmm)", image: "" },
+          { text: "Reflection", image: "" },
+          { text: "Clarification", image: "" },
+          { text: "Confrontation", image: "" },
         ],
-        feedbackExplanation: "You stabilized the lobby by identifying how stress, injury, and electrical signaling affect the human body.",
+        multipleChoiceAnswer: "Active listening",
       },
-    ],
-  },
-
-  {
-    slug: "disaster-doctor-floor-1",
-    title: "Disaster Doctor: Rising Waters",
-    description: "Heavy rain is flooding the lower floors. Use anatomy and physiology to assess and stabilize residents before it’s too late.",
-    image: "/images/disaster-doctor/flooded-lobby.png",
-    questions: [
       {
-        id: 9998,
-        type: "rpg-interaction",
-        question: "Floodwater is pouring into the lobby. Several residents are trapped. Move through the area and assess what’s happening inside their bodies.",
-        rpgRequiredInteractions: 3,
-        rpgObjects: [
-          {
-            id: "panicked-resident",
-            label: "Panicked Resident",
-            mapSprite: {
-              src: "/images/characters/world-people.png",
-              x: 134,
-              y: 200,
-              width: 32,
-              height: 48,
-            },
-            portrait: {
-              src: "/images/characters/people-spritesheet.png",
-              x: 207,
-              y: 36,
-              width: 80,
-              height: 128,
-            },
-            gridX: 2,
-            gridY: 3,
-            dialogue: ["I can’t catch my breath!", "My heart is racing!"],
-            choices: [
-              {
-                text: "Sympathetic nervous system activation",
-                correct: true,
-                explanation: "Stress activates the sympathetic nervous system, releasing adrenaline and increasing heart rate and breathing.",
-              },
-              {
-                text: "Parasympathetic dominance",
-                correct: false,
-                explanation: "The parasympathetic system slows the heart and promotes rest, which does not match these symptoms.",
-              },
-              {
-                text: "Respiratory infection",
-                correct: false,
-                explanation: "There are no signs of infection such as fever or cough.",
-              },
-              {
-                text: "Cardiac muscle failure",
-                correct: false,
-                explanation: "This presentation fits acute stress, not heart failure.",
-              },
-            ],
-          },
-          {
-            id: "injured-leg",
-            label: "Resident with Injured Leg",
-            mapSprite: {
-              src: "/images/characters/world-people.png",
-              x: 142,
-              y: 290,
-              width: 32,
-              height: 48,
-            },
-
-            portrait: {
-              src: "/images/characters/people-spritesheet.png",
-
-              x: 299,
-              y: 36,
-              width: 128,
-              height: 128,
-            },
-            gridX: 6,
-            gridY: 4,
-            dialogue: ["I slipped and can’t stand up.", "My leg won’t support me."],
-            choices: [
-              {
-                text: "Disrupted neuromuscular signaling",
-                correct: true,
-                explanation: "Movement requires intact nerve signaling and muscle contraction. Injury can disrupt this pathway.",
-              },
-              {
-                text: "Lung hypoxia",
-                correct: false,
-                explanation: "There are no respiratory symptoms.",
-              },
-              {
-                text: "Digestive system failure",
-                correct: false,
-                explanation: "Digestion is unrelated to leg movement.",
-              },
-              {
-                text: "Hormonal imbalance",
-                correct: false,
-                explanation: "This injury is acute and mechanical, not endocrine.",
-              },
-            ],
-          },
-          {
-            id: "electrical-panel",
-            label: "Flooded Electrical Panel",
-            mapSprite: {
-              src: "/images/characters/world-people.png",
-              x: 441,
-              y: 191,
-              width: 32,
-              height: 48,
-            },
-
-            portrait: {
-              src: "/images/characters/people-spritesheet.png",
-              x: 204,
-              y: 210,
-              width: 80,
-              height: 128,
-            },
-            gridX: 8,
-            gridY: 1,
-            dialogue: ["Water crackles around exposed wiring."],
-            choices: [
-              {
-                text: "Electrical signaling depends on ion movement",
-                correct: true,
-                explanation: "Nerves rely on controlled ion flow across membranes, similar to electrical circuits.",
-              },
-              {
-                text: "Bones generate electricity",
-                correct: false,
-                explanation: "Bones do not generate electrical signals.",
-              },
-              {
-                text: "Blood conducts nerve impulses",
-                correct: false,
-                explanation: "Nerve impulses travel along neurons, not through blood.",
-              },
-              {
-                text: "Muscles fire independently of nerves",
-                correct: false,
-                explanation: "Muscles require nerve input to contract.",
-              },
-            ],
-          },
+        id: 4,
+        type: "multiple-choice",
+        question: "The nurse is collecting objective data.  The most efficient way to collect this information is through which assessment?",
+        multipleChoiceOptions: [
+          { text: "Reflection", image: "" },
+          { text: "Physical assessment", image: "" },
+          { text: "Health History", image: "" },
+          { text: "Facilitation", image: "" },
         ],
-        feedbackExplanation: "You stabilized the lobby by identifying how stress, injury, and electrical signaling affect the human body.",
+        multipleChoiceAnswer: "Physical assessment",
+      },
+      {
+        id: 5,
+        type: "multiple-choice",
+        question: "The nurse is documenting in the electronic record. The nurse understands that this is referred to as:",
+        multipleChoiceOptions: [
+          { text: "The legal permanent record", image: "" },
+          { text: "The shift assessment", image: "" },
+          { text: "The genogram", image: "" },
+          { text: "The review of systems", image: "" },
+        ],
+        multipleChoiceAnswer: "The legal permanent record",
+      },
+      {
+        id: 6,
+        type: "multiple-choice",
+        question: "The patient makes the following statement to the nurse: “I work out, eat healthy, and take vitamins every day.”  The nurse understands that the client is practicing which health maintenance technique?",
+        multipleChoiceOptions: [
+          { text: "Health advancement", image: "" },
+          { text: "Health promotion", image: "" },
+          { text: "Clinical judgement", image: "" },
+          { text: "Tertiary prevention", image: "" },
+        ],
+        multipleChoiceAnswer: "Health promotion",
       },
 
       {
-        id: 9999,
-        type: "rpg-interaction",
-        question: "The water reaches knee height. A resident collapses near the stairwell. Others feel weak and cold. Assess the circulatory system.",
-        rpgRequiredInteractions: 3,
-        rpgObjects: [
-          {
-            id: "collapsed-resident",
-            label: "Collapsed Resident",
-            mapSprite: {
-              src: "/sprites/world-people.png",
-              x: 0,
-              y: 0,
-              width: 16,
-              height: 16,
-            },
-
-            portrait: {
-              src: "/images/interactionObjects/interaction-spritesheet.png",
-              x: 128,
-              y: 0,
-              width: 64,
-              height: 64,
-            },
-            gridX: 4,
-            gridY: 3,
-            dialogue: ["I feel dizzy… everything is spinning.", "My hands feel cold."],
-            choices: [
-              {
-                text: "Early circulatory shock",
-                correct: true,
-                explanation: "Low blood pressure reduces oxygen delivery, causing dizziness, weakness, and cold extremities.",
-              },
-              {
-                text: "Primary lung infection",
-                correct: false,
-                explanation: "There are no respiratory or infectious signs.",
-              },
-              {
-                text: "Digestive upset",
-                correct: false,
-                explanation: "GI issues do not cause collapse or cold extremities.",
-              },
-              {
-                text: "Normal stress response",
-                correct: false,
-                explanation: "Collapse indicates a pathological process.",
-              },
-            ],
-          },
-          {
-            id: "rapid-pulse",
-            label: "Resident with Rapid Pulse",
-            mapSprite: {
-              src: "/sprites/world-people.png",
-              x: 0,
-              y: 0,
-              width: 16,
-              height: 16,
-            },
-
-            portrait: {
-              src: "/images/interactionObjects/interaction-spritesheet.png",
-              x: 128,
-              y: 0,
-              width: 64,
-              height: 64,
-            },
-            gridX: 1,
-            gridY: 4,
-            dialogue: ["My heart won’t slow down!"],
-            choices: [
-              {
-                text: "Normal athletic conditioning",
-                correct: false,
-                explanation: "Athletic hearts beat slower at rest.",
-              },
-              {
-                text: "Compensatory tachycardia",
-                correct: true,
-                explanation: "The heart beats faster to maintain blood flow during low pressure states.",
-              },
-              {
-                text: "Respiratory alkalosis",
-                correct: false,
-                explanation: "No breathing-related pH disturbance is evident.",
-              },
-              {
-                text: "Cardiac arrest",
-                correct: false,
-                explanation: "The heart is clearly beating.",
-              },
-            ],
-          },
-          {
-            id: "cold-water",
-            label: "Cold Floodwater",
-            gridX: 8,
-            gridY: 2,
-            dialogue: ["The water is painfully cold."],
-            choices: [
-              {
-                text: "Peripheral vasoconstriction",
-                correct: true,
-                explanation: "Blood vessels constrict to preserve core temperature.",
-              },
-              {
-                text: "Vasodilation",
-                correct: false,
-                explanation: "Vasodilation increases heat loss.",
-              },
-              {
-                text: "Increased sweating",
-                correct: false,
-                explanation: "Sweating occurs with heat, not cold.",
-              },
-              {
-                text: "Digestive activation",
-                correct: false,
-                explanation: "Cold stress suppresses digestion.",
-              },
-            ],
-          },
+        id: 7,
+        type: "multiple-choice",
+        question: "The nurse is collecting information regarding the client’s perception of overall health status through the review of systems.  The nurse understands that the information collected with this technique would be considered____.",
+        multipleChoiceOptions: [
+          { text: "Subjective data", image: "" },
+          { text: "Chief complaint", image: "" },
+          { text: "Secondary data", image: "" },
+          { text: "Objective data", image: "" },
         ],
-        feedbackExplanation: "You identified early shock and compensatory responses. As flooding worsens, circulation becomes increasingly fragile.",
+        multipleChoiceAnswer: "Subjective data",
+      },
+      {
+        id: 8,
+        type: "multiple-choice",
+        question: "The nurse is collecting data on the client’s symptoms and chief complaint.  These are all components of:",
+        multipleChoiceOptions: [
+          { text: "Confrontation", image: "" },
+          { text: "The Physical Exam", image: "" },
+          { text: "Facilitation", image: "" },
+          { text: "The History of Present Illness", image: "" },
+        ],
+        multipleChoiceAnswer: "The History of Present Illness",
+      },
+
+      {
+        id: 9,
+        type: "multiple-choice",
+        question: "Which communication technique would the nurse utilize to encourage the client to continue speaking?",
+        multipleChoiceOptions: [
+          { text: "Active listening", image: "" },
+          { text: "Facilitation", image: "" },
+          { text: "Reflection", image: "" },
+          { text: "Confrontation", image: "" },
+        ],
+        multipleChoiceAnswer: "Facilitation",
+      },
+
+      {
+        id: 10,
+        type: "multiple-choice",
+        question: "A 50-year-old client has scheduled an appointment for a colonoscopy. This is an example of?",
+        multipleChoiceOptions: [
+          { text: "Primary prevention", image: "" },
+          { text: "Tertiary prevention", image: "" },
+          { text: "Secondary prevention", image: "" },
+          { text: "Quaternary prevention", image: "" },
+        ],
+        multipleChoiceAnswer: "Secondary prevention",
       },
     ],
   },
